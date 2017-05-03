@@ -17,11 +17,14 @@ const parseTestResults = (testJson) => {
     imageList = imageList.splice(0, config.get('images.maxNumberOfImages'));
     imageList = _.forEach(imageList, (image) => {
         let imageData = _.find(requestsData, (imgData) => {
-           return imgData.full_url === image.url;
+           return imgData.full_url === image.url && image.naturalHeight > 0 && image.naturalWidth > 0;
         });
-        image.size = imageData.image_total
+        if (imageData) {
+            image.size = imageData.image_total;
+        }
     });
-
+    imageList = filterByImageSize(imageList);
+    imageList = filterByResolution(imageList);
     return imageList;
 };
 
@@ -32,9 +35,11 @@ const filterByImageSize = (imageList) => {
     });
 };
 
-const filterByResoution = (imageList) => {
+const filterByResolution = (imageList) => {
   let maxRes = config.get('images.maxImageRes') * 1000000;
-
+  return _.filter(imageList, (image) => {
+      return (image.naturalWidth * image.naturalHeight) <= maxRes;
+  })
 };
 
 exports.wtpResParser = parseTestResults;

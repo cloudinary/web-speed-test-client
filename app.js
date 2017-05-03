@@ -1,13 +1,13 @@
 'use strict';
 const express = require('express');
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 
 const app = express();
 const wpt = require('./routes/wpt');
+wpt(app);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -31,7 +31,10 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
 });
 
-module.exports = app;
+app.listen(3000, () => {
+    console.log('Listening on port 3000');
+});
+
+//module.exports = app;

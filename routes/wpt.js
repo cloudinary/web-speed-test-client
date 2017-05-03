@@ -1,26 +1,38 @@
 'use strict';
 const express = require('express');
-const router = express.Router();
 const request = require('request');
+const resultParser = require('../wtp/wtpResultsParser');
 
 const RESULTS_URL = 'https://www.webpagetest.org/jsonResult.php';
 
-/* GET users listing. */
-router.get('/test/:testId', function(req, res, next) {
 
-  res.send('respond with a resource');
-});
+const wtp = (app) => {
+    app.get('/test/:testId', function (req, res, next) {
+        let testId = req.params.testId;
+        let results = getTestResults(testId);
+    });
 
 
-const getTestResults = (testId) => {
-    let options = {
-        baseUrl: RESULTS_URL,
-        qs: {test: testId}
+    const getTestResults = (testId) => {
+        let options = {
+            url: RESULTS_URL,
+            qs: {test: testId}
+        };
+        request.get(options, (error, response, body) => {
+            if (error) {
+                //TODO: handel
+            }
+            if (response && response.statusCode !== 200) {
+                //TODO: handel
+            }
+            if (!body) {
+                //TODO: handel
+            }
+            return resultParser.wtpResParser(JSON.parse(body));
+        })
+
+
     };
-    request.get(options)
-
-
 };
 
-
-module.exports = router;
+module.exports = wtp;
