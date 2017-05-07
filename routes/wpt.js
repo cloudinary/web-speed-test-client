@@ -1,38 +1,34 @@
 'use strict';
 const express = require('express');
-const request = require('request');
-const resultParser = require('../wtp/wtpResultsParser');
+const validUrl = require('valid-url');
+const apiCaller = require('../wtp/apiCaller');
 
-const RESULTS_URL = 'https://www.webpagetest.org/jsonResult.php';
 
 
 const wtp = (app) => {
-    app.get('/test/:testId', function (req, res, next) {
+    app.get('/test/:testId', (req, res) => {
         let testId = req.params.testId;
-        let results = getTestResults(testId);
+        apiCaller.getTestResults(testId, res);
     });
 
 
-    const getTestResults = (testId) => {
-        let options = {
-            url: RESULTS_URL,
-            qs: {test: testId}
-        };
-        request.get(options, (error, response, body) => {
-            if (error) {
-                //TODO: handel
-            }
-            if (response && response.statusCode !== 200) {
-                //TODO: handel
-            }
-            if (!body) {
-                //TODO: handel
-            }
-            return resultParser.wtpResParser(JSON.parse(body));
-        })
 
-
-    };
+    app.post('/test/run' , (req, res) => {
+        if (!req.body) {
+            res.sendStatus(400);
+            return;
+        }
+        let testUrl = req.body.url;
+        if (!testUrl) {
+            res.sendStatus(400);
+            return;
+        }
+        if (!validUrl.isUri(testUrl)) {
+            res.json({status: 'error',  message: 'URL is not valid'});
+            return;
+        }
+        apiCaller.runWtpTest(testUrl, res);
+    })
 };
 
 module.exports = wtp;

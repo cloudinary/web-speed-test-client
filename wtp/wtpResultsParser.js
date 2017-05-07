@@ -7,6 +7,7 @@
 const _ = require('lodash');
 const config = require('config');
 const bytes = require('bytes');
+const logger = require('winston');
 
 const parseTestResults = (testJson) => {
     let imageList = JSON.parse(_.get(testJson, 'data.median.firstView.Images'));
@@ -28,6 +29,15 @@ const parseTestResults = (testJson) => {
     return imageList;
 };
 
+const parseTestResponse = (body) => {
+    if (body.statusText !== 'Ok') {
+        logger.error('WTP returned an error');
+        return {status: 'error', message: 'WTP returned an error'}
+    }
+    return body.data.testId;
+};
+
+
 const filterByImageSize = (imageList) => {
     let maxSizeInBytes = bytes(config.get('images.maxImageSize') + 'mb');
     return _.filter(imageList, (image) => {
@@ -42,4 +52,9 @@ const filterByResolution = (imageList) => {
   })
 };
 
-exports.wtpResParser = parseTestResults;
+
+
+module.exports = {
+    parseTestResults: parseTestResults,
+    parseTestResponse: parseTestResponse
+};
