@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "async": "^2.4.0",
     "body-parser": "~1.17.1",
     "bytes": "^2.5.0",
+    "cloudinary": "^1.9.0",
     "config": "^1.25.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",

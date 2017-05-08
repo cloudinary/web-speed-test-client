@@ -8,6 +8,7 @@
 const request = require('request');
 const config = require('config');
 const resultParser = require('../wtp/wtpResultsParser');
+const cloudinaryCaller = require('../cloudinary/apiCaller');
 const RESULTS_URL = 'https://www.webpagetest.org/jsonResult.php';
 const RUN_TEST_URL = 'http://www.webpagetest.org/runtest.php';
 const GET_TEST_STATUS = 'http://www.webpagetest.org/testStatus.php';
@@ -31,7 +32,9 @@ const getTestResults = (testId, res) => {
             res.json({status: 'error', message: 'WTP returned empty body', error: 'empty body'});
             return
         }
-        res.json(resultParser.parseTestResults(JSON.parse(body)));
+        let wtpRes = resultParser.parseTestResults(JSON.parse(body));
+        cloudinaryCaller(wtpRes, res);
+
     })
 };
 
@@ -66,7 +69,7 @@ const runWtpTest = (url, res) => {
 const checkTestStatus = (testId, res) => {
     let options = {
         'url': GET_TEST_STATUS,
-        'qs': {test:testId, k:config.get('wtpApiKey'), f:"json"}
+        'qs': {test:testId, k:config.get('wtp.apiKey'), f:"json"}
     };
     request.get(options, (error, response, body) => {
        if (error) {
