@@ -7,6 +7,7 @@
 
 const request = require('request');
 const config = require('config');
+const logger = require('winston');
 const resultParser = require('../wtp/wtpResultsParser');
 const cloudinaryCaller = require('../cloudinary/apiCaller');
 const RESULTS_URL = 'https://www.webpagetest.org/jsonResult.php';
@@ -33,7 +34,7 @@ const getTestResults = (testId, res) => {
             return
         }
         let wtpRes = resultParser.parseTestResults(JSON.parse(body));
-        cloudinaryCaller(wtpRes, res);
+        cloudinaryCaller(wtpRes.imageList, wtpRes.dpr, res);
 
     })
 };
@@ -42,7 +43,7 @@ const runWtpTest = (url, res) => {
 
     let options = {
         'url': RUN_TEST_URL,
-        'qs': {url:url, k:config.get('wtpApiKey'), f:"json"}
+        'qs': {url:url, k:config.get('wtp.apiKey'), f:"json", custom: config.get('wtp.imageScript')} //TODO: remove image script when integrated natively
     };
     request.get(options, (error, response, body) => {
         if (error) {
@@ -67,6 +68,7 @@ const runWtpTest = (url, res) => {
 };
 
 const checkTestStatus = (testId, res) => {
+    logger.debug('Test id ' + testId);
     let options = {
         'url': GET_TEST_STATUS,
         'qs': {test:testId, k:config.get('wtp.apiKey'), f:"json"}
@@ -81,6 +83,7 @@ const checkTestStatus = (testId, res) => {
            return;
        }
        let testRes = JSON.parse(body);
+        logger.debug('Test status code ' + testRes.statusCode);
        if (testRes.statusCode >= 400) {
            res.json({status: 'error', message: 'WTP returned bad status', error: testRes.statusText});
            return;

@@ -11,13 +11,13 @@ const cloudinaryParser = require('./cloudinaryResultParser');
 const cloudinary = require('cloudinary');
 
 cloudinary.config({
-    cloud_name: config.get('cloudinary.name'),
+    cloud_name: config.get('cloudinary.cloudName'),
     api_key: config.get('cloudinary.apiKey'),
     api_secret: config.get('cloudinary.secret')
 });
 
 /** @param {Array} imagesArray */
-const sentToAnalyze = (imagesArray, res) => {
+const sentToAnalyze = (imagesArray, dpr, res) => {
     let numOfImages = imagesArray.length;
     let batchSize = config.get('cloudinary.batchSize');
     let chunks = _.chunk(imagesArray, batchSize);
@@ -26,10 +26,14 @@ const sentToAnalyze = (imagesArray, res) => {
     for (const chunk of chunks) {
         setTimeout(() => {
             for (const image of chunk) {
-                cloudinary.uploader.upload(image.url, (error, result) => {
-                    if (error) {
+                let context = {
+                   rendered_dimensions: {width: image.width, height: image.height},
+                    dpr: dpr
+                }; //TODO: add analyse parameter once once added to API
+                cloudinary.uploader.upload(image.url, (result) => {
+                    if (result.error) {
                         analyzeResults.push({public_id: null});
-                        logger.error('Error uploading to cloudinary', error);
+                        logger.error('Error uploading to cloudinary', result);
                     } else {
                         analyzeResults.push(result);
                     }

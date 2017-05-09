@@ -26,7 +26,9 @@ const parseTestResults = (testJson) => {
     });
     imageList = filterByImageSize(imageList);
     imageList = filterByResolution(imageList);
-    return imageList;
+    let dpi = JSON.parse(_.get(testJson, 'data.median.firstView.Dpi'));
+    let dpr = dpi.dppx ? dpi.dppx : 0;
+    return {imageList: imageList, dpr: dpr};
 };
 
 const parseTestResponse = (body) => {
