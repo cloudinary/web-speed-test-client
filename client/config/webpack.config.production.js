@@ -65,7 +65,17 @@ module.exports = merge(config, {
           loader: [
             { loader: 'css', query: { sourceMap: true } },
             'postcss',
-            { loader: 'sass', query: { outputStyle: 'compressed' } }
+            {
+              loader: 'sass',
+              query: {
+                outputStyle: 'compressed',
+                includePaths: [
+                  path.resolve(__dirname, "../src/client/assets/styles"),
+                  // Bootstrap loader
+                  // path.resolve(__dirname, "../node_modules/bootstrap-sass/assets/stylesheets/")
+                ]
+              }
+            }
           ]
         })
       },

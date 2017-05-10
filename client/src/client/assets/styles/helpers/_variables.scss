@@ -1,0 +1,19 @@
+// --------------------------------------------------
+//                   Variables
+// --------------------------------------------------
+
+//== Containers
+$container-width: 1208px;
+
+//== Media queries breakpoints
+$screen-lg: $container-width !default;
+$screen-md: 992px !default;
+$screen-sm: 768px !default;
+$screen-xs: 480px !default;
+$screen-md-max: ($screen-lg - 1) !default;
+$screen-sm-max: ($screen-md - 1) !default;
+$screen-xs-max: ($screen-sm - 1) !default;
+
+$desktop-only: "(min-width: #{$screen-lg})";
+$portrait-only: "(max-width: #{$screen-xs-max})";
+$mobile-only: "(max-width: #{$screen-md-max})";
