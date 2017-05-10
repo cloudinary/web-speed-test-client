@@ -1,7 +1,7 @@
 // @flow
 
 import { createStructuredSelector } from 'reselect';
-import isFunction from 'lodash/isfunction';
+import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
 import { State, ImageAnalyzeInfo, TotalPageRank } from '../../models/pagespeed';
 
@@ -117,13 +117,6 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
 }
 // Selectors
 
-const checkUrlForTestId = () => (dispatch, getState) => {
-  const {routing: {locationBeforeTransitions: location}} = getState();
-  if (location.query.testid) {
-    dispatch(setTestId(location.query.testid))
-  }
-}
-
 const pagespeed = (state) => state[NAME];
 
 export const selector = createStructuredSelector({
@@ -132,6 +125,5 @@ export const selector = createStructuredSelector({
 
 export const actionCreators = {
   fetchTestDataIfNeeded,
-  setTestId,
-  checkUrlForTestId
+  setTestId
 };
