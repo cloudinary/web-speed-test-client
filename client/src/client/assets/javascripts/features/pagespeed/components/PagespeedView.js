@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { CloudinaryContext } from 'cloudinary-react';
 
 import { actionCreators as pagespeedActions, selector } from '../';
 import PagespeedLayout from './PagespeedLayout';
@@ -11,9 +12,9 @@ import PagespeedLayout from './PagespeedLayout';
 export default class PagespeedView extends Component {
   render() {
     return (
-      <div>
+      <CloudinaryContext cloudName="pagespeed" cname="staging.cloudinary.com/res">
         <PagespeedLayout {...this.props} />
-      </div>
+      </CloudinaryContext>
     );
   }
   componentDidMount() {
