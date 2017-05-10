@@ -1,5 +1,5 @@
 /**
- * This script copies src/client/assets/index.html into build/client/index.html
+ * This script copies src/assets/index.html into build/index.html
  * This is useful for our built production code.
  */
 
@@ -9,7 +9,7 @@ const fs = require('fs');
 const colors = require('colors');
 const cheerio = require('cheerio');
 
-fs.readFile('src/client/assets/index.html', 'utf8', (err, markup) => {
+fs.readFile('src/assets/index.html', 'utf8', (err, markup) => {
   if (err) {
     return console.error(err);
   }
@@ -18,7 +18,7 @@ fs.readFile('src/client/assets/index.html', 'utf8', (err, markup) => {
 
   $('head').append('<link rel="stylesheet" href="/css/app.css">');
 
-  fs.writeFile('build/client/index.html', $.html(), 'utf8', (err) => {
+  fs.writeFile('build/index.html', $.html(), 'utf8', (err) => {
     if (err) {
       return console.error(err);
     }

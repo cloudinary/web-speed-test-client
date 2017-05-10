@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-
-import './PagespeedApp.scss';
+import Header from './Header/Header';
+import ResultsList from './ResultsList/ResultsList';
 
 export default class PagespeedLayout extends Component {
   static propTypes = {
@@ -9,11 +9,12 @@ export default class PagespeedLayout extends Component {
   };
 
   render() {
-    const { pagespeed: { pagespeedById }, actions } = this.props;
+    const { pagespeed, actions } = this.props;
 
     return (
       <div className="pagespeedApp">
-        <h1>PageSpeed</h1>
+        <Header />
+        <ResultsList results={pagespeed.imagesTestResults || []} />
       </div>
     );
   }

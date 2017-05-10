@@ -1,0 +1,19 @@
+// --------------------------------------------------
+//                 Basic layout
+// --------------------------------------------------
+
+html,
+body {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+}
