@@ -8,10 +8,6 @@ const apiCaller = require('../wtp/apiCaller');
 const wtp = (app) => {
     app.get('/test/:testId', (req, res) => {
         let testId = req.params.testId;
-        if (!testId) {
-            res.sendStatus(400);
-            return;
-        }
         apiCaller.getTestResults(testId, res);
     });
 

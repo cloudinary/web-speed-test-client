@@ -14,7 +14,7 @@ const GLOBALS = {
 module.exports = merge(config, {
   debug: true,
   cache: true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'inline-source-map',
   entry: {
     application: [
       'webpack-hot-middleware/client',
@@ -41,7 +41,17 @@ module.exports = merge(config, {
           'style',
           'css',
           'postcss',
-          { loader: 'sass', query: { outputStyle: 'expanded' } }
+          {
+            loader: 'sass',
+            query: {
+              outputStyle: 'expanded',
+              includePaths: [
+                path.resolve(__dirname, "../src/client/assets/styles"),
+                // Bootstrap loader
+                // path.resolve(__dirname, "../node_modules/bootstrap-sass/assets/stylesheets/")
+              ]
+            }
+          }
         ]
       },
       // Sass + CSS Modules
