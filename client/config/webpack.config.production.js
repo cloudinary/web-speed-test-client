@@ -22,7 +22,7 @@ module.exports = merge(config, {
   plugins: [
     new CopyWebpackPlugin([
       {
-        from: path.join(__dirname, '../src/client/assets/images'),
+        from: path.join(__dirname, '../src/assets/images'),
         to: 'images'
       }
     ]),
@@ -56,9 +56,9 @@ module.exports = merge(config, {
       {
         test: /\.scss$/,
         include: [
-          path.resolve(__dirname, '../src/client/assets/javascripts'),
-          path.resolve(__dirname, '../src/client/assets/styles'),
-          path.resolve(__dirname, '../src/client/scripts')
+          path.resolve(__dirname, '../src/assets/javascripts'),
+          path.resolve(__dirname, '../src/assets/styles'),
+          path.resolve(__dirname, '../src/scripts')
         ],
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style',
@@ -70,7 +70,7 @@ module.exports = merge(config, {
               query: {
                 outputStyle: 'compressed',
                 includePaths: [
-                  path.resolve(__dirname, "../src/client/assets/styles"),
+                  path.resolve(__dirname, "../src/assets/styles"),
                   // Bootstrap loader
                   // path.resolve(__dirname, "../node_modules/bootstrap-sass/assets/stylesheets/")
                 ]

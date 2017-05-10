@@ -33,9 +33,9 @@ module.exports = merge(config, {
       {
         test: /\.scss$/,
         include: [
-          path.resolve(__dirname, '../src/client/assets/javascripts'),
-          path.resolve(__dirname, '../src/client/assets/styles'),
-          path.resolve(__dirname, '../src/client/scripts')
+          path.resolve(__dirname, '../src/assets/javascripts'),
+          path.resolve(__dirname, '../src/assets/styles'),
+          path.resolve(__dirname, '../src/scripts')
         ],
         loaders: [
           'style',
@@ -46,7 +46,7 @@ module.exports = merge(config, {
             query: {
               outputStyle: 'expanded',
               includePaths: [
-                path.resolve(__dirname, "../src/client/assets/styles"),
+                path.resolve(__dirname, "../src/assets/styles"),
                 // Bootstrap loader
                 // path.resolve(__dirname, "../node_modules/bootstrap-sass/assets/stylesheets/")
               ]
