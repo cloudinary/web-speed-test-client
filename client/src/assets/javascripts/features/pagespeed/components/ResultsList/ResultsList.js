@@ -15,11 +15,15 @@ export default class ResultsList extends Component {
       <div className="resultsList">
         <div className="container">
           <h1>{this.context.t("Image Analysis Results")}</h1>
-          {results && results.length > 0 &&
-            results.map((result, key) => (
-              <ResultsItem result={result} key={key} />
-            ))
-          }
+        </div>
+        <div className="results">
+          <div className="container">
+            {results && results.length > 0 &&
+              results.map((result, key) => (
+                <ResultsItem result={result} key={key} />
+              ))
+            }
+          </div>
         </div>
       </div>
     );
