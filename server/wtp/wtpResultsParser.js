@@ -10,10 +10,10 @@ const bytes = require('bytes');
 const logger = require('winston');
 
 const parseTestResults = (testJson) => {
-    let imageList = JSON.parse(_.get(testJson, 'data.median.firstView.Images', null));
-    let requestsData = _.get(testJson, 'data.median.firstView.requests', null);
+    let imageList = JSON.parse(_.get(testJson, 'data.median.firstView.Images'));
+    let requestsData = _.get(testJson, 'data.median.firstView.requests');
     if (!imageList || !requestsData) {
-        return null;
+        //TODO: handel error
     }
     imageList = imageList.splice(0, config.get('images.maxNumberOfImages'));
     imageList = _.forEach(imageList, (image) => {

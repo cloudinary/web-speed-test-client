@@ -33,17 +33,7 @@ const getTestResults = (testId, res) => {
             res.json({status: 'error', message: 'WTP returned empty body', error: 'empty body'});
             return
         }
-        let resBody = JSON.parse(body);
-        if (typeof resBody.data.statusCode !== 'undefined') {
-            res.json({status: 'error', message: resBody.data.statusText, error: resBody.data.statusText});
-            return
-        }
-        let wtpRes = resultParser.parseTestResults(body);
-        if (!wtpRes) {
-            res.json({status: 'error', message: 'WTP results are missing data', error: 'data missing'});
-            return
-
-        }
+        let wtpRes = resultParser.parseTestResults(JSON.parse(body));
         cloudinaryCaller(wtpRes.imageList, wtpRes.dpr, res);
 
     })
