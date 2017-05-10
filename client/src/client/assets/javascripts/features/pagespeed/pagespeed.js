@@ -1,7 +1,7 @@
 // @flow
 
 import { createStructuredSelector } from 'reselect';
-import isFunction from 'lodash/isfunction';
+import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
 import { State, ImageAnalyzeInfo, TotalPageRank } from '../../models/pagespeed';
 
