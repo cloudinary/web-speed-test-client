@@ -13,12 +13,19 @@ export default class ResultsList extends Component {
     const { results } = this.props;
     return (
       <div className="resultsList">
-        {results && results.length > 0 &&
-          results.map((result, key) => (
-            <ResultsItem result={result} key={key} />
-          ))
-        }
+        <div className="container">
+          <h1>{this.context.t("Image Analysis Results")}</h1>
+          {results && results.length > 0 &&
+            results.map((result, key) => (
+              <ResultsItem result={result} key={key} />
+            ))
+          }
+        </div>
       </div>
     );
   }
+}
+
+ResultsList.contextTypes = {
+  t: React.PropTypes.func.isRequired
 }

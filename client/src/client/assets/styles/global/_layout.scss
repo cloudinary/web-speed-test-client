@@ -12,10 +12,8 @@ body {
   flex-direction: column;
 }
 
-.page-container {
+.container {
   width: 100%;
   max-width: $container-width;
   margin: 0 auto;
-  display: flex;
-  flex: 1;
 }

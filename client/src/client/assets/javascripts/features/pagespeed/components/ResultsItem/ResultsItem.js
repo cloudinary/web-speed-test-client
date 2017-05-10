@@ -13,7 +13,7 @@ export default class ResultsItem extends Component {
 
     return (
       <div className="resultsItem">
-        {result.original_filename + '.' + result.format}
+        <a href={result.secure_url} target="_blank">{result.original_filename + '.' + result.format}</a>
       </div>
     );
   }
