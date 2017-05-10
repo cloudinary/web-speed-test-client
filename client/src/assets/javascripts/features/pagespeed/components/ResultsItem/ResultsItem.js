@@ -14,10 +14,20 @@ export default class ResultsItem extends Component {
 
     return (
       <div className="resultsItem">
-        <a href={result.secure_url} target="_blank">{result.original_filename + '.' + result.format}</a>
-        <Image publicId={result.public_id}>
-          <Transformation width="200" crop="scale" angle="10"/>
-        </Image>
+        <div className="image-orig">
+          <Image publicId={result.public_id}>
+            <Transformation height="300" width="400" background="auto:predominant" crop="pad" />
+          </Image>
+        </div>
+        <div className="image-data">
+          <div className="image-data-header">
+            <h3 className="image-data-name">{result.original_filename + '.' + result.format}</h3>
+            <div className="image-data-meta">
+              <div className="image-data-type">{result.format}</div>
+              <div className="image-data-bytes">{result.bytes}B</div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
