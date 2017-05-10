@@ -3,18 +3,18 @@
  */
 
 'use strict';
-
+require('dotenv').config();
 const logger = require('winston');
 const config = require('config');
 const _ = require('lodash');
 const cloudinaryParser = require('./cloudinaryResultParser');
 const cloudinary = require('cloudinary');
 
-cloudinary.config({
-    cloud_name: config.get('cloudinary.cloudName'),
-    api_key: config.get('cloudinary.apiKey'),
-    api_secret: config.get('cloudinary.secret')
-});
+// cloudinary.config({
+//     cloud_name: config.get('cloudinary.cloudName'),
+//     api_key: config.get('cloudinary.apiKey'),
+//     api_secret: config.get('cloudinary.secret')
+// });
 
 /** @param {Array} imagesArray */
 const sentToAnalyze = (imagesArray, dpr, res) => {

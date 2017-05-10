@@ -8,6 +8,13 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
+//@for working with localhost
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -16,7 +23,10 @@ app.use(logger('dev'));
 
 const wpt = require('./routes/wpt');
 wpt(app);
+
+
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   let err = new Error('Not Found');
   err.status = 404;
@@ -33,8 +43,8 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
 });
 
-app.listen(3000, () => {
-    console.log('Listening on port 3000');
+app.listen(5000, () => {
+    console.log('Listening on port 5000');
 });
 
 //module.exports = app;
