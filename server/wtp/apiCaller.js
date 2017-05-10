@@ -38,7 +38,7 @@ const getTestResults = (testId, res) => {
             res.json({status: 'error', message: resBody.data.statusText, error: resBody.data.statusText});
             return
         }
-        let wtpRes = resultParser.parseTestResults(body);
+        let wtpRes = resultParser.parseTestResults(resBody);
         if (!wtpRes) {
             res.json({status: 'error', message: 'WTP results are missing data', error: 'data missing'});
             return
