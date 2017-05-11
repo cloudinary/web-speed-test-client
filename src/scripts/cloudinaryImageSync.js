@@ -17,7 +17,7 @@ const uploadImages = imagesPath => {
     const publicId = path.join(UPLOAD_PATH, fileName);
     cloudinary.uploader.upload(path.join(imagesPath, fileName),
       result => callback(),
-      {public_id: publicId, tags: ['static'], 'resource_type': 'image'}
+      {public_id: publicId, tags: ['static'], type: 'asset'}
     )
   }, err => {
     if (err) {
