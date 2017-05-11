@@ -14,10 +14,9 @@ const uploadImages = imagesPath => {
   const files = fs.readdirSync(imagesPath);
   console.log("uploading " + files.length + " files");
   return async.eachLimit(files, UPLOAD_LIMIT, (fileName, callback) => {
-    const publicId = path.join(UPLOAD_PATH, fileName);
     cloudinary.uploader.upload(path.join(imagesPath, fileName),
       result => callback(),
-      {public_id: publicId, tags: ['static'], 'resource_type': 'image'}
+      {public_id: fileName, tags: ['static'], type: 'asset'}
     )
   }, err => {
     if (err) {
