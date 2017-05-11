@@ -102,6 +102,7 @@ const checkTestStatus = (testId, res) => {
            getTestResults(testId, res);
        }
        if (testRes.statusCode >= 100 && testRes.statusCode < 200) {
+           //@TODO: add timeout
            setTimeout(() => {checkTestStatus(testId, res)}, 1000)
        }
     });
@@ -109,6 +110,6 @@ const checkTestStatus = (testId, res) => {
 };
 
 module.exports = {
-    getTestResults: getTestResults,
-    runWtpTest: runWtpTest
+    getTestResults,
+    runWtpTest
 };

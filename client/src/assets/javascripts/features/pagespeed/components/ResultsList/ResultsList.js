@@ -13,9 +13,6 @@ export default class ResultsList extends Component {
     const { results } = this.props;
     return (
       <div className="resultsList">
-        <div className="container">
-          <h1>{this.context.t("Image Analysis Results")}</h1>
-        </div>
         <div className="results">
           <div className="container">
             {results && results.length > 0 &&

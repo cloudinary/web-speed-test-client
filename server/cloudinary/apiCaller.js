@@ -9,42 +9,32 @@ const config = require('config');
 const _ = require('lodash');
 const cloudinaryParser = require('./cloudinaryResultParser');
 const cloudinary = require('cloudinary');
+const async = require('async');
 
-// cloudinary.config({
-//     cloud_name: config.get('cloudinary.cloudName'),
-//     api_key: config.get('cloudinary.apiKey'),
-//     api_secret: config.get('cloudinary.secret')
-// });
-
-/** @param {Array} imagesArray */
 const sentToAnalyze = (imagesArray, dpr, res) => {
-    let numOfImages = imagesArray.length;
     let batchSize = config.get('cloudinary.batchSize');
-    let chunks = _.chunk(imagesArray, batchSize);
-    let chunksDelay = chunks.length > 1 ? config.get('cloudinary.chunkDelay') : 0;
     let analyzeResults = [];
-    for (const chunk of chunks) {
-        setTimeout(() => {
-            for (const image of chunk) {
-                let context = {
-                   rendered_dimensions: {width: image.width, height: image.height},
-                    dpr: dpr
-                }; //TODO: add analyse parameter once once added to API
-                cloudinary.uploader.upload(image.url, (result) => {
-                    if (result.error) {
-                        analyzeResults.push({public_id: null});
-                        logger.error('Error uploading to cloudinary', result);
-                    } else {
-                        analyzeResults.push(result);
-                    }
-                    if (analyzeResults.length === numOfImages) {
-                        let parsed = cloudinaryParser.parseCloudinaryResults(analyzeResults);
-                        res.json(parsed);
-                    }
-                });
-            }
-        }, chunksDelay);
-    }
+    async.eachLimit(imagesArray, batchSize, (image, callback) => {
+      let context = {
+        rendered_dimensions: {width: image.width, height: image.height},
+        dpr: dpr
+      }; //TODO: add analyse parameter once once added to API
+      cloudinary.uploader.upload(image.url, (result) => {
+        if (result.error) {
+          analyzeResults.push({public_id: null});
+          logger.error('Error uploading to cloudinary', result);
+        } else {
+          analyzeResults.push(result);
+          callback();
+        }
+      });
+    }, err => {
+      if (err) {
+        res.json({status: 'error', message: 'Error getting results from cloudinary', error: err.message});
+      }
+      let parsed = cloudinaryParser.parseCloudinaryResults(analyzeResults);
+      res.json({status: 'success', data : parsed});
+    })
 };
 
 module.exports = sentToAnalyze;
