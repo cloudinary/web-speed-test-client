@@ -100,16 +100,20 @@ const fetchTestData = async(testId) => {
 }
 const processTestResults = (data) => {
   console.log(data);
-  //@TODO: calculate results.
-  return {imagesTestResults: data, totalPageRank: {}}
+  return {imagesTestResults: data.imagesTestResults, totalPageRank: data.totalPageRank}
 }
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
   if (testId && !getState().isFetching && !getState().hasResults) {
     try {
       dispatch(requestTestResults(testId));
-      const data = await fetchTestData(testId);
-      dispatch(requestTestSuccess(processTestResults(data)));
+      const result = await fetchTestData(testId);
+      if (result.status == 'success') {
+        dispatch(requestTestSuccess(processTestResults(result.data)));
+      }
+      else {
+        dispatch(requestTestError(result.message));
+      }
     } catch (err) {
       dispatch(requestTestError(err));
     }
