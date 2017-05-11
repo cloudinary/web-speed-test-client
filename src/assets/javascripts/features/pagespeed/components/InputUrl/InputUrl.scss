@@ -1,0 +1,28 @@
+.inputUrl {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  background: #EFF3F4;
+  input,
+  button {
+    font-family: 'Fira Sans', sans-serif;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 1px solid #0270BC;
+  }
+  input {
+    width: 400px;
+    border-radius: 8px 0 0 8px;
+  }
+  button {
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    text-shadow: none;
+    background: #0270BC;
+  }
+}

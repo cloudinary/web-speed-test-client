@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Header from './Header/Header';
+import InputUrl from './InputUrl/InputUrl';
 import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
 
@@ -15,17 +16,21 @@ export default class PagespeedLayout extends Component {
     return (
       <div className="pagespeedApp">
         <Header />
-        {pagespeed.isFetching == false &&
+        {!pagespeed.testId &&
+          <InputUrl/>
+        }
+        {pagespeed.testId && pagespeed.isFetching !== false &&
+          <h2 className="page-wrap" style={{'textAlign': 'center', 'margin': '100px'}}>
+            Loading
+          </h2>
+        }
+        {pagespeed.testId && pagespeed.isFetching == false &&
           <div className="page-wrap">
             <ResultSumm result={pagespeed || {}} />
             <ResultsList results={pagespeed.imagesTestResults || []} />
           </div>
         }
-        {pagespeed.isFetching !== false &&
-          <h2 className="page-wrap" style={{'text-align': 'center', 'margin': '100px'}}>
-            Loading
-          </h2>
-        }
+
       </div>
     );
   }
