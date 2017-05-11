@@ -26,6 +26,9 @@ wpt(app);
 
 
 // catch 404 and forward to error handler
+app.all('*', function(req, res){
+  res.send('what???', 404);
+});
 
 app.use(function(req, res, next) {
   let err = new Error('Not Found');
