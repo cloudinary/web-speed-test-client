@@ -15,8 +15,17 @@ export default class PagespeedLayout extends Component {
     return (
       <div className="pagespeedApp">
         <Header />
-        <ResultSumm result={pagespeed || {}} />
-        <ResultsList results={pagespeed.imagesTestResults || []} />
+        {pagespeed.isFetching == false &&
+          <div className="page-wrap">
+            <ResultSumm result={pagespeed || {}} />
+            <ResultsList results={pagespeed.imagesTestResults || []} />
+          </div>
+        }
+        {pagespeed.isFetching !== false &&
+          <h2 className="page-wrap" style={{'text-align': 'center', 'margin': '100px'}}>
+            Loading
+          </h2>
+        }
       </div>
     );
   }
