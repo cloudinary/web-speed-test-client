@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import Header from './Header/Header';
+import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
 
 export default class PagespeedLayout extends Component {
@@ -14,6 +15,7 @@ export default class PagespeedLayout extends Component {
     return (
       <div className="pagespeedApp">
         <Header />
+        <ResultSumm result={pagespeed || {}} />
         <ResultsList results={pagespeed.imagesTestResults || []} />
       </div>
     );
