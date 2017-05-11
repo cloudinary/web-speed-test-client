@@ -8,7 +8,7 @@
   },
   "scripts": {
     "clean:build": "rimraf build",
-    "upload:image": "node ./src/scripts/cloudinaryImageSync.js",
+    "upload:images": "node ./src/scripts/cloudinaryImageSync.js",
     "build:html": "node ./bin/buildHtml.js",
     "prestart": "npm run clean:build",
     "start": "webpack-dashboard -m -c white -- node dev-server.js",
