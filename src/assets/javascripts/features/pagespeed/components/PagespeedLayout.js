@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import Header from './Header/Header';
 import InputUrl from './InputUrl/InputUrl';
+import Loader from './Loader/Loader';
 import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
 
@@ -20,9 +21,7 @@ export default class PagespeedLayout extends Component {
           <InputUrl/>
         }
         {pagespeed.testId && pagespeed.isFetching !== false &&
-          <h2 className="page-wrap" style={{'textAlign': 'center', 'margin': '100px'}}>
-            Loading
-          </h2>
+          <Loader />
         }
         {pagespeed.testId && pagespeed.isFetching == false &&
           <div className="page-wrap">

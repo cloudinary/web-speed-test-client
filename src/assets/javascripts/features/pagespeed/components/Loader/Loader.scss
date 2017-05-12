@@ -1,0 +1,12 @@
+.loader {
+  min-height: 400px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    text-align: start;
+    width: 150px;
+  }
+}
