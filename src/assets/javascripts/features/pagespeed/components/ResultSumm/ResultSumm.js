@@ -7,7 +7,7 @@ import './ResultSumm.scss';
 export default class ResultSumm extends Component {
   static propTypes = {
     result: PropTypes.object.isRequired,
-    thisId: PropTypes.string.isRequired,
+    testId: PropTypes.string.isRequired,
   };
 
   render() {

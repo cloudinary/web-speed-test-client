@@ -16,7 +16,6 @@ export default class PagespeedLayout extends Component {
     return (
       <div className="pagespeedApp">
         <Header />
-        <ResultSumm result={pagespeed.testResult.resultSumm} />
         {!pagespeed.testId &&
           <InputUrl/>
         }
