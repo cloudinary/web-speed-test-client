@@ -11,12 +11,12 @@ export default class PagespeedLayout extends Component {
 
   render() {
     const { pagespeed, actions } = this.props;
-
+    console.log(this.props);
     return (
       <div className="pagespeedApp">
         <Header />
-        <ResultSumm result={pagespeed || {}} />
-        <ResultsList results={pagespeed.imagesTestResults || []} />
+        <ResultSumm result={pagespeed.testResult.resultSumm} />
+        <ResultsList results={pagespeed.testResult.imagesTestResults} />
       </div>
     );
   }
