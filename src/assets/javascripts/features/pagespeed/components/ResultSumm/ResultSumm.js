@@ -7,15 +7,16 @@ import './ResultSumm.scss';
 export default class ResultSumm extends Component {
   static propTypes = {
     result: PropTypes.object.isRequired,
+    thisId: PropTypes.string.isRequired,
   };
 
   render() {
-    const { result } = this.props;
+    const { result, testId } = this.props;
     return (
       <div className="resultSumm">
         <div className="container">
           <h1>{this.context.t("Image Analysis Results")}</h1>
-          <div className="test-url">{result.testId}</div>
+          <div className="test-url">{testId}</div>
           <div className="test-summ">
             <div className="test-meta">
               <div className="test-grade test-meta-box">
