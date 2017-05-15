@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
-// const loaderHtml = `<div>HTML</div>`;
 
 import './Loader.scss';
 
