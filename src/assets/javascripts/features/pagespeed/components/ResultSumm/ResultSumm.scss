@@ -1,3 +1,5 @@
+@import "helpers";
+
 .resultSumm {
   padding-top: 15px;
   overflow: hidden;
@@ -9,6 +11,7 @@
   }
   .test-url {
     font-size: 18px;
+    color: #323a45;
   }
   .test-summ {
     display: flex;
@@ -17,6 +20,7 @@
     margin-top: 50px;
   }
   .test-screen {
+    max-height: 720px;
     img {
       box-shadow:
         0 0 30px rgba(#000, .2),
@@ -28,13 +32,14 @@
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
+    padding-right: 5%;
   }
   .test-meta-box {
     box-sizing: border-box;
     border-left: 1px solid #ddd;
     flex: 1;
     margin-bottom: 60px;
-    padding: 0 30px 20px;
+    padding: 0 10px 20px 30px;
     .label {
       text-align: left;
       color: #6a6f77;
@@ -48,12 +53,74 @@
     .grade {
       font-size: 61px;
     }
+    .grade-text {
+      font-size: 18px;
+      margin: 20px auto 0;
+      max-width: 150px;
+      &-A,
+      &-B {
+        color: $color-grade-a;
+      }
+      &-C,
+      &-D {
+        color: $color-grade-c;
+      }
+      &-E,
+      &-F {
+        color: $color-grade-e;
+      }
+    }
   }
+
   .test-stats {
     flex: 2 0 66%;
     padding: 0 0 20px;
     .label {
       padding-left: 30px;
+      margin-bottom: 10px;
+    }
+    .original-images-label {
+      font-size: 12px;
+      text-align: right;
+    }
+    .original-images-weight {
+      margin-top: 6px;
+      color: $color-grade-e;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    .original-images-indicator {
+      margin-top: 6px;
+      background: $color-grade-e;
+      height: 7px;
+      border-radius: 0 7px 7px 0;
+    }
+    .trans-images {
+      display: inline-block;
+    }
+    .trans-images-indicator {
+      margin-top: 20px;
+      background: $color-blue-c;
+      height: 7px;
+      border-radius: 0 7px 7px 0;
+    }
+    .trans-images-weight {
+      margin-top: 6px;
+      color: $color-blue-c;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 400;
+      padding-left: 30px;
+    }
+    .trans-images-label {
+      margin-top: 6px;
+      padding-left: 30px;
+      font-size: 12px;
+      img {
+        vertical-align: bottom;
+        margin-right: 3px;
+      }
     }
   }
 
@@ -63,6 +130,27 @@
     .test-meta-box {
       flex: 1 0 33%;
     }
+    .label {
+      height: 45px;
+      margin-bottom: 0;
+    }
+    .value {
+      font-weight: 100;
+      font-size: 64px;
+      text-transform: uppercase;
+      line-height: 1.2;
+      white-space: nowrap;
+      color: $color-blue-dark;
+      img {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+    .description {
+      margin-top: 10px;
+      font-size: 12px;
+      color: $color-gray-blue;
+    }
   }
   .image-count {
     padding: 0 40px 20px;
@@ -71,10 +159,17 @@
   .test-info {
     width: 100%;
     display: flex;
+    .label {
+      margin-bottom: 15px;
+    }
     .test-meta-box,
     .label {
       text-align: center;
       font-size: 12px;
+    }
+    .value {
+      margin-top: 10px;
+      color: $color-gray-blue;
     }
   }
 }

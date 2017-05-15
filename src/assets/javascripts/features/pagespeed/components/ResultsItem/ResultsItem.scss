@@ -1,3 +1,5 @@
+@import "helpers";
+
 .resultsItem {
   display: flex;
   background: #E4EAEE;
@@ -59,22 +61,16 @@
   border-radius: 1.5em;
   line-height: 1.6;
   box-shadow: 0 3px 6px rgba(#000, .3);
-  &-A {
-    background: #77BD58;
-  }
+  &-A,
   &-B {
-    background: #d7e53c;
+    background: $color-grade-a;
   }
-  &-C {
-    background: #F2A81A;
-  }
+  &-C,
   &-D {
-    background: #e17d30;
+    background: $color-grade-c;
   }
-  &-E {
-    background: #dd6e34;
-  }
+  &-E,
   &-F {
-    background: #F05C5F;
+    background: $color-grade-e;
   }
 }
