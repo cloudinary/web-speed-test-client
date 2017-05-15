@@ -30,7 +30,7 @@ export default class Loader extends Component {
   render() {
     return (
       <div className="loader">
-        <Image publicId="arrow_animation.gif.gif" type="asset"></Image>
+        <Image publicId="scan_animation.gif.gif" type="asset"></Image>
         <h2>{this.context.t('Loading')}<span ref="ellipsis" /></h2>
       </div>
     )
