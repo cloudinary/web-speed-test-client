@@ -3,7 +3,7 @@
 import { createStructuredSelector } from 'reselect';
 import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
-import { State, ImageAnalyzeInfo, TotalPageRank } from '../../models/pagespeed';
+import { State } from '../../models/pagespeed';
 
 // Action Types
 
@@ -24,9 +24,7 @@ const TEST_RESULTS_END_POINT = API_URL + '/test';
 
 const initialState: State = {
   testId: null,
-  imagesTestResults: [],
-  totalPageRank: null,
-  isFetching: false,
+  testResult: {imagesTestResults : [], resultSumm : {}},
   hasResults: false
 };
 
@@ -40,23 +38,20 @@ export default function (state = initialState, action) {
      }),
      [REQUEST_TEST_RESULTS_SUCCESS]: () => ({
        ...state,
-       imagesTestResults: action.payload.imagesTestResults,
-       totalPageRank: action.payload.totalPageRank,
+       testResult: action.payload,
        isFetching: false,
        hasResults: true
      }),
      [REQUEST_TEST_RESULTS_ERROR]: () => ({
        ...state,
-       imagesTestResults: null,
-       totalPageRank: null,
+       testResult: initialState.testResult,
        isFetching: false,
        hasResults: false
      }),
      [REQUEST_TEST_RESULTS]: () => ({
        ...state,
        isFetching: true,
-       imagesTestResults: null,
-       totalPageRank: null,
+       testResult: initialState.testResult,
        hasResults: false
      })
   };
@@ -100,7 +95,25 @@ const fetchTestData = async(testId) => {
 }
 const processTestResults = (data) => {
   console.log(data);
-  return {imagesTestResults: data.imagesTestResults, totalPageRank: data.totalPageRank}
+  return {imagesTestResults: processEagerResult(data.imagesTestResults), resultSumm: data.resultSumm}
+}
+const processEagerResult = results => {
+  var processedResults = [];
+  results.forEach(result => {
+    let processedResult = Object.assign({}, result);
+    processedResult.dynamicFormats = [];
+    processedResult.eager.forEach(transformed => {
+      if (transformed.transformation.indexOf("/") == -1) {
+        processedResult.transformedImage = transformed;
+      }
+      else {
+        processedResult.dynamicFormats.push(transformed);
+      }
+    })
+    delete processedResult.eager;
+    processedResults.push(processedResult);
+  })
+  return processedResults;
 }
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
@@ -109,6 +122,7 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
       dispatch(requestTestResults(testId));
       const result = await fetchTestData(testId);
       if (result.status == 'success') {
+
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {

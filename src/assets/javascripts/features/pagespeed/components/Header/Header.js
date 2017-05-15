@@ -15,7 +15,7 @@ export default class Header extends Component {
         <div className="container">
           {/*<Image className="logo" publicId="logo.png.png" width="31" type="asset" />*/}
           <h1>{this.context.t("Page Speed")}</h1>
-          <a className="learn" href="#">{this.context.t("Learn More")}</a>
+          <a className="learn" href="#">{this.context.t("LearnMoreText")}</a>
         </div>
       </header>
     );

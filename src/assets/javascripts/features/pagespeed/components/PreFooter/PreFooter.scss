@@ -1,0 +1,86 @@
+@import "helpers";
+
+.preFooter {
+  background: $color-blue-d;
+  color: #fff;
+  text-align: center;
+  padding: 60px 5%;
+  h1 {
+    font-size: 48px;
+    margin: 0 0 30px;
+    color: #fff;
+  }
+  p {
+    max-width: 600px;
+    margin: 20px auto;
+    font-weight: 300;
+  }
+  a.link-box {
+    background: #e4ebf1;
+    display: inline-block;
+    color: #000;
+    font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    padding: 20px 40px;
+  }
+  .compare-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  .original,
+  .dynamic {
+    font-size: 18px;
+    font-weight: 300;
+    padding: 20px;
+    width: 200px;
+    .label {
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+  }
+  .original {
+    text-align: right;
+  }
+  .dynamic {
+    text-align: left;
+  }
+  .original-image,
+  .dynamic-image {
+    padding: 10px 0;
+    position: relative;
+    img {
+      box-shadow: 0 0 20px rgba(#000, .5);
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: #fff;
+      z-index: 2;
+    }
+  }
+  .original-image:after {
+    right: 0;
+  }
+  .dynamic-image:after {
+    left: 0;
+  }
+  a.link-btn {
+    display: inline-block;
+    font-size: 19px;
+    width: 190px;
+    border-radius: 6px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: #ff7829;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(#000, .4);
+    transition: background .3s;
+    &:hover {
+      background: darken(#ff7829, 10%);
+    }
+  }
+}
