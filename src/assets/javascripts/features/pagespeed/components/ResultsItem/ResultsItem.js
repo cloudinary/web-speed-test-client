@@ -38,9 +38,7 @@ export default class ResultsItem extends Component {
       <div className={resultCls}>
         <div className="image-intro">
           <div className="image-orig">
-            <Image publicId={result.public_id}>
-              <Transformation height="300" width="400" background="auto:predominant" crop="pad" />
-            </Image>
+            <Image publicId={result.public_id} height="300" width="400" background="auto:predominant" crop="pad"></Image>
           </div>
           <div className="image-data">
             <div className="image-data-header">
