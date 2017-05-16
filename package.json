@@ -15,7 +15,7 @@
     "prebuild": "npm run clean:build",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
     "postbuild": "npm run build:html",
-    "build:serve": "http-server build/client -p 3003 --cors -o",
+    "build:serve": "http-server build -p 3003 --cors -o",
     "lint": "eslint config src/js/** --ext .js",
     "jscs": "jscs src/js/",
     "typecheck": "flow",

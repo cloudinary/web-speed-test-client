@@ -82,7 +82,7 @@ module.exports = merge(config, {
       // Sass + CSS Modules
       // {
       //   test: /\.scss$/,
-      //   include: /src\/client\/assets\/javascripts/,
+      //   include: /src\/assets\/javascripts/,
       //   loader: ExtractTextPlugin.extract({
       //     fallbackLoader: 'style',
       //     loader: [

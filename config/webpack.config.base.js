@@ -7,7 +7,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   output: {
     filename: 'js/[name].js',
-    path: path.resolve(__dirname, '../build/client'),
+    path: path.resolve(__dirname, '../build'),
     publicPath: '/'
   },
   resolve: {
