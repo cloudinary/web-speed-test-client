@@ -20,7 +20,7 @@ export default class ImageExpanded extends Component {
           <div className="tab">
             {result.format}
           </div>
-          <ImageInfo image={result.analyze} isOriginal={true} />
+          <ImageInfo image={result} isOriginal={true} />
         </div>
         <div className="image-details transformed">
           <div className="title">
@@ -29,7 +29,7 @@ export default class ImageExpanded extends Component {
           <div className="tab">
             {result.transformedImage.analyze.data.format}
           </div>
-          <ImageInfo image={result.transformedImage.analyze} original={result.analyze} />
+          <ImageInfo image={result.transformedImage} original={result} />
         </div>
         <div className="image-details dynamic">
           <div className="title">
@@ -43,7 +43,7 @@ export default class ImageExpanded extends Component {
             </TabList>
             {result.dynamicFormats.map((format, key) => (
               <TabPanel key={key}>
-                <ImageInfo image={format.analyze} original={result.analyze} />
+                <ImageInfo image={format} original={result} />
               </TabPanel>
             ))}
           </Tabs>

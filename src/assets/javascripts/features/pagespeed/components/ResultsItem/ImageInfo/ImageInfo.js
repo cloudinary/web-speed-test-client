@@ -14,13 +14,20 @@ export default class ImageInfo extends Component {
     const { image, original, isOriginal } = this.props;
     return (
       <div className="imageInfo">
-        {isOriginal !== true &&
-          numbro(0.521).format('0.0%')
-        }
-        {numbro(image.data.bytes).format('0.0d')}
+        <div className="browsers">BROWSERS</div>
+        <div className="links">LINKS</div>
+        <div className="dimensions">{image.width} x {image.height}</div>
+        <div className="percent">
+          {isOriginal !== true &&
+            numbro(0.521).format('0.0%')
+          }
+        </div>
+        <div className="weight">
+          {numbro(image.analyze.data.bytes).format('0.0d')}
+        </div>
 
-        {image.explanation &&
-          image.explanation.map((explain, key) => (
+        {image.analyze.explanation &&
+          image.analyze.explanation.map((explain, key) => (
             <p key={key}>{explain}</p>
           ))
         }

@@ -68,7 +68,7 @@ export default class ResultsItem extends Component {
                   {numbro(0.521).format('0.0%')}
                 </div>
                 <div className="image-final-pixel">
-                  {result.width}x{result.height} -> {result.transformedImage.width}x{result.transformedImage.height }
+                  {result.width}x{result.height} -> {result.transformedImage.width}x{result.transformedImage.height}
                 </div>
                 <button onClick={this.toggleImageInfo} className="toggle-btn toggle-show">
                   <Image publicId="icon-expand.svg.svg" type="asset" width="12"></Image>
