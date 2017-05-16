@@ -14,7 +14,7 @@
     flex: 1;
     height: 500px;
     &.original {
-      max-width: 400px;
+      flex: 0 1 400px;
       background: #fff;
     }
     &.transformed,
