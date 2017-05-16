@@ -50,7 +50,7 @@ export default class CompressionBar extends Component {
         }
         {originalSize &&
           <div className="note compression-note">
-            {numbro(this.computeCompression(size, originalSize)).format('0.0%')}
+            ({numbro(this.computeCompression(size, originalSize)).format('0.0%')})
           </div>
         }
       </div>

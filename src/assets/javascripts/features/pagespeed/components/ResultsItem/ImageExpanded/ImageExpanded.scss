@@ -1,0 +1,60 @@
+.imageExpanded {
+  max-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: max-height .3s linear;
+
+  display: flex;
+  border: 1px solid #8596AA;
+  border-top: none;
+  .resultsItem.expanded & {
+    max-height: 500px;
+  }
+  .image-details {
+    flex: 1;
+    height: 500px;
+    &.original {
+      max-width: 400px;
+      background: #fff;
+    }
+    &.transformed,
+    &.dynamic {
+      padding: 0 5px;
+    }
+    .title {
+      font-size: 18px;
+      text-align: center;
+      padding: 20px;
+      margin-bottom: 10px;
+      color: #616161;
+    }
+  }
+  .tab {
+    background: #fff;
+    text-align: center;
+    width: 33%;
+    padding: 6px 20px;
+    border-radius: 6px 6px 0 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  .original .tab {
+    text-align: left;
+  }
+  .react-tabs__tab-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  .react-tabs__tab {
+    display: block;
+    margin: 0 7px 0 0;
+    flex: 1;
+    @extend .tab;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+}
