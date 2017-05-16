@@ -1,3 +1,5 @@
+@import "helpers";
+
 .resultsItem {
   display: flex;
   background: #E4EAEE;
@@ -35,17 +37,11 @@
     padding: 15px 30px;
     border-bottom: 1px solid #ddd;
   }
-  .image-data-meta {
-    display: flex;
-  }
-  .image-data-type,
-  .image-data-bytes {
+  .image-compressions-title {
     font-size: 18px;
-    padding: 15px 30px;
-    border-right: 1px solid #ddd;
-  }
-  .image-data-type {
-    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    padding: 22px 30px 12px;
   }
 }
 
@@ -59,22 +55,16 @@
   border-radius: 1.5em;
   line-height: 1.6;
   box-shadow: 0 3px 6px rgba(#000, .3);
-  &-A {
-    background: #77BD58;
-  }
+  &-A,
   &-B {
-    background: #d7e53c;
+    background: $color-grade-a;
   }
-  &-C {
-    background: #F2A81A;
-  }
+  &-C,
   &-D {
-    background: #e17d30;
+    background: $color-grade-c;
   }
-  &-E {
-    background: #dd6e34;
-  }
+  &-E,
   &-F {
-    background: #F05C5F;
+    background: $color-grade-e;
   }
 }
