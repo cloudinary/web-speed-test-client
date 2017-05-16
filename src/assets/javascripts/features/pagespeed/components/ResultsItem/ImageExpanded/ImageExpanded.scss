@@ -8,10 +8,11 @@
   border: 1px solid #8596AA;
   border-top: none;
   .resultsItem.expanded & {
-    max-height: 100px;
+    max-height: 500px;
   }
   .image-details {
     flex: 1;
+    height: 500px;
     &.original {
       max-width: 400px;
       background: #fff;
