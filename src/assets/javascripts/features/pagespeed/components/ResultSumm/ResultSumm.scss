@@ -130,6 +130,9 @@
     .test-meta-box {
       flex: 1 0 33%;
       padding: 0 10px 20px 30px;
+      &.image-count {
+        padding: 0 40px 20px;
+      }
     }
     .label {
       height: 45px;
@@ -153,9 +156,7 @@
       color: $color-gray-blue;
     }
   }
-  .image-count {
-    padding: 0 40px 20px;
-  }
+
 
   .test-info {
     width: 100%;

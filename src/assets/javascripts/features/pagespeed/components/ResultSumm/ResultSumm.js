@@ -64,9 +64,9 @@ export default class ResultSumm extends Component {
                     <Image publicId="icon-layers.svg.svg" type="asset" width="41"></Image>
                     {numbro(result.totalImagesCount).format('0a')}
                   </div>
-                  <div className="description">
+                  {/*<div className="description">
                     {this.context.t("TotalImagesNumber")}
-                  </div>
+                  </div>*/}
                 </div>
                 <div className="image-weight test-meta-box">
                   <div className="label">
