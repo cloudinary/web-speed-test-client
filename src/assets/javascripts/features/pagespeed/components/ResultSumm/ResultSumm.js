@@ -17,7 +17,7 @@ export default class ResultSumm extends Component {
       <div className="resultSumm">
         <div className="container">
           <h1>{this.context.t("PageTitleResults")}</h1>
-          <div className="test-url">{result.metaData.url}</div>
+          <div className="test-url">{result.url}</div>
           <div className="test-summ">
             <div className="test-meta">
               <div className="test-grade test-meta-box">
@@ -62,8 +62,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-layers.svg.svg" type="asset" width="41"></Image>
-                    {/*ToDo*/}
-                    {numbro(160000).format('0a')}
+                    {numbro(result.totalImagesCount).format('0a')}
                   </div>
                   <div className="description">
                     {this.context.t("TotalImagesNumber")}
@@ -75,8 +74,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-weight.svg.svg" type="asset" width="41"></Image>
-                    {/*ToDo*/}
-                    {numbro(150100).format('0d')}
+                    {numbro(result.totalImagesWeight).format('0d')}
                   </div>
                  </div>
                 <div className="compression test-meta-box">
@@ -96,10 +94,10 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_BrowserType")}
                   </div>
                   <div className="icon">
-                    <Image publicId={'browser-' + result.metaData.browserName + '.svg.svg'} type="asset" height="22"></Image>
+                    <Image publicId={'browser-' + result.browserName + '.svg.svg'} type="asset" height="22"></Image>
                   </div>
                   <div className="value">
-                    {result.metaData.browserName}
+                    {result.browserName}
                   </div>
                 </div>
                 <div className="location test-meta-box">
@@ -110,7 +108,7 @@ export default class ResultSumm extends Component {
                     <Image publicId="icon-location.svg.svg" type="asset" height="22"></Image>
                   </div>
                   <div className="value">
-                    {result.metaData.location}
+                    {result.location}
                   </div>
                 </div>
                 <div className="viewport test-meta-box">
@@ -121,7 +119,7 @@ export default class ResultSumm extends Component {
                     <Image publicId="icon-screen.svg.svg" type="asset" height="22"></Image>
                   </div>
                   <div className="value">
-                    {result.metaData.viewportSize.width + ' x ' + result.metaData.viewportSize.height + ' px'}
+                    {result.viewportSize.width + ' x ' + result.viewportSize.height + ' px'}
                   </div>
                 </div>
                 <div className="dpi test-meta-box">
@@ -132,7 +130,7 @@ export default class ResultSumm extends Component {
                     <Image publicId="icon-dpi.svg.svg" type="asset" height="22"></Image>
                   </div>
                   <div className="value">
-                    {result.metaData.dpi + ' DPI'}
+                    {result.dpi + ' DPI'}
                   </div>
                 </div>
                 <div className="wpt test-meta-box">
@@ -146,7 +144,7 @@ export default class ResultSumm extends Component {
               </div>
             </div>
             <div className="test-screen">
-              <Image publicId={result.metaData.url} type="url2png" width="300"></Image>
+              <Image publicId={result.url} type="url2png" width="300"></Image>
             </div>
           </div>
         </div>

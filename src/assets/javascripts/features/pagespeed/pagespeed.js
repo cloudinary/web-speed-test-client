@@ -94,7 +94,6 @@ const fetchTestData = async(testId) => {
 
 }
 const processTestResults = (data) => {
-  console.log(data);
   return {imagesTestResults: processEagerResult(data.imagesTestResults), resultSumm: data.resultSumm}
 }
 const processEagerResult = results => {

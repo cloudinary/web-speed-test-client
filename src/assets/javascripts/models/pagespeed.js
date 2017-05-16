@@ -8,8 +8,8 @@ export type ViewportSize = {
 export type ResultSumm = {
   totalPageRank: string,
   //@TODO: write logic
-  // totalImagesWeight: number,
-  // totalImageCount: number,
+  totalImagesWeight: number,
+  totalImagesCount: number,
   // smartCompressPercentage: number,
   location: string,
   dpi: number,
