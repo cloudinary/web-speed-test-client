@@ -39,12 +39,14 @@ export default class ResultSumm extends Component {
                   {this.context.t("OriginalImages")}
                 </div>
                 <div className="original-images-weight">
+                  {/*ToDo*/}
                   {numbro(1231231231).format('0.0d')}
                 </div>
                 <div className="original-images-indicator"></div>
                 <div className="trans-images">
                   <div className="trans-images-indicator" style={{'width': '80px'}}></div>
                   <div className="trans-images-weight">
+                    {/*ToDo*/}
                     {numbro(31231231).format('0.0d')}
                   </div>
                 </div>
@@ -60,6 +62,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-layers.svg.svg" type="asset" width="41"></Image>
+                    {/*ToDo*/}
                     {numbro(160000).format('0a')}
                   </div>
                   <div className="description">
@@ -72,6 +75,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-weight.svg.svg" type="asset" width="41"></Image>
+                    {/*ToDo*/}
                     {numbro(150100).format('0d')}
                   </div>
                  </div>
@@ -81,6 +85,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-compress.svg.svg" type="asset" width="41"></Image>
+                    {/*ToDo*/}
                     {numbro(0.521).format('0.0%')}
                   </div>
                 </div>

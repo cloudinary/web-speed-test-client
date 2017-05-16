@@ -37,17 +37,11 @@
     padding: 15px 30px;
     border-bottom: 1px solid #ddd;
   }
-  .image-data-meta {
-    display: flex;
-  }
-  .image-data-type,
-  .image-data-bytes {
+  .image-compressions-title {
     font-size: 18px;
-    padding: 15px 30px;
-    border-right: 1px solid #ddd;
-  }
-  .image-data-type {
-    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0;
+    padding: 22px 30px 12px;
   }
 }
 

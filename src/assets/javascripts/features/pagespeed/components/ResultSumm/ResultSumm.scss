@@ -39,7 +39,7 @@
     border-left: 1px solid #ddd;
     flex: 1;
     margin-bottom: 60px;
-    padding: 0 10px 20px 30px;
+    padding: 0 30px 20px;
     .label {
       text-align: left;
       color: #6a6f77;
@@ -129,6 +129,7 @@
     display: flex;
     .test-meta-box {
       flex: 1 0 33%;
+      padding: 0 10px 20px 30px;
     }
     .label {
       height: 45px;

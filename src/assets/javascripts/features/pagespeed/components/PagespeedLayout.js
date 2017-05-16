@@ -4,6 +4,8 @@ import InputUrl from './InputUrl/InputUrl';
 import Loader from './Loader/Loader';
 import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
+import PreFooter from './PreFooter/PreFooter';
+import Footer from './Footer/Footer';
 
 export default class PagespeedLayout extends Component {
   static propTypes = {
@@ -29,7 +31,13 @@ export default class PagespeedLayout extends Component {
             <ResultsList results={pagespeed.testResult.imagesTestResults || []} />
           </div>
         }
+        <PreFooter />
+        <Footer />
       </div>
     );
   }
+}
+
+PagespeedLayout.contextTypes = {
+  t: React.PropTypes.func.isRequired
 }
