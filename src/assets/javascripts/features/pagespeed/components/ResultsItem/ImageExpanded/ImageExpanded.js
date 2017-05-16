@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ImageInfo from '../ImageInfo/ImageInfo';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import './ImageExpanded.scss';
@@ -19,6 +20,7 @@ export default class ImageExpanded extends Component {
           <div className="tab">
             {result.format}
           </div>
+          <ImageInfo image={result.analyze} isOriginal={true} />
         </div>
         <div className="image-details transformed">
           <div className="title">
@@ -27,6 +29,7 @@ export default class ImageExpanded extends Component {
           <div className="tab">
             {result.transformedImage.analyze.data.format}
           </div>
+          <ImageInfo image={result.transformedImage.analyze} original={result.analyze} />
         </div>
         <div className="image-details dynamic">
           <div className="title">
@@ -39,7 +42,9 @@ export default class ImageExpanded extends Component {
               ))}
             </TabList>
             {result.dynamicFormats.map((format, key) => (
-              <TabPanel key={key}>{format.analyze.data.format}</TabPanel>
+              <TabPanel key={key}>
+                <ImageInfo image={format.analyze} original={result.analyze} />
+              </TabPanel>
             ))}
           </Tabs>
         </div>
