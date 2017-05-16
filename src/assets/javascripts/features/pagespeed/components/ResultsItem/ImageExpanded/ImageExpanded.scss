@@ -1,0 +1,25 @@
+.imageExpanded {
+  max-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: max-height .3s linear;
+
+  display: flex;
+  border: 1px solid #8596AA;
+  border-top: none;
+  .resultsItem.expanded & {
+    max-height: 100px;
+  }
+  .image-details {
+    flex: 1;
+    &.original {
+      max-width: 400px;
+      background: #fff;
+    }
+    .title {
+      font-size: 18px;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}
