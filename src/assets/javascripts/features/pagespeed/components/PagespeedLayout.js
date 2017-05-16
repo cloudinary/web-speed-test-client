@@ -20,7 +20,7 @@ export default class PagespeedLayout extends Component {
       <div className="pagespeedApp">
         <Header />
         {!pagespeed.testId &&
-          <InputUrl/>
+          <InputUrl onSubmit={actions.runNewTest}/>
         }
         {pagespeed.testId && pagespeed.isFetching !== false &&
           <Loader />
