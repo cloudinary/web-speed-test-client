@@ -29,7 +29,7 @@ export default class ResultsItem extends Component {
             <div className="image-data-meta">
               <div className="image-data-type">{result.format}</div>
               <div className="image-data-bytes">
-                {numbro(result.analyze.data.bytes).format('0.0d')}
+                {numbro(result.bytes).format('0.0d')}
               </div>
             </div>
           </div>
