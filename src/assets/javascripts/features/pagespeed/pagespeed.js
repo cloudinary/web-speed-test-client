@@ -104,9 +104,15 @@ const requestTestError = (msg: string) => ({
 const fetchTestData = async(testId) => {
   try {
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
-    const data: Object = await response.json();
-    return data;
+    if (response.statusCode == 504) {
+      return fetchTestData(testId);
+    }
+    else {
+      const data: Object = await response.json();
+      return data;
+    }
   } catch (err) {
+
     throw err;
   }
 }
@@ -153,6 +159,7 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
   if (testId && !getState().isFetching && !getState().hasResults) {
     try {
       dispatch(requestTestResults(testId));
+
       const result = await fetchTestData(testId);
       if (result.status == 'success') {
 
