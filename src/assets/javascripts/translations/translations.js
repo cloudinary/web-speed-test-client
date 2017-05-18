@@ -73,14 +73,14 @@ export const translations = {
     'ExpandedTabOriginal': 'Original',
     'ExpandedTabSameFormat': 'Transformed Image',
     'ExpandedTabOtherFormats': 'Dynamic Format Selection',
-    'ImageProperty_Aggregated': 'Aggregated',
-    'ImageProperty_Format': 'Format',
-    'ImageProperty_Fit': 'FIT',
-    'ImageProperty_Compression': 'Compression',
-    'ImageProperty_ColorSpace': 'Color Space',
-    'ImageProperty_Color  Depth': 'Color Depth',
-    'ImageProperty_Metadata': 'Metadata',
-    'ImageProperty_Progressive': 'Progressive',
+    'ImageProperty_aggregated': 'Aggregated',
+    'ImageProperty_format': 'Format',
+    'ImageProperty_fit': 'FIT',
+    'ImageProperty_compression': 'Compression',
+    'ImageProperty_color_space': 'Color Space',
+    'ImageProperty_color_depth': 'Color Depth',
+    'ImageProperty_metadata': 'Metadata',
+    'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average'
   }
 }

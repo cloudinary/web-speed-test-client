@@ -89,6 +89,19 @@ export default class ImageInfo extends Component {
           </div>
         </div>
 
+        {isOriginal == true && grading &&
+          <div className="grading">
+            {Object.keys(grading).map((grade, key) => (
+              <div key={key}>
+                <div className={'original-image-grading grade grade-' + grading[grade].value}>
+                  {grading[grade].value}
+                </div>
+                {this.context.t('ImageProperty_' + grade)}
+              </div>
+            ))}
+          </div>
+        }
+
         {original && original.hasOwnProperty("public_id") &&
           <Image
             publicId={original.public_id + '.' + this.getFormat(data.format)}
@@ -105,6 +118,14 @@ export default class ImageInfo extends Component {
           <div className="explanation">
             {explanation.map((explain, key) => (
               <p key={key}>{explain}</p>
+            ))}
+          </div>
+        }
+
+        {isOriginal == true && grading &&
+          <div className="explanation">
+            {Object.keys(grading).map((grade, key) => (
+              <p key={key}>{grading[grade].explanation}</p>
             ))}
           </div>
         }
