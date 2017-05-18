@@ -1,4 +1,6 @@
 .imageExpanded {
+  $col-height: 800px;
+
   max-height: 0;
   overflow: hidden;
   box-sizing: border-box;
@@ -7,19 +9,22 @@
   display: flex;
   border: 1px solid #8596AA;
   border-top: none;
+  justify-content: space-between;
   .resultsItem.expanded & {
-    max-height: 500px;
+    max-height: $col-height;
   }
   .image-details {
-    flex: 1;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 392px;
+    height: $col-height;
+    margin-right: 5px;
     &.original {
       flex: 0 1 400px;
       background: #fff;
     }
     &.transformed,
     &.dynamic {
-      padding: 0 5px;
     }
     .title {
       font-size: 18px;
@@ -38,9 +43,16 @@
     box-sizing: border-box;
     text-transform: uppercase;
     font-size: 14px;
+    border-bottom: 1px solid #E4EAEE;
   }
   .original .tab {
     text-align: left;
+    width: auto;
+  }
+  .react-tabs {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   .react-tabs__tab-list {
     display: flex;
@@ -48,13 +60,22 @@
     margin: 0;
   }
   .react-tabs__tab {
+    @extend .tab;
+    background: #d0dae2;
     display: block;
     margin: 0 7px 0 0;
     flex: 1;
-    @extend .tab;
     &:last-child {
       margin-right: 0;
     }
   }
-
+  .react-tabs__tab--selected {
+    background: #fff;
+  }
+  .react-tabs__tab-panel--selected,
+  .imageInfo {
+    background: #fff;
+    flex: 1;
+    margin-bottom: 10px;
+  }
 }

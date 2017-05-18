@@ -1,2 +1,43 @@
 .imageInfo {
+  .immage-info-bar {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #E4EAEE;
+    font-size: 18px;
+  }
+  .browsers {
+    img {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  .links {
+    margin-left: auto;
+    a {
+      margin-left: 10px;
+    }
+    img {
+      vertical-align: middle;
+    }
+  }
+  .dimensions {
+    color: #5b616a;
+  }
+  .percent {
+    margin-left: auto;
+  }
+  .weight {
+    margin-left: auto;
+    color: #5b616a;
+  }
+  .percent + .weight {
+    margin-left: 15px;
+  }
+  .explanation {
+    padding: 15px;
+    font-size: 14px;
+    color: #616161;
+  }
 }
