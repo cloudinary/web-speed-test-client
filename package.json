@@ -15,13 +15,13 @@
     "prebuild": "npm run clean:build",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.production.js --progress",
     "postbuild": "npm run build:html",
-    "build:serve": "http-server build/client -p 3003 --cors -o",
+    "build:serve": "http-server build -p 3003 --cors -o",
     "lint": "eslint config src/js/** --ext .js",
     "jscs": "jscs src/js/",
     "typecheck": "flow",
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --require ./test/unit/testHelper.js --recursive ./test/unit",
     "test:watch": "npm run test -- --watch",
-    "deployS3": "s3cmd put --recursive ./build/client/* s3://$BUCKET/ -P ; s3cmd put  ./build/index.html s3://$BUCKET/ -P"
+    "deployS3": "s3cmd put --recursive ./build/client/* s3://$BUCKET/ -P ; s3cmd tput  ./build/index.html s3://$BUCKET/ -P"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",

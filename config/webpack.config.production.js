@@ -7,7 +7,8 @@ const config = require('./webpack.config.base');
 
 const GLOBALS = {
   'process.env': {
-    'NODE_ENV': JSON.stringify('production')
+    'NODE_ENV': JSON.stringify('production'),
+    'API_URL':  JSON.stringify(process.env.API_URL)
   },
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 };
@@ -82,7 +83,7 @@ module.exports = merge(config, {
       // Sass + CSS Modules
       // {
       //   test: /\.scss$/,
-      //   include: /src\/client\/assets\/javascripts/,
+      //   include: /src\/assets\/javascripts/,
       //   loader: ExtractTextPlugin.extract({
       //     fallbackLoader: 'style',
       //     loader: [

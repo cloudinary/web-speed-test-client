@@ -13,7 +13,7 @@ export default class Header extends Component {
     return (
       <header className="header">
         <div className="container">
-          {/*<Image className="logo" publicId="logo.png.png" width="31" type="asset" />*/}
+          <Image className="logo" publicId="icon-logo.svg.svg" width="31" type="asset"></Image>
           <h1>{this.context.t("Page Speed")}</h1>
           <a className="learn" href="#">{this.context.t("LearnMoreText")}</a>
         </div>
