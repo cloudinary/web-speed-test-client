@@ -27,11 +27,16 @@
     &.dynamic {
     }
     .title {
+      position: relative;
       font-size: 18px;
       text-align: center;
       padding: 20px;
       margin-bottom: 10px;
       color: #616161;
+    }
+    .image-info-icon {
+      position: absolute;
+      left: 20px;
     }
   }
   .tab {

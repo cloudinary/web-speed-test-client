@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Image, Transformation } from 'cloudinary-react';
 import ImageInfo from '../ImageInfo/ImageInfo';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
@@ -15,6 +16,7 @@ export default class ImageExpanded extends Component {
       <div className="imageExpanded">
         <div className="image-details original">
           <div className="title">
+            <Image className="image-info-icon" publicId="icon-original.svg.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">
@@ -24,6 +26,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
+            <Image className="image-info-icon" publicId="icon-transformed.png.png" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
@@ -33,6 +36,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details dynamic">
           <div className="title">
+            <Image className="image-info-icon" publicId="icon-dynamic.svg.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOtherFormats')}
           </div>
           <Tabs>
