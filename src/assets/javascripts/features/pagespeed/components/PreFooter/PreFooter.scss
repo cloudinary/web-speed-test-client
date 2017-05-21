@@ -21,6 +21,11 @@
     color: #000;
     font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
     padding: 20px 40px;
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .compare-images {
     display: flex;
@@ -82,5 +87,8 @@
     &:hover {
       background: darken(#ff7829, 10%);
     }
+  }
+  @media #{$bp-max-xs} {
+    display: none;
   }
 }

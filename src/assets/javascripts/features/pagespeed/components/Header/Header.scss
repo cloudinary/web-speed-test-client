@@ -1,9 +1,13 @@
+@import "helpers";
+
 .header {
   box-shadow: 0 0 6px rgba(#000, .4);
-  img {
-    display: inline-block;
-    vertical-align: bottom;
-    margin-bottom: 21px;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
     margin-right: 10px;
   }
   h1 {
@@ -11,12 +15,26 @@
     margin: 0;
     font-size: 18px;
     line-height: 70px;
-    display: inline-block;
   }
   .learn {
     font-size: 14px;
-    display: inline-block;
     margin-left: 15px;
-    vertical-align: text-bottom;
+    margin-bottom: -3px;
   }
+  .powered-by {
+    margin-left: auto;
+    font-size: 10px;
+    color: #90a0b3;
+    text-align: center;
+    .label {
+      margin-bottom: -7px;
+    }
+  }
+
+  @media #{$bp-max-xs} {
+    .learn {
+      display: none;
+    }
+  }
+
 }

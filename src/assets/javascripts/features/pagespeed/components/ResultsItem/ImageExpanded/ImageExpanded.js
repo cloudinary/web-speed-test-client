@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import ImageInfo from '../ImageInfo/ImageInfo';
+import { Image, Transformation } from 'cloudinary-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import classnames from 'classnames';
+import ImageInfo from '../ImageInfo/ImageInfo';
 
 import './ImageExpanded.scss';
 
@@ -9,12 +11,53 @@ export default class ImageExpanded extends Component {
     result: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: props.expanded || false,
+      carousel: props.carousel || 1
+    };
+    this.toggleDynamic = this.toggleDynamic.bind(this);
+    this.mobileCarousel = this.mobileCarousel.bind(this);
+  }
+
+  toggleDynamic() {
+    this.setState({expanded: !this.state.expanded})
+    console.log(this.state.expanded);
+  }
+
+  mobileCarousel(dir) {
+    const slides = 3;
+    let currSlide = this.state.carousel;
+    console.log(currSlide);
+    if (dir == 'next' && currSlide < slides) {
+      this.setState({carousel: this.state.carousel + 1})
+    }
+    else if (dir == 'prev' && currSlide > 1) {
+      this.setState({carousel: this.state.carousel - 1})
+    }
+  }
+
   render() {
     const { result } = this.props;
+
+    const imageExpandedCls = classnames(
+      'imageExpanded',
+      'carousel-' + this.state.carousel,
+      {'dynamicIn': this.state.expanded}
+    );
+
     return (
-      <div className="imageExpanded">
+      <div className={imageExpandedCls}>
+        <button className="mobile-carousel-btn prev" onClick={() => this.mobileCarousel('prev')}>
+          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+        </button>
+        <button className="mobile-carousel-btn next" onClick={() => this.mobileCarousel('next')}>
+          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+        </button>
         <div className="image-details original">
           <div className="title">
+            <Image className="image-info-icon" publicId="icon-original.svg.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">
@@ -24,6 +67,10 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
+            <button className="image-info-expand" onClick={this.toggleDynamic}>
+              <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+            </button>
+            <Image className="image-info-icon" publicId="icon-transformed.png.png" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
@@ -33,6 +80,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details dynamic">
           <div className="title">
+            <Image className="image-info-icon" publicId="icon-dynamic.svg.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOtherFormats')}
           </div>
           <Tabs>

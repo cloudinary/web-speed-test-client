@@ -5,7 +5,7 @@
   overflow: hidden;
   h1 {
     margin-top: 40px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $color-gray-border;
     padding-bottom: 12px;
     margin-bottom: 12px;
   }
@@ -36,7 +36,7 @@
   }
   .test-meta-box {
     box-sizing: border-box;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid $color-gray-border;
     flex: 1;
     margin-bottom: 60px;
     padding: 0 30px 20px;
@@ -127,6 +127,7 @@
   .test-totals {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     .test-meta-box {
       flex: 1 0 33%;
       padding: 0 10px 20px 30px;
@@ -137,6 +138,7 @@
     .label {
       height: 45px;
       margin-bottom: 0;
+      overflow: hidden;
     }
     .value {
       font-weight: 100;
@@ -174,4 +176,77 @@
       color: $color-gray-blue;
     }
   }
+
+  @media #{$bp-max-md} {
+    .test-summ {
+      flex-direction: column;
+    }
+    .test-meta {
+      padding-right: 0;
+    }
+    .test-info {
+      width: 50%;
+      flex-wrap: wrap;
+      .test-meta-box {
+        flex-basis: 50%;
+        &:nth-child(odd) {
+          border-left: none;
+        }
+      }
+    }
+    .test-screen {
+      $height: 440px;
+      height: $height;
+      margin-top: -$height;
+      width: 40%;
+    }
+  }
+
+  @media #{$bp-max-sm} {
+    .test-totals .value {
+      font-size: 46px;
+    }
+  }
+
+  @media #{$bp-max-xs} {
+    .test-meta-box,
+    .test-totals .test-meta-box {
+      flex: 1 0 100%;
+    }
+    .test-meta-box {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .test-grade,
+    .test-meta-box,
+    .test-stats .label,
+    .test-totals .test-meta-box,
+    .test-totals .test-meta-box.image-count,
+    .test-stats .trans-images-label {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .grade-content {
+      display: flex;
+      .grade-text {
+        margin: 0 0 0 20px;
+        align-self: center;
+        font-size: 22px;
+        font-weight: 300;
+        max-width: none;
+      }
+    }
+    .test-totals .value {
+      font-size: 64px;
+    }
+    .test-info {
+      width: 100%;
+    }
+    .test-screen {
+      margin: 20px auto 0;
+      width: auto;
+    }
+  }
+
 }
