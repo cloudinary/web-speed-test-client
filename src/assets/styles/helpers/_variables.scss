@@ -25,8 +25,10 @@ $screen-xs: 641px !default;
 $screen-md-max: ($screen-lg - 1) !default;
 $screen-sm-max: ($screen-md - 1) !default;
 $screen-xs-max: ($screen-sm - 1) !default;
+$screen-xs-min: ($screen-xs + 1) !default;
 
 // $desktop-only: "(min-width: #{$screen-lg})";
 $bp-max-md: "(max-width: #{$screen-sm-max})";
 $bp-max-sm: "(max-width: #{$screen-xs-max})";
+$bp-min-xs-max-md: "(min-width: #{$screen-xs-min}) and (max-width: #{$screen-sm-max})";
 $bp-max-xs: "(max-width: #{$screen-xs})";
