@@ -72,7 +72,7 @@ export default class ImageInfo extends Component {
           {this.state.imageUrl && original.public_id &&
             <div className="links">
               <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg.svg" type="asset" width="16"></Image></a>
-              <a download={original.public_id + '.' + this.getFormat(data.format)} traget="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg.svg" type="asset" width="16"></Image></a>
+              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg.svg" type="asset" width="16"></Image></a>
             </div>
           }
         </div>
@@ -91,14 +91,27 @@ export default class ImageInfo extends Component {
 
         {isOriginal == true && grading &&
           <div className="grading">
-            {Object.keys(grading).map((grade, key) => (
-              <div key={key}>
-                <div className={'original-image-grading grade grade-' + grading[grade].value}>
-                  {grading[grade].value}
+            <div className="list">
+              {Object.keys(grading).map((grade, key) => (
+                <div key={key}>
+                  <div className={'original-image-grading grade grade-' + grading[grade].value}>
+                    {grading[grade].value}
+                  </div>
+                  {this.context.t('ImageProperty_' + grade)}
                 </div>
-                {this.context.t('ImageProperty_' + grade)}
+              ))}
+            </div>
+            <div className="bracket">
+              <div className="b-top"></div>
+              <div className="b-center"></div>
+              <div className="b-bottom"></div>
+            </div>
+            <div className="total">
+              <span className="average">{this.context.t('GradesToAverageConnection')}</span>
+              <div className={'grade grade-' + grading.aggregated.value}>
+                {grading.aggregated.value}
               </div>
-            ))}
+            </div>
           </div>
         }
 

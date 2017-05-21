@@ -37,13 +37,57 @@
   }
 
   .grading {
-    padding: 30px 20px 20px;
-    color: #616161;
-    font-weight: 300;
-    font-size: 14px;
+    display: flex;
+    padding: 20px;
+    .list {
+      color: #616161;
+      font-weight: 300;
+      font-size: 14px;
+      padding-right: 30px;
+    }
     .grade {
-      margin-right: 8px;
-      margin-bottom: 12px;
+      margin: 6px 8px 6px 0;
+    }
+    .bracket {
+      display: flex;
+      flex-direction: column;
+      width: 33px;
+      margin: 14px 0;
+      background: url('./bracket/b-vert.png') repeat-y 15px;
+      .b-top {
+        width: 20px;
+        height: 20px;
+        background: url('./bracket/b-top.png') no-repeat right #fff;
+      }
+      .b-center {
+        margin: auto 0;
+        width: 33px;
+        height: 24px;
+        background: url('./bracket/b-center.png') no-repeat 15px #fff;
+      }
+      .b-bottom {
+        width: 20px;
+        height: 20px;
+        background: url('./bracket/b-bottom.png') no-repeat right #fff;
+      }
+    }
+    .total {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 31px;
+      background: url('./bracket/b-horz.png') repeat-x center;
+      .grade {
+        margin: 0;
+      }
+    }
+    .average {
+      font-size: 14px;
+      color: #90a0b3;
+      margin-top: -30px;
+      margin-left: 10px;
+      font-weight: 300;
     }
   }
 
