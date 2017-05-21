@@ -8,6 +8,7 @@ $color-blue-light: #0054ac;
 $color-blue-c: #0071ba;
 $color-blue-d: #255fb0;
 $color-gray-blue: #90a0b3;
+$color-gray-border: #ccc;
 
 $color-grade-a: #77BD58;
 $color-grade-c: #F2A81A;
@@ -18,7 +19,7 @@ $container-width: 1208px;
 
 //== Media queries breakpoints
 $screen-lg: $container-width !default;
-$screen-md: 992px !default;
+$screen-md: 1150px !default;
 $screen-sm: 768px !default;
 $screen-xs: 480px !default;
 $screen-md-max: ($screen-lg - 1) !default;
@@ -26,5 +27,5 @@ $screen-sm-max: ($screen-md - 1) !default;
 $screen-xs-max: ($screen-sm - 1) !default;
 
 $desktop-only: "(min-width: #{$screen-lg})";
+$mobile-only: "(max-width: #{$screen-sm-max})";
 $portrait-only: "(max-width: #{$screen-xs-max})";
-$mobile-only: "(max-width: #{$screen-md-max})";

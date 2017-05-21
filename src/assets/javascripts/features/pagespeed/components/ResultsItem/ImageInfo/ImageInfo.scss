@@ -1,5 +1,5 @@
 .imageInfo {
-  .immage-info-bar {
+  .image-info-bar {
     display: flex;
     align-items: center;
     height: 30px;
@@ -89,6 +89,10 @@
       margin-left: 10px;
       font-weight: 300;
     }
+  }
+
+  .transform-image {
+    text-align: center;
   }
 
   .explanation {

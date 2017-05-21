@@ -1,7 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import numbro from 'numbro';
-import classnames from 'classnames';
 
 import './ResultSumm.scss';
 

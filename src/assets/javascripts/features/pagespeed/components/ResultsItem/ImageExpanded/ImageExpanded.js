@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
-import ImageInfo from '../ImageInfo/ImageInfo';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import classnames from 'classnames';
+import ImageInfo from '../ImageInfo/ImageInfo';
 
 import './ImageExpanded.scss';
 
@@ -10,10 +11,30 @@ export default class ImageExpanded extends Component {
     result: PropTypes.object.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      expanded: props.expanded || false
+    };
+    this.toggleDynamic = this.toggleDynamic.bind(this);
+  }
+
+  toggleDynamic() {
+    this.setState({expanded: !this.state.expanded})
+    console.log(this.state.expanded);
+    // console.log(this.toggle);
+  }
+
   render() {
     const { result } = this.props;
+
+    const imageExpandedCls = classnames(
+      'imageExpanded',
+      {'dynamicIn': this.state.expanded}
+    );
+
     return (
-      <div className="imageExpanded">
+      <div className={imageExpandedCls}>
         <div className="image-details original">
           <div className="title">
             <Image className="image-info-icon" publicId="icon-original.svg.svg" type="asset" width="25"></Image>
@@ -26,6 +47,9 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
+            <button className="image-info-expand" onClick={this.toggleDynamic}>
+              <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+            </button>
             <Image className="image-info-icon" publicId="icon-transformed.png.png" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>

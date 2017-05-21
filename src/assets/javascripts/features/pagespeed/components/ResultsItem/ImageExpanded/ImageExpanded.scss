@@ -1,3 +1,5 @@
+@import "helpers";
+
 .imageExpanded {
   $col-height: 800px;
 
@@ -9,8 +11,10 @@
   display: flex;
   border: 1px solid #8596AA;
   border-top: none;
+  margin-top: -1px;
   justify-content: space-between;
   .resultsItem.expanded & {
+    margin-top: 0;
     max-height: $col-height;
   }
   .image-details {
@@ -22,9 +26,6 @@
     &.original {
       flex: 0 1 400px;
       background: #fff;
-    }
-    &.transformed,
-    &.dynamic {
     }
     .title {
       position: relative;
@@ -82,5 +83,64 @@
     background: #fff;
     flex: 1;
     margin-bottom: 10px;
+  }
+
+  .image-info-expand {
+    display: none;
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    line-height: 20px;
+    position: absolute;
+    right: 10px;
+    z-index: 9;
+    transform: rotate(0);
+    transition: transform .4s;
+    img {
+      transform: rotate(270deg);
+      vertical-align: middle;
+    }
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+  &.dynamicIn .image-info-expand {
+    transform: rotate(180deg);
+    &:hover {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media #{$mobile-only} {
+    position: relative;
+    .image-info-expand {
+      display: block;
+    }
+    .image-details {
+      margin-right: 1%;
+      &.original {
+        flex: 0 0 50%;
+      }
+      &.transformed,
+      &.dynamic {
+        flex: 0 0 48%;
+      }
+      &.dynamic {
+        position: absolute;
+        right: 0;
+        width: 48%;
+        transform: translateX(102%);
+        transition: transform .4s;
+        display: block;
+        background: #E4EAEE;
+      }
+    }
+    &.dynamicIn .image-details.dynamic {
+      transform: translateX(0);
+    }
+    .image-info-icon {
+      display: none;
+    }
   }
 }

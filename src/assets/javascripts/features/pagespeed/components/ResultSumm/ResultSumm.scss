@@ -5,7 +5,7 @@
   overflow: hidden;
   h1 {
     margin-top: 40px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $color-gray-border;
     padding-bottom: 12px;
     margin-bottom: 12px;
   }
@@ -36,7 +36,7 @@
   }
   .test-meta-box {
     box-sizing: border-box;
-    border-left: 1px solid #ddd;
+    border-left: 1px solid $color-gray-border;
     flex: 1;
     margin-bottom: 60px;
     padding: 0 30px 20px;
@@ -172,6 +172,31 @@
     .value {
       margin-top: 10px;
       color: $color-gray-blue;
+    }
+  }
+
+  @media #{$mobile-only} {
+    .test-summ {
+      flex-direction: column;
+    }
+    .test-meta {
+      padding-right: 0;
+    }
+    .test-info {
+      width: 50%;
+      flex-wrap: wrap;
+      .test-meta-box {
+        flex-basis: 50%;
+        &:nth-child(odd) {
+          border-left: none;
+        }
+      }
+    }
+    .test-screen {
+      $height: 440px;
+      height: $height;
+      margin-top: -$height;
+      width: 40%;
     }
   }
 }

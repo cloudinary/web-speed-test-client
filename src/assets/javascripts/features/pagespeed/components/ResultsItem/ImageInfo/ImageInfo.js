@@ -63,7 +63,7 @@ export default class ImageInfo extends Component {
 
     return (
       <div className="imageInfo">
-        <div className="immage-info-bar">
+        <div className="image-info-bar">
           <div className="browsers">
             {this.getBrowsersSupport(data.format).map((browser, key) => (
               <Image key={key} publicId={'browser-' + browser + '.svg.svg'} type="asset"></Image>
@@ -77,7 +77,7 @@ export default class ImageInfo extends Component {
           }
         </div>
 
-        <div className="immage-info-bar">
+        <div className="image-info-bar">
           <div className="dimensions">{image.width} x {image.height}</div>
           {isOriginal !== true &&
             <div className="percent">
@@ -116,15 +116,17 @@ export default class ImageInfo extends Component {
         }
 
         {original && original.hasOwnProperty("public_id") &&
-          <Image
-            publicId={original.public_id + '.' + this.getFormat(data.format)}
-            crop="lpad"
-            height="300"
-            width="400"
-            background="auto:predominant"
-            crop="lpad"
-            ref={(image) => { this.image = image; }}
-          ></Image>
+          <div className="transform-image">
+            <Image
+              publicId={original.public_id + '.' + this.getFormat(data.format)}
+              crop="lpad"
+              height="300"
+              width="400"
+              background="auto:predominant"
+              crop="lpad"
+              ref={(image) => { this.image = image; }}
+            ></Image>
+          </div>
         }
 
         {explanation && explanation.length > 0 &&
