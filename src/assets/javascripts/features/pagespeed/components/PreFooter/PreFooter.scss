@@ -88,4 +88,7 @@
       background: darken(#ff7829, 10%);
     }
   }
+  @media #{$bp-max-xs} {
+    display: none;
+  }
 }

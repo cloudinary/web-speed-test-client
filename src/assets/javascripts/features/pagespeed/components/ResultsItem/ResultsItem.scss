@@ -6,6 +6,7 @@
   margin: 25px 0;
   .image-intro {
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid #8596AA;
     position: relative;
   }
@@ -60,6 +61,9 @@
   }
   .image-data-inner {
     display: flex;
+  }
+  .image-compression-bars {
+    padding-bottom: 5px;
   }
   .image-final {
     flex: 1;
@@ -150,6 +154,9 @@
     .image-compressions-title {
       padding-left: 7%;
     }
+    .image-compression-bars {
+      width: 100%;
+    }
     .image-final {
       position: absolute;
       left: 0;
@@ -166,6 +173,29 @@
       z-index: 9;
     }
   }
+
+  @media #{$bp-max-xs} {
+    .image-orig,
+    .image-data {
+      width: 100%;
+      flex: 0 0 100%;
+      border-right: none;
+    }
+    .image-data-name {
+      padding-left: 32px;
+    }
+    .image-data-grading {
+      left: -.4em;
+    }
+    .image-details {
+      flex: 0 0 100% !important;
+      margin: 0;
+      .title {
+        padding-top: 40px;
+      }
+    }
+  }
+
 }
 
 .grade {
