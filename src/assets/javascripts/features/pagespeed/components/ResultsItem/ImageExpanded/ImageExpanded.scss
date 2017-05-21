@@ -112,7 +112,7 @@
     }
   }
 
-  @media #{$mobile-only} {
+  @media #{$bp-max-md} {
     position: relative;
     .image-info-expand {
       display: block;

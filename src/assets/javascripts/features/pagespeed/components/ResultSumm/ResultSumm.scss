@@ -127,6 +127,7 @@
   .test-totals {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     .test-meta-box {
       flex: 1 0 33%;
       padding: 0 10px 20px 30px;
@@ -137,6 +138,7 @@
     .label {
       height: 45px;
       margin-bottom: 0;
+      overflow: hidden;
     }
     .value {
       font-weight: 100;
@@ -175,7 +177,7 @@
     }
   }
 
-  @media #{$mobile-only} {
+  @media #{$bp-max-md} {
     .test-summ {
       flex-direction: column;
     }
@@ -199,4 +201,52 @@
       width: 40%;
     }
   }
+
+  @media #{$bp-max-sm} {
+    .test-totals .value {
+      font-size: 46px;
+    }
+  }
+
+  @media #{$bp-max-xs} {
+    .test-meta-box,
+    .test-totals .test-meta-box {
+      flex: 1 0 100%;
+    }
+    .test-meta-box {
+      border: none;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .test-grade,
+    .test-meta-box,
+    .test-stats .label,
+    .test-totals .test-meta-box,
+    .test-totals .test-meta-box.image-count,
+    .test-stats .trans-images-label {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .grade-content {
+      display: flex;
+      .grade-text {
+        margin: 0 0 0 20px;
+        align-self: center;
+        font-size: 22px;
+        font-weight: 300;
+        max-width: none;
+      }
+    }
+    .test-totals .value {
+      font-size: 64px;
+    }
+    .test-info {
+      width: 100%;
+    }
+    .test-screen {
+      margin: 20px auto 0;
+      width: auto;
+    }
+  }
+
 }

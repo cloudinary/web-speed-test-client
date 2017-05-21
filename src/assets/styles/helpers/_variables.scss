@@ -20,12 +20,13 @@ $container-width: 1208px;
 //== Media queries breakpoints
 $screen-lg: $container-width !default;
 $screen-md: 1150px !default;
-$screen-sm: 768px !default;
-$screen-xs: 480px !default;
+$screen-sm: 850px !default;
+$screen-xs: 641px !default;
 $screen-md-max: ($screen-lg - 1) !default;
 $screen-sm-max: ($screen-md - 1) !default;
 $screen-xs-max: ($screen-sm - 1) !default;
 
-$desktop-only: "(min-width: #{$screen-lg})";
-$mobile-only: "(max-width: #{$screen-sm-max})";
-$portrait-only: "(max-width: #{$screen-xs-max})";
+// $desktop-only: "(min-width: #{$screen-lg})";
+$bp-max-md: "(max-width: #{$screen-sm-max})";
+$bp-max-sm: "(max-width: #{$screen-xs-max})";
+$bp-max-xs: "(max-width: #{$screen-xs})";

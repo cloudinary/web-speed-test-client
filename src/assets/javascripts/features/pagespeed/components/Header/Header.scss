@@ -1,3 +1,5 @@
+@import "helpers";
+
 .header {
   box-shadow: 0 0 6px rgba(#000, .4);
   .container {
@@ -28,4 +30,11 @@
       margin-bottom: -7px;
     }
   }
+
+  @media #{$bp-max-xs} {
+    .learn {
+      display: none;
+    }
+  }
+
 }

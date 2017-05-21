@@ -10,6 +10,10 @@
     position: relative;
   }
   .image-orig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
     background: #fff;
     position: relative;
     z-index: 1;
@@ -52,6 +56,7 @@
     font-weight: 400;
     margin: 0;
     padding: 22px 30px 12px;
+    white-space: nowrap;
   }
   .image-data-inner {
     display: flex;
@@ -128,7 +133,7 @@
     }
   }
 
-  @media #{$mobile-only} {
+  @media #{$bp-max-md} {
     $height: 130px;
     margin-bottom: 40px;
     .image-intro {
@@ -140,6 +145,10 @@
     }
     .image-data {
       width: 50%;
+    }
+    .image-data-name,
+    .image-compressions-title {
+      padding-left: 7%;
     }
     .image-final {
       position: absolute;

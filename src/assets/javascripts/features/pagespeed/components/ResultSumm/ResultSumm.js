@@ -23,11 +23,13 @@ export default class ResultSumm extends Component {
                 <div className="label">
                   {this.context.t("PageImageScoreTitle")}
                 </div>
-                <div className={'grade grade-' + result.totalPageRank}>
-                  {result.totalPageRank}
-                </div>
-                <div className={'grade-text grade-text-' + result.totalPageRank}>
-                  {this.context.t("AverageGrade"+result.totalPageRank)}
+                <div className="grade-content">
+                  <div className={'grade grade-' + result.totalPageRank}>
+                    {result.totalPageRank}
+                  </div>
+                  <div className={'grade-text grade-text-' + result.totalPageRank}>
+                    {this.context.t("AverageGrade"+result.totalPageRank)}
+                  </div>
                 </div>
               </div>
               <div className="test-stats test-meta-box">

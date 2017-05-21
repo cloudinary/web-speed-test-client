@@ -7,36 +7,42 @@
   border-right: 1px solid $color-gray-border;
   font-size: 18px;
   height: 60px;
+
   .image-compression-bars & {
     font-size: 14px;
     height: 32px;
   }
+
   .type {
     text-transform: uppercase;
-    padding: 0 30px;
+    padding: 0 7%;
     width: 70px;
   }
+
   .bytes {
-    width: 60px;
-    padding: 0 20px;
+    width: 17%;
+    padding-left: 5%;
   }
+
   .bar-wrp {
     align-self: stretch;
     border-left: 1px solid $color-gray-border;
-    width: 105px;
+    width: 25%;
     display: flex;
     align-items: center;
   }
+
   .bar {
     height: 7px;
     border-radius: 0 7px 7px 0;
   }
+
   .original-note {
     font-size: 12px;
     color: #999;
   }
 
-  @media #{$mobile-only} {
+  @media #{$bp-max-md} {
     width: 100%;
     border: none;
   }
