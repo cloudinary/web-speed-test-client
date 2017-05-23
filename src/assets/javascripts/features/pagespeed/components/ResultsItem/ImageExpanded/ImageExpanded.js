@@ -23,13 +23,11 @@ export default class ImageExpanded extends Component {
 
   toggleDynamic() {
     this.setState({expanded: !this.state.expanded})
-    console.log(this.state.expanded);
   }
 
   mobileCarousel(dir) {
     const slides = 3;
     let currSlide = this.state.carousel;
-    console.log(currSlide);
     if (dir == 'next' && currSlide < slides) {
       this.setState({carousel: this.state.carousel + 1})
     }
