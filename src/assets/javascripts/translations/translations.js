@@ -49,6 +49,7 @@ export const translations = {
     'ImageWeightComparisonTitle': 'Image Weight Comparison',
     'OriginalImages': 'Original Images',
     'PotentialCompression': 'Potential Smart Compression Weight',
+    'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyxed images',      
     'AverageGradeA': 'Average Grade A',
     'AverageGradeB': 'Average Grade B',
     'AverageGradeC': 'Average Grade C',
@@ -58,6 +59,7 @@ export const translations = {
     'TotalImagesNumber': 'Total Image Count',
     'TotalImagesWeight': 'Total Image Weight',
     'PotentialCompressionPercentage': 'Potential Smart Compression Percentage',
+    'PotentialCompressionPercentageMoreInfo': 'Potential compression percentage is calculated only for the analyxed images',
     'TotalImagesNumber_TooMany_A': 'Only first', // Only first X images were analyzed
     'TotalImagesNumber_TooMany_B': 'images were analyzed',
     'Tested_BrowserType': 'Tested on browser',
