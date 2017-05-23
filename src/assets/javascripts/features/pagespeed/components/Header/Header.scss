@@ -1,15 +1,40 @@
+@import "helpers";
+
 .header {
   box-shadow: 0 0 6px rgba(#000, .4);
-  padding: 15px 0;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    margin-right: 10px;
+  }
   h1 {
     font-weight: 400;
     margin: 0;
     font-size: 18px;
-    display: inline-block;
+    line-height: 70px;
   }
   .learn {
     font-size: 14px;
-    display: inline-block;
     margin-left: 15px;
+    margin-bottom: -3px;
   }
+  .powered-by {
+    margin-left: auto;
+    font-size: 10px;
+    color: #90a0b3;
+    text-align: center;
+    .label {
+      margin-bottom: -7px;
+    }
+  }
+
+  @media #{$bp-max-xs} {
+    .learn {
+      display: none;
+    }
+  }
+
 }

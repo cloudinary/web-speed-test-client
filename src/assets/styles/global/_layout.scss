@@ -13,12 +13,13 @@ body {
 }
 
 .container {
-  width: 100%;
+  width: 94%;
   max-width: $container-width;
   margin: 0 auto;
 }
 
 img {
   max-width: 100%;
+  height: auto;
   vertical-align: top;
 }

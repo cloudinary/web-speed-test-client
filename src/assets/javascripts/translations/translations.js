@@ -11,6 +11,7 @@ export const translations = {
     'CloudinaryLogoURL': 'http://cloudinary.com',
     'ToolDescription': 'Every image is unique and every one of your website visitors is different. In a perfect world, we would like to adapt each image individually to be "just right" for every user, by being perfectly cropped, with correct encoding settings and optimal quality with the best image format.',
     'EditBoxDefaultText': 'Enter URL',
+    'EditBoxError': 'Invalid URL',
     'ButtonText': 'START',
 
     // Page Footer
@@ -73,14 +74,14 @@ export const translations = {
     'ExpandedTabOriginal': 'Original',
     'ExpandedTabSameFormat': 'Transformed Image',
     'ExpandedTabOtherFormats': 'Dynamic Format Selection',
-    'ImageProperty_Aggregated': 'Aggregated',
-    'ImageProperty_Format': 'Format',
-    'ImageProperty_Fit': 'FIT',
-    'ImageProperty_Compression': 'Compression',
-    'ImageProperty_ColorSpace': 'Color Space',
-    'ImageProperty_Color  Depth': 'Color Depth',
-    'ImageProperty_Metadata': 'Metadata',
-    'ImageProperty_Progressive': 'Progressive',
+    'ImageProperty_aggregated': 'Aggregated',
+    'ImageProperty_format': 'Format',
+    'ImageProperty_fit': 'FIT',
+    'ImageProperty_compression': 'Compression',
+    'ImageProperty_color_space': 'Color Space',
+    'ImageProperty_color_depth': 'Color Depth',
+    'ImageProperty_metadata': 'Metadata',
+    'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average'
   }
 }

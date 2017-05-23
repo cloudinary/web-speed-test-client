@@ -4,15 +4,22 @@
   background: #E4EAEE;
   box-shadow: 0 0 6px rgba(#000, .3);
   margin: 25px 0;
-  overflow: hidden;
   .image-intro {
     display: flex;
+    flex-wrap: wrap;
     border: 1px solid #8596AA;
+    position: relative;
   }
   .image-orig {
-    background: #8596AA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background: #fff;
     position: relative;
     z-index: 1;
+    text-align: center;
+    border-right: 1px solid $color-gray-border;
     img {
       vertical-align: top;
     }
@@ -37,16 +44,26 @@
     font-weight: 400;
     margin: 0;
     padding: 15px 30px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid $color-gray-border;
+
+    box-sizing: border-box;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .image-compressions-title {
     font-size: 18px;
     font-weight: 400;
     margin: 0;
     padding: 22px 30px 12px;
+    white-space: nowrap;
   }
   .image-data-inner {
     display: flex;
+  }
+  .image-compression-bars {
+    padding-bottom: 5px;
   }
   .image-final {
     flex: 1;
@@ -119,6 +136,59 @@
       opacity: 1;
     }
   }
+
+  @media #{$bp-max-md} {
+    $height: 130px;
+    margin-bottom: 40px;
+    .image-intro {
+      padding-bottom: $height;
+    }
+    .image-orig {
+      width: 50%;
+      border-bottom: 1px solid $color-gray-border;
+    }
+    .image-data {
+      width: 50%;
+    }
+    .image-data-name,
+    .image-compressions-title {
+      padding-left: 7%;
+    }
+    .image-compression-bars {
+      width: 100%;
+    }
+    .image-final {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: $height;
+      border-top: 1px solid $color-gray-border;
+    }
+    .image-final-percent {
+      margin-top: 15px;
+    }
+    .toggle-btn {
+      bottom: -19px;
+      z-index: 9;
+    }
+  }
+
+  @media #{$bp-max-xs} {
+    .image-orig,
+    .image-data {
+      width: 100%;
+      flex: 0 0 100%;
+      border-right: none;
+    }
+    .image-data-name {
+      padding-left: 32px;
+    }
+    .image-data-grading {
+      left: -.4em;
+    }
+  }
+
 }
 
 .grade {
