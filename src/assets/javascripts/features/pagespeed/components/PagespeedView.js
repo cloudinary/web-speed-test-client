@@ -18,7 +18,6 @@ export default class PagespeedView extends Component {
     );
   }
   componentDidMount() {
-    console.log(this.props);
     const { location } = this.props;
     let { setTestId, fetchTestDataIfNeeded } = this.props.actions;
     if (location.query.testid) {
