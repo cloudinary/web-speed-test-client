@@ -12,7 +12,8 @@ export default class InputUrl extends Component {
     this.submitUrl = this.submitUrl.bind(this);
   }
 
-  submitUrl() {
+  submitUrl(e) {
+    e.preventDefault();
     this.props.onSubmit(this.input.value)
   }
 
