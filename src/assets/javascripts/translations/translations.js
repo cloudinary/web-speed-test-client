@@ -4,7 +4,8 @@ export const translations = {
   en: {
     // Home page
     'PageSpeedAppName': 'Page Speed Analyzer',
-    'PageTitleHome': 'Page Speed Image Analysis Tool',
+    'PageTitleA': 'Page Speed',
+    'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
     'LearnMoreURL': 'http://cloudinary.com/features/image_manipulation',
     'PoweredByText': 'Powered By',

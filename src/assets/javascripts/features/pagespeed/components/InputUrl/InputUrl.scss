@@ -1,10 +1,48 @@
+@import "helpers";
+
 .inputUrl {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
   background: #EFF3F4;
+  padding-top: 120px;
+  padding-bottom: 160px;
+  .container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  .logo {
+    $size: 120px;
+    background: #fff;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border-radius: $size;
+    box-sizing: border-box;
+    padding: 20px 0 0 25px;
+    img {
+      vertical-align: middle;
+    }
+  }
+  h1 {
+    font-weight: 200;
+    span {
+      color: $color-blue-c;
+    }
+  }
+  p {
+    font-weight: 300;
+    font-size: 15px;
+    color: #626063;
+    max-width: 880px;
+    margin: 30px auto 50px;
+  }
+  form {
+    display: flex;
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+  }
   input,
   button {
     font-family: 'Fira Sans', sans-serif;
@@ -13,16 +51,47 @@
     padding: 0 20px;
     vertical-align: middle;
     box-sizing: border-box;
-    border: 1px solid #0270BC;
+    border: 1px solid $color-blue-c;
   }
   input {
-    width: 400px;
     border-radius: 8px 0 0 8px;
+    flex: 1;
   }
   button {
     border-radius: 0 8px 8px 0;
     color: #fff;
     text-shadow: none;
-    background: #0270BC;
+    background: $color-blue-c;
   }
+
+  @media #{$bp-max-md} {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  @media #{$bp-max-xs} {
+    h1 {
+      font-size: 34px;
+      span {
+        display: block;
+      }
+    }
+    form {
+      display: block;
+      order: 3;
+      margin: 0;
+      max-width: 400px;
+    }
+    input,
+    button {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+    }
+    p {
+      order: 4;
+    }
+  }
+
 }
