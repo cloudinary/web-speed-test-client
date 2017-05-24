@@ -90,5 +90,12 @@ export const translations = {
     // Image type display name transforms
     'jpg': 'JPEG',
     'jxr': 'JPEG-XR',
+    'gif': 'GIF',
+    'png': 'PNG',
+    'bmp': 'BMP',
+    'ico': 'ICO',
+    'tiff': 'TIFF',
+    'webp': 'WEBP',
+    'svg': 'SVG'      
   }
 }
