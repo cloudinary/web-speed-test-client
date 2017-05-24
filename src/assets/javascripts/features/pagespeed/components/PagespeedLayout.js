@@ -15,7 +15,6 @@ export default class PagespeedLayout extends Component {
 
   render() {
     const { pagespeed, actions } = this.props;
-    console.log(this.props);
     return (
       <div className="pagespeedApp">
         <Header />

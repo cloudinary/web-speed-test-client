@@ -23,13 +23,11 @@ export default class ImageExpanded extends Component {
 
   toggleDynamic() {
     this.setState({expanded: !this.state.expanded})
-    console.log(this.state.expanded);
   }
 
   mobileCarousel(dir) {
     const slides = 3;
     let currSlide = this.state.carousel;
-    console.log(currSlide);
     if (dir == 'next' && currSlide < slides) {
       this.setState({carousel: this.state.carousel + 1})
     }
@@ -61,7 +59,7 @@ export default class ImageExpanded extends Component {
             {this.context.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">
-            {result.format}
+            {this.context.t(result.format)}
           </div>
           <ImageInfo image={result} isOriginal={true} />
         </div>
@@ -74,7 +72,7 @@ export default class ImageExpanded extends Component {
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
-            {result.transformedImage.analyze.data.format}
+            {this.context.t(result.transformedImage.analyze.data.format)}
           </div>
           <ImageInfo image={result.transformedImage} original={result} />
         </div>
@@ -86,7 +84,7 @@ export default class ImageExpanded extends Component {
           <Tabs>
             <TabList>
               {result.dynamicFormats.map((format, key) => (
-                <Tab key={key}>{format.analyze.data.format}</Tab>
+                <Tab key={key}>{this.context.t(format.analyze.data.format)}</Tab>
               ))}
             </TabList>
             {result.dynamicFormats.map((format, key) => (

@@ -101,19 +101,18 @@ const requestTestError = (msg: string) => ({
 });
 
 
-const fetchTestData = async(testId) => {
+const fetchTestData = async(testId, retryNum = 0) => {
   try {
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
-    if (response.statusCode == 504) {
-      return fetchTestData(testId);
+    const data: Object = await response.json();
+    return data;
+  } catch (err) {
+    if (retryNum < 5) {
+      return fetchTestData(testId, retryNum + 1)
     }
     else {
-      const data: Object = await response.json();
-      return data;
+      throw err;
     }
-  } catch (err) {
-
-    throw err;
   }
 }
 

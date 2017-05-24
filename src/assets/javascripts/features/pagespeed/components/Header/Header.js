@@ -10,11 +10,11 @@ export default class Header extends Component {
         <div className="container">
           <Image className="logo" publicId="icon-logo.svg.svg" width="31" type="asset"></Image>
           <h1>{this.context.t("Page Speed")}</h1>
-          <a className="learn" href={this.context.t('LearnMoreURL')}>{this.context.t("LearnMoreText")}</a>
-          <div className="powered-by">
+          <a className="learn" href={this.context.t('LearnMoreURL')} target="_blank">{this.context.t("LearnMoreText")}</a>
+          <a className="powered-by" href={this.context.t('CloudinaryLogoURL')} target="_blank">
             <div className="label">{this.context.t('PoweredByText')}</div>
             <Image className="logo" publicId="cloudinary_logo_text.svg.svg" width="120" type="asset"></Image>
-          </div>
+          </a>
         </div>
       </header>
     );
