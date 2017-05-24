@@ -138,9 +138,9 @@ export default class ResultSumm extends Component {
                   <div className="label">
                     {this.context.t("IntegratedWith")}
                   </div>
-                  <div className="icon">
+                  <a href={'https://www.webpagetest.org/result/' + testId} target="_blank" className="icon">
                     <Image publicId="icon-wpt.png.png" type="asset"></Image>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
