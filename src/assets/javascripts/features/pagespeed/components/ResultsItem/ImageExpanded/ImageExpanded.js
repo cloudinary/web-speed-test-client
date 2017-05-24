@@ -59,7 +59,7 @@ export default class ImageExpanded extends Component {
             {this.context.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">
-            {result.format}
+            {this.context.t(result.format)}
           </div>
           <ImageInfo image={result} isOriginal={true} />
         </div>
@@ -72,7 +72,7 @@ export default class ImageExpanded extends Component {
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
-            {result.transformedImage.analyze.data.format}
+            {this.context.t(result.transformedImage.analyze.data.format)}
           </div>
           <ImageInfo image={result.transformedImage} original={result} />
         </div>
@@ -84,7 +84,7 @@ export default class ImageExpanded extends Component {
           <Tabs>
             <TabList>
               {result.dynamicFormats.map((format, key) => (
-                <Tab key={key}>{format.analyze.data.format}</Tab>
+                <Tab key={key}>{this.context.t(format.analyze.data.format)}</Tab>
               ))}
             </TabList>
             {result.dynamicFormats.map((format, key) => (

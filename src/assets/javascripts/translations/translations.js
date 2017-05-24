@@ -50,7 +50,7 @@ export const translations = {
     'ImageWeightComparisonTitle': 'Image Weight Comparison',
     'OriginalImages': 'Original Images',
     'PotentialCompression': 'Potential Smart Compression Weight',
-    'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyxed images',      
+    'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyxed images',
     'AverageGradeA': 'Average Grade A',
     'AverageGradeB': 'Average Grade B',
     'AverageGradeC': 'Average Grade C',
@@ -79,12 +79,16 @@ export const translations = {
     'ExpandedTabOtherFormats': 'Dynamic Format Selection',
     'ImageProperty_aggregated': 'Aggregated',
     'ImageProperty_format': 'Format',
-    'ImageProperty_fit': 'FIT',
+    'ImageProperty_fit': 'Fit',
     'ImageProperty_compression': 'Compression',
     'ImageProperty_color_space': 'Color Space',
     'ImageProperty_color_depth': 'Color Depth',
     'ImageProperty_metadata': 'Metadata',
     'ImageProperty_progressive': 'Progressive',
-    'GradesToAverageConnection': 'Average'
+    'GradesToAverageConnection': 'Average',
+
+    // Image type display name transforms
+    'jpg': 'JPEG',
+    'jxr': 'JPEG-XR',
   }
 }
