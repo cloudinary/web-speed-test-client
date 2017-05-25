@@ -13,7 +13,7 @@ export const translations = {
     'ToolDescription': 'Every image is unique and every one of your website visitors is different. In a perfect world, we would like to adapt each image individually to be "just right" for every user, by being perfectly cropped, with correct encoding settings and optimal quality with the best image format.',
     'EditBoxDefaultText': 'Enter URL',
     'EditBoxError': 'Invalid URL',
-    'ButtonText': 'START',
+    'ButtonText': 'ANALYZE',
 
     // Page Footer
     'FooterTitle': 'Optimize Every Image',
