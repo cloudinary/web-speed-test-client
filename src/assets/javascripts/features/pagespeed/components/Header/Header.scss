@@ -40,7 +40,12 @@
   }
 
   @media #{$bp-max-xs} {
-    .learn {
+    .container {
+      justify-content: flex-start;
+    }
+    .learn,
+    .share,
+    .powered-by {
       display: none;
     }
   }
