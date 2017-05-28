@@ -47,6 +47,9 @@ export default class ImageExpanded extends Component {
 
     return (
       <div className={imageExpandedCls}>
+        <button className="image-info-expand" onClick={this.toggleDynamic}>
+          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+        </button>
         <button className="mobile-carousel-btn prev" onClick={() => this.mobileCarousel('prev')}>
           <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
         </button>
@@ -65,9 +68,6 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
-            <button className="image-info-expand" onClick={this.toggleDynamic}>
-              <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
-            </button>
             <Image className="image-info-icon" publicId="icon-transformed.png.png" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>
