@@ -13,7 +13,7 @@ export const translations = {
     'ToolDescription': 'Every image is unique and every one of your website visitors is different. In a perfect world, we would like to adapt each image individually to be "just right" for every user, by being perfectly cropped, with correct encoding settings and optimal quality with the best image format.',
     'EditBoxDefaultText': 'Enter URL',
     'EditBoxError': 'Invalid URL',
-    'ButtonText': 'START',
+    'ButtonText': 'ANALYZE',
 
     // Page Footer
     'FooterTitle': 'Optimize Every Image',
@@ -90,5 +90,12 @@ export const translations = {
     // Image type display name transforms
     'jpg': 'JPEG',
     'jxr': 'JPEG-XR',
+    'gif': 'GIF',
+    'png': 'PNG',
+    'bmp': 'BMP',
+    'ico': 'ICO',
+    'tiff': 'TIFF',
+    'webp': 'WEBP',
+    'svg': 'SVG'      
   }
 }
