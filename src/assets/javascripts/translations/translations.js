@@ -3,8 +3,8 @@
 export const translations = {
   en: {
     // Home page
-    'PageSpeedAppName': 'Page Speed Analyzer',
-    'PageTitleA': 'Page Speed',
+    'PageSpeedAppName': 'Website Speed Test',
+    'PageTitleA': 'Website Speed Test',
     'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
     'LearnMoreURL': 'http://cloudinary.com/features/image_manipulation',
