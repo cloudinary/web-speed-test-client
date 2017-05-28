@@ -1,3 +1,4 @@
+@import "helpers";
 .imageInfo {
   .image-info-bar {
     display: flex;
@@ -93,6 +94,17 @@
 
   .transform-image {
     text-align: center;
+    position: relative;
+  }
+  .support {
+    color: $color-grade-e;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 10px 25px;
+    background: linear-gradient(rgba(#000, .8), rgba(#000, .5) 50%, transparent 95%);
   }
 
   .explanation {
