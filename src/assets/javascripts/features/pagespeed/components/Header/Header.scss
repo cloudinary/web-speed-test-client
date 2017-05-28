@@ -1,6 +1,8 @@
 @import "helpers";
 
 .header {
+  position: relative;
+  z-index: 1;
   box-shadow: 0 0 6px rgba(#000, .4);
   .container {
     display: flex;

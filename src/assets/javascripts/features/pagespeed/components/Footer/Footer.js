@@ -10,7 +10,7 @@ export default class Footer extends Component {
         <div className="container">
           <div className="brand">
             <Image className="logo" publicId="icon-logo.svg.svg" width="31" type="asset"></Image>
-            <h1>{this.context.t("PageTitleA")}</h1>
+            <h1>{this.context.t("AppName")}</h1>
           </div>
           <div className="links">
             <a href={this.context.t('AboutButtonURL')} target="_blank">{this.context.t("AboutButtonText")}</a>
