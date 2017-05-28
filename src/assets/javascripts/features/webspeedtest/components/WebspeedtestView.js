@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { CloudinaryContext } from 'cloudinary-react';
 
-import { actionCreators as pagespeedActions, selector } from '../';
-import PagespeedLayout from './PagespeedLayout';
+import { actionCreators as webspeedtestActions, selector } from '../';
+import WebspeedtestLayout from './WebspeedtestLayout';
 
 @connect(selector, (dispatch) => ({
-  actions: bindActionCreators(pagespeedActions, dispatch)
+  actions: bindActionCreators(webspeedtestActions, dispatch)
 }))
-export default class PagespeedView extends Component {
+export default class WebspeedtestView extends Component {
 
   componentDidMount() {
     const { location, actions: { setTestId, fetchTestDataIfNeeded } } = this.props;
@@ -21,11 +21,11 @@ export default class PagespeedView extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { pagespeed, location } = this.props;
-    if (nextProps.pagespeed.testId && pagespeed.testId !== nextProps.pagespeed.testId) {
+    const { webspeedtest, location } = this.props;
+    if (nextProps.webspeedtest.testId && webspeedtest.testId !== nextProps.webspeedtest.testId) {
       browserHistory.push({
         pathname: location.pathname,
-        query: { testid: nextProps.pagespeed.testId }
+        query: { testid: nextProps.webspeedtest.testId }
       });
     }
   }
@@ -33,7 +33,7 @@ export default class PagespeedView extends Component {
   render() {
     return (
       <CloudinaryContext cloudName="pagespeed" cname="staging.cloudinary.com/res">
-        <PagespeedLayout {...this.props} />
+        <WebspeedtestLayout {...this.props} />
       </CloudinaryContext>
     );
   }
