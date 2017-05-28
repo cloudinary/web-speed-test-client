@@ -35,33 +35,42 @@
     font-size: 15px;
     color: #626063;
     max-width: 880px;
-    margin: 30px auto 50px;
+    margin: 0 auto 10px;
   }
   form {
     display: flex;
     width: 100%;
     max-width: 800px;
-    margin: 30px auto;
+    margin: 20px auto;
   }
   input,
   button {
     font-family: 'Fira Sans', sans-serif;
-    height: 40px;
-    line-height: 40px;
+    font-weight: 300;
+    height: 60px;
+    line-height: 60px;
     padding: 0 20px;
     vertical-align: middle;
     box-sizing: border-box;
-    border: 1px solid $color-blue-c;
+    border: 1px solid $color-gray-blue;
   }
   input {
+    font-size: 18px;
     border-radius: 8px 0 0 8px;
     flex: 1;
+    border-right: 0;
   }
   button {
     border-radius: 0 8px 8px 0;
     color: #fff;
     text-shadow: none;
+    border-left: 0;
     background: $color-blue-c;
+    box-shadow: 1px 2px 5px rgba(#000, .25);
+    img {
+      vertical-align: baseline;
+      margin-left: 20px;
+    }
   }
 
   @media #{$bp-max-md} {

@@ -31,7 +31,10 @@ export default class InputUrl extends Component {
           <p>{this.context.t('ToolDescription')}</p>
           <form onSubmit={this.submitUrl}>
             <input type="url" name="testid" placeholder={this.context.t('EditBoxDefaultText')} ref={(input) => this.input = input}  autoComplete={"test-url"} />
-            <button type="submit">START</button>
+            <button type="submit">
+              {this.context.t('ButtonText')}
+              <Image publicId="icon-arrow-white.svg.svg" width="21" type="asset"></Image>
+            </button>
           </form>
         </div>
       </div>
