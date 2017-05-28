@@ -3,28 +3,28 @@
 import { createStructuredSelector } from 'reselect';
 import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
-import { State } from '../../models/pagespeed';
+import { State } from '../../models/webspeedtest';
 
 // Action Types
 
 // Define types in the form of 'npm-module-or-myapp/feature-name/ACTION_TYPE_NAME'
-const SET_TEST_ID = 'redux-app/pagespeed/SET_TEST_ID';
-const REQUEST_TEST_RESULTS = 'redux-app/pagespeed/REQUEST_TEST_RESULTS';
-const REQUEST_TEST_RESULTS_SUCCESS = 'redux-app/pagespeed/REQUEST_TEST_RESULTS_SUCCESS';
-const REQUEST_TEST_RESULTS_ERROR = 'redux-app/pagespeed/REQUEST_TEST_RESULTS_ERROR';
-const REQUEST_NEW_TEST = 'redux-app/pagespeed/REQUEST_NEW_TEST';
-const REQUEST_NEW_TEST_SUCCESS = 'redux-app/pagespeed/REQUEST_NEW_TEST_SUCCESS';
-const REQUEST_NEW_TEST_ERROR = 'redux-app/pagespeed/REQUEST_NEW_TEST_ERROR';
+const SET_TEST_ID = 'redux-app/webspeedtest/SET_TEST_ID';
+const REQUEST_TEST_RESULTS = 'redux-app/webspeedtest/REQUEST_TEST_RESULTS';
+const REQUEST_TEST_RESULTS_SUCCESS = 'redux-app/webspeedtest/REQUEST_TEST_RESULTS_SUCCESS';
+const REQUEST_TEST_RESULTS_ERROR = 'redux-app/webspeedtest/REQUEST_TEST_RESULTS_ERROR';
+const REQUEST_NEW_TEST = 'redux-app/webspeedtest/REQUEST_NEW_TEST';
+const REQUEST_NEW_TEST_SUCCESS = 'redux-app/webspeedtest/REQUEST_NEW_TEST_SUCCESS';
+const REQUEST_NEW_TEST_ERROR = 'redux-app/webspeedtest/REQUEST_NEW_TEST_ERROR';
 
 // This will be used in our root reducer and selectors
-export const NAME = 'pagespeed';
+export const NAME = 'webspeedtest';
 // Api url
 //@TODO: think about where to store the api url (config file or env)
 const API_URL = process.env.API_URL || 'http://localhost:5000'
 const TEST_RESULTS_END_POINT = API_URL + '/test';
 const NEW_TEST_END_POINT = API_URL + '/test/run';
 
-// Define the initial state for `pagespeed` module
+// Define the initial state for `webspeedtest` module
 
 const initialState: State = {
   testId: null,
@@ -194,10 +194,10 @@ const runNewTest = (url) => async(dispatch, getState) => {
 
 // Selectors
 
-const pagespeed = (state) => state[NAME];
+const webspeedtest = (state) => state[NAME];
 
 export const selector = createStructuredSelector({
-  pagespeed
+  webspeedtest
 });
 
 export const actionCreators = {

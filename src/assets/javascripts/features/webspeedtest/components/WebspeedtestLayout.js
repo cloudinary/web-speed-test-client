@@ -7,27 +7,27 @@ import ResultsList from './ResultsList/ResultsList';
 import PreFooter from './PreFooter/PreFooter';
 import Footer from './Footer/Footer';
 
-export default class PagespeedLayout extends Component {
+export default class WebspeedtestLayout extends Component {
   static propTypes = {
     actions: PropTypes.object.isRequired,
-    pagespeed: PropTypes.object.isRequired
+    webspeedtest: PropTypes.object.isRequired
   };
 
   render() {
-    const { pagespeed, actions } = this.props;
+    const { webspeedtest, actions } = this.props;
     return (
-      <div className="pagespeedApp">
+      <div className="webspeedtestApp">
         <Header />
-        {!pagespeed.testId &&
+        {!webspeedtest.testId &&
           <InputUrl onSubmit={actions.runNewTest}/>
         }
-        {pagespeed.testId && pagespeed.isFetching !== false &&
+        {webspeedtest.testId && webspeedtest.isFetching !== false &&
           <Loader />
         }
-        {pagespeed.testId && pagespeed.isFetching == false &&
+        {webspeedtest.testId && webspeedtest.isFetching == false &&
           <div className="page-wrap">
-            <ResultSumm testId={pagespeed.testId} result={pagespeed.testResult.resultSumm || {}} />
-            <ResultsList results={pagespeed.testResult.imagesTestResults || []} />
+            <ResultSumm testId={webspeedtest.testId} result={webspeedtest.testResult.resultSumm || {}} />
+            <ResultsList results={webspeedtest.testResult.imagesTestResults || []} />
           </div>
         }
         <PreFooter />
@@ -37,6 +37,6 @@ export default class PagespeedLayout extends Component {
   }
 }
 
-PagespeedLayout.contextTypes = {
+WebspeedtestLayout.contextTypes = {
   t: React.PropTypes.func.isRequired
 }
