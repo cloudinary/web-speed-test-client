@@ -145,10 +145,14 @@
     }
     .image-orig {
       width: 50%;
+      flex: 0 0 50%;
+      box-sizing: border-box;
       border-bottom: 1px solid $color-gray-border;
     }
     .image-data {
+      flex: 0 0 50%;
       width: 50%;
+      box-sizing: border-box;
     }
     .image-data-name,
     .image-compressions-title {

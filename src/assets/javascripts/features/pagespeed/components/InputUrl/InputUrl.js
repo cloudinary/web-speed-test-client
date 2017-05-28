@@ -30,7 +30,7 @@ export default class InputUrl extends Component {
           </h1>
           <p>{this.context.t('ToolDescription')}</p>
           <form onSubmit={this.submitUrl}>
-            <input type="url" name="testid" ref={(input) => this.input = input}  autoComplete={"test-url"} />
+            <input type="url" name="testid" placeholder={this.context.t('EditBoxDefaultText')} ref={(input) => this.input = input}  autoComplete={"test-url"} />
             <button type="submit">START</button>
           </form>
         </div>

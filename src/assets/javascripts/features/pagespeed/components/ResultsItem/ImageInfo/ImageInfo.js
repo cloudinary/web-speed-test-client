@@ -14,8 +14,10 @@ export default class ImageInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageUrl: false
+      imageUrl: false,
+      formatSupported: true
     };
+    this.imageError = this.imageError.bind(this);
   }
 
   componentDidMount() {
@@ -51,6 +53,13 @@ export default class ImageInfo extends Component {
         break;
     }
     return browsers;
+  }
+
+  imageError() {
+    if (this.state.formatSupported == true) {
+      this.image.element.src = this.image.state.url.replace(/\.[^\.]+$/, '.jpg');
+      this.setState({ formatSupported: false });
+    }
   }
 
   render() {
@@ -117,6 +126,9 @@ export default class ImageInfo extends Component {
 
         {original && original.hasOwnProperty("public_id") &&
           <div className="transform-image">
+            {this.state.formatSupported !== true &&
+              <div className="support">{this.context.t('{f} is not supported in your browser', {f: this.context.t(data.format)})}</div>
+            }
             <Image
               publicId={original.public_id + '.' + this.getFormat(data.format)}
               crop="lpad"
@@ -125,6 +137,7 @@ export default class ImageInfo extends Component {
               background="auto:predominant"
               crop="lpad"
               ref={(image) => { this.image = image; }}
+              onError={this.imageError}
             ></Image>
           </div>
         }
