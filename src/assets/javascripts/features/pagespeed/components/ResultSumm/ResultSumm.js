@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
+import Share from '../Share/Share';
 import numbro from 'numbro';
 
 import './ResultSumm.scss';
@@ -16,6 +17,7 @@ export default class ResultSumm extends Component {
       <div className="resultSumm">
         <div className="container">
           <h1>{this.context.t("PageTitleResults")}</h1>
+          <Share shareUrl={window.location.href} title={this.context.t("PageTitleA") + ' - ' + this.context.t('PageTitleB')}>{this.context.t('ShareResults')}</Share>
           <div className="test-url">{result.url}</div>
           <div className="test-summ">
             <div className="test-meta">

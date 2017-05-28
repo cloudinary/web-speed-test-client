@@ -9,6 +9,16 @@
     padding-bottom: 12px;
     margin-bottom: 12px;
   }
+  .share {
+    float: right;
+    .share-widget {
+      padding: 0 10px 5px;
+      margin-right: -10px;
+    }
+    .share-count {
+      display: none;
+    }
+  }
   .test-url {
     font-size: 18px;
     color: #323a45;

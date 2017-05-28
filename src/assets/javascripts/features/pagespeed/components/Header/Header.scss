@@ -21,8 +21,14 @@
     margin-left: 15px;
     margin-bottom: -3px;
   }
-  .powered-by {
+  .share {
     margin-left: auto;
+    .share-icon {
+      height: 70px;
+    }
+  }
+  .powered-by {
+    margin-left: 20px;
     font-size: 10px;
     color: #90a0b3;
     text-align: center;

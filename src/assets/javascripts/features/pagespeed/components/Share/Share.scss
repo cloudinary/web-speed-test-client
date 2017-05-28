@@ -1,0 +1,48 @@
+@import "helpers";
+
+.share {
+  position: relative;
+  .share-widget {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 0 10px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(#000, .4);
+    &:before {
+      content: '';
+      background: #fff;
+      position: absolute;
+      height: 10px;
+      left: 0;
+      right: 0;
+      top: -10px;
+    }
+  }
+  &.expanded .share-widget {
+    display: flex;
+  }
+  .share-toggle {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    min-height: 35px;
+    color: #0071ba;
+    img {
+      position: relative;
+      z-index: 4;
+      margin-right: 10px;
+    }
+  }
+  .share-item {
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+  }
+  .share-button {
+    cursor: pointer;
+  }
+}
