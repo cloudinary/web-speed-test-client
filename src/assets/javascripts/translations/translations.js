@@ -3,7 +3,7 @@
 export const translations = {
   en: {
     // Home page
-    'PageSpeedAppName': 'Website Speed Test',
+    'AppName': 'Website Speed Test',
     'PageTitleA': 'Website Speed Test',
     'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
@@ -96,6 +96,6 @@ export const translations = {
     'ico': 'ICO',
     'tiff': 'TIFF',
     'webp': 'WEBP',
-    'svg': 'SVG'      
+    'svg': 'SVG'
   }
 }

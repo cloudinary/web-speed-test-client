@@ -30,5 +30,6 @@ $screen-xs-min: ($screen-xs + 1) !default;
 // $desktop-only: "(min-width: #{$screen-lg})";
 $bp-max-md: "(max-width: #{$screen-sm-max})";
 $bp-max-sm: "(max-width: #{$screen-xs-max})";
+$bp-min-xs: "(min-width: #{$screen-xs-min})";
 $bp-min-xs-max-md: "(min-width: #{$screen-xs-min}) and (max-width: #{$screen-sm-max})";
 $bp-max-xs: "(max-width: #{$screen-xs})";
