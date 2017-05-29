@@ -32,7 +32,7 @@ export default class WebspeedtestView extends Component {
 
   render() {
     return (
-      <CloudinaryContext cloudName="pagespeed" cname="staging.cloudinary.com/res">
+      <CloudinaryContext cloudName="webspeedtest" cname="staging.cloudinary.com/res">
         <WebspeedtestLayout {...this.props} />
       </CloudinaryContext>
     );
