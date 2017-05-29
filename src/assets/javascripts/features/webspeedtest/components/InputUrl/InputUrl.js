@@ -12,6 +12,13 @@ export default class InputUrl extends Component {
     this.submitUrl = this.submitUrl.bind(this);
   }
 
+  handleBlur(e) {
+    // Add http protocol if missing.
+    if (!/^https?:\/\//i.test(e.target.value)) {
+      e.target.value = 'http://' + e.target.value;
+    }
+  }
+
   submitUrl(e) {
     e.preventDefault();
     this.props.onSubmit(this.input.value)
@@ -30,7 +37,14 @@ export default class InputUrl extends Component {
           </h1>
           <p>{this.context.t('ToolDescription')}</p>
           <form onSubmit={this.submitUrl}>
-            <input type="url" name="testid" placeholder={this.context.t('EditBoxDefaultText')} ref={(input) => this.input = input}  autoComplete={"test-url"} />
+            <input
+              type="url"
+              name="testid"
+              placeholder={this.context.t('EditBoxDefaultText')}
+              ref={(input) => this.input = input}
+              autoComplete={"test-url"}
+              onBlur={this.handleBlur}
+            />
             <button type="submit">
               {this.context.t('ButtonText')}
               <Image publicId="icon-arrow-white.svg.svg" width="21" type="asset"></Image>
