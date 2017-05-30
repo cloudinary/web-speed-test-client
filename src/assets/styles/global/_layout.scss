@@ -14,6 +14,7 @@ body {
 
 .container {
   width: 94%;
+  width: calc(100% - 34px);
   max-width: $container-width;
   margin: 0 auto;
 }

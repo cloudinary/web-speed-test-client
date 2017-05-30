@@ -18,10 +18,18 @@
     .share-count {
       display: none;
     }
+    .share-toggle span {
+      line-height: 20px;
+    }
   }
   .test-url {
     font-size: 18px;
     color: #323a45;
+    line-height: 28px;
+    max-width: calc(100% - 30px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .test-summ {
     display: flex;
@@ -219,6 +227,11 @@
   }
 
   @media #{$bp-max-xs} {
+    h1 {
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: 200;
+    }
     .test-meta-box,
     .test-totals .test-meta-box {
       flex: 1 0 100%;
@@ -256,6 +269,14 @@
     .test-screen {
       margin: 20px auto 0;
       width: auto;
+    }
+    .share .share-toggle {
+      img {
+        margin-right: 5px;
+      }
+      span {
+        display: none;
+      }
     }
   }
 
