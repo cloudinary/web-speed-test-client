@@ -120,7 +120,7 @@
     position: absolute;
     top: 20px;
     z-index: 9;
-    transition: opacity .4s;
+    transition: opacity .3s;
     img {
       vertical-align: middle;
     }
@@ -136,6 +136,12 @@
         transform: rotate(270deg);
       }
     }
+  }
+  &.carousel-1 .mobile-carousel-btn.prev {
+    opacity: .3;
+  }
+  &.carousel-3 .mobile-carousel-btn.next {
+    opacity: .3;
   }
 
   @media #{$bp-max-md} {
