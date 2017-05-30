@@ -90,7 +90,7 @@ export default class ImageInfo extends Component {
           <div className="dimensions">{image.width} x {image.height}</div>
           {isOriginal !== true &&
             <div className="percent">
-              {numbro(0.521).format('0.0%')}
+              {numbro(Math.random()).format('0.0%')}
             </div>
           }
           <div className="weight">

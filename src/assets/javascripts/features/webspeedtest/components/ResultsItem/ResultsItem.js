@@ -63,7 +63,7 @@ export default class ResultsItem extends Component {
                 <div className="image-final-percent">
                   <Image publicId="icon-compress.svg.svg" type="asset" width="35"></Image>
                   {/*ToDo*/}
-                  {numbro(0.521).format('0.0%')}
+                  {numbro(Math.random()).format('0.0%')}
                 </div>
                 <div className="image-final-pixel">
                   {result.width}x{result.height} -> {result.transformedImage.width}x{result.transformedImage.height}
