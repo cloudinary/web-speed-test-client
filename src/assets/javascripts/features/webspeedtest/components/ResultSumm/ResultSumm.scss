@@ -227,6 +227,11 @@
   }
 
   @media #{$bp-max-xs} {
+    h1 {
+      margin-top: 10px;
+      font-size: 28px;
+      font-weight: 200;
+    }
     .test-meta-box,
     .test-totals .test-meta-box {
       flex: 1 0 100%;
