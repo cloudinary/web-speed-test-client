@@ -22,10 +22,15 @@
     border-right: 1px solid $color-gray-border;
     img {
       vertical-align: top;
+      height: 100%; width: 100%;
+      object-fit: cover
     }
   }
   .image-data {
     flex: 1;
+    @media #{$bp-min-sm} {
+      max-width: calc(100% - 401px);
+    }
   }
   .image-data-header {
     position: relative;
