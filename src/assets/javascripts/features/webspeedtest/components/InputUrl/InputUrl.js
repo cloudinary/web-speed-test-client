@@ -4,23 +4,20 @@ import { Image, Transformation } from 'cloudinary-react';
 import './InputUrl.scss';
 
 export default class InputUrl extends Component {
-  static propTypes = {
-  };
 
   constructor(props) {
     super(props);
     this.submitUrl = this.submitUrl.bind(this);
   }
 
-  handleBlur(e) {
-    // Add http protocol if missing.
-    if (!/^https?:\/\//i.test(e.target.value)) {
-      e.target.value = 'http://' + e.target.value;
-    }
-  }
-
   submitUrl(e) {
     e.preventDefault();
+
+    // Add http protocol if missing.
+    if (!/^https?:\/\//i.test(this.input.value)) {
+      this.input.value = 'http://' + this.input.value;
+    }
+
     this.props.onSubmit(this.input.value)
   }
 
@@ -38,12 +35,11 @@ export default class InputUrl extends Component {
           <p>{this.context.t('ToolDescription')}</p>
           <form onSubmit={this.submitUrl}>
             <input
-              type="url"
+              type="text"
               name="testid"
               placeholder={this.context.t('EditBoxDefaultText')}
               ref={(input) => this.input = input}
               autoComplete={"test-url"}
-              onBlur={this.handleBlur}
             />
             <button type="submit">
               {this.context.t('ButtonText')}
