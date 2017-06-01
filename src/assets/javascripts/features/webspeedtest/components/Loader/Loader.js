@@ -1,33 +1,43 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 
+import wdtLoading from './wdtLoading.js';
+import './wdtLoading.css';
 import './Loader.scss';
 
 export default class Loader extends Component {
 
   componentDidMount() {
-    this.animateEllipsis();
+    wdtLoading.start({
+      speed: 15000
+    });
   }
 
   componentWillUnmount() {
-    clearInterval(this.loaderInterval);
+    wdtLoading.done();
   }
 
-  animateEllipsis() {
-    const ellipsis = this.refs.ellipsis;
-    this.loaderInterval = setInterval( function() {
-      if ( ellipsis.innerHTML.length > 3 )
-          ellipsis.innerHTML = "";
-      else
-          ellipsis.innerHTML += ".";
-    }, 500);
+  getPhrases() {
+    let phrases = [], i = 0;
+    while (this.context.t('loadingPhrase' + i) !== 'loadingPhrase' + i) {
+      phrases.push(this.context.t('loadingPhrase' + i));
+      ++i;
+    }
+    return phrases;
   }
 
   render() {
+    const phrases = this.getPhrases();
     return (
-      <div className="loader">
-        <Image publicId="scan_animation.gif.gif" type="asset"></Image>
-        <h2>{this.context.t('Loading')}<span ref="ellipsis" /></h2>
+      <div className="loader wdt-loading-screen">
+        <div className="wdt-loading-phrases">
+          <div className="wdt-loading-phrase-category" data-category="default">
+            {phrases.map((phrase, i) =>
+              <div key={i} className="wdt-loading-phrase">{phrase}</div>
+            )}
+          </div>
+        </div>
+        <p className="loader-explanation">{this.context.t('loaderExplanation')}</p>
       </div>
     )
   }

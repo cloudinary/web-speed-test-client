@@ -1,13 +1,29 @@
+@import "helpers";
+
 .loader {
-  min-height: 400px;
-  background: #EFF3F4;
+  min-height: 440px;
+  background: $color-gray-bg;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  h2 {
-    text-align: start;
-    width: 120px;
+  position: relative;
+  .wdt-loading-phrases {
+    top: 150px;
+    &:before {
+      background: linear-gradient(to bottom, rgba($color-gray-bg,1) 0%, rgba($color-gray-bg,0) 50%, rgba($color-gray-bg,1) 100%);
+    }
+  }
+  .wdt-loading-phrase {
+    white-space: nowrap;
+    &:before {
+      background: #fff;
+    }
+  }
+  .loader-explanation {
+    position: relative;
+    margin: 150px auto 0;
+    width: 80%;
+    max-width: 600px;
+    font-size: 14px;
+    color: #787878;
+
   }
 }
