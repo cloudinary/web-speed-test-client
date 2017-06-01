@@ -99,12 +99,15 @@ export const translations = {
     'svg': 'SVG',
 
     // Loader phrases
-    'loadingPhrase0': 'Getting dom together...',
-    'loadingPhrase1': 'Coffee break...',
-    'loadingPhrase2': 'Feeding the unicorns...',
-    'loadingPhrase3': 'Doing great things...',
-    'loadingPhrase4': 'Calculating stuff...',
+    // Loader configuration (time between sentences and loop yes/no) can be found in
+    // pagespeed-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
+    // wdtLoading.start
+    'loadingPhrase0': 'Ranking images\' aspects...',
+    'loadingPhrase1': 'Optimizing images...',
+    'loadingPhrase2': 'Creating recommended images...',
+    'loadingPhrase3': 'Adding explanations...',
+    'loadingPhrase4': 'Analysis may take up to 2 minutes...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.'
+    'loaderExplanation': ''
   }
 }
