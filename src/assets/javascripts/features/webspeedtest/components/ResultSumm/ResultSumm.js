@@ -147,7 +147,7 @@ export default class ResultSumm extends Component {
               </div>
             </div>
             <div className="test-screen">
-              <Image publicId={result.url} type="url2png" width="300"></Image>
+              <Image publicId={result.url} type="url2png" width="300" fetch_format="jpg"></Image>
             </div>
           </div>
         </div>
