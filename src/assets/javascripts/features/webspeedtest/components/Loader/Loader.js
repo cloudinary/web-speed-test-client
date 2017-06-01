@@ -9,7 +9,8 @@ export default class Loader extends Component {
 
   componentDidMount() {
     wdtLoading.start({
-      speed: 15000
+      speed: 15000,
+      loop: false
     });
   }
 
