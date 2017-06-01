@@ -12,7 +12,8 @@ var wdtLoading = {};
 
 wdtLoading.defaults = {
 	category: 'default',
-	speed   : 2000, // millisecond
+	speed: 2000, // millisecond
+	loop: true
 }
 
 /**
@@ -70,23 +71,27 @@ wdtLoading.spin = function () {
 		addClass(that.activePhrases[that.currentIndex], 'wdt-checked');
 		that.currentTransform = that.currentTransform - that.phraseHeight;
 
-		if (that.currentIndex+1 == that.activePhrases.length) {
-			clearInterval(this.spinInternal);
-			return;
+		if (!that.options.loop) {
+			if (that.currentIndex+1 == that.activePhrases.length) {
+				clearInterval(this.spinInternal);
+				return;
+			}
 		}
 
 		window.setTimeout(function () {
 			css(that.wdtPhraseActiveCat, {transform: 'translateY(' + that.currentTransform + 'px)'});
 		}, 500);
 
-		// if (that.currentIndex > 0) {
-		// 	var currentNone = that.activePhrases[that.currentIndex - 1];
-		// 	var currentClone = currentNone.cloneNode(true);
-		// 	removeClass(currentClone, 'wdt-checked');
-		// 	addClass(currentClone, 'wdt-cloned-phrase');
-		// 	currentClone.style.transform = '';
-		// 	that.wdtPhraseActiveCat.appendChild(currentClone);
-		// }
+		if (that.options.loop) {
+			if (that.currentIndex > 0) {
+				var currentNone = that.activePhrases[that.currentIndex - 1];
+				var currentClone = currentNone.cloneNode(true);
+				removeClass(currentClone, 'wdt-checked');
+				addClass(currentClone, 'wdt-cloned-phrase');
+				currentClone.style.transform = '';
+				that.wdtPhraseActiveCat.appendChild(currentClone);
+			}
+		}
 
 		that.currentIndex++;
 
