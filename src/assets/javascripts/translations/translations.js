@@ -96,6 +96,15 @@ export const translations = {
     'ico': 'ICO',
     'tiff': 'TIFF',
     'webp': 'WEBP',
-    'svg': 'SVG'
+    'svg': 'SVG',
+
+    // Loader phrases
+    'loadingPhrase0': 'Getting dom together...',
+    'loadingPhrase1': 'Coffee break...',
+    'loadingPhrase2': 'Feeding the unicorns...',
+    'loadingPhrase3': 'Doing great things...',
+    'loadingPhrase4': 'Calculating stuff...',
+    'loadingPhrase5': 'Almost done...',
+    'loaderExplanation': 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis.'
   }
 }

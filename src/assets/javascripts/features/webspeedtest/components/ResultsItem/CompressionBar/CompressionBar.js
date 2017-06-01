@@ -29,7 +29,7 @@ export default class CompressionBar extends Component {
   }
 
   computeCompression(size, originalSize) {
-    return 1 - (size / originalSize);
+    return size / originalSize;
   }
 
   render() {
