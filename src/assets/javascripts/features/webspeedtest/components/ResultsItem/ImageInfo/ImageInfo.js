@@ -102,7 +102,7 @@ export default class ImageInfo extends Component {
           <div className="grading">
             <div className="list">
               {Object.keys(grading).map((grade, key) => (
-                <div key={key}>
+                <div className={grade.toLowerCase()} key={key}>
                   <div className={'original-image-grading grade grade-' + grading[grade].value}>
                     {grading[grade].value}
                   </div>
