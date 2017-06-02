@@ -86,8 +86,7 @@ export default class ResultSumm extends Component {
                   </div>
                   <div className="value">
                     <Image publicId="icon-compress.svg.svg" type="asset" width="41"></Image>
-                    {/*ToDo*/}
-                    {numbro(Math.random()).format('0.0%')}
+                    {numbro(result.totalPercentChange/100).format('0.0%')}
                   </div>
                 </div>
               </div>

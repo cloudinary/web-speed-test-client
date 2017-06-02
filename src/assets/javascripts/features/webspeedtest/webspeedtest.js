@@ -141,7 +141,7 @@ const processEagerResult = results => {
     let processedResult = Object.assign({}, result);
     processedResult.dynamicFormats = [];
     processedResult.eager.forEach(transformed => {
-      if (transformed.transformation.indexOf("/") == -1) {
+      if (transformed.transformation.indexOf("f_") == -1) {
         processedResult.transformedImage = transformed;
       }
       else {

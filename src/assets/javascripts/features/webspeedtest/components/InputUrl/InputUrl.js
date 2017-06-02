@@ -39,7 +39,7 @@ export default class InputUrl extends Component {
               name="testid"
               placeholder={this.context.t('EditBoxDefaultText')}
               ref={(input) => this.input = input}
-              autoComplete={"test-url"}
+              autoComplete="true"
             />
             <button type="submit">
               {this.context.t('ButtonText')}
