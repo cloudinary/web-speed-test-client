@@ -6,6 +6,17 @@ import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
 import PreFooter from './PreFooter/PreFooter';
 import Footer from './Footer/Footer';
+import * as Pages from "views";
+
+const StaticPage = (props) => {
+  const page = props.page;
+  console.log(Pages[page]);
+  if (Pages[page]) {
+    const Page = Pages[page];
+    return <Page />
+  }
+  return <Pages.NotFound />
+}
 
 export default class WebspeedtestLayout extends Component {
   static propTypes = {
@@ -15,10 +26,15 @@ export default class WebspeedtestLayout extends Component {
 
   render() {
     const { webspeedtest, actions } = this.props;
+    const staticPage = this.props.params.page ? this.props.params.page : false;
+
     return (
       <div className="webspeedtestApp">
         <Header />
-        {!webspeedtest.testId &&
+        {staticPage &&
+          <StaticPage page={staticPage} />
+        }
+        {!staticPage && !webspeedtest.testId &&
           <InputUrl onSubmit={actions.runNewTest}/>
         }
         {webspeedtest.testId && webspeedtest.isFetching !== false &&
