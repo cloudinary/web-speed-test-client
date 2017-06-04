@@ -7,7 +7,9 @@ export default class NotFound extends Component {
       <div className="container text-center">
         <h1>404 :(</h1>
         <hr />
-        <Link to="/">Back To Home View</Link>
+        <p>
+          <Link to="/">Back To Home View</Link>
+        </p>
       </div>
     );
   }
