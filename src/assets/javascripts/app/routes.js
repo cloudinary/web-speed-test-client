@@ -3,7 +3,7 @@ import { Route, IndexRoute, Redirect } from 'react-router';
 
 import App from './App';
 import WebspeedtestView from 'features/webspeedtest/components/WebspeedtestView';
-import {NotFound} from 'views';
+import { NotFound } from 'views';
 
 export default (
   <Route path="/" component={App}>
