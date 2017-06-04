@@ -38,7 +38,9 @@ export default class Loader extends Component {
             )}
           </div>
         </div>
-        <p className="loader-explanation">{this.context.t('loaderExplanation')}</p>
+        {this.context.t('loaderExplanation') !== 'loaderExplanation' &&
+          <p className="loader-explanation">{this.context.t('loaderExplanation')}</p>
+        }
       </div>
     )
   }
