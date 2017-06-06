@@ -42,15 +42,13 @@ export default class ResultSumm extends Component {
                   {this.context.t("OriginalImages")}
                 </div>
                 <div className="original-images-weight">
-                  {/*ToDo*/}
-                  {numbro(1231231231).format('0.0d')}
+                  {numbro(result.totalImagesWeight).format('0.0d')}
                 </div>
                 <div className="original-images-indicator"></div>
-                <div className="trans-images">
-                  <div className="trans-images-indicator" style={{'width': '80px'}}></div>
+                <div className="trans-images" style={{'width': result.totalPercentChange + '%'}}>
+                  <div className="trans-images-indicator"></div>
                   <div className="trans-images-weight">
-                    {/*ToDo*/}
-                    {numbro(31231231).format('0.0d')}
+                    {numbro(result.totalImagesWeight * result.totalPercentChange / 100).format('0.0d')}
                   </div>
                 </div>
                 <div className="trans-images-label">
