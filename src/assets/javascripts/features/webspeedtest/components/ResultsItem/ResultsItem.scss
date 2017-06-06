@@ -2,14 +2,13 @@
 
 .resultsItem {
   background: #E4EAEE;
-  box-shadow: 0 0 6px rgba(#000, .3);
+  box-shadow: 0 0 6px rgba(#000, .2);
   margin: 25px 0;
   .image-intro {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid #8596AA;
     position: relative;
-    overflow: hidden;
   }
   .image-orig {
     display: flex;
@@ -40,7 +39,17 @@
   .image-data-header {
     position: relative;
     background: #fff;
-    box-shadow: 0 0 6px rgba(#000, .4);
+    &:after {
+      content: '';
+      position: absolute;
+      height: 5px;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: linear-gradient(rgba(#000, .15), rgba(#000, .05) 50%, transparent 80%);
+    // box-shadow: 0 0 6px rgba(#000, .4);
+
+    }
   }
   .image-data-grading {
     position: absolute;
