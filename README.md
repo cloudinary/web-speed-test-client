@@ -21,7 +21,7 @@ $ yarn install                  # Install project dependencies listed in package
 **Step 3**. Compile and launch your app by running:
 
 ```shell
-$ yarn start                    # Compiles the app and opens it in a browser with "live reload"
+$ CLOUDINARY_CLOUD_NAME='demo' yarn start      # Compiles the app and opens a browser with "live reload"
 ```
 
 ## Build
