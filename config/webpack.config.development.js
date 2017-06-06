@@ -6,7 +6,10 @@ const path = require('path');
 
 const GLOBALS = {
   'process.env': {
-    'NODE_ENV': JSON.stringify('development')
+    'NODE_ENV': JSON.stringify('development'),
+    'API_URL':  JSON.stringify(process.env.API_URL),
+    'CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
+    'CLOUDINARY_CNAME': JSON.stringify(process.env.CLOUDINARY_CNAME)
   },
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'true'))
 };
