@@ -28,6 +28,9 @@ export default class WebspeedtestView extends Component {
         query: { testid: nextProps.webspeedtest.testId }
       });
     }
+    if (webspeedtest.isFetching && nextProps.webspeedtest.isFetching == false) {
+      window.scrollTo(0, 0);
+    }
   }
 
   render() {
