@@ -134,7 +134,7 @@ export default class ImageInfo extends Component {
               crop="lpad"
               height="300"
               width="400"
-              background="auto:predominant"
+              background="auto"
               crop="lpad"
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
