@@ -13,8 +13,8 @@ This is the client app for Cloudinary image analysis tool.
 **Step 2**. Clone this repository
 
 ```shell
-$ git clone git@github.com:CloudinaryLtd/pagespeed.git pagespeed
-$ cd pagespeed
+$ git clone git@github.com:CloudinaryLtd/pagespeed-client.git
+$ cd pagespeed-client
 $ yarn install                  # Install project dependencies listed in package.json
 ```
 
@@ -27,8 +27,8 @@ $ yarn start                    # Compiles the app and opens it in a browser wit
 ## Build
 
 ```shell
-$ yarn run build                # Compiles the app for production
-$ yarn run build:serve          # boot up HTTP server on `3003` port and serve `build/client`
+$ CLOUDINARY_CLOUD_NAME='demo' yarn run build  # Compiles the app for production
+$ yarn run build:serve                         # boot up HTTP server on `3003` port and serve `build/client`
 ```
 
 ## Testing

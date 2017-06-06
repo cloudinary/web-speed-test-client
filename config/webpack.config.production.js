@@ -8,7 +8,9 @@ const config = require('./webpack.config.base');
 const GLOBALS = {
   'process.env': {
     'NODE_ENV': JSON.stringify('production'),
-    'API_URL':  JSON.stringify(process.env.API_URL)
+    'API_URL':  JSON.stringify(process.env.API_URL),
+    'CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
+    'CLOUDINARY_CNAME': JSON.stringify(process.env.CLOUDINARY_CNAME)
   },
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 };
