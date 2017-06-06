@@ -20,7 +20,7 @@ const REQUEST_NEW_TEST_ERROR = 'redux-app/webspeedtest/REQUEST_NEW_TEST_ERROR';
 export const NAME = 'webspeedtest';
 // Api url
 //@TODO: think about where to store the api url (config file or env)
-const API_URL = process.env.API_URL || 'http://localhost:5000'
+const API_URL = process.env.API_URL || 'http://localhost:5000';
 const TEST_RESULTS_END_POINT = API_URL + '/test';
 const NEW_TEST_END_POINT = API_URL + '/test/run';
 

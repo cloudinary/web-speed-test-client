@@ -97,6 +97,8 @@ export const translations = {
     'tiff': 'TIFF',
     'webp': 'WEBP',
     'svg': 'SVG',
+    'wdp': 'JPEG-XR',
+    'hdp': 'JPEG-XR',      
 
     // Loader phrases
     // Loader configuration (time between sentences and loop yes/no) can be found in
@@ -108,6 +110,6 @@ export const translations = {
     'loadingPhrase3': 'Adding explanations...',
     'loadingPhrase4': 'Analysis may take up to 2 minutes...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': ''
+    'loaderExplanation': ' '
   }
 }
