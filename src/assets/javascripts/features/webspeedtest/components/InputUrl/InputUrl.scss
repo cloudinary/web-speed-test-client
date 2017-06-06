@@ -3,7 +3,7 @@
 .inputUrl {
   background: #EFF3F4;
   padding-top: 120px;
-  padding-bottom: 160px;
+  padding-bottom: 140px;
   .container {
     display: flex;
     text-align: center;
@@ -77,6 +77,16 @@
       border-left: 0;
     }
   }
+  .integrated {
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    color: #777;
+    img {
+      vertical-align: text-bottom;
+      margin-left: 6px;
+    }
+  }
 
   @media #{$bp-max-md} {
     padding-top: 80px;
@@ -92,7 +102,7 @@
     }
     form {
       display: block;
-      order: 3;
+      order: 2;
       margin: 0 0 30px;
       max-width: 400px;
     }
@@ -104,6 +114,9 @@
       border-radius: 8px;
     }
     p {
+      order: 3;
+    }
+    .integrated {
       order: 4;
     }
   }
