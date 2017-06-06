@@ -45,7 +45,7 @@ export default class ResultsItem extends Component {
       <div className={resultCls}>
         <div className="image-intro">
           <div className="image-orig">
-            <Image publicId={result.public_id} height="300" width="400" background="auto" crop="pad"></Image>
+            <Image publicId={result.public_id} height="300" width="400" background="auto" crop="lpad"></Image>
           </div>
           <div className="image-data">
             <div className="image-data-header">
@@ -69,7 +69,6 @@ export default class ResultsItem extends Component {
               <div className="image-final">
                 <div className="image-final-percent">
                   <Image publicId="icon-compress.svg.svg" type="asset" width="35"></Image>
-                  {/*ToDo*/}
                   {numbro(this.getBestReduction(transformations)).format('0.0%')}
                 </div>
                 <div className="image-final-pixel">
