@@ -75,7 +75,7 @@ export const translations = {
     'CollapseButton': 'Close',
     'BestImageText': 'Smallest Image',
     'ExpandedTabOriginal': 'Current',
-    'ExpandedTabSameFormat': ''Recommended Image',
+    'ExpandedTabSameFormat': 'Recommended Image',
     'ExpandedTabOtherFormats': 'Dynamic Format Selection',
     'ImageProperty_aggregated': 'Aggregated',
     'ImageProperty_format': 'Format',
@@ -98,7 +98,7 @@ export const translations = {
     'webp': 'WEBP',
     'svg': 'SVG',
     'wdp': 'JPEG-XR',
-    'hdp': 'JPEG-XR',      
+    'hdp': 'JPEG-XR',
 
     // Loader phrases
     // Loader configuration (time between sentences and loop yes/no) can be found in
