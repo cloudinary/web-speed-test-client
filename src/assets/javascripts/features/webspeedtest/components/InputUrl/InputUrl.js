@@ -46,6 +46,12 @@ export default class InputUrl extends Component {
               <Image publicId="icon-arrow-white.svg.svg" width="21" type="asset"></Image>
             </button>
           </form>
+          <div className="integrated">
+            {this.context.t("IntegratedWith")}
+            <a href={'https://www.webpagetest.org/result/' + this.props.testId} target="_blank" className="icon">
+              <Image publicId="icon-wpt.png.png" type="asset"></Image>
+            </a>
+          </div>
         </div>
       </div>
     );

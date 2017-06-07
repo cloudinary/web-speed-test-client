@@ -98,6 +98,7 @@
   .transform-image {
     text-align: center;
     position: relative;
+    @include checkered;
   }
   .support {
     color: $color-grade-e;
@@ -115,6 +116,9 @@
     font-size: 14px;
     color: #616161;
     font-weight: 300;
+    p {
+      margin: .5em 0;
+    }
   }
 }
 .original .explanation {

@@ -65,6 +65,7 @@
     display: flex;
     padding: 0;
     margin: 0;
+    min-height: 33px;
   }
   .react-tabs__tab {
     @extend .tab;
@@ -84,6 +85,7 @@
     background: #fff;
     flex: 1;
     margin-bottom: 10px;
+    overflow: auto;
   }
 
   .image-info-expand {
