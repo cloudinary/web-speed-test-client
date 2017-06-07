@@ -24,7 +24,7 @@ export default class ImageInfo extends Component {
     if (this.image) {
       this.setState({
         // Get image URL without transforms.
-        imageUrl: this.image.state.url.replace(/upload\/.*\//, 'upload\/')
+        imageUrl: this.image.state.url.replace(/upload\/.*\//, 'upload\/q_auto\/')
       });
     }
   }
@@ -135,6 +135,7 @@ export default class ImageInfo extends Component {
               height="300"
               width="400"
               background="auto"
+              quality="auto"
               crop="lpad"
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
