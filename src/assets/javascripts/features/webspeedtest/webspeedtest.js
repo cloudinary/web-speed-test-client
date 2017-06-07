@@ -102,23 +102,23 @@ const requestTestError = (msg: string) => ({
 
 
 const fetchTestData = async(testId, retryNum = 0) => {
+  const totalRetries = 10;
   try {
-    const totalRetries = 10;
     console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
-    return data;
+    if (data.status == "success") {
+      return data;
+    }
   } catch (err) {
     if (retryNum < totalRetries) {
-      console.group("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
+      console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
       console.log(err);
-      console.groupEnd();
       return fetchTestData(testId, retryNum + 1)
     }
     else {
-      console.group("Got server error");
+      console.log("Got server error");
       console.log(err);
-      console.groupEnd();
       throw err;
     }
   }
