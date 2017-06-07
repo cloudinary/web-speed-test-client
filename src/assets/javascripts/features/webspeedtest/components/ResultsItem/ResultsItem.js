@@ -72,7 +72,7 @@ export default class ResultsItem extends Component {
                   {numbro(this.getBestReduction(transformations)).format('0.0%')}
                 </div>
                 <div className="image-final-pixel">
-                  {result.width}x{result.height} -> {result.transformedImage.width}x{result.transformedImage.height}
+                  {result.width}x{result.height} -> {result.transformedImage.analyze.data.width}x{result.transformedImage.analyze.data.height}
                 </div>
                 <button onClick={this.toggleImageInfo} className="toggle-btn toggle-show">
                   <Image publicId="icon-expand.svg.svg" type="asset" width="12"></Image>
