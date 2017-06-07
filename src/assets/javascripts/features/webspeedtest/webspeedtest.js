@@ -111,18 +111,25 @@ const fetchTestData = async(testId, retryNum = 0) => {
 
     // This should return a promise.
     // resolve only if:
-    // if (data.status === 'success' && data.code !== 150) {
-    //   SUCCESS
-    // }
-    // else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
-    //   retryNum++;
-    //   KEEP TRYING
-    // }
-    // else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
-    //   STOP TRYING
-    // }
+    if (data.status === 'success' && data.code !== 150) {
+      // SUCCESS
+      debugger;
+      return data;
+    }
+    else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
+      // KEEP TRYING
+      debugger;
+      retryNum++;
+      setTimeout(() => {
+        fetchTestData(testId, retryNum)
+      }, delay);
+    }
+    else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
+      // STOP TRYING
+      debugger;
+      return data;
+    }
 
-    return data;
 
   } catch (err) {
     // if (retryNum < totalRetries) {
@@ -183,7 +190,6 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
 
       const result = await fetchTestData(testId);
       if (result.status == 'success') {
-
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
