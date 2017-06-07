@@ -102,25 +102,39 @@ const requestTestError = (msg: string) => ({
 
 
 const fetchTestData = async(testId, retryNum = 0) => {
-  const totalRetries = 10;
+  const totalRetries = 60;
+  const delay = 10000;
   try {
     console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
-    if (data.status == "success") {
-      return data;
-    }
+
+    // This should return a promise.
+    // resolve only if:
+    // if (data.status === 'success' && data.code !== 150) {
+    //   SUCCESS
+    // }
+    // else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
+    //   retryNum++;
+    //   KEEP TRYING
+    // }
+    // else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
+    //   STOP TRYING
+    // }
+
+    return data;
+
   } catch (err) {
-    if (retryNum < totalRetries) {
-      console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
-      console.log(err);
-      return fetchTestData(testId, retryNum + 1)
-    }
-    else {
+    // if (retryNum < totalRetries) {
+    //   console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
+    //   console.log(err);
+    //   return fetchTestData(testId, retryNum + 1)
+    // }
+    // else {
       console.log("Got server error");
       console.log(err);
       throw err;
-    }
+    // }
   }
 }
 
@@ -164,7 +178,7 @@ const processEagerResult = results => {
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
   if (testId && !getState().isFetching && !getState().hasResults) {
-    try {
+    // try {
       dispatch(requestTestResults(testId));
 
       const result = await fetchTestData(testId);
@@ -175,9 +189,9 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
       else {
         dispatch(requestTestError(result.message));
       }
-    } catch (err) {
-      dispatch(requestTestError(err));
-    }
+    // } catch (err) {
+    //   dispatch(requestTestError(err));
+    // }
   }
 }
 
