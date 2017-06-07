@@ -87,7 +87,7 @@ export default class ImageInfo extends Component {
         </div>
 
         <div className="image-info-bar">
-          <div className="dimensions">{data.width} x {data.height}</div>
+          <div className="dimensions">{image.width} x {image.height}</div>
           {isOriginal !== true &&
             <div className="percent">
               {numbro(image.percentChange / 100).format('0.0%')}
