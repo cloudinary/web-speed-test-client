@@ -5,20 +5,16 @@ export default class Tos extends Component {
   render() {
     return (
       <div className="static-page container">
-        <h1>{this.context.t('Cloudinary Website Speed Test Image Analysis Tool - Terms of Service')}</h1>
-        <hr />
-			<p class="c0">
-				<a name="h.gjdgxs"></a>
-				<span class="c2">Welcome to Cloudinary&#39;s Website Speed Test Image Analysis Tool, (the &ldquo;</span>
-				<span class="c5 c2">Service</span>
-				<span class="c2">&rdquo;). The Service is owned and Operated by Cloudinary Ltd. (&quot;</span>
-				<span class="c5 c2">Cloudinary</span>
-				<span class="c2">&quot;) </span>
-			</p>
-			<p class="c0">
-				<span class="c2">PLEASE READ CAREFULLY THE FOLLOWING TERMS AND CONDITIONS (THE &quot;</span>
-				<span class="c5 c2">TERMS</span>
-				<span class="c2">&quot;), BECAUSE THEY CONSTITUTE A BINDING AGREEMENT BETWEEN YOU AND CLOUDINARY. BY ACCESSING OR USING THE SERVICE YOU SIGNIFY YOUR ACCEPTANCE OF THESE TERMS. </span>
+        <h1>{this.context.t('Cloudinary Website Speed Test Image Analysis Tool')}</h1>
+        <h1>{this.context.t('Terms of Service')}</h1>
+
+        Welcome to Cloudinary&#39;s Website Speed Test Image Analysis Tool, (the &ldquo;<b>Service</b>&rdquo;). 
+        The Service is owned and Operated by Cloudinary Ltd. (&quot;<b>Cloudinary</b>&quot;)
+                                                              
+        <b>PLEASE READ CAREFULLY THE FOLLOWING TERMS AND CONDITIONS (THE &quot;<b>TERMS</b>&quot;), 
+        BECAUSE THEY CONSTITUTE A BINDING AGREEMENT BETWEEN YOU AND CLOUDINARY. BY ACCESSING OR USING THE SERVICE 
+        YOU SIGNIFY YOUR ACCEPTANCE OF THESE TERMS. </b>
+                                                              
 			</p>
 			<h2 class="c7">
 				<span>Cloudinary may change the Terms to meet technical, operational and legal changes. Cloudinary may also modify or enhance the Service, and may offer additional tools and features, free-of-charge or subject to fees. </span>
