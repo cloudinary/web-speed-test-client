@@ -58,7 +58,7 @@ export const translations = {
     'AverageGradeE': 'Poor',
     'AverageGradeF': 'Very Poor',
     'TotalImagesNumber': 'Total Images Analyzed',
-    'TotalImagesWeight': 'Total Image Weight Compressed',
+    'TotalImagesWeight': 'Total Image Weight',
     'PotentialCompressionPercentage': 'Potential Compressed Weight',
     'PotentialCompressionPercentageMoreInfo': 'The potential compression percentage is calculated only for the analyzed images',
     'TotalImagesNumber_TooMany_A': 'Only the first', // Only first X images were analyzed
