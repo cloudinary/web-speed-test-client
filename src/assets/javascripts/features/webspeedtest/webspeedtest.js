@@ -100,27 +100,41 @@ const requestTestError = (msg: string) => ({
   msg
 });
 
+const wait = (duration) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, duration)
+  });
+};
 
 const fetchTestData = async(testId, retryNum = 0) => {
-  const totalRetries = 10;
+  const totalRetries = 60;
+  const delay = 10000;
   try {
     console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
-    if (data.status == "success") {
+
+    if (data.status === 'success' && data.code !== 150) {
+      // SUCCESS
+      console.log("Got test data:", data);
       return data;
     }
+    else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
+      // KEEP TRYING
+      console.log("Test not ready yet. re-trying [" + retryNum + '/' + totalRetries + "]");
+      retryNum++;
+      return wait(delay).then(() => {return fetchTestData(testId, retryNum)});
+    }
+    else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
+      // STOP TRYING
+      console.log("Tried " + retryNum + " times. Stopping.");
+      data.status = 'timeout';
+      return data;
+    }
+
   } catch (err) {
-    if (retryNum < totalRetries) {
-      console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
-      console.log(err);
-      return fetchTestData(testId, retryNum + 1)
-    }
-    else {
-      console.log("Got server error");
-      console.log(err);
-      throw err;
-    }
+    console.log("Got server error", err);
+    throw err;
   }
 }
 
@@ -169,12 +183,12 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
 
       const result = await fetchTestData(testId);
       if (result.status == 'success') {
-
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
         dispatch(requestTestError(result.message));
       }
+
     } catch (err) {
       dispatch(requestTestError(err));
     }
