@@ -85,7 +85,7 @@ export default class Tos extends Component {
 				<span class="c2">&nbsp;Cloudinary will make efforts to address your inquiry promptly.</span>
 			</p>
 			<p class="c0 c8">
-				<span class="c2">Updated: January 1, 2016.</span>
+				<span class="c2">Updated: Jun 8, 2017.</span>
 			</p>
 			<p class="c0 c8 c10">
 				<span></span>
