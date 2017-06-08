@@ -1,5 +1,3 @@
-
-
 export const translations = {
   en: {
     // Home page
@@ -14,10 +12,10 @@ export const translations = {
     'EditBoxDefaultText': 'Enter URL',
     'EditBoxError': 'Invalid URL',
     'ButtonText': 'ANALYZE',
-
+ 
     // Page Footer
     'FooterTitle': 'Optimize Every Image with Cloudinary',
-    'FooterText': 'Cloudinary is the image back-end for web and mobile developers. An end-to-end solution for all your image-related needs. The following sample URL shows how simple it is to deliver an optimized image to your users, with on-the-fly transformations included as a component of the URL:',
+    'FooterText': 'Cloudinary is the image back-end for web and mobile developers; an end-to-end solution for all your image-related needs. The following sample URL shows how simple it is to deliver an optimized image to your users, with on-the-fly transformations included as a component of the URL:',
     'FooterOriginalTitle': 'Original',
     'FooterCompressedTitle': 'Dynamic Format',
     'FooterOriginalImageFormat': 'JPG',
@@ -39,24 +37,24 @@ export const translations = {
     'FacebookURL': 'https://www.facebook.com/Cloudinary',
     'GooglePlusURL': 'https://plus.google.com/+Cloudinary',
     'TwitterURL': 'https://twitter.com/cloudinary',
-
+ 
     /* Results page
     **********************/
-
+ 
     // Page header
     'PageTitleResults': 'Image Analysis Results',
     'ShareResults': 'Share Results',
     'PageImageScoreTitle': 'Page Image Score',
     'ImageWeightComparisonTitle': 'Image Weight Comparison',
-    'OriginalImages': 'Current Images',
-    'PotentialCompression': 'Potential After Smart Compression',
+    'OriginalImages': Current Images',
+    'PotentialCompression': 'Potential after Smart Compression',
     'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyzed images',
     'AverageGradeA': 'Excellent',
     'AverageGradeB': 'Good',
-    'AverageGradeC': 'Mediocre',
+      'AverageGradeC': 'Mediocre',
     'AverageGradeD': 'Poor',
-    'AverageGradeE': 'Poor',
-    'AverageGradeF': 'Very Poor',
+   'AverageGradeE': 'Poor',
+    'AverageGradeF': 'Very poor',
     'TotalImagesNumber': 'Total Images Analyzed',
     'TotalImagesWeight': 'Total Image Weight',
     'PotentialCompressionPercentage': 'Potential Compressed Weight',
@@ -68,14 +66,14 @@ export const translations = {
     'Tested_Viewport': 'Viewport size',
     'Tested_DeviceDPI': 'Device DPI',
     'IntegratedWith': 'Integrated with',
-
+ 
     // Page body (collapse and expanded)
     'CollapsedPotentialCompressionTitle': 'Potential Smart Compression',
     'ExpandButton': 'See More',
     'CollapseButton': 'Close',
     'BestImageText': 'Smallest Image',
     'ExpandedTabOriginal': 'Current',
-    'ExpandedTabSameFormat': 'Optimized Image',
+    'ExpandedTabSameFormat': Optimized Image',
     'ExpandedTabOtherFormats': 'Format Alternatives',
     'ImageProperty_aggregated': 'Aggregated',
     'ImageProperty_format': 'Format',
@@ -86,7 +84,7 @@ export const translations = {
     'ImageProperty_metadata': 'Metadata',
     'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average',
-
+ 
     // Image type display name transforms
     'jpg': 'JPEG',
     'jxr': 'JPEG-XR',
@@ -98,8 +96,8 @@ export const translations = {
     'webp': 'WEBP',
     'svg': 'SVG',
     'wdp': 'JPEG-XR',
-    'hdp': 'JPEG-XR',
-
+    'hdp': 'JPEG-XR',      
+ 
     // Loader phrases
     // Loader configuration (time between sentences and loop yes/no) can be found in
     // pagespeed-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
@@ -110,6 +108,6 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take several minutes'
+    'loaderExplanation': 'Analysis may take several minutes’
   }
 }
