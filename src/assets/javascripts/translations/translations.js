@@ -50,13 +50,13 @@ export const translations = {
     'ImageWeightComparisonTitle': 'Image Weight Comparison',
     'OriginalImages': 'Current Images',
     'PotentialCompression': 'Potential After Smart Compression',
-    'PotentialCompressionMoreInfo': 'Potential compression is calculated only for analyzed images',
-    'AverageGradeA': 'Excellent!',
-    'AverageGradeB': 'Pretty good',
-    'AverageGradeC': 'Room for some improvement',
-    'AverageGradeD': 'Could be much better',
-    'AverageGradeE': 'Needs attention',
-    'AverageGradeF': 'Urgent attention required!',
+    'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyzed images',
+    'AverageGradeA': 'Excellent',
+    'AverageGradeB': 'Good',
+    'AverageGradeC': 'Mediocre',
+    'AverageGradeD': 'Poor',
+    'AverageGradeE': 'Poor',
+    'AverageGradeF': 'Very Poor',
     'TotalImagesNumber': 'Total Images Analyzed',
     'TotalImagesWeight': 'Total Image Weight Compressed',
     'PotentialCompressionPercentage': 'Potential Compressed Weight',
@@ -75,8 +75,8 @@ export const translations = {
     'CollapseButton': 'Close',
     'BestImageText': 'Smallest Image',
     'ExpandedTabOriginal': 'Current',
-    'ExpandedTabSameFormat': 'Recommended Image',
-    'ExpandedTabOtherFormats': 'Dynamic Format Selection',
+    'ExpandedTabSameFormat': 'Optimized Image',
+    'ExpandedTabOtherFormats': 'Format Alternatives',
     'ImageProperty_aggregated': 'Aggregated',
     'ImageProperty_format': 'Format',
     'ImageProperty_fit': 'Fit',
@@ -104,12 +104,12 @@ export const translations = {
     // Loader configuration (time between sentences and loop yes/no) can be found in
     // pagespeed-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
     // wdtLoading.start
-    'loadingPhrase0': 'Ranking images\' aspects...',
-    'loadingPhrase1': 'Optimizing images...',
-    'loadingPhrase2': 'Creating recommended images...',
-    'loadingPhrase3': 'Adding explanations...',
-    'loadingPhrase4': 'Analysis may take up to 2 minutes...',
+    'loadingPhrase0': 'Analyzing images...',
+    'loadingPhrase1': 'Ranking optimization potential...',
+    'loadingPhrase2': 'Optimizing images...',
+    'loadingPhrase3': 'Creating recommended images...',
+    'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': ' '
+    'loaderExplanation': 'Analysis may take up to 2 minutes'
   }
 }
