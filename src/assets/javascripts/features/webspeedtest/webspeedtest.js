@@ -192,11 +192,12 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
       dispatch(requestTestResults(testId));
 
       const result = await fetchTestData(testId);
-      debugger;
-      if (result.status === 'success') {
+      if (result.status == 'success') {
+        debugger;
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
+        debugger;
         dispatch(requestTestError(result.message));
       }
     // } catch (err) {
