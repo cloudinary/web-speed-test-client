@@ -110,6 +110,6 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take up to 2 minutes'
+    'loaderExplanation': 'Analysis may take several minutes'
   }
 }
