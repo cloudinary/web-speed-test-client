@@ -33,13 +33,13 @@ export default class InputUrl extends Component {
             <span> {this.context.t('PageTitleB')}</span>
           </h1>
           <p>{this.context.t('ToolDescription')}</p>
-          <form onSubmit={this.submitUrl}>
+          <form onSubmit={this.submitUrl} autoComplete="on">
             <input
               type="text"
               name="testid"
               placeholder={this.context.t('EditBoxDefaultText')}
               ref={(input) => this.input = input}
-              autoComplete="true"
+              autoComplete="on"
             />
             <button type="submit">
               {this.context.t('ButtonText')}
@@ -48,7 +48,7 @@ export default class InputUrl extends Component {
           </form>
           <div className="integrated">
             {this.context.t("IntegratedWith")}
-            <a href={'https://www.webpagetest.org/result/' + this.props.testId} target="_blank" className="icon">
+            <a href="https://www.webpagetest.org/" target="_blank" className="icon">
               <Image publicId="icon-wpt.png.png" type="asset"></Image>
             </a>
           </div>
