@@ -8,7 +8,6 @@ export default class Tos extends Component {
         <h1>{this.context.t('Cloudinary Website Speed Test Image Analysis Tool')}</h1>
         <h1>{this.context.t('Terms of Service')}</h1>
 				<p>
-
 					Welcome to Cloudinary&#39;s Website Speed Test Image Analysis Tool, (the &ldquo;<b>Service</b>&rdquo;).
 					The Service is owned and Operated by Cloudinary Ltd. (&quot;<b>Cloudinary</b>&quot;)</p>
 
@@ -16,43 +15,42 @@ export default class Tos extends Component {
 					BECAUSE THEY CONSTITUTE A BINDING AGREEMENT BETWEEN YOU AND CLOUDINARY. BY ACCESSING OR USING THE SERVICE
 					YOU SIGNIFY YOUR ACCEPTANCE OF THESE TERMS. </p>
 
-				</p>
 			<p>
-            <b>Cloudinary may change the Terms to meet technical, operational and legal changes. Cloudinary may also modify or 
+            <b>Cloudinary may change the Terms to meet technical, operational and legal changes. Cloudinary may also modify or
                enhance the Service, and may offer additional tools and features, free-of-charge or subject to fees. </b>
             </p>
-                                                                          
+
 			<p>
             <b>Grant of Right</b>
             </p>
-            <p>                                                              
-			Subject to these Terms Cloudinary grants you a worldwide, limited, non-exclusive, revocable, non-transferable, 
-            non-sublicensable right to use the Service. Except as explicitly provided in these Terms, you may not use the Service for any other purpose.                                                                          
+            <p>
+			Subject to these Terms Cloudinary grants you a worldwide, limited, non-exclusive, revocable, non-transferable,
+            non-sublicensable right to use the Service. Except as explicitly provided in these Terms, you may not use the Service for any other purpose.
 			</p>
-			<p>Cloudinary may prohibit you from accessing the Service, remove your content and take technical and legal measures 
-                to keep you off the Service, if Cloudinary that you: (i) abused your rights to use the Service; (ii) breached 
-                the Terms; (iii) violated any applicable law, rule, or regulation; (iv) performed any act or omission which is 
-                harmful or likely to be harmful to us, or any other third party, including other users or providers of the 
+			<p>Cloudinary may prohibit you from accessing the Service, remove your content and take technical and legal measures
+                to keep you off the Service, if Cloudinary that you: (i) abused your rights to use the Service; (ii) breached
+                the Terms; (iii) violated any applicable law, rule, or regulation; (iv) performed any act or omission which is
+                harmful or likely to be harmful to us, or any other third party, including other users or providers of the
                 Service;
 			</p>
-			
+
 			<p>
             <b>Acceptable Use of the Service</b>
             </p>
-            <p>               
-               When using the Service, you will abide by the applicable laws, rules and regulations, and by any usage 
+            <p>
+               When using the Service, you will abide by the applicable laws, rules and regulations, and by any usage
                guidelines Cloudinary may convey to you from time to time.
 			</p>
-			<p>You may not access or use the Service for any illegal or abusive purposes, or to develop or create a 
-            similar or competitive product or service to the Service. You will be responsible for all acts and omissions 
+			<p>You may not access or use the Service for any illegal or abusive purposes, or to develop or create a
+            similar or competitive product or service to the Service. You will be responsible for all acts and omissions
             associated with your access and use of the Service and the access and use of the Service.
 			</p>
-			<p>You may upload and edit content (&quot;<b>Contributed Content</b>&quot;), subject to any content upload 
-            technical and safety guidelines and limitations which will be conveyed to you by Cloudinary and amended 
+			<p>You may upload and edit content (&quot;<b>Contributed Content</b>&quot;), subject to any content upload
+            technical and safety guidelines and limitations which will be conveyed to you by Cloudinary and amended
                from time to time.
 			</p>
-                                                
-                                                
+
+
 			<p className="c0">
 				<span className="c2">Cloudinary may remove and report any Contributed Content and share user identifiable information, if Cloudinary believes that such content is illegal or abusive or may violate any third party rights. </span>
 			</p>
