@@ -10,7 +10,7 @@ export const translations = {
     'LearnMoreURL': 'http://cloudinary.com/features/image_manipulation',
     'PoweredByText': 'Powered By',
     'CloudinaryLogoURL': 'http://cloudinary.com',
-    'ToolDescription': 'Every image is unique and every one of your website visitors is different. In a perfect world, we would like to adapt each image individually to be "just right" for every user, by being perfectly cropped, with correct encoding settings and optimal quality with the best image format.',
+    'ToolDescription': 'Web page load time is a major factor in user retention, with images taking up the largest percentage of most websites\' footprint. The  Image Analysis Tool provides measurable and actionable information about how to go beyond simple compression to optimize web performance. Discover how changes to image size, format selection, quality and encoding parameters can drastically improve page load speed.',
     'EditBoxDefaultText': 'Enter URL',
     'EditBoxError': 'Invalid URL',
     'ButtonText': 'ANALYZE',
