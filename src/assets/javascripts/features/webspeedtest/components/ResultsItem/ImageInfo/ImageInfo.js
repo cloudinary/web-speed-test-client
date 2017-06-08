@@ -21,10 +21,10 @@ export default class ImageInfo extends Component {
   }
 
   componentDidMount() {
-    if (this.image) {
+    if (this.imageSrc) {
       this.setState({
         // Get image URL without transforms.
-        imageUrl: this.image.state.url.replace(/upload\/.*\//, 'upload\/q_auto\/')
+        imageUrl: this.imageSrc.state.url
       });
     }
   }
@@ -57,7 +57,7 @@ export default class ImageInfo extends Component {
 
   imageError() {
     if (this.state.formatSupported == true) {
-      this.image.element.src = this.image.state.url.replace(/\.[^\.]+$/, '.jpg');
+      this.image.element.src = this.image.state.url.replace('f_' + this.image.props.fetchFormat, 'f_auto');
       this.setState({ formatSupported: false });
     }
   }
@@ -69,6 +69,8 @@ export default class ImageInfo extends Component {
       isOriginal,
       image: { analyze: { data, explanation, grading } }
     } = this.props;
+
+    const format = image.transformation && image.transformation.includes('f_') ? this.getFormat(data.format) : 'auto';
 
     return (
       <div className="imageInfo">
@@ -130,7 +132,8 @@ export default class ImageInfo extends Component {
               <div className="support">{this.context.t('{f} is not supported in your browser', {f: this.context.t(data.format)})}</div>
             }
             <Image
-              publicId={original.public_id + '.' + this.getFormat(data.format)}
+              publicId={original.public_id}
+              fetchFormat={format}
               crop="lpad"
               height="300"
               width="400"
@@ -139,6 +142,13 @@ export default class ImageInfo extends Component {
               crop="lpad"
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
+            ></Image>
+            <Image
+              style={{'display': 'none'}}
+              publicId={original.public_id}
+              fetchFormat={format}
+              quality="auto"
+              ref={(image) => { this.imageSrc = image; }}
             ></Image>
           </div>
         }
