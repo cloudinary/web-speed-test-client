@@ -100,6 +100,11 @@ const requestTestError = (msg: string) => ({
   msg
 });
 
+const wait = (duration) => {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, duration)
+    });
+};
 
 const fetchTestData = async(testId, retryNum = 0) => {
   const totalRetries = 60;
@@ -120,9 +125,7 @@ const fetchTestData = async(testId, retryNum = 0) => {
       // KEEP TRYING
       debugger;
       retryNum++;
-      setTimeout(() => {
-        fetchTestData(testId, retryNum)
-      }, delay);
+      return wait(delay).then(() => {return fetchTestData(testId, retryNum)});
     }
     else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
       // STOP TRYING
@@ -189,7 +192,8 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
       dispatch(requestTestResults(testId));
 
       const result = await fetchTestData(testId);
-      if (result.status == 'success') {
+      debugger;
+      if (result.status === 'success') {
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
