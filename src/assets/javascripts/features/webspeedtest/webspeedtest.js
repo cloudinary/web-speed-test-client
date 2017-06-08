@@ -101,9 +101,9 @@ const requestTestError = (msg: string) => ({
 });
 
 const wait = (duration) => {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, duration)
-    });
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, duration)
+  });
 };
 
 const fetchTestData = async(testId, retryNum = 0) => {
@@ -114,37 +114,27 @@ const fetchTestData = async(testId, retryNum = 0) => {
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
 
-    // This should return a promise.
-    // resolve only if:
     if (data.status === 'success' && data.code !== 150) {
       // SUCCESS
-      debugger;
+      console.log("Got test data:", data);
       return data;
     }
     else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
       // KEEP TRYING
-      debugger;
+      console.log("Test not ready yet. re-trying [" + retryNum + '/' + totalRetries + "]");
       retryNum++;
       return wait(delay).then(() => {return fetchTestData(testId, retryNum)});
     }
     else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
       // STOP TRYING
-      debugger;
+      console.log("Tried " + retryNum + " times. Stopping.");
+      data.status = 'timeout';
       return data;
     }
 
-
   } catch (err) {
-    // if (retryNum < totalRetries) {
-    //   console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
-    //   console.log(err);
-    //   return fetchTestData(testId, retryNum + 1)
-    // }
-    // else {
-      console.log("Got server error");
-      console.log(err);
-      throw err;
-    // }
+    console.log("Got server error", err);
+    throw err;
   }
 }
 
@@ -188,21 +178,20 @@ const processEagerResult = results => {
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
   if (testId && !getState().isFetching && !getState().hasResults) {
-    // try {
+    try {
       dispatch(requestTestResults(testId));
 
       const result = await fetchTestData(testId);
       if (result.status == 'success') {
-        debugger;
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
-        debugger;
         dispatch(requestTestError(result.message));
       }
-    // } catch (err) {
-    //   dispatch(requestTestError(err));
-    // }
+
+    } catch (err) {
+      dispatch(requestTestError(err));
+    }
   }
 }
 
