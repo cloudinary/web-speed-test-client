@@ -194,6 +194,9 @@
       margin-top: 10px;
       color: $color-gray-blue;
     }
+    img {
+      height: 22px;
+    }
   }
 
   @media #{$bp-max-md} {
