@@ -80,10 +80,15 @@ export default class ImageInfo extends Component {
               <Image key={key} publicId={'browser-' + browser + '.svg'} type="asset"></Image>
             ))}
           </div>
-          {this.state.imageUrl && original.public_id &&
+          {this.state.imageUrl && original && original.hasOwnProperty("public_id") &&
             <div className="links">
               <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
               <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg" type="asset" width="16"></Image></a>
+            </div>
+          }
+          {isOriginal == true &&
+            <div className="links">
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
             </div>
           }
         </div>
@@ -151,6 +156,14 @@ export default class ImageInfo extends Component {
               ref={(image) => { this.imageSrc = image; }}
             ></Image>
           </div>
+        }
+
+        {isOriginal == true &&
+          <Image
+            style={{'display': 'none'}}
+            publicId={image.public_id}
+            ref={(image) => { this.imageSrc = image; }}
+          ></Image>
         }
 
         {explanation && explanation.length > 0 &&
