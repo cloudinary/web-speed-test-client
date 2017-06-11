@@ -26,7 +26,7 @@ export default class InputUrl extends Component {
       <div className="inputUrl">
         <div className="container">
           <div className="logo">
-            <Image publicId="icon-logo.svg.svg" width="70" type="asset"></Image>
+            <Image publicId="icon-logo.svg" width="70" type="asset"></Image>
           </div>
           <h1>
             {this.context.t('PageTitleA')}
@@ -43,7 +43,7 @@ export default class InputUrl extends Component {
             />
             <button type="submit">
               {this.context.t('ButtonText')}
-              <Image publicId="icon-arrow-white.svg.svg" width="21" type="asset"></Image>
+              <Image publicId="icon-arrow-white.svg" width="21" type="asset"></Image>
             </button>
           </form>
           <div className="integrated">

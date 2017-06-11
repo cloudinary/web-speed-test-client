@@ -30,11 +30,11 @@ export default class PreFooter extends Component {
             </div>
           </div>
           <div className="original-image">
-            <Image publicId="paints.jpg.jpg" gravity="west" height="210" width="185" crop="fill" type="asset">
+            <Image publicId="paints.jpg" gravity="west" height="210" width="185" crop="fill" type="asset">
             </Image>
           </div>
           <div className="dynamic-image">
-            <Image publicId="paints.jpg.jpg" gravity="east" quality="auto" height="210" width="185" crop="fill" fetch_format="auto" type="asset">
+            <Image publicId="paints.jpg" gravity="east" quality="auto" height="210" width="185" crop="fill" fetch_format="auto" type="asset">
             </Image>
           </div>
           <div className="dynamic">

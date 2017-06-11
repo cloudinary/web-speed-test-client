@@ -77,13 +77,13 @@ export default class ImageInfo extends Component {
         <div className="image-info-bar">
           <div className="browsers">
             {this.getBrowsersSupport(data.format).map((browser, key) => (
-              <Image key={key} publicId={'browser-' + browser + '.svg.svg'} type="asset"></Image>
+              <Image key={key} publicId={'browser-' + browser + '.svg'} type="asset"></Image>
             ))}
           </div>
           {this.state.imageUrl && original.public_id &&
             <div className="links">
-              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg.svg" type="asset" width="16"></Image></a>
-              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg.svg" type="asset" width="16"></Image></a>
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
+              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg" type="asset" width="16"></Image></a>
             </div>
           }
         </div>

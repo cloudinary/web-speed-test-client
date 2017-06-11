@@ -58,7 +58,7 @@ export default class Share extends Component {
       <div className={shareCls}>
 
         <button className="share-toggle" onClick={this.toggleShareWidget}>
-          <Image publicId="icon-share.svg.svg" width="18" type="asset"></Image>
+          <Image publicId="icon-share.svg" width="18" type="asset"></Image>
           {children}
         </button>
 
