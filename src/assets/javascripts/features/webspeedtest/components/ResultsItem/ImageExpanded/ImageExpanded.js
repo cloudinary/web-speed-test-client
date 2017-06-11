@@ -48,17 +48,17 @@ export default class ImageExpanded extends Component {
     return (
       <div className={imageExpandedCls}>
         <button className="image-info-expand" onClick={this.toggleDynamic}>
-          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
         </button>
         <button className="mobile-carousel-btn prev" onClick={() => this.mobileCarousel('prev')}>
-          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
         </button>
         <button className="mobile-carousel-btn next" onClick={() => this.mobileCarousel('next')}>
-          <Image publicId="icon-expand-b.svg.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
         </button>
         <div className="image-details original">
           <div className="title">
-            <Image className="image-info-icon" publicId="icon-original.svg.svg" type="asset" width="25"></Image>
+            <Image className="image-info-icon" publicId="icon-original.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">
@@ -68,7 +68,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
-            <Image className="image-info-icon" publicId="icon-transformed.png.png" type="asset" width="25"></Image>
+            <Image className="image-info-icon" publicId="icon-transformed.png" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
@@ -78,7 +78,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details dynamic">
           <div className="title">
-            <Image className="image-info-icon" publicId="icon-dynamic.svg.svg" type="asset" width="25"></Image>
+            <Image className="image-info-icon" publicId="icon-dynamic.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabOtherFormats')}
           </div>
           <Tabs>

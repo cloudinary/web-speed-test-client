@@ -42,17 +42,17 @@ export default class ResultSumm extends Component {
                   {this.context.t("OriginalImages")}
                 </div>
                 <div className="original-images-weight">
-                  {numbro(result.totalImagesWeight).format('0.0d')}
+                  {numbro(result.totalImagesWeight).format('0.0 d')}
                 </div>
                 <div className="original-images-indicator"></div>
                 <div className="trans-images" style={{'width': result.totalPercentChange + '%'}}>
                   <div className="trans-images-indicator"></div>
                   <div className="trans-images-weight">
-                    {numbro(result.totalImagesWeight * result.totalPercentChange / 100).format('0.0d')}
+                    {numbro(result.totalImagesWeight * result.totalPercentChange / 100).format('0.0 d')}
                   </div>
                 </div>
                 <div className="trans-images-label">
-                  <Image publicId="cloudinary_logo.svg.svg" type="asset" width="30"></Image>
+                  <Image publicId="cloudinary_logo.svg" type="asset" width="30"></Image>
                   {this.context.t("PotentialCompression")}
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("TotalImagesNumber")}
                   </div>
                   <div className="value">
-                    <Image publicId="icon-layers.svg.svg" type="asset" width="41"></Image>
+                    <Image publicId="icon-layers.svg" type="asset" width="41"></Image>
                     {numbro(result.totalImagesCount).format('0a')}
                   </div>
                   {/*<div className="description">
@@ -74,7 +74,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("TotalImagesWeight")}
                   </div>
                   <div className="value">
-                    <Image publicId="icon-weight.svg.svg" type="asset" width="41"></Image>
+                    <Image publicId="icon-weight.svg" type="asset" width="41"></Image>
                     {numbro(result.totalImagesWeight).format('0d')}
                   </div>
                  </div>
@@ -83,7 +83,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("PotentialCompressionPercentage")}
                   </div>
                   <div className="value">
-                    <Image publicId="icon-compress.svg.svg" type="asset" width="41"></Image>
+                    <Image publicId="icon-compress.svg" type="asset" width="41"></Image>
                     {numbro(result.totalPercentChange/100).format('0.0%')}
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_BrowserType")}
                   </div>
                   <div className="icon">
-                    <Image publicId={'browser-' + result.browserName + '.svg.svg'} type="asset"></Image>
+                    <Image publicId={'browser-' + result.browserName + '.svg'} type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.browserName}
@@ -105,7 +105,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_Location")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-location.svg.svg" type="asset"></Image>
+                    <Image publicId="icon-location.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.location}
@@ -116,7 +116,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_Viewport")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-screen.svg.svg" type="asset"></Image>
+                    <Image publicId="icon-screen.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.viewportSize.width + ' x ' + result.viewportSize.height + ' px'}
@@ -127,7 +127,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_DeviceDPI")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-dpi.svg.svg" type="asset"></Image>
+                    <Image publicId="icon-dpi.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.dpi + ' DPI'}
