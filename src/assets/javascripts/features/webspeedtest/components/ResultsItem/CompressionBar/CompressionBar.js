@@ -36,7 +36,7 @@ export default class CompressionBar extends Component {
     const { format, size, originalSize } = this.props;
     return (
       <div className="compressionBar">
-        <div className="type">{format}</div>
+        <div className="type">{this.context.t(format)}</div>
         <div className="bar-wrp">
           <div className="bar" style={this.computeBarStyles(size, originalSize)}></div>
         </div>
