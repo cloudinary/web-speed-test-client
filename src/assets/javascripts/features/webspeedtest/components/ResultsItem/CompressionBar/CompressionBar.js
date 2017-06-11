@@ -41,7 +41,7 @@ export default class CompressionBar extends Component {
           <div className="bar" style={this.computeBarStyles(size, originalSize)}></div>
         </div>
         <div className="bytes">
-          {numbro(size).format('0.0d')}
+          {numbro(size).format('0.0 d')}
         </div>
         {!originalSize &&
           <div className="note original-note">

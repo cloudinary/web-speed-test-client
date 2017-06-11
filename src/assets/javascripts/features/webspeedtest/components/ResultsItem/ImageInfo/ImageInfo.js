@@ -96,7 +96,7 @@ export default class ImageInfo extends Component {
             </div>
           }
           <div className="weight">
-            {numbro(data.bytes).format('0.0d')}
+            {numbro(data.bytes).format('0.0 d')}
           </div>
         </div>
 
