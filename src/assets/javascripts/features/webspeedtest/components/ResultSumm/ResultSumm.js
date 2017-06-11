@@ -94,7 +94,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_BrowserType")}
                   </div>
                   <div className="icon">
-                    <Image publicId={'browser-' + result.browserName + '.svg.svg'} type="asset" height="22"></Image>
+                    <Image publicId={'browser-' + result.browserName + '.svg.svg'} type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.browserName}
@@ -105,7 +105,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_Location")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-location.svg.svg" type="asset" height="22"></Image>
+                    <Image publicId="icon-location.svg.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.location}
@@ -116,7 +116,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_Viewport")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-screen.svg.svg" type="asset" height="22"></Image>
+                    <Image publicId="icon-screen.svg.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.viewportSize.width + ' x ' + result.viewportSize.height + ' px'}
@@ -127,7 +127,7 @@ export default class ResultSumm extends Component {
                     {this.context.t("Tested_DeviceDPI")}
                   </div>
                   <div className="icon">
-                    <Image publicId="icon-dpi.svg.svg" type="asset" height="22"></Image>
+                    <Image publicId="icon-dpi.svg.svg" type="asset"></Image>
                   </div>
                   <div className="value">
                     {result.dpi + ' DPI'}
