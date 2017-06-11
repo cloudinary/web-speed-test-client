@@ -197,6 +197,12 @@
     img {
       height: 22px;
     }
+    .wpt {
+      img {
+        height: auto;
+        opacity: .6;
+      }
+    }
   }
 
   @media #{$bp-max-md} {
