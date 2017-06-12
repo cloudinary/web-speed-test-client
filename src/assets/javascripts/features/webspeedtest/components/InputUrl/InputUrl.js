@@ -18,9 +18,6 @@ export default class InputUrl extends Component {
     const pattern = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi;
 
     if (!pattern.test(this.input.value)) {
-      if (this.state.validUrl) {
-        this.setState({validUrl: false})
-      }
       return false;
     } else {
       if (!this.state.validUrl) {
@@ -40,6 +37,9 @@ export default class InputUrl extends Component {
 
     if(this.validateUrl()) {
       this.props.onSubmit(this.input.value)
+    }
+    else if (this.state.validUrl) {
+      this.setState({validUrl: false})
     }
 
   }
