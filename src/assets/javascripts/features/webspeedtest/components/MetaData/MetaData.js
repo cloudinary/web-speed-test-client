@@ -17,10 +17,10 @@ export default class MetaData extends Component {
           <meta property="og:site_name" id="meta-og-site_name" content={this.context.t('meta_results_title')+' '+url} />
           <meta property="og:description" id="meta-og-description" content={this.context.t('meta_social_description')+' '+this.context.t('meta_results_social_description')+' '+url} />
           <meta property="og:type" id="meta-og-type" content={this.context.t('meta_social_type')} />
-          <meta itemprop="name" id="meta-name" content={this.context.t('meta_results_title')+' '+url} />
-          <meta itemprop="description" id="meta-description" content={this.context.t('meta_social_description')+' '+this.context.t('meta_results_social_description')+' '+url} />
+          <meta itemProp="name" id="meta-name" content={this.context.t('meta_results_title')+' '+url} />
+          <meta itemProp="description" id="meta-description" content={this.context.t('meta_social_description')+' '+this.context.t('meta_results_social_description')+' '+url} />
           <meta property="og:image" id="meta-og-image" content={this.context.t('meta_social_image')} />
-          <meta itemprop="image" id="meta-image" content={this.context.t('meta_social_image')} />
+          <meta itemProp="image" id="meta-image" content={this.context.t('meta_social_image')} />
         </MetaTags>
       );
     }
@@ -33,10 +33,10 @@ export default class MetaData extends Component {
           <meta property="og:site_name" id="meta-og-site_name" content={this.context.t('meta_social_site_name')} />
           <meta property="og:description" id="meta-og-description" content={this.context.t('meta_social_description')} />
           <meta property="og:type" id="meta-og-type" content={this.context.t('meta_social_type')} />
-          <meta itemprop="name" id="meta-name" content={this.context.t('meta_social_site_name')} />
-          <meta itemprop="description" id="meta-description" content={this.context.t('meta_social_description')} />
+          <meta itemProp="name" id="meta-name" content={this.context.t('meta_social_site_name')} />
+          <meta itemProp="description" id="meta-description" content={this.context.t('meta_social_description')} />
           <meta property="og:image" id="meta-og-image" content={this.context.t('meta_social_image')} />
-          <meta itemprop="image" id="meta-image" content={this.context.t('meta_social_image')} />
+          <meta itemProp="image" id="meta-image" content={this.context.t('meta_social_image')} />
         </MetaTags>
       );
     }
