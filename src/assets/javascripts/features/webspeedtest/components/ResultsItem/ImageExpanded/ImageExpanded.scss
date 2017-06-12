@@ -100,7 +100,7 @@
     cursor: pointer;
     position: absolute;
     z-index: 9;
-    transform: rotate(180deg);
+    transform: rotate(0);
     transition: transform .4s;
     img {
       transform: rotate(270deg);
@@ -108,7 +108,7 @@
     }
   }
   &.dynamicIn .image-info-expand {
-    transform: rotate(0);
+    transform: rotate(180deg);
   }
 
   .mobile-carousel-btn {

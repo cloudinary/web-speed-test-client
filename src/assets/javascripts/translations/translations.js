@@ -44,6 +44,7 @@ export const translations = {
     // Page header
     'PageTitleResults': 'Image Analysis Results',
     'ShareResults': 'Share Results',
+    'EmptyTest': 'We couldn\'t find any images on this page',
     'PageImageScoreTitle': 'Page Image Score',
     'ImageWeightComparisonTitle': 'Image Weight Comparison',
     'OriginalImages': 'Current Images',
@@ -109,23 +110,23 @@ export const translations = {
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
     'loaderExplanation': 'Analysis may take several minutes',
-      
+
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_url': 'http://webspeedtest.cloudinary.com',
     'meta_social_type': 'website',
     'meta_social_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
     'meta_social_image': 'https://cloudinary-res.cloudinary.com/image/upload/cloudinary_sharing_picture',
-    
-    // Meta data - results page  
-      
+
+    // Meta data - results page
+
     // the analyzed url will be added to the end of the following 2 strings
     'meta_results_title': 'Website Speed Test by Cloudinary - results for',
-    
-    // meta_social_url should be replaced with the results page URL 
-    
+
+    // meta_social_url should be replaced with the results page URL
+
     // meta_results_social_description should be appended to the meta_social_description + the analyzed URL
     'meta_results_social_description': ' Analyzed URL: '
-      
+
   }
 }

@@ -46,7 +46,9 @@ export default class WebspeedtestLayout extends Component {
         {webspeedtest.testId && webspeedtest.isFetching == false &&
           <div className="page-wrap">
             <ResultSumm testId={webspeedtest.testId} result={webspeedtest.testResult.resultSumm || {}} />
-            <ResultsList testId={webspeedtest.testId} results={webspeedtest.testResult.imagesTestResults || []} />
+            {webspeedtest.testResult.resultSumm.totalImagesCount > 0 &&
+              <ResultsList testId={webspeedtest.testId} results={webspeedtest.testResult.imagesTestResults || []} />
+            }
           </div>
         }
 

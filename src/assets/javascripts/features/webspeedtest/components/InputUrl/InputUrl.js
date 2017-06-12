@@ -7,7 +7,27 @@ export default class InputUrl extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      validUrl: true
+    };
+    this.validateUrl = this.validateUrl.bind(this);
     this.submitUrl = this.submitUrl.bind(this);
+  }
+
+  validateUrl() {
+    const pattern = /(^|\s)((https?:\/\/)?[\w-]+(\.[\w-]+)+\.?(:\d+)?(\/\S*)?)/gi;
+
+    if (!pattern.test(this.input.value)) {
+      if (this.state.validUrl) {
+        this.setState({validUrl: false})
+      }
+      return false;
+    } else {
+      if (!this.state.validUrl) {
+        this.setState({validUrl: true})
+      }
+      return true;
+    }
   }
 
   submitUrl(e) {
@@ -18,7 +38,10 @@ export default class InputUrl extends Component {
       this.input.value = 'http://' + this.input.value;
     }
 
-    this.props.onSubmit(this.input.value)
+    if(this.validateUrl()) {
+      this.props.onSubmit(this.input.value)
+    }
+
   }
 
   render() {
@@ -39,12 +62,16 @@ export default class InputUrl extends Component {
               name="testid"
               placeholder={this.context.t('EditBoxDefaultText')}
               ref={(input) => this.input = input}
+              onChange={this.validateUrl}
               autoComplete="on"
             />
             <button type="submit">
               {this.context.t('ButtonText')}
               <Image publicId="icon-arrow-white.svg" width="21" type="asset"></Image>
             </button>
+            {!this.state.validUrl &&
+              <div className="validation">{this.context.t('Please enter a valid URL.')}</div>
+            }
           </form>
           <div className="integrated">
             {this.context.t("IntegratedWith")}
