@@ -8,14 +8,14 @@ export const translations = {
     'LearnMoreURL': 'http://cloudinary.com/features/image_manipulation',
     'PoweredByText': 'Powered By',
     'CloudinaryLogoURL': 'http://cloudinary.com',
-    'ToolDescription': 'Web page load time is a major factor in user retention, with images taking up the largest percentage of most websites\' footprint. The  Image Analysis Tool provides measurable and actionable information about how to go beyond simple compression to optimize web performance. Discover how changes to image size, format selection, quality and encoding parameters can drastically improve page load speed.',
-    'EditBoxDefaultText': 'Enter URL',
+    'ToolDescription': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
+    'EditBoxDefaultText': 'Web page URL',
     'EditBoxError': 'Invalid URL',
     'ButtonText': 'ANALYZE',
 
     // Page Footer
     'FooterTitle': 'Optimize Every Image with Cloudinary',
-    'FooterText': 'Cloudinary is the image back-end for web and mobile developers; an end-to-end solution for all your image-related needs. The following sample URL shows how simple it is to deliver an optimized image to your users, with on-the-fly transformations included as a component of the URL:',
+    'FooterText': 'Cloudinary is the end-to-end solution for all your image-related needs. Check out how simple it is to deliver an optimized image to your users, with on-the-fly transformations included as a component of the URL:',
     'FooterOriginalTitle': 'Original',
     'FooterCompressedTitle': 'Dynamic Format',
     'FooterOriginalImageFormat': 'JPG',
@@ -108,6 +108,16 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take several minutes'
+    'loaderExplanation': 'Analysis may take several minutes',
+      
+    // Meta data
+    'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
+    // the analyzed url will be added to the end of the following 2 strings
+    'meta_og_title': 'Website Speed Test by Cloudinary - results for',
+    'meta_og_site_name': 'Website Speed Test by Cloudinary - results for',
+    'meta_og_type': 'website',
+    'meta_og_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
+    'meta_og_image': 'https://cloudinary-res.cloudinary.com/image/upload/cloudinary_sharing_picture'
+      
   }
 }
