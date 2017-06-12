@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import numbro from 'numbro';
+import cloudinary from 'cloudinary-core';
 
 import './ImageInfo.scss';
 
@@ -18,15 +19,6 @@ export default class ImageInfo extends Component {
       formatSupported: true
     };
     this.imageError = this.imageError.bind(this);
-  }
-
-  componentDidMount() {
-    if (this.imageSrc) {
-      this.setState({
-        // Get image URL without transforms.
-        imageUrl: this.imageSrc.state.url
-      });
-    }
   }
 
   getFormat(format) {
@@ -72,6 +64,20 @@ export default class ImageInfo extends Component {
 
     const format = image.transformation && image.transformation.includes('f_') ? this.getFormat(data.format) : 'auto';
 
+    const cloudinaryCore = new cloudinary.Cloudinary({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      cname: process.env.CLOUDINARY_CNAME
+    });
+    const transform = new cloudinary.Transformation();
+    let transformedUrl = '';
+    if (isOriginal == true) {
+      transformedUrl = cloudinaryCore.url(image.public_id);
+    }
+    else if (original && original.hasOwnProperty("public_id")) {
+      transform.crop('scale').width(image.width).height(image.height).fetchFormat(format).quality("auto");
+      transformedUrl = cloudinaryCore.url(original.public_id, transform);
+    }
+
     return (
       <div className="imageInfo">
         <div className="image-info-bar">
@@ -80,15 +86,15 @@ export default class ImageInfo extends Component {
               <Image key={key} publicId={'browser-' + browser + '.svg'} type="asset"></Image>
             ))}
           </div>
-          {this.state.imageUrl && original && original.hasOwnProperty("public_id") &&
+          {original && original.hasOwnProperty("public_id") &&
             <div className="links">
-              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
-              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg" type="asset" width="16"></Image></a>
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={transformedUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
+              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={transformedUrl}><Image publicId="icon-download.svg" type="asset" width="16"></Image></a>
             </div>
           }
           {isOriginal == true &&
             <div className="links">
-              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={transformedUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
             </div>
           }
         </div>
@@ -148,22 +154,7 @@ export default class ImageInfo extends Component {
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
             ></Image>
-            <Image
-              style={{'display': 'none'}}
-              publicId={original.public_id}
-              fetchFormat={format}
-              quality="auto"
-              ref={(image) => { this.imageSrc = image; }}
-            ></Image>
           </div>
-        }
-
-        {isOriginal == true &&
-          <Image
-            style={{'display': 'none'}}
-            publicId={image.public_id}
-            ref={(image) => { this.imageSrc = image; }}
-          ></Image>
         }
 
         {explanation && explanation.length > 0 &&
