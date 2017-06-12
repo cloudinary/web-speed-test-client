@@ -34,6 +34,8 @@ export default class ImageInfo extends Component {
     let browsers = [];
     switch (format) {
       case 'jxr':
+      case 'wdp':
+      case 'hdp':
         browsers = ['Internet Explorer', 'Microsoft Edge'];
         break;
       case 'webp':
