@@ -108,6 +108,16 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take several minutes'
+    'loaderExplanation': 'Analysis may take several minutes',
+      
+    // Meta data
+    'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
+    // the analyzed url will be added to the end of the following 2 strings
+    'meta_og_title': 'Website Speed Test by Cloudinary - results for',
+    'meta_og_site_name': 'Website Speed Test by Cloudinary - results for',
+    'meta_og_type': 'website',
+    'meta_og_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
+    'meta_og_image': 'https://cloudinary-res.cloudinary.com/image/upload/cloudinary_sharing_picture'
+      
   }
 }
