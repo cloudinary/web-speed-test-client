@@ -107,8 +107,8 @@ const wait = (duration) => {
 };
 
 const fetchTestData = async(testId, retryNum = 0) => {
-  const totalRetries = 60;
-  const delay = 10000;
+  const totalRetries = 180;
+  const delay = 3000;
   try {
     console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)

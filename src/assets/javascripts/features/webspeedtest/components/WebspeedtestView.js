@@ -14,19 +14,28 @@ export default class WebspeedtestView extends Component {
 
   componentDidMount() {
     const { location, actions: { setTestId, fetchTestDataIfNeeded } } = this.props;
+    console.log(this.props.params);
+    //@TODO: remove after change the redirect on WPT side.
     if (location.query.testid) {
-      setTestId(location.query.testid)
-      fetchTestDataIfNeeded(location.query.testid);
+      browserHistory.push({
+        pathname: location.pathname + "results/" + location.query.testid
+      });
+    }
+    const testId = this.props.params && this.props.params.testId || location.query.testid;
+    if (testId) {
+      setTestId(testId)
+      fetchTestDataIfNeeded(testId);
     }
   }
 
   componentWillReceiveProps(nextProps) {
     const { webspeedtest, location } = this.props;
     if (nextProps.webspeedtest.testId && webspeedtest.testId !== nextProps.webspeedtest.testId) {
-      browserHistory.push({
-        pathname: location.pathname,
-        query: { testid: nextProps.webspeedtest.testId }
-      });
+      if (location.pathname.indexOf('results') == -1) {
+        browserHistory.push({
+          pathname: location.pathname + "results/" + nextProps.webspeedtest.testId
+        });
+      }
     }
     if (webspeedtest.isFetching && nextProps.webspeedtest.isFetching == false) {
       window.scrollTo(0, 0);
