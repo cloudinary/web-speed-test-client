@@ -12,6 +12,20 @@ export default class ResultSumm extends Component {
     testId: PropTypes.string.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      screenshotLoaded: false
+    };
+    this.handleScreenshotOnLoad = this.handleScreenshotOnLoad.bind(this);
+  }
+
+  handleScreenshotOnLoad() {
+    if (this.state.screenshotLoaded == false) {
+      this.setState({ screenshotLoaded: true });
+    }
+  }
+
   render() {
     const { result, testId } = this.props;
 
@@ -19,7 +33,7 @@ export default class ResultSumm extends Component {
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
       cname: process.env.CLOUDINARY_CNAME
     });
-    const url2png = cloudinaryCore.url("http://cnn.com", { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2500%7Cthumbnail_max_width=300";
+    const url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
 
     return (
       <div className="resultSumm">
@@ -166,8 +180,9 @@ export default class ResultSumm extends Component {
                   </div>
                 </div>
               </div>
-              <div className="test-screen">
-                <img width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url}/>
+              <div className={this.state.screenshotLoaded ? "test-screen loaded" : "test-screen"}>
+                <Image className="placeholder" publicId="placeholder.png" type="asset"></Image>
+                <img className="screenshot" width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url} onLoad={this.handleScreenshotOnLoad} />
               </div>
             </div>
           }

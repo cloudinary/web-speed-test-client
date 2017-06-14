@@ -57,6 +57,17 @@
         0 0 30px rgba(#000, .2),
         0 -15px 20px -5px rgba(#000, .2);
     }
+    .screenshot {
+      display: none;
+    }
+    &.loaded {
+      .placeholder {
+        display: none;
+      }
+      .screenshot {
+        display: initial;
+      }
+    }
   }
   .test-meta {
     display: flex;
