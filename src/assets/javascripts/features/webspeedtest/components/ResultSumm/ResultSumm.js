@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import Share from '../Share/Share';
 import numbro from 'numbro';
+import cloudinary from 'cloudinary-core';
 
 import './ResultSumm.scss';
 
@@ -11,8 +12,29 @@ export default class ResultSumm extends Component {
     testId: PropTypes.string.isRequired,
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      screenshotLoaded: false
+    };
+    this.handleScreenshotOnLoad = this.handleScreenshotOnLoad.bind(this);
+  }
+
+  handleScreenshotOnLoad() {
+    if (this.state.screenshotLoaded == false) {
+      this.setState({ screenshotLoaded: true });
+    }
+  }
+
   render() {
     const { result, testId } = this.props;
+
+    const cloudinaryCore = new cloudinary.Cloudinary({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      cname: process.env.CLOUDINARY_CNAME
+    });
+    const url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
+
     return (
       <div className="resultSumm">
         <div className="container">
@@ -25,9 +47,9 @@ export default class ResultSumm extends Component {
               <div className="test-empty">
                 {this.context.t('EmptyTest')}
               </div>
-              <div className="test-empty-screen">
-                <Image publicId={result.url} type="url2png" width="300" fetch_format="jpg"></Image>
-              </div>
+              {/*<div className="test-empty-screen">
+                <img width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url}/>
+              </div>*/}
             </div>
           }
 
@@ -152,14 +174,15 @@ export default class ResultSumm extends Component {
                     </div>
                     <a href={'https://www.webpagetest.org/result/' + testId} target="_blank" className="icon">
                       <Image publicId="https://nullvoid.org/jason.khanlar/assets/img/logos/webpagetest-logo.png" type="fetch" width="107">
-                        <Transformation width="107" crop="scale" />
+                        <Transformation width="107" crop="fit" />
                       </Image>
                     </a>
                   </div>
                 </div>
               </div>
-              <div className="test-screen">
-                <Image publicId={result.url} type="url2png" width="300" fetch_format="jpg"></Image>
+              <div className={this.state.screenshotLoaded ? "test-screen loaded" : "test-screen"}>
+                <Image className="placeholder" publicId="placeholder.png" type="asset"></Image>
+                <img className="screenshot" width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url} onLoad={this.handleScreenshotOnLoad} />
               </div>
             </div>
           }

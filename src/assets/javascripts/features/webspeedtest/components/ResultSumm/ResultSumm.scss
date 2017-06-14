@@ -39,22 +39,34 @@
     margin-top: 50px;
   }
   .test-empty {
-    padding: 40px 30px 80px 0;
+    padding: 60px 0 120px;
     font-size: 38px;
     font-weight: 300;
     color: #aaa;
     align-self: center;
+    margin: auto;
   }
-  .test-empty-screen {
-    flex: 0 0 300px;
-  }
-  .test-empty-screen,
+  // .test-empty-screen {
+  //   flex: 0 0 300px;
+  // }
+  // .test-empty-screen,
   .test-screen {
     max-height: 660px;
     img {
       box-shadow:
         0 0 30px rgba(#000, .2),
         0 -15px 20px -5px rgba(#000, .2);
+    }
+    .screenshot {
+      display: none;
+    }
+    &.loaded {
+      .placeholder {
+        display: none;
+      }
+      .screenshot {
+        display: initial;
+      }
     }
   }
   .test-meta {

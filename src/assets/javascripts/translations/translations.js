@@ -24,7 +24,7 @@ export const translations = {
     'FooterCompressedImageDimensions': '800x450',
     'FooterOriginalImageWeight': '73 KB',
     'FooterCompressedImageWeight': '53 KB (saved 28%)',
-    'FooterSampleURL': 'https://res.cloudinary.com/webspeedtest/w_800,f_auto,q_auto/paint.jpg',
+    'FooterSampleURL': 'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
     'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',
     'AboutButtonText': 'About',
@@ -113,10 +113,12 @@ export const translations = {
 
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
+    'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
+    'meta_social_site_name': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_url': 'http://webspeedtest.cloudinary.com',
     'meta_social_type': 'website',
     'meta_social_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
-    'meta_social_image': 'https://cloudinary-res.cloudinary.com/image/upload/cloudinary_sharing_picture',
+    'meta_social_image': 'http://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
 
     // Meta data - results page
 

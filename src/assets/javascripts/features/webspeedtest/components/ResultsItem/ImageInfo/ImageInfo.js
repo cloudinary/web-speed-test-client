@@ -76,7 +76,7 @@ export default class ImageInfo extends Component {
       transformedUrl = cloudinaryCore.url(image.public_id);
     }
     else if (original && original.hasOwnProperty("public_id")) {
-      transform.crop('scale').width(image.width).height(image.height).fetchFormat(format).quality("auto");
+      transform.crop('fit').width(image.width).height(image.height).fetchFormat(format).quality("auto");
       transformedUrl = cloudinaryCore.url(original.public_id, transform);
     }
 
