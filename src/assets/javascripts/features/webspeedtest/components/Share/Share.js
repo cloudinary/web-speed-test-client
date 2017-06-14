@@ -72,11 +72,6 @@ export default class Share extends Component {
                 size={32}
                 round />
             </FacebookShareButton>
-            <FacebookShareCount
-              url={shareUrl}
-              className="share-count">
-              {count => count}
-            </FacebookShareCount>
           </div>
 
           <div className="share-item tw-share">
@@ -99,11 +94,6 @@ export default class Share extends Component {
                 round />
             </GooglePlusShareButton>
 
-            <GooglePlusShareCount
-              url={shareUrl}
-              className="share-count">
-              {count => count}
-            </GooglePlusShareCount>
           </div>
 
           <div className="share-item lin-share">
@@ -118,11 +108,6 @@ export default class Share extends Component {
                 round />
             </LinkedinShareButton>
 
-            <LinkedinShareCount
-              url={shareUrl}
-              className="share-count">
-              {count => count}
-            </LinkedinShareCount>
           </div>
 
         </div>
