@@ -24,7 +24,7 @@ export const translations = {
     'FooterCompressedImageDimensions': '800x450',
     'FooterOriginalImageWeight': '73 KB',
     'FooterCompressedImageWeight': '53 KB (saved 28%)',
-    'FooterSampleURL': 'https://res.cloudinary.com/webspeedtest/w_800,f_auto,q_auto/paint.jpg',
+    'FooterSampleURL': 'http://res.cloudinary.com/demo/image/upload/w_800,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
     'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',
     'AboutButtonText': 'About',
