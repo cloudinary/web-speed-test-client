@@ -1,10 +1,10 @@
 {
-  "name": "PageSpeed",
-  "description": "Page Speed Image Performance Analysis Client App",
+  "name": "web-speed-test",
+  "description": "web-speed-test Image Performance Analysis Client App",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CloudinaryLtd/pagespeed.git"
+    "url": "https://github.com/CloudinaryLtd/web-speed-test-client.git"
   },
   "scripts": {
     "upload:images": "node ./src/scripts/cloudinaryImageSync.js",

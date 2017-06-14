@@ -101,7 +101,7 @@ export const translations = {
 
     // Loader phrases
     // Loader configuration (time between sentences and loop yes/no) can be found in
-    // pagespeed-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
+    // web-speed-test-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
     // wdtLoading.start
     'loadingPhrase0': 'Analyzing images...',
     'loadingPhrase1': 'Ranking optimization potential...',
