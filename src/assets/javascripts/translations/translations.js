@@ -116,7 +116,7 @@ export const translations = {
     'meta_social_url': 'http://webspeedtest.cloudinary.com',
     'meta_social_type': 'website',
     'meta_social_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
-    'meta_social_image': 'https://cloudinary-res.cloudinary.com/image/upload/cloudinary_sharing_picture',
+    'meta_social_image': 'http://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
 
     // Meta data - results page
 
