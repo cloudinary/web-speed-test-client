@@ -100,9 +100,11 @@ export default class ResultSumm extends Component {
                       <Image publicId="icon-layers.svg" type="asset" width="41"></Image>
                       {numbro(result.totalImagesCount).format('0a')}
                     </div>
-                    {/*<div className="description">
-                    {this.context.t("TotalImagesNumber")}
-                  </div>*/}
+                    {result.reachedMax == true &&
+                      <div className="description">
+                        {this.context.t("TotalImagesNumber_TooMany_A") + ' ' + numbro(result.totalImagesCount).format('0a') + ' ' + this.context.t("TotalImagesNumber_TooMany_B")}
+                      </div>
+                    }
                   </div>
                   <div className="image-weight test-meta-box">
                     <div className="label">
