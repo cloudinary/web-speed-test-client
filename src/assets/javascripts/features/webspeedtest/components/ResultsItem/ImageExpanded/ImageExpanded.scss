@@ -69,6 +69,7 @@
   }
   .react-tabs__tab {
     @extend .tab;
+    cursor: pointer;
     background: #d0dae2;
     display: block;
     margin: 0 7px 0 0;
