@@ -52,6 +52,7 @@
   // .test-empty-screen,
   .test-screen {
     max-height: 660px;
+    position: relative;
     img {
       box-shadow:
         0 0 30px rgba(#000, .2),
@@ -59,6 +60,19 @@
     }
     .screenshot {
       display: none;
+    }
+    .placeholder-text {
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      z-index: 1;
+      font-size: 29px;
+      color: #bbb;
+      line-height: 1.2;
+      padding: 22px 20px;
     }
     &.loaded {
       .placeholder {

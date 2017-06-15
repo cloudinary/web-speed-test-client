@@ -182,6 +182,7 @@ export default class ResultSumm extends Component {
               </div>
               <div className={this.state.screenshotLoaded ? "test-screen loaded" : "test-screen"}>
                 <Image className="placeholder" publicId="placeholder.png" type="asset"></Image>
+                <div className="placeholder-text">{this.context.t('URL2PNG_PlaceHolderText')}</div>
                 <img className="screenshot" width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url} onLoad={this.handleScreenshotOnLoad} />
               </div>
             </div>
