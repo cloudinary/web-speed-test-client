@@ -118,7 +118,7 @@ export const translations = {
     'meta_social_site_name': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_url': 'http://webspeedtest.cloudinary.com',
     'meta_social_type': 'website',
-    'meta_social_description': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
+    'meta_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression.',
     'meta_social_image': 'http://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
 
     // Meta data - results page
@@ -128,7 +128,7 @@ export const translations = {
 
     // meta_social_url should be replaced with the results page URL
 
-    'meta_results_social_description': 'Optimizing images can significantly improve web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression. Check out this website analysis results:'
+    'meta_results_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression. Check out this website analysis results:'
 
   }
 }
