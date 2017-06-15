@@ -4,16 +4,17 @@ import { Image, Transformation } from 'cloudinary-react';
 import './PreFooter.scss';
 
 export default class PreFooter extends Component {
-  static propTypes = {
-  };
-
   render() {
-
     return (
       <section className="preFooter">
         <h1>{this.context.t('FooterTitle')}</h1>
         <p>{this.context.t('FooterText')}</p>
-        <a className="link-box" href={this.context.t('FooterSampleURL')} target="_blank">{this.context.t('FooterSampleURL')}</a>
+        <a className="link-box" href="https://res.cloudinary.com/demo/image/upload/h_210/f_auto,q_auto/paint.jpg" target="_blank">
+          https://res.cloudinary.com/demo/image/upload/
+          <span className="color-orange">h_210</span>/
+          <span className="color-blue">f_auto,q_auto</span>
+          /paint.jpg
+        </a>
         <div className="compare-images">
           <div className="original">
             <div className="label">
@@ -30,12 +31,10 @@ export default class PreFooter extends Component {
             </div>
           </div>
           <div className="original-image">
-            <Image publicId="paints.jpg" gravity="west" height="210" width="185" crop="fill" type="asset">
-            </Image>
+            <img src="https://res.cloudinary.com/demo/image/upload/c_fill,g_west,h_210,w_185/paint.jpg" alt="Original image"/>
           </div>
           <div className="dynamic-image">
-            <Image publicId="paints.jpg" gravity="east" quality="auto" height="210" width="185" crop="fill" fetch_format="auto" type="asset">
-            </Image>
+            <img src="https://res.cloudinary.com/demo/image/upload/c_fill,f_auto,g_east,h_210,q_auto,w_185/paint.jpg" alt="Optimised image"/>
           </div>
           <div className="dynamic">
             <div className="label">
