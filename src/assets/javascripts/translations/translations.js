@@ -128,7 +128,7 @@ export const translations = {
     // meta_social_url should be replaced with the results page URL
 
     // meta_results_social_description should be appended to the meta_social_description + the analyzed URL
-    'meta_results_social_description': ' Analyzed URL: '
+    'meta_results_social_description': 'Optimizing images can significantly improve web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression. Check out this website analysis results:'
 
   }
 }
