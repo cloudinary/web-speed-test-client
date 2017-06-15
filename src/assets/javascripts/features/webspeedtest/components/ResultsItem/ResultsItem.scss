@@ -98,6 +98,10 @@
   .image-final-pixel {
     color: #5b616a;
     font-size: 18px;
+    img {
+      vertical-align: baseline;
+      margin: 0 7px;
+    }
   }
   .toggle-btn {
     position: relative;
