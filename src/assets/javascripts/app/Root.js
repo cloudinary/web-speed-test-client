@@ -12,15 +12,14 @@ if (process.env.GA) {
 }
 
 const Root = ({ store, history }: any) => {
-
-  if (process.env.GA) {
+  const logPageView = () => {
     ReactGA.set({ page: window.location.pathname + window.location.search });
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   let ComponentEl = (
     <Provider store={store}>
-      <Router history={history} routes={routes} />
+      <Router history={history} routes={routes} onUpdate={logPageView} />
     </Provider>
   );
 
