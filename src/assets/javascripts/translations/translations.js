@@ -67,6 +67,7 @@ export const translations = {
     'Tested_Viewport': 'Viewport size',
     'Tested_DeviceDPI': 'Device DPI',
     'IntegratedWith': 'Integrated with',
+    'url2png_PlaceHolderText': 'Generating Thumbnail',
 
     // Page body (collapse and expanded)
     'CollapsedPotentialCompressionTitle': 'Potential Smart Compression',
