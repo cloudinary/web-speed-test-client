@@ -64,18 +64,17 @@
     .placeholder-text {
       text-align: center;
       position: absolute;
-      top: 0;
+      top: 40px;
       left: 0;
-      right: 0;
-      margin: auto;
+      width: 300px;
       z-index: 1;
-      font-size: 29px;
+      font-size: 16px;
       color: #bbb;
       line-height: 1.2;
-      padding: 22px 20px;
     }
     &.loaded {
-      .placeholder {
+      .placeholder,
+      .placeholder-text {
         display: none;
       }
       .screenshot {
@@ -175,10 +174,34 @@
       margin-top: 6px;
       padding-left: 30px;
       font-size: 12px;
-      img {
+      > img {
         vertical-align: bottom;
         margin-right: 3px;
       }
+    }
+  }
+
+  .more-info {
+    position: relative;
+    img {
+      vertical-align: baseline;
+      margin-left: 4px;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      box-shadow: 0 0 5px rgba(#000, .3);
+      border-radius: 2px;
+      width: 220px;
+      background: #fbfbfb;
+      padding: 7px 12px;
+      color: #666;
+      bottom: 120%;
+      right: -30px;
+      font-size: 12px;
+    }
+    &:hover .tooltip {
+      display: block;
     }
   }
 
@@ -190,13 +213,12 @@
       flex: 1 0 33%;
       padding: 0 10px 20px 30px;
       &.image-count {
-        padding: 0 40px 20px;
+        padding: 0 20px 20px 40px;
       }
     }
     .label {
       height: 45px;
       margin-bottom: 0;
-      overflow: hidden;
     }
     .value {
       font-weight: 100;
