@@ -89,6 +89,10 @@ export default class ResultSumm extends Component {
                   <div className="trans-images-label">
                     <Image publicId="cloudinary_logo.svg" type="asset" width="30"></Image>
                     {this.context.t("PotentialCompression")}
+                    <span className="more-info">
+                      <Image publicId="icon-info.svg" type="asset" width="14"></Image>
+                      <span className="tooltip">{this.context.t("PotentialCompressionMoreInfo")}</span>
+                    </span>
                   </div>
                 </div>
                 <div className="test-totals">
@@ -118,6 +122,10 @@ export default class ResultSumm extends Component {
                   <div className="compression test-meta-box">
                     <div className="label">
                       {this.context.t("PotentialCompressionPercentage")}
+                      <span className="more-info">
+                        <Image publicId="icon-info.svg" type="asset" width="16"></Image>
+                        <span className="tooltip">{this.context.t("PotentialCompressionPercentageMoreInfo")}</span>
+                      </span>
                     </div>
                     <div className="value">
                       <Image publicId="icon-compress.svg" type="asset" width="41"></Image>
