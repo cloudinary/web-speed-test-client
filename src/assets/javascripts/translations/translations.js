@@ -52,9 +52,9 @@ export const translations = {
     'PotentialCompressionMoreInfo': 'Potential compression is calculated only for the analyzed images',
     'AverageGradeA': 'Excellent',
     'AverageGradeB': 'Good',
-      'AverageGradeC': 'Mediocre',
+    'AverageGradeC': 'Mediocre',
     'AverageGradeD': 'Poor',
-   'AverageGradeE': 'Poor',
+    'AverageGradeE': 'Poor',
     'AverageGradeF': 'Very poor',
     'TotalImagesNumber': 'Total Images Analyzed',
     'TotalImagesWeight': 'Total Image Weight',
@@ -67,6 +67,7 @@ export const translations = {
     'Tested_Viewport': 'Viewport size',
     'Tested_DeviceDPI': 'Device DPI',
     'IntegratedWith': 'Integrated with',
+    'URL2PNG_PlaceHolderText': 'Generating Thumbnail',
 
     // Page body (collapse and expanded)
     'CollapsedPotentialCompressionTitle': 'Potential Smart Compression',
