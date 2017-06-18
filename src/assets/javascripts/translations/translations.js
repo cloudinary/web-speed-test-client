@@ -31,6 +31,7 @@ export const translations = {
     'LeadForm_EmailDefaultText': 'Email',
     'LeadForm_FirstDefaultText': 'First name',
     'LeadForm_LastDefaultText': 'Last name',
+    'LeadForm_Button': 'Send',
     'AboutButtonText': 'About',
     'AboutButtonURL': 'http://cloudinary.com/features/image_manipulation?utm_source=webspeedtest',
     'PrivacyButtonText': 'Privacy',
