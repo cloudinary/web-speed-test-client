@@ -33,8 +33,10 @@ export default class ResultSumm extends Component {
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
       cname: process.env.CLOUDINARY_CNAME
     });
-    const url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
-
+    let url2png;
+    if (result.url) {
+      url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
+    }
     return (
       <div className="resultSumm">
         <div className="container">
@@ -89,6 +91,10 @@ export default class ResultSumm extends Component {
                   <div className="trans-images-label">
                     <Image publicId="cloudinary_logo.svg" type="asset" width="30"></Image>
                     {this.context.t("PotentialCompression")}
+                    <span className="more-info">
+                      <Image publicId="icon-info.svg" type="asset" width="14"></Image>
+                      <span className="tooltip">{this.context.t("PotentialCompressionMoreInfo")}</span>
+                    </span>
                   </div>
                 </div>
                 <div className="test-totals">
@@ -118,6 +124,10 @@ export default class ResultSumm extends Component {
                   <div className="compression test-meta-box">
                     <div className="label">
                       {this.context.t("PotentialCompressionPercentage")}
+                      <span className="more-info">
+                        <Image publicId="icon-info.svg" type="asset" width="16"></Image>
+                        <span className="tooltip">{this.context.t("PotentialCompressionPercentageMoreInfo")}</span>
+                      </span>
                     </div>
                     <div className="value">
                       <Image publicId="icon-compress.svg" type="asset" width="41"></Image>

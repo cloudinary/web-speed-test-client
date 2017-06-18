@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
-
+import ContactForm from '../ContactForm/ContactForm';
 import './PreFooter.scss';
 
 export default class PreFooter extends Component {
@@ -52,6 +52,9 @@ export default class PreFooter extends Component {
           </div>
         </div>
         <a className="link-btn" href={this.context.t('TryItNowButtonURL')} target="_blank">{this.context.t('TryItNowButtonText')}</a>
+
+        <ContactForm />
+
       </section>
     );
   }
