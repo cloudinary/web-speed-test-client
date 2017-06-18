@@ -70,6 +70,12 @@
       z-index: 2;
     }
   }
+  .original-image {
+    text-align: right;
+  }
+  .dynamic-image {
+    text-align: left;
+  }
   .original-image:after {
     right: 0;
   }
@@ -83,12 +89,12 @@
     border-radius: 6px;
     padding: 10px 20px;
     margin-top: 20px;
-    background: #ff7829;
+    background: $color-orange;
     color: #fff;
     box-shadow: 0 2px 8px rgba(#000, .4);
     transition: background .3s;
     &:hover {
-      background: darken(#ff7829, 10%);
+      background: darken($color-orange, 10%);
     }
   }
   @media #{$bp-max-xs} {
