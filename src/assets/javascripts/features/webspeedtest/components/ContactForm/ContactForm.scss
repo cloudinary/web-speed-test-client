@@ -6,7 +6,11 @@
   background: #3B82D7;
   border-radius: 8px;
   padding-bottom: 30px;
-  overflow: hidden;
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   h2 {
     font-size: 42px;
     color: #fff;
