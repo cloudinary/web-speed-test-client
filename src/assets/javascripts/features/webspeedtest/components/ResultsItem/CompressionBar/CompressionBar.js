@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Image, Transformation } from 'cloudinary-react';
 import numbro from 'numbro';
 import classnames from 'classnames';
 
@@ -9,6 +10,7 @@ export default class CompressionBar extends Component {
     format: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
     originalSize: PropTypes.number,
+    best: PropTypes.bool
   };
 
   computeBarStyles(size, originalSize) {
@@ -33,10 +35,18 @@ export default class CompressionBar extends Component {
   }
 
   render() {
-    const { format, size, originalSize } = this.props;
+    const { format, size, originalSize, best } = this.props;
     return (
       <div className="compressionBar">
-        <div className="type">{this.context.t(format)}</div>
+        <div className="type">
+          {this.context.t(format)}
+          {best === true &&
+            <div className="best">
+            <Image publicId="icon-best.svg" type="asset" width="20" title={this.context.t("BestImageText")}></Image>
+              <span className="tooltip">{this.context.t("BestImageText")}</span>
+            </div>
+          }
+        </div>
         <div className="bar-wrp">
           <div className="bar" style={this.computeBarStyles(size, originalSize)}></div>
         </div>

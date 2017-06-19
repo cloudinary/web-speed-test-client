@@ -55,6 +55,9 @@
     vertical-align: middle;
     box-sizing: border-box;
     border: 1px solid $color-gray-blue;
+    &:focus {
+      outline: none;
+    }
   }
   input {
     font-size: 18px;
@@ -62,6 +65,9 @@
     flex: 1;
     @media #{$bp-min-xs} {
       border-right: 0;
+    }
+    &:focus {
+      border-color: darken($color-gray-blue, 25%);
     }
   }
   button {
@@ -77,6 +83,9 @@
     }
     @media #{$bp-min-xs} {
       border-left: 0;
+    }
+    &:focus {
+      background: darken($color-blue-c, 10%);
     }
   }
   .validation {
