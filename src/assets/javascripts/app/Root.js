@@ -29,7 +29,7 @@ const Root = ({ store, history }: any) => {
     ComponentEl = (
       <Provider store={store}>
         <div>
-          <Router history={history} routes={routes} />
+          <Router history={history} routes={routes} onUpdate={logPageView}  />
           {!window.devToolsExtension ? <DevTools /> : null}
         </div>
       </Provider>
