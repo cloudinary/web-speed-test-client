@@ -2,8 +2,11 @@
 
 .resultsItem {
   background: #E4EAEE;
-  box-shadow: 0 0 6px rgba(#000, .2);
   margin: 25px 0;
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 0 6px rgba(#000, .2);
+  }
   .image-intro {
     display: flex;
     flex-wrap: wrap;
