@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router'
 import { Image, Transformation } from 'cloudinary-react';
 import Share from '../Share/Share';
 
@@ -9,10 +10,12 @@ export default class Header extends Component {
     return (
       <header className="header">
         <div className="container">
-          <Image className="logo" publicId="icon-logo.svg" width="31" type="asset"></Image>
-          <h1>{this.context.t("AppName")}</h1>
+          <Link className="brand" to="/">
+            <Image className="logo" publicId="icon-logo.svg" width="31" type="asset"></Image>
+            <h1>{this.context.t("AppName")}</h1>
+          </Link>
           <a className="learn" href={this.context.t('LearnMoreURL')} target="_blank">{this.context.t("LearnMoreText")}</a>
-          <Share shareUrl={window.location.href.split('?')[0]} title={this.context.t("PageTitleA") + ' - ' + this.context.t('PageTitleB')} />
+          <Share icon="icon-share-gray.svg" shareUrl={window.location.href.split('?')[0]} title={this.context.t("PageTitleA") + ' - ' + this.context.t('PageTitleB')} />
           <a className="powered-by" href={this.context.t('CloudinaryLogoURL')} target="_blank">
             <div className="label">{this.context.t('PoweredByText')}</div>
             <Image publicId="cloudinary_logo_text.svg" width="120" type="asset"></Image>

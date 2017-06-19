@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router'
 import { Image, Transformation } from 'cloudinary-react';
 
 import './Footer.scss';
@@ -8,10 +9,10 @@ export default class Footer extends Component {
     return (
       <footer className="footer">
         <div className="container">
-          <div className="brand">
+          <Link className="brand" to="/">
             <Image className="logo" publicId="icon-logo.svg" width="31" type="asset"></Image>
             <h1>{this.context.t("AppName")}</h1>
-          </div>
+          </Link>
           <div className="links">
             <a href={this.context.t('AboutButtonURL')} target="_blank">{this.context.t("AboutButtonText")}</a>
             <a href={this.context.t('PrivacyButtonURL')} target="_blank">{this.context.t("PrivacyButtonText")}</a>

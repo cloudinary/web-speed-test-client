@@ -18,11 +18,22 @@ export default class ResultSumm extends Component {
       screenshotLoaded: false
     };
     this.handleScreenshotOnLoad = this.handleScreenshotOnLoad.bind(this);
+    this.getBrowserIcon = this.getBrowserIcon.bind(this);
   }
 
   handleScreenshotOnLoad() {
     if (this.state.screenshotLoaded == false) {
       this.setState({ screenshotLoaded: true });
+    }
+  }
+
+  getBrowserIcon() {
+    const { result } = this.props;
+    if (result.browserName.includes("Chrome")) {
+      return 'browser-Google Chrome.svg';
+    }
+    else {
+      return 'browser-' + result.browserName + '.svg';
     }
   }
 
@@ -37,6 +48,7 @@ export default class ResultSumm extends Component {
     if (result.url) {
       url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
     }
+
     return (
       <div className="resultSumm">
         <div className="container">
@@ -141,7 +153,7 @@ export default class ResultSumm extends Component {
                       {this.context.t("Tested_BrowserType")}
                     </div>
                     <div className="icon">
-                      <Image publicId={'browser-' + result.browserName + '.svg'} type="asset"></Image>
+                      <Image publicId={this.getBrowserIcon()} type="asset"></Image>
                     </div>
                     <div className="value">
                       {result.browserName}
