@@ -152,6 +152,10 @@
       bottom: 0;
       margin: auto;
     }
+    &:focus {
+      outline: none;
+      background: darken($color-blue-c, 20%);
+    }
   }
   &.expanded .toggle-btn {
     &.toggle-show {
