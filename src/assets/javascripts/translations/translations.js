@@ -26,7 +26,7 @@ export const translations = {
     'FooterCompressedImageWeight': '16 KB (42%)',
     'FooterSampleURL': 'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
-    'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',      
+    'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',
     'LeadForm_Title': 'Learn more about image optimizations',
     'LeadForm_EmailDefaultText': 'Email',
     'LeadForm_FirstDefaultText': 'First name',
@@ -121,10 +121,10 @@ export const translations = {
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_site_name': 'Website Speed Test - Image Analysis Tool by Cloudinary',
-    'meta_social_url': 'http://webspeedtest.cloudinary.com',
+    'meta_social_url': 'https://webspeedtest.cloudinary.com/',
     'meta_social_type': 'website',
     'meta_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression.',
-    'meta_social_image': 'http://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
+    'meta_social_image': 'https://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
 
     // Meta data - results page
 
