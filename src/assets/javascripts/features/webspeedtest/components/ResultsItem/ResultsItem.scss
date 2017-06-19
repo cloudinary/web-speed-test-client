@@ -129,7 +129,7 @@
     right: 0;
     bottom: 15px;
     margin: auto;
-    transition: all .4s;
+    transition: all .5s;
     &:hover {
       background: darken($color-blue-c, 10%);
     }
@@ -138,7 +138,7 @@
       opacity: 1;
     }
     &.toggle-hide {
-      transform: scale(0);
+      transform: scale(.7);
       opacity: 0;
       img {
         transform: rotate(180deg);
