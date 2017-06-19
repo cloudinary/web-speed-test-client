@@ -15,8 +15,34 @@
 
   .type {
     text-transform: uppercase;
-    padding: 0 7%;
-    width: 18%;
+    padding: 0 0 0 7%;
+    width: 25%;
+  }
+
+  .best {
+    float: right;
+    position: relative;
+    text-transform: initial;
+    margin: 0 6px 0 3px;
+    &:hover .tooltip {
+      display: block;
+    }
+  }
+  .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 5px;
+    right: 50%;
+    transform: translateX(50%);
+    white-space: nowrap;
+    background: #303B46;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 4px 7px 3px;
+    border-radius: 4px;
+    @include triangle($dir: bottom, $pos: 50%, $color: #303B46);
   }
 
   .bytes {

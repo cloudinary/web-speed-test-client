@@ -63,6 +63,7 @@ export default class ResultsItem extends Component {
                     format={transform.analyze.data.format}
                     size={transform.analyze.data.bytes}
                     originalSize={result.analyze.data.bytes}
+                    best={transform.best}
                   />
                 ))}
               </div>
