@@ -29,6 +29,7 @@ const LinkedinIcon = generateShareIcon('linkedin');
 
 export default class Share extends Component {
   static propTypes = {
+    icon: PropTypes.string,
     shareUrl: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   };
@@ -52,13 +53,13 @@ export default class Share extends Component {
       { 'expanded': this.state.expanded }
     );
 
-    const { shareUrl, title, children } = this.props;
+    const { icon, shareUrl, title, children } = this.props;
 
     return (
       <div className={shareCls}>
 
         <button className="share-toggle" onClick={this.toggleShareWidget}>
-          <Image publicId="icon-share.svg" width="18" type="asset"></Image>
+          <Image publicId={icon || "icon-share.svg"} width="18" type="asset"></Image>
           {children}
         </button>
 
