@@ -57,9 +57,18 @@ export default function (state = initialState, action) {
        isFetching: true,
        testResult: initialState.testResult,
        hasResults: false
+     }),
+     ['@@router/LOCATION_CHANGE']: () => ({
+       ...state,
+       isFetching: false,
+       testResult: initialState.testResult,
+       hasResults: false,
+       testId: initialState.testId
      })
   };
-
+  if (action.type == '@@router/LOCATION_CHANGE' && action.payload.pathname != '/') {
+    return state
+  }
   return (isFunction(actions[action.type])) ? actions[action.type]() : state
 }
 
@@ -106,11 +115,13 @@ const wait = (duration) => {
   });
 };
 
-const fetchTestData = async(testId, retryNum = 0) => {
+const fetchTestData = async(testId, getState, retryNum = 0) => {
   const totalRetries = 180;
   const delay = 3000;
   try {
-    console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
+    if (getState().webspeedtest.isFetching == false) {
+      return false;
+    }
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
 
@@ -123,7 +134,7 @@ const fetchTestData = async(testId, retryNum = 0) => {
       // KEEP TRYING
       console.log("Test not ready yet. re-trying [" + retryNum + '/' + totalRetries + "]");
       retryNum++;
-      return wait(delay).then(() => {return fetchTestData(testId, retryNum)});
+      return wait(delay).then(() => {return fetchTestData(testId, getState, retryNum)});
     }
     else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
       // STOP TRYING
@@ -181,7 +192,10 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
     try {
       dispatch(requestTestResults(testId));
 
-      const result = await fetchTestData(testId);
+      const result = await fetchTestData(testId, getState);
+      if (result == false) {
+        return;
+      }
       if (result.status == 'success') {
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
