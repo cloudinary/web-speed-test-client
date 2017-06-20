@@ -49,52 +49,23 @@ export default class Tos extends Component {
             technical and safety guidelines and limitations which will be conveyed to you by Cloudinary and amended
                from time to time.
 			</p>
+			<p>Cloudinary may remove and report any Contributed Content and share user identifiable information, if Cloudinary believes that such content is illegal or abusive or may violate any third party rights.</p>
+			<p><b>Intellectual Property</b></p>
+			<p>Except for your Contributed Content, all rights, title and interest in and to the Service, including any intellectual property rights, are owned by, or licensed to Cloudinary. </p>
+			<p>You grant Cloudinary permission to use your Contributed Content, for the purposes of providing, developing and supporting the Service. You acknowledge that Cloudinary may adjust and modify Contributed Content, per your requests.</p>
+			<p><b>Disclaimer</b></p>
+			<p>THE SERVICE IS PROVIDED FOR USE &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot;, WITHOUT ANY WARRANTIES AND LIABILITY OF ANY KIND.</p>
+			<p><b>General</b></p>
+			<p>These Terms along with the
+			<a href="http://cloudinary.com/privacy">Privacy Policy</a>&nbsp;constitute the entire agreement between you and Cloudinary with respect to the Service.
+			</p>
 
+			<p><b>Contact Us</b></p>
+			<p>You may contact Cloudinary with any question about the Service, through the contact form at:<a href="http://cloudinary.com/contact">http://cloudinary.com/contact</a>
+            &nbsp;Cloudinary will make efforts to address your inquiry promptly.</span>
 
-			<p className="c0">
-				<span className="c2">Cloudinary may remove and report any Contributed Content and share user identifiable information, if Cloudinary believes that such content is illegal or abusive or may violate any third party rights. </span>
-			</p>
-			<p className="c0">
-				<span className="c5 c2">Intellectual Property</span>
-			</p>
-			<p className="c0">
-				<span className="c2">Except for your Contributed Content, all rights, title and interest in and to the Service, including any intellectual property rights, are owned by, or licensed to Cloudinary. </span>
-			</p>
-			<p className="c0">
-				<span className="c2">You grant Cloudinary permission to use your Contributed Content, for the purposes of providing, developing and supporting the Service. You acknowledge that Cloudinary may adjust and modify Contributed Content, per your requests.</span>
-			</p>
-			<p className="c0">
-				<span className="c5 c2">Disclaimer </span>
-			</p>
-			<p className="c0">
-				<span className="c2">THE SERVICE IS PROVIDED FOR USE &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot;, WITHOUT ANY WARRANTIES AND LIABILITY OF ANY KIND. </span>
-			</p>
-			<p className="c0">
-				<span className="c5 c2">General </span>
-			</p>
-			<p className="c0">
-				<span className="c2">These Terms along with the </span>
-				<span className="c2 c11 c12">
-					<a className="c3" href="http://cloudinary.com/privacy">Privacy Policy</a>
-				</span>
-				<span className="c2">&nbsp;constitute the entire agreement between you and Cloudinary with respect to the Service. </span>
-			</p>
-			<p className="c0">
-				<span className="c5 c2">Contact Us</span>
-			</p>
-			<p className="c0">
-				<span className="c2">You may contact Cloudinary with any question about the Service, through the contact form at: </span>
-				<span className="c2 c11">
-					<a className="c3" href="http://cloudinary.com/contact">http://cloudinary.com/contact</a>
-				</span>
-				<span className="c2">&nbsp;Cloudinary will make efforts to address your inquiry promptly.</span>
-			</p>
-			<p className="c0 c8">
-				<span className="c2">Updated: Jun 8, 2017.</span>
-			</p>
-			<p className="c0 c8 c10">
-				<span></span>
-			</p>
+			<p>Updated: Jun 8, 2017.</p>
+
 
         <p>
           <Link to="/">Back To Home View</Link>
