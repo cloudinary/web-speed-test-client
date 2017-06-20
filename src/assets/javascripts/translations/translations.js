@@ -27,7 +27,7 @@ export const translations = {
     'FooterSampleURL': 'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
     'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',
-    'LeadForm_Title': 'Learn more about image optimizations',
+    'LeadForm_Title': 'Learn more about Image Optimization',
     'LeadForm_EmailDefaultText': 'Email',
     'LeadForm_FirstDefaultText': 'First name',
     'LeadForm_LastDefaultText': 'Last name',
