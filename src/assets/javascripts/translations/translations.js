@@ -124,7 +124,7 @@ export const translations = {
     'meta_social_url': 'https://webspeedtest.cloudinary.com/',
     'meta_social_type': 'website',
     'meta_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression.',
-    'meta_social_image': 'https://res.cloudinary.com/webspeedtest/image/upload/share_image.jpg',
+    'meta_social_image': 'https://res.cloudinary.com/webspeedtest/image/upload/socialshare.jpg',
 
     // Meta data - results page
 
