@@ -62,7 +62,8 @@ export default class Tos extends Component {
 
 			<p><b>Contact Us</b></p>
 			<p>You may contact Cloudinary with any question about the Service, through the contact form at:<a href="http://cloudinary.com/contact">http://cloudinary.com/contact</a>
-            &nbsp;Cloudinary will make efforts to address your inquiry promptly.</span>
+          &nbsp;Cloudinary will make efforts to address your inquiry promptly.
+            </p>
 
 			<p>Updated: Jun 8, 2017.</p>
 
