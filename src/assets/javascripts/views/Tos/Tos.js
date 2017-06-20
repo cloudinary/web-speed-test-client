@@ -5,7 +5,7 @@ export default class Tos extends Component {
   render() {
     return (
       <div className="static-page container">
-        <h1>{this.context.t('Cloudinary Website Speed Test Image Analysis Tool')}</h1>
+        <h2>{this.context.t('Cloudinary Website Speed Test Image Analysis Tool')}</h2>
         <h1>{this.context.t('Terms of Service')}</h1>
 				<p>
 					Welcome to Cloudinary&#39;s Website Speed Test Image Analysis Tool, (the &ldquo;<b>Service</b>&rdquo;).
@@ -69,7 +69,7 @@ export default class Tos extends Component {
 
 
         <p>
-          <Link to="/">Back To Home View</Link>
+          <Link to="/">Back Home</Link>
         </p>
       </div>
     );
