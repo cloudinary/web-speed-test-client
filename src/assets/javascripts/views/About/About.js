@@ -20,7 +20,8 @@ export default class About extends Component {
         <h2>Website Speed Test FAQ</h2>
         <h3>The report doesn&#39;t seem to be showing all the images in my web page</h3>
         <ul>
-          <li>We analyze only images that are defined in the web page as &lt;IMG&gt; elements. &nbsp;&nbsp;`background-image` files are included only if &nbsp;`background-repeat` is set to &#39;no-repeat&#39; (meaning that the background image is not tiled).</li>
+          <li>We analyze only images that are defined in the web page as &lt;IMG&gt; elements.</li>
+          <li>We analyze all background-image images except for ones with background-repeat round.</li>
           <li>We limit the analysis to the 50 images with the highest resolution (pixel width X height) in the web page.</li>
         </ul>
         <h3>How do you calculate the image&#39;s average score?</h3>
