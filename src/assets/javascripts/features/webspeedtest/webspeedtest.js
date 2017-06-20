@@ -165,26 +165,7 @@ const fetchNewTest = async(url) => {
 }
 
 const processTestResults = (data) => {
-  return {imagesTestResults: processEagerResult(data.imagesTestResults), resultSumm: data.resultSumm}
-}
-
-const processEagerResult = results => {
-  var processedResults = [];
-  results.forEach(result => {
-    let processedResult = Object.assign({}, result);
-    processedResult.dynamicFormats = [];
-    processedResult.eager.forEach(transformed => {
-      if (transformed.transformation.indexOf("f_") == -1) {
-        processedResult.transformedImage = transformed;
-      }
-      else {
-        processedResult.dynamicFormats.push(transformed);
-      }
-    })
-    delete processedResult.eager;
-    processedResults.push(processedResult);
-  })
-  return processedResults;
+  return {imagesTestResults: data.imagesTestResults, resultSumm: data.resultSumm}
 }
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {

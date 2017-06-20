@@ -5,10 +5,9 @@ export default class About extends Component {
   render() {
     return (
       <div className="static-page container">
-        <h1>{this.context.t('About Cloudinary Website Speed Test')}</h1>
+        <h1>About Cloudinary Website Speed Test</h1>
         <hr />
 
-        <h1>About Cloudinary Website Speed Test</h1>
         <p>Website Speed Test analyzes a website&#39;s images and provides a ranking for a variety of image aspects and categories. Using a grade range of A-F, it rates the image format, fit, compression rate, color space and color depth.</p>
         <p>Along with the ranking, the Website Speed Test tool provides measurable and actionable information about how to go beyond simple compression to optimize web performance. Users can discover how changes to image size, format selection, quality and encoding parameters to drastically improve their web page&#39;s load speed.</p>
         <p>The Website Speed Test image analysis tool is integrated with <a href="https://www.webpagetest.org/">WebPagetest</a>. With this integration, <a href="http://cloudinary.com/">Cloudinary</a> powers WebPagetest with robust image analysis capabilities, enabling users to see and understand the problems related to images on their pages. Users receive valuable information on how to manage those images so they can deliver an optimal user experience.</p>

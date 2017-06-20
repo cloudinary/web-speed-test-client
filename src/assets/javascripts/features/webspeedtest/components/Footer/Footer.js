@@ -20,19 +20,19 @@ export default class Footer extends Component {
           </div>
           <div className="social">
             <a href={this.context.t('CloudinaryLogoURL')} target="_blank">
-              <Image publicId="icon-cloudinary.png" width="40" type="asset"></Image>
+              <Image publicId="icon-cloudinary.png" width="40" type="asset" dpr="auto"></Image>
             </a>
             <a href={this.context.t('LinkedinURL')} target="_blank">
-              <Image publicId="icon-lin.png" width="24" type="asset"></Image>
+              <Image publicId="icon-lin.png" width="24" type="asset" dpr="auto"></Image>
             </a>
             <a href={this.context.t('FacebookURL')} target="_blank">
-              <Image publicId="icon-fb.png" width="24" type="asset"></Image>
+              <Image publicId="icon-fb.png" width="24" type="asset" dpr="auto"></Image>
             </a>
             <a href={this.context.t('GooglePlusURL')} target="_blank">
-              <Image publicId="icon-gplus.png" width="24" type="asset"></Image>
+              <Image publicId="icon-gplus.png" width="24" type="asset" dpr="auto"></Image>
             </a>
             <a href={this.context.t('TwitterURL')} target="_blank">
-              <Image publicId="icon-twitter.png" width="24" type="asset"></Image>
+              <Image publicId="icon-twitter.png" width="24" type="asset" dpr="auto"></Image>
             </a>
           </div>
         </div>

@@ -91,6 +91,7 @@
     flex: 1;
     text-align: center;
     position: relative;
+    padding-bottom: 70px;
   }
   .image-final-percent {
     margin-top: 30px;
@@ -111,7 +112,7 @@
     }
   }
   .toggle-btn {
-    position: relative;
+    position: absolute;
     display: inline-block;
     cursor: pointer;
     font-size: 14px;
@@ -124,7 +125,6 @@
     box-shadow: 0 2px 8px rgba(#000, .4);
     border: none;
     transition: background .3s;
-    position: absolute;
     left: 0;
     right: 0;
     bottom: 15px;
