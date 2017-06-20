@@ -69,7 +69,7 @@ export const translations = {
     'TotalImagesNumber_TooMany_B': 'images were analyzed',
     'Tested_BrowserType': 'Tested on browser',
     'Tested_Location': 'From location',
-    'Tested_Viewport': 'Viewport size',
+    'Tested_Viewport': 'Screen resolution',
     'Tested_DeviceDPI': 'Device DPI',
     'IntegratedWith': 'Integrated with',
     'URL2PNG_PlaceHolderText': 'Generating Thumbnail',
