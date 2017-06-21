@@ -14,6 +14,8 @@
     .share-widget {
       padding: 0 10px 5px;
       margin-right: -10px;
+      margin-top: 5px;
+      z-index: 2;
     }
     .share-count {
       display: none;
@@ -31,18 +33,55 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .test-empty-summ,
   .test-summ {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-top: 50px;
   }
+  .test-empty {
+    padding: 60px 0 120px;
+    font-size: 38px;
+    font-weight: 300;
+    color: #aaa;
+    align-self: center;
+    margin: auto;
+  }
+  // .test-empty-screen {
+  //   flex: 0 0 300px;
+  // }
+  // .test-empty-screen,
   .test-screen {
     max-height: 660px;
+    position: relative;
     img {
       box-shadow:
         0 0 30px rgba(#000, .2),
         0 -15px 20px -5px rgba(#000, .2);
+    }
+    .screenshot {
+      display: none;
+    }
+    .placeholder-text {
+      text-align: center;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      width: 300px;
+      z-index: 1;
+      font-size: 16px;
+      color: #bbb;
+      line-height: 1.2;
+    }
+    &.loaded {
+      .placeholder,
+      .placeholder-text {
+        display: none;
+      }
+      .screenshot {
+        display: initial;
+      }
     }
   }
   .test-meta {
@@ -131,15 +170,40 @@
       font-size: 18px;
       font-weight: 400;
       padding-left: 30px;
+      white-space: nowrap;
     }
     .trans-images-label {
       margin-top: 6px;
       padding-left: 30px;
       font-size: 12px;
-      img {
+      > img {
         vertical-align: bottom;
         margin-right: 3px;
       }
+    }
+  }
+
+  .more-info {
+    position: relative;
+    img {
+      vertical-align: baseline;
+      margin-left: 4px;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      box-shadow: 0 0 5px rgba(#000, .3);
+      border-radius: 2px;
+      width: 220px;
+      background: #fbfbfb;
+      padding: 7px 12px;
+      color: #666;
+      bottom: 120%;
+      right: -30px;
+      font-size: 12px;
+    }
+    &:hover .tooltip {
+      display: block;
     }
   }
 
@@ -151,13 +215,12 @@
       flex: 1 0 33%;
       padding: 0 10px 20px 30px;
       &.image-count {
-        padding: 0 40px 20px;
+        padding: 0 20px 20px 40px;
       }
     }
     .label {
       height: 45px;
       margin-bottom: 0;
-      overflow: hidden;
     }
     .value {
       font-weight: 100;
@@ -193,6 +256,15 @@
     .value {
       margin-top: 10px;
       color: $color-gray-blue;
+    }
+    img {
+      height: 22px;
+    }
+    .wpt {
+      img {
+        height: auto;
+        opacity: .6;
+      }
     }
   }
 

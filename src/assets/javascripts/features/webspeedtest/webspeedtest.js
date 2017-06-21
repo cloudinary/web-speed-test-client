@@ -57,9 +57,18 @@ export default function (state = initialState, action) {
        isFetching: true,
        testResult: initialState.testResult,
        hasResults: false
+     }),
+     ['@@router/LOCATION_CHANGE']: () => ({
+       ...state,
+       isFetching: false,
+       testResult: initialState.testResult,
+       hasResults: false,
+       testId: initialState.testId
      })
   };
-
+  if (action.type == '@@router/LOCATION_CHANGE' && action.payload.pathname != '/') {
+    return state
+  }
   return (isFunction(actions[action.type])) ? actions[action.type]() : state
 }
 
@@ -100,27 +109,43 @@ const requestTestError = (msg: string) => ({
   msg
 });
 
+const wait = (duration) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(resolve, duration)
+  });
+};
 
-const fetchTestData = async(testId, retryNum = 0) => {
-  const totalRetries = 10;
+const fetchTestData = async(testId, getState, retryNum = 0) => {
+  const totalRetries = 180;
+  const delay = 3000;
   try {
-    console.log("Fetching: " + TEST_RESULTS_END_POINT + '/' + testId);
+    if (getState().webspeedtest.isFetching == false) {
+      return false;
+    }
     const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId)
     const data: Object = await response.json();
-    if (data.status == "success") {
+
+    if (data.status === 'success' && data.code !== 150) {
+      // SUCCESS
+      console.log("Got test data:", data);
       return data;
     }
+    else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
+      // KEEP TRYING
+      console.log("Test not ready yet. re-trying [" + retryNum + '/' + totalRetries + "]");
+      retryNum++;
+      return wait(delay).then(() => {return fetchTestData(testId, getState, retryNum)});
+    }
+    else if (data.status === 'success' && data.code === 150 && retryNum >= totalRetries) {
+      // STOP TRYING
+      console.log("Tried " + retryNum + " times. Stopping.");
+      data.status = 'timeout';
+      return data;
+    }
+
   } catch (err) {
-    if (retryNum < totalRetries) {
-      console.log("Got error message, re-trying [" + retryNum + '/' + totalRetries + "]");
-      console.log(err);
-      return fetchTestData(testId, retryNum + 1)
-    }
-    else {
-      console.log("Got server error");
-      console.log(err);
-      throw err;
-    }
+    console.log("Got server error", err);
+    throw err;
   }
 }
 
@@ -140,26 +165,7 @@ const fetchNewTest = async(url) => {
 }
 
 const processTestResults = (data) => {
-  return {imagesTestResults: processEagerResult(data.imagesTestResults), resultSumm: data.resultSumm}
-}
-
-const processEagerResult = results => {
-  var processedResults = [];
-  results.forEach(result => {
-    let processedResult = Object.assign({}, result);
-    processedResult.dynamicFormats = [];
-    processedResult.eager.forEach(transformed => {
-      if (transformed.transformation.indexOf("f_") == -1) {
-        processedResult.transformedImage = transformed;
-      }
-      else {
-        processedResult.dynamicFormats.push(transformed);
-      }
-    })
-    delete processedResult.eager;
-    processedResults.push(processedResult);
-  })
-  return processedResults;
+  return {imagesTestResults: data.imagesTestResults, resultSumm: data.resultSumm}
 }
 
 const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
@@ -167,14 +173,17 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
     try {
       dispatch(requestTestResults(testId));
 
-      const result = await fetchTestData(testId);
+      const result = await fetchTestData(testId, getState);
+      if (result == false) {
+        return;
+      }
       if (result.status == 'success') {
-
         dispatch(requestTestSuccess(processTestResults(result.data)));
       }
       else {
         dispatch(requestTestError(result.message));
       }
+
     } catch (err) {
       dispatch(requestTestError(err));
     }

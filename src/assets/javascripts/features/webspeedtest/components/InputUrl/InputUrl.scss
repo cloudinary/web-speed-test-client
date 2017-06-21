@@ -39,9 +39,11 @@
   }
   form {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     max-width: 800px;
-    margin: 20px auto;
+    min-height: 90px;
+    margin: 20px auto 0;
   }
   input,
   button {
@@ -53,6 +55,9 @@
     vertical-align: middle;
     box-sizing: border-box;
     border: 1px solid $color-gray-blue;
+    &:focus {
+      outline: none;
+    }
   }
   input {
     font-size: 18px;
@@ -60,6 +65,9 @@
     flex: 1;
     @media #{$bp-min-xs} {
       border-right: 0;
+    }
+    &:focus {
+      border-color: darken($color-gray-blue, 25%);
     }
   }
   button {
@@ -76,6 +84,17 @@
     @media #{$bp-min-xs} {
       border-left: 0;
     }
+    &:focus {
+      background: darken($color-blue-c, 10%);
+    }
+  }
+  .validation {
+    width: 100%;
+    text-align: left;
+    color: #F44336;
+    padding: 3px 20px;
+    font-size: 14px;
+    min-height: 20px;
   }
   .integrated {
     font-size: 15px;
@@ -83,7 +102,6 @@
     font-weight: 300;
     color: #777;
     img {
-      vertical-align: text-bottom;
       margin-left: 6px;
     }
   }
@@ -101,7 +119,6 @@
       }
     }
     form {
-      display: block;
       order: 2;
       margin: 0 0 30px;
       max-width: 400px;
@@ -113,12 +130,11 @@
       width: 100%;
       border-radius: 8px;
     }
-    p {
-      order: 3;
-    }
-    .integrated {
-      order: 4;
-    }
+    input { order: 1; }
+    .validation { order: 2; }
+    button { order: 3; }
+    p { order: 4; }
+    .integrated { order: 5; }
   }
 
 }

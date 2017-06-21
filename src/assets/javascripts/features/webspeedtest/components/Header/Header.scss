@@ -9,6 +9,10 @@
     justify-content: space-between;
     align-items: center;
   }
+  .brand {
+    display: flex;
+    align-items: center;
+  }
   .logo {
     margin-right: 10px;
   }
@@ -43,10 +47,21 @@
     .container {
       justify-content: flex-start;
     }
+    .logo {
+      margin-right: 5px;
+    }
+    h1 {
+      font-size: 16px;
+    }
     .learn,
-    .share,
-    .powered-by {
+    .share {
       display: none;
+    }
+    .powered-by {
+      margin-left: auto;
+      img {
+        max-width: 90px;
+      }
     }
   }
 

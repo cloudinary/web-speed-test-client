@@ -2,8 +2,11 @@
 
 .resultsItem {
   background: #E4EAEE;
-  box-shadow: 0 0 6px rgba(#000, .2);
   margin: 25px 0;
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 0 6px rgba(#000, .2);
+  }
   .image-intro {
     display: flex;
     flex-wrap: wrap;
@@ -14,7 +17,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 300px;
+    height: 300px;
+    width: 400px;
     position: relative;
     z-index: 1;
     text-align: center;
@@ -22,7 +26,10 @@
     @include checkered;
     img {
       vertical-align: top;
-      height: 100%; width: 100%;
+      height: 100%;
+      width: 100%;
+    }
+    &:not(.image-svg) img {
       object-fit: cover
     }
   }
@@ -71,7 +78,7 @@
     font-size: 18px;
     font-weight: 400;
     margin: 0;
-    padding: 22px 30px 12px;
+    padding: 22px 6.9% 12px;
     white-space: nowrap;
   }
   .image-data-inner {
@@ -84,6 +91,9 @@
     flex: 1;
     text-align: center;
     position: relative;
+    @media #{$bp-min-md} {
+      padding-bottom: 70px;
+    }
   }
   .image-final-percent {
     margin-top: 30px;
@@ -98,10 +108,15 @@
   .image-final-pixel {
     color: #5b616a;
     font-size: 18px;
+    img {
+      vertical-align: baseline;
+      margin: 0 7px;
+    }
   }
   .toggle-btn {
-    position: relative;
+    position: absolute;
     display: inline-block;
+    cursor: pointer;
     font-size: 14px;
     width: 190px;
     border-radius: 6px;
@@ -112,12 +127,11 @@
     box-shadow: 0 2px 8px rgba(#000, .4);
     border: none;
     transition: background .3s;
-    position: absolute;
     left: 0;
     right: 0;
     bottom: 15px;
     margin: auto;
-    transition: all .4s;
+    transition: all .5s;
     &:hover {
       background: darken($color-blue-c, 10%);
     }
@@ -126,7 +140,7 @@
       opacity: 1;
     }
     &.toggle-hide {
-      transform: scale(0);
+      transform: scale(.7);
       opacity: 0;
       img {
         transform: rotate(180deg);
@@ -139,6 +153,10 @@
       top: 0;
       bottom: 0;
       margin: auto;
+    }
+    &:focus {
+      outline: none;
+      background: darken($color-blue-c, 20%);
     }
   }
   &.expanded .toggle-btn {

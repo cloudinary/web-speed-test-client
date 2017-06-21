@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import MetaData from './MetaData/MetaData';
 import Header from './Header/Header';
 import InputUrl from './InputUrl/InputUrl';
 import Loader from './Loader/Loader';
@@ -30,7 +31,9 @@ export default class WebspeedtestLayout extends Component {
 
     return (
       <div className="webspeedtestApp">
+        <MetaData result={webspeedtest.testResult} />
         <Header />
+
         {staticPage &&
           <StaticPage page={staticPage} />
         }
@@ -43,9 +46,12 @@ export default class WebspeedtestLayout extends Component {
         {webspeedtest.testId && webspeedtest.isFetching == false &&
           <div className="page-wrap">
             <ResultSumm testId={webspeedtest.testId} result={webspeedtest.testResult.resultSumm || {}} />
-            <ResultsList testId={webspeedtest.testId} results={webspeedtest.testResult.imagesTestResults || []} />
+            {webspeedtest.testResult.resultSumm.totalImagesCount > 0 &&
+              <ResultsList testId={webspeedtest.testId} results={webspeedtest.testResult.imagesTestResults || []} />
+            }
           </div>
         }
+
         <PreFooter />
         <Footer />
       </div>

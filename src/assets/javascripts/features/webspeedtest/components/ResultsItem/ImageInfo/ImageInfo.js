@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Image, Transformation } from 'cloudinary-react';
 import numbro from 'numbro';
+import cloudinary from 'cloudinary-core';
 
 import './ImageInfo.scss';
 
@@ -20,15 +21,6 @@ export default class ImageInfo extends Component {
     this.imageError = this.imageError.bind(this);
   }
 
-  componentDidMount() {
-    if (this.image) {
-      this.setState({
-        // Get image URL without transforms.
-        imageUrl: this.image.state.url.replace(/upload\/.*\//, 'upload\/q_auto\/')
-      });
-    }
-  }
-
   getFormat(format) {
     if (format == 'jxr') {
       return 'wdp';
@@ -42,6 +34,8 @@ export default class ImageInfo extends Component {
     let browsers = [];
     switch (format) {
       case 'jxr':
+      case 'wdp':
+      case 'hdp':
         browsers = ['Internet Explorer', 'Microsoft Edge'];
         break;
       case 'webp':
@@ -57,7 +51,7 @@ export default class ImageInfo extends Component {
 
   imageError() {
     if (this.state.formatSupported == true) {
-      this.image.element.src = this.image.state.url.replace(/\.[^\.]+$/, '.jpg');
+      this.image.element.src = this.image.state.url.replace('f_' + this.image.props.fetchFormat, 'f_auto');
       this.setState({ formatSupported: false });
     }
   }
@@ -70,18 +64,39 @@ export default class ImageInfo extends Component {
       image: { analyze: { data, explanation, grading } }
     } = this.props;
 
+    const format = image.transformation && image.transformation.includes('f_') ? this.getFormat(data.format) : 'auto';
+
+    const cloudinaryCore = new cloudinary.Cloudinary({
+      cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+      cname: process.env.CLOUDINARY_CNAME
+    });
+    const transform = new cloudinary.Transformation();
+    let transformedUrl = '';
+    if (isOriginal == true) {
+      transformedUrl = cloudinaryCore.url(image.public_id);
+    }
+    else if (original && original.hasOwnProperty("public_id")) {
+      transform.crop('limit').width(image.width).height(image.height).fetchFormat(format).quality("auto");
+      transformedUrl = cloudinaryCore.url(original.public_id, transform);
+    }
+
     return (
       <div className="imageInfo">
         <div className="image-info-bar">
           <div className="browsers">
             {this.getBrowsersSupport(data.format).map((browser, key) => (
-              <Image key={key} publicId={'browser-' + browser + '.svg.svg'} type="asset"></Image>
+              <Image key={key} publicId={'browser-' + browser + '.svg'} type="asset"></Image>
             ))}
           </div>
-          {this.state.imageUrl && original.public_id &&
+          {original && original.hasOwnProperty("public_id") &&
             <div className="links">
-              <a target="_blank" title={this.context.t('Open image in a new tab')} href={this.state.imageUrl}><Image publicId="icon-external.svg.svg" type="asset" width="16"></Image></a>
-              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={this.state.imageUrl}><Image publicId="icon-download.svg.svg" type="asset" width="16"></Image></a>
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={transformedUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
+              <a download={original.public_id + '.' + this.getFormat(data.format)} target="_blank" title={this.context.t('Download the image')} href={transformedUrl}><Image publicId="icon-download.svg" type="asset" width="16"></Image></a>
+            </div>
+          }
+          {isOriginal == true &&
+            <div className="links">
+              <a target="_blank" title={this.context.t('Open image in a new tab')} href={transformedUrl}><Image publicId="icon-external.svg" type="asset" width="16"></Image></a>
             </div>
           }
         </div>
@@ -94,7 +109,7 @@ export default class ImageInfo extends Component {
             </div>
           }
           <div className="weight">
-            {numbro(data.bytes).format('0.0d')}
+            {numbro(data.bytes).format('0.0 d')}
           </div>
         </div>
 
@@ -130,7 +145,8 @@ export default class ImageInfo extends Component {
               <div className="support">{this.context.t('{f} is not supported in your browser', {f: this.context.t(data.format)})}</div>
             }
             <Image
-              publicId={original.public_id + '.' + this.getFormat(data.format)}
+              publicId={original.public_id}
+              fetchFormat={format}
               crop="lpad"
               height="300"
               width="400"

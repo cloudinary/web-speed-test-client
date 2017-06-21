@@ -69,10 +69,11 @@
   }
   .react-tabs__tab {
     @extend .tab;
+    cursor: pointer;
     background: #d0dae2;
     display: block;
     margin: 0 7px 0 0;
-    flex: 1;
+    flex: 0 1 35%;
     &:last-child {
       margin-right: 0;
     }
@@ -84,7 +85,7 @@
   .imageInfo {
     background: #fff;
     flex: 1;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     overflow: auto;
   }
 
@@ -100,7 +101,7 @@
     cursor: pointer;
     position: absolute;
     z-index: 9;
-    transform: rotate(180deg);
+    transform: rotate(0);
     transition: transform .4s;
     img {
       transform: rotate(270deg);
@@ -108,7 +109,7 @@
     }
   }
   &.dynamicIn .image-info-expand {
-    transform: rotate(0);
+    transform: rotate(180deg);
   }
 
   .mobile-carousel-btn {
