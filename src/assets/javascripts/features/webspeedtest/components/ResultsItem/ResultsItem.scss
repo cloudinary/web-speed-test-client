@@ -91,7 +91,9 @@
     flex: 1;
     text-align: center;
     position: relative;
-    padding-bottom: 70px;
+    @media #{$bp-min-md} {
+      padding-bottom: 70px;
+    }
   }
   .image-final-percent {
     margin-top: 30px;
