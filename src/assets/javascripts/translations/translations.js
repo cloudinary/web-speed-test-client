@@ -33,7 +33,7 @@ export const translations = {
     'LeadForm_LastDefaultText': 'Last name',
     'LeadForm_Button': 'Send',
     'AboutButtonText': 'About',
-    'AboutButtonURL': 'http://cloudinary.com/features/image_manipulation?utm_source=webspeedtest',
+    'AboutButtonURL': 'https://webspeedtest.cloudinary.com/about',
     'PrivacyButtonText': 'Privacy',
     'PrivacyButtonURL': 'http://cloudinary.com/privacy',
     'TermsButtonText': 'Terms',
