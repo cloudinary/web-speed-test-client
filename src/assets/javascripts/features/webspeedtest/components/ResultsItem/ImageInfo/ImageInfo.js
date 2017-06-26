@@ -18,16 +18,26 @@ export default class ImageInfo extends Component {
       imageUrl: false,
       formatSupported: true
     };
+    this.getFormat = this.getFormat.bind(this);
     this.imageError = this.imageError.bind(this);
   }
 
-  getFormat(format) {
-    if (format == 'jxr') {
-      return 'wdp';
+  // Returns the transformed format (file type)
+  // or undefined if no format manipulation is needed.
+  // Turns jxr -> wdp
+  getFormat() {
+    const { image, image: { analyze: { data: { format }}}} = this.props;
+
+    if (image.transformation && image.transformation.includes('f_')) {
+      if (format == 'jxr') {
+        return 'wdp';
+      }
+      else {
+        return format;
+      }
     }
-    else {
-      return format;
-    }
+
+    return undefined;
   }
 
   getBrowsersSupport(format) {
@@ -64,7 +74,7 @@ export default class ImageInfo extends Component {
       image: { analyze: { data, explanation, grading } }
     } = this.props;
 
-    const format = image.transformation && image.transformation.includes('f_') ? this.getFormat(data.format) : 'auto';
+    const format = this.getFormat();
 
     const cloudinaryCore = new cloudinary.Cloudinary({
       cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -76,7 +86,10 @@ export default class ImageInfo extends Component {
       transformedUrl = cloudinaryCore.url(image.public_id);
     }
     else if (original && original.hasOwnProperty("public_id")) {
-      transform.crop('limit').width(image.width).height(image.height).fetchFormat(format).quality("auto");
+      transform.crop('limit').width(image.width).height(image.height).quality("auto");
+      if (format) {
+        transform.fetchFormat(format);
+      }
       transformedUrl = cloudinaryCore.url(original.public_id, transform);
     }
 
