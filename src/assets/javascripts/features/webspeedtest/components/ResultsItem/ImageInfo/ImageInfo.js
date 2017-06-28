@@ -160,12 +160,10 @@ export default class ImageInfo extends Component {
             <Image
               publicId={original.public_id}
               fetchFormat={format}
-              crop="lpad"
+              crop="limit"
               height="300"
               width="400"
-              background="auto"
               quality="auto"
-              crop="lpad"
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
             ></Image>

@@ -97,8 +97,11 @@
   }
 
   .transform-image {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    height: 300px;
     @include checkered;
   }
   .support {

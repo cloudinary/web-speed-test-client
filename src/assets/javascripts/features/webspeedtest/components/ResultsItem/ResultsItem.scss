@@ -24,14 +24,6 @@
     text-align: center;
     border-right: 1px solid $color-gray-border;
     @include checkered;
-    img {
-      vertical-align: top;
-      height: 100%;
-      width: 100%;
-    }
-    &:not(.image-svg) img {
-      object-fit: cover
-    }
   }
   .image-data {
     flex: 1;
