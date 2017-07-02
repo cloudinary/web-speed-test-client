@@ -164,6 +164,7 @@ export default class ImageInfo extends Component {
               height="300"
               width="400"
               quality="auto"
+              dpr="auto"
               ref={(image) => { this.image = image; }}
               onError={this.imageError}
             ></Image>
