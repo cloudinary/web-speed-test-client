@@ -144,7 +144,24 @@ export const translations = {
 
     // meta_social_url should be replaced with the results page URL
 
-    'meta_results_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression. Check out this website analysis results:'
+    'meta_results_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression. Check out this website analysis results:',
+  
+    // Errors handling
+      
+    // Timeout waiting for WPT results
+    'error_timeout_header': 'Its a bit crowded at the moment...',
+    'error_timeout_subtitle': 'Looks like we are having too many requests',
+    'error_timeout_content': 'Please try again later',
+      
+    // Firefox is not supported
+    'error_firefox_header': 'Firefox is not supported',
+    'error_firefox_subtitle': 'Unfortunaetly Firefox testing is not supported at the moment',
+    'error_firefox_content': 'We will add this capability in the near future',
+
+    // WPT failure
+    'error_wpt_failure_header': 'Error Encountered',
+    'error_wpt_failure_subtitle': 'We are sorry but something went wrong',
+    'error_wpt_failure_content': 'Please contact us for assistance'
 
   }
 }
