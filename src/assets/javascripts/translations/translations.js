@@ -109,6 +109,8 @@ export const translations = {
     // Loader configuration (time between sentences and loop yes/no) can be found in
     // web-speed-test-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
     // wdtLoading.start
+    //  
+    // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
     'loadingPhrase1': 'Ranking optimization potential...',
     'loadingPhrase2': 'Optimizing images...',
@@ -117,6 +119,15 @@ export const translations = {
     'loadingPhrase5': 'Almost done...',
     'loaderExplanation': 'Analysis may take several minutes',
 
+    // Loader arrived from webpagetest
+    'loadingWPTPhrase0': 'Analyzing images...',
+    'loadingWPTPhrase1': 'Ranking optimization potential...',
+    'loadingWPTPhrase2': 'Optimizing images...',
+    'loadingWPTPhrase3': 'Creating recommended images...',
+    'loadingWPTPhrase4': 'Adding explanations...',
+    'loadingWPTPhrase5': 'Almost done...',
+    'loaderWPTExplanation': 'Analysis takes around 10 seconds',
+      
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
