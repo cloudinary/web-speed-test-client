@@ -40,8 +40,8 @@ export default class About extends Component {
         <div id="disqus_thread"></div>
         <script>
         var disqus_config = function () {
-        this.page.url = 'https://webspeedtest.cloudinary.com/about';
-        this.page.identifier = 'about';
+        this.page.url = "https://webspeedtest.cloudinary.com/about";
+        this.page.identifier = "about";
         };
         (function() { 
         var d = document, s = d.createElement('script');
