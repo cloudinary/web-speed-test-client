@@ -161,7 +161,11 @@ export const translations = {
     // WPT failure
     'error_wpt_failure_header': 'Error Encountered',
     'error_wpt_failure_subtitle': 'We are sorry but something went wrong',
-    'error_wpt_failure_content': 'Please contact us for assistance'
+    'error_wpt_failure_content': 'Please contact us for assistance',
 
+    // Cloudinary failure
+    'error_cld_failure_header': 'Error Encountered',
+    'error_cld_failure_subtitle': 'We are sorry but something went wrong',
+    'error_cld_failure_content': 'Please contact us for assistance'
   }
 }
