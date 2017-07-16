@@ -46,7 +46,7 @@ export default class ResultSumm extends Component {
     });
     let url2png;
     if (result.url) {
-      url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { type: "url2png", fetchFormat: "jpg", dpr: "auto" }) + "%2f/url2png/fullpage=false%7Cviewport=1024x2200%7Cthumbnail_max_width=300";
+      url2png = cloudinaryCore.url(result.url.replace(/\/$/, ""), { width: 300, crop: 'limit', type: "url2png", fetchFormat: "jpg", dpr: "auto" }) + "%2f/url2png/fullpage=false%7Cviewport=" + result.viewportSize.width + "x2200%7Cthumbnail_max_width=900";
     }
 
     return (
