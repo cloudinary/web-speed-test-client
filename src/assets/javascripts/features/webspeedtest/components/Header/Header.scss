@@ -3,6 +3,7 @@
 .header {
   position: relative;
   z-index: 1;
+  background: #fff;
   box-shadow: 0 0 6px rgba(#000, .4);
   .container {
     display: flex;
@@ -27,8 +28,14 @@
     margin-left: 15px;
     margin-bottom: -3px;
   }
-  .share {
+  .support {
     margin-left: auto;
+    margin-right: 25px;
+    img {
+      vertical-align: middle;
+    }
+  }
+  .share {
     .share-toggle {
       height: 70px;
     }
@@ -43,6 +50,19 @@
     }
   }
 
+  @media #{$bp-min-md} {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    @at-root {
+      .page-container {
+        padding-top: 70px;
+      }
+    }
+  }
+
+
   @media #{$bp-max-xs} {
     .container {
       justify-content: flex-start;
@@ -54,7 +74,8 @@
       font-size: 16px;
     }
     .learn,
-    .share {
+    .share,
+    .support {
       display: none;
     }
     .powered-by {

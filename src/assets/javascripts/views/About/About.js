@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import ReactDisqusThread from 'react-disqus-thread';
+import ReactDisqusComments from 'react-disqus-comments';
 
 export default class About extends Component {
   render() {
@@ -38,7 +38,7 @@ export default class About extends Component {
         <h3>Can I use the optimized images?</h3>
         <p>Sure! For every optimized image, you will find a download button. As long as the original image was yours and the image license permits it, feel free to download the optimized version of the image and use it. (Please refer to the service <a href="http://webspeedtest-staging.cloudinary.com/tos">Terms of Service</a>&nbsp;for full details.</p>
 
-        <ReactDisqusThread
+        <ReactDisqusComments
             shortname="website-speed-test"
             identifier="about"
             url="https://webspeedtest.cloudinary.com/about" />

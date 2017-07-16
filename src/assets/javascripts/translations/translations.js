@@ -6,6 +6,8 @@ export const translations = {
     'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
     'LearnMoreURL': 'https://webspeedtest.cloudinary.com/about',
+    'SupportText': 'Contact Cloudinary support',
+    'SupportURL': 'https://support.cloudinary.com/hc/en-us/requests/new',
     'PoweredByText': 'Powered By',
     'CloudinaryLogoURL': 'http://cloudinary.com?utm_source=webspeedtest',
     'ToolDescription': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
