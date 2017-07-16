@@ -26,7 +26,7 @@ export const translations = {
     'FooterCompressedImageWeight': '16 KB (42%)',
     'FooterSampleURL': 'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
-    'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest',
+    'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest&utm_source=webspeedtest',
     'LeadForm_Title': 'Learn more about Image Optimization',
     'LeadForm_EmailDefaultText': 'Email',
     'LeadForm_FirstDefaultText': 'First name',
