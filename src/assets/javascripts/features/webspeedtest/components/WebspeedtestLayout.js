@@ -31,7 +31,7 @@ export default class WebspeedtestLayout extends Component {
 
     return (
       <div className="webspeedtestApp">
-        <MetaData result={webspeedtest.testResult} />
+        {/*<MetaData result={webspeedtest.testResult} />*/}
         <Header />
 
         {staticPage &&

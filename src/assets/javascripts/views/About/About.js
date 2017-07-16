@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
+import ReactDisqusThread from 'react-disqus-thread';
 
 export default class About extends Component {
   render() {
@@ -37,23 +38,15 @@ export default class About extends Component {
         <h3>Can I use the optimized images?</h3>
         <p>Sure! For every optimized image, you will find a download button. As long as the original image was yours and the image license permits it, feel free to download the optimized version of the image and use it. (Please refer to the service <a href="http://webspeedtest-staging.cloudinary.com/tos">Terms of Service</a>&nbsp;for full details.</p>
 
-        <div id="disqus_thread"></div>
-        <script>
-        var disqus_config = function () {
-        this.page.url = "https://webspeedtest.cloudinary.com/about";
-        this.page.identifier = "about";
-        };
-        (function() { 
-        var d = document, s = d.createElement('script');
-        s.src = 'https://website-speed-test.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-        </script>
-      
+        <ReactDisqusThread
+            shortname="website-speed-test"
+            identifier="about"
+            url="https://webspeedtest.cloudinary.com/about" />
+
         <p>
           <Link to="/">Back Home</Link>
         </p>
+
       </div>
     );
   }
