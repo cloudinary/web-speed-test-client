@@ -20,7 +20,6 @@
     height: 300px;
     width: 400px;
     position: relative;
-    z-index: 1;
     text-align: center;
     border-right: 1px solid $color-gray-border;
     @include checkered;
