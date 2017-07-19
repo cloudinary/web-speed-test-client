@@ -40,6 +40,10 @@ export default function (state = initialState, action) {
        ...state,
        testId: action.testId
      }),
+     [REQUEST_NEW_TEST]: () => ({
+       ...state,
+       testUrl: action.url
+     }),
      [REQUEST_TEST_RESULTS_SUCCESS]: () => ({
        ...state,
        testResult: action.payload,

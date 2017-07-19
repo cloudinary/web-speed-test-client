@@ -107,12 +107,11 @@ export const translations = {
     'wdp': 'JPEG-XR',
     'hdp': 'JPEG-XR',
 
-    // Loader phrases
+    // Loader
     // Loader configuration (time between sentences and loop yes/no) can be found in
-    // web-speed-test-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
-    // wdtLoading.start
-      
-    //  
+    // /src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
+    'loaderTitle': 'Testing',
+
     // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
     'loadingPhrase1': 'Ranking optimization potential...',
@@ -120,14 +119,16 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take several minutes',
+    'loaderExplanation': `Website Speed Test analyzes a website\'s images and provides a ranking for a variety of image aspects and categories. Using a grade range of A-F, it rates the image format, fit, compression rate, color space and color depth.
+
+    Analysis may take several minutes`,
 
     // Loader arrived from webpagetest
     'loadingWPTPhrase0': 'Analyzing images...',
     'loadingWPTPhrase1': 'Ranking optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
     'loaderWPTExplanation': 'Analysis takes around 10 seconds',
-      
+
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
@@ -143,16 +144,15 @@ export const translations = {
     'meta_results_title': 'Website Speed Test by Cloudinary - results for',
 
     // meta_social_url should be replaced with the results page URL
-
     'meta_results_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression. Check out this website analysis results:',
 
     // Errors handling
-      
+
     // Timeout waiting for WPT results
     'error_timeout_header': 'Its a bit crowded at the moment...',
     'error_timeout_subtitle': 'Looks like we are having too many requests',
     'error_timeout_content': 'Please try again later',
-      
+
     // Firefox is not supported
     'error_firefox_header': 'Firefox is not supported',
     'error_firefox_subtitle': 'Unfortunaetly Firefox testing is not supported at the moment',
