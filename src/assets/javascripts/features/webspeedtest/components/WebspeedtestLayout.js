@@ -41,7 +41,7 @@ export default class WebspeedtestLayout extends Component {
           <InputUrl onSubmit={actions.runNewTest}/>
         }
         {webspeedtest.testId && webspeedtest.isFetching !== false &&
-          <Loader  url={webspeedtest.testUrl} />
+          <Loader url={webspeedtest.testUrl} />
         }
         {webspeedtest.testId && webspeedtest.isFetching == false &&
           <div className="page-wrap">

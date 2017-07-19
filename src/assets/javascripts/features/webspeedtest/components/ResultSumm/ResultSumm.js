@@ -61,9 +61,6 @@ export default class ResultSumm extends Component {
               <div className="test-empty">
                 {this.context.t('EmptyTest')}
               </div>
-              {/*<div className="test-empty-screen">
-                <img width="300" src={url2png} alt={this.context.t('Screenshot of ') + result.url}/>
-              </div>*/}
             </div>
           }
 
