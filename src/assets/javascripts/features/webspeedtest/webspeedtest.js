@@ -53,6 +53,7 @@ export default function (state = initialState, action) {
      [REQUEST_TEST_RESULTS_ERROR]: () => ({
        ...state,
        testResult: initialState.testResult,
+       error: action.msg,
        isFetching: false,
        hasResults: false
      }),
@@ -144,6 +145,7 @@ const fetchTestData = async(testId, getState, retryNum = 0) => {
       // STOP TRYING
       console.log("Tried " + retryNum + " times. Stopping.");
       data.status = 'timeout';
+      data.message = 'timeout';
       return data;
     }
 

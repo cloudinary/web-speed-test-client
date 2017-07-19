@@ -3,6 +3,7 @@ import MetaData from './MetaData/MetaData';
 import Header from './Header/Header';
 import InputUrl from './InputUrl/InputUrl';
 import Loader from './Loader/Loader';
+import Error from './Error/Error';
 import ResultSumm from './ResultSumm/ResultSumm';
 import ResultsList from './ResultsList/ResultsList';
 import PreFooter from './PreFooter/PreFooter';
@@ -43,13 +44,16 @@ export default class WebspeedtestLayout extends Component {
         {webspeedtest.testId && webspeedtest.isFetching !== false &&
           <Loader url={webspeedtest.testUrl} />
         }
-        {webspeedtest.testId && webspeedtest.isFetching == false &&
+        {webspeedtest.testId && webspeedtest.isFetching == false && !webspeedtest.error &&
           <div className="page-wrap">
             <ResultSumm testId={webspeedtest.testId} result={webspeedtest.testResult.resultSumm || {}} />
             {webspeedtest.testResult.resultSumm.totalImagesCount > 0 &&
               <ResultsList testId={webspeedtest.testId} results={webspeedtest.testResult.imagesTestResults || []} />
             }
           </div>
+        }
+        {webspeedtest.error &&
+          <Error error={webspeedtest.error} />
         }
 
         <PreFooter />

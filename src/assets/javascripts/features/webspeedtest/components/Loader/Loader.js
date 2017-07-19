@@ -37,7 +37,7 @@ export default class Loader extends Component {
       <div className="loader">
         <div className="container">
           <h2>{this.context.t('loaderTitle')}{url ? ' ' + url : '...'}</h2>
-          <Image className="gif" publicId="loader.gif" type="asset"></Image>
+          <Image className="gif" publicId="loader.gif" width="180" type="asset"></Image>
           <div className="col">
             {this.context.t('loaderExplanation') !== 'loaderExplanation' &&
               <p className="loader-explanation">{this.context.t('loaderExplanation')}</p>
