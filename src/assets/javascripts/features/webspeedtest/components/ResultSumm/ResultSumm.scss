@@ -234,9 +234,16 @@
       white-space: nowrap;
       color: $color-blue-dark;
       img {
-        vertical-align: middle;
+        vertical-align: baseline;
         margin-right: 10px;
+        margin-bottom: -1px;
       }
+    }
+    .image-weight .value img {
+      margin-bottom: -3px;
+    }
+    .compression .value img {
+      margin-bottom: -2px;
     }
     .description {
       margin-top: 10px;

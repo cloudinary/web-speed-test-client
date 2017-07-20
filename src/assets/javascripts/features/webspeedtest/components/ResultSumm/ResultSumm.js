@@ -112,7 +112,7 @@ export default class ResultSumm extends Component {
                       {this.context.t("TotalImagesNumber")}
                     </div>
                     <div className="value">
-                      <Image publicId="icon-layers.svg" type="asset" width="41"></Image>
+                      <Image publicId="icon-layers-v2.svg" type="asset" width="41"></Image>
                       {numbro(result.totalImagesCount).format('0a')}
                     </div>
                     {result.imageList && result.imageList.isCut === true &&
@@ -126,7 +126,7 @@ export default class ResultSumm extends Component {
                       {this.context.t("TotalImagesWeight")}
                     </div>
                     <div className="value">
-                      <Image publicId="icon-weight.svg" type="asset" width="41"></Image>
+                      <Image publicId="icon-weight-v2.svg" type="asset" width="41"></Image>
                       {numbro(result.totalImagesWeight).format('0d')}
                     </div>
                   </div>
@@ -139,7 +139,7 @@ export default class ResultSumm extends Component {
                       </span>
                     </div>
                     <div className="value">
-                      <Image publicId="icon-compress.svg" type="asset" width="41"></Image>
+                      <Image publicId="icon-compress-v2.svg" type="asset" width="41"></Image>
                       {numbro(result.totalPercentChange / 100).format('0.0%')}
                     </div>
                   </div>
