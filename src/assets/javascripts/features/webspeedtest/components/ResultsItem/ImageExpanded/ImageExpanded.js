@@ -68,7 +68,7 @@ export default class ImageExpanded extends Component {
         </div>
         <div className="image-details transformed">
           <div className="title">
-            <Image className="image-info-icon" publicId="icon-transformed.png" type="asset" width="25"></Image>
+            <Image className="image-info-icon" publicId="icon-transformed.svg" type="asset" width="25"></Image>
             {this.context.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">

@@ -190,7 +190,6 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
           dispatch(requestTestError('generic'));
         }
         else {
-          debugger;
           // Success
           dispatch(requestTestSuccess(processTestResults(result.data)));
         }
