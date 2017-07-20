@@ -240,4 +240,21 @@
   &-F {
     background: $color-grade-e;
   }
+  // Tweaks
+  &-A {
+    line-height: 1.55;
+  }
+  &-B {
+    text-indent: 0.04em;
+  }
+  &-C {
+    text-indent: -0.02em;
+  }
+  &-D {
+    text-indent: 0.09em;
+  }
+  &-E {
+    line-height: 1.57;
+    text-indent: -0.02em;
+  }
 }
