@@ -2,10 +2,12 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import ReactDisqusComments from 'react-disqus-comments';
 
+import './About.scss';
+
 export default class About extends Component {
   render() {
     return (
-      <div className="static-page container">
+      <div className="about static-page container">
         <h1>About Cloudinary Website Speed Test</h1>
         <hr />
 
