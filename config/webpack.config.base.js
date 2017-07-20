@@ -59,6 +59,11 @@ module.exports = {
           limit: 8192,
           name: 'fonts/[name].[ext]?[hash]'
         }
+      },
+      // JSON
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
