@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
 import { State } from '../../models/webspeedtest';
+import { version } from '../../../../../package.json';
 
 // Action Types
 
@@ -29,7 +30,8 @@ const NEW_TEST_END_POINT = API_URL + '/test/run';
 const initialState: State = {
   testId: null,
   testResult: {imagesTestResults : [], resultSumm : {}},
-  hasResults: false
+  hasResults: false,
+  version: version
 };
 
 // Reducer
