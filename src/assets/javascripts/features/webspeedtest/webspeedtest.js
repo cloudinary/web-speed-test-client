@@ -184,7 +184,14 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
         return;
       }
       if (result.status == 'success') {
-        dispatch(requestTestSuccess(processTestResults(result.data)));
+        if (result.data.imagesTestResults.length == 0 && result.data.resultSumm.totalImagesCount !== 0) {
+          // Catch an error where images are not analyzed.
+          // Image list is empty while totalImagesCount > 0.
+          dispatch(requestTestError('generic'));
+        }
+        else {
+          dispatch(requestTestSuccess(processTestResults(result.data)));
+        }
       }
       else {
         dispatch(requestTestError(result.message));

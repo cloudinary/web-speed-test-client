@@ -5,7 +5,7 @@ export const translations = {
     'PageTitleA': 'Website Speed Test',
     'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
-    'LearnMoreURL': 'https://webspeedtest.cloudinary.com/about',
+    'LearnMoreURL': '/about',
     'SupportText': 'Contact Cloudinary support',
     'SupportURL': 'https://support.cloudinary.com/hc/en-us/requests/new',
     'PoweredByText': 'Powered By',
@@ -35,7 +35,7 @@ export const translations = {
     'LeadForm_LastDefaultText': 'Last name',
     'LeadForm_Button': 'Send',
     'AboutButtonText': 'About',
-    'AboutButtonURL': 'https://webspeedtest.cloudinary.com/about',
+    'AboutButtonURL': '/about',
     'PrivacyButtonText': 'Privacy',
     'PrivacyButtonURL': 'http://cloudinary.com/privacy',
     'TermsButtonText': 'Terms',
@@ -163,10 +163,10 @@ export const translations = {
     'error_wpt_failure_subtitle': 'We are sorry but something went wrong',
     'error_wpt_failure_content': 'Please contact us for assistance',
 
-    // Cloudinary failure
-    'error_cld_failure_header': 'Error Encountered',
-    'error_cld_failure_subtitle': 'We are sorry but something went wrong',
-    'error_cld_failure_content': 'Please contact us for assistance'
+    // Generic error
+    'error_generic_header': 'Error Encountered',
+    'error_generic_subtitle': 'We are sorry but something went wrong',
+    'error_generic_content': 'Please contact us for assistance'
 
   }
 }

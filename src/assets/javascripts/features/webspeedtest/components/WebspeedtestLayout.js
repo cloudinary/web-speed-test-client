@@ -12,7 +12,6 @@ import * as Pages from "views";
 
 const StaticPage = (props) => {
   const page = props.page;
-  console.log(Pages[page]);
   if (Pages[page]) {
     const Page = Pages[page];
     return <Page />
