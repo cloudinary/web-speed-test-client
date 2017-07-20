@@ -342,6 +342,9 @@
     }
     .test-info {
       width: 100%;
+      .test-meta-box {
+        border-bottom: none;
+      }
     }
     .test-screen {
       margin: 20px auto 0;
