@@ -33,15 +33,19 @@ export default class About extends Component {
         <h4>How do you calculate the Page Image Score?</h4>
         <p>The Page Image Score is the average value of the scores for all analyzed images.</p>
         <h4>What information is presented in the image&#39;s expanded view?</h4>
-        <h5>Left Tab – Current Image</h5>
+        <b>Left Tab – Current Image</b>
         <p>Presents the website&#39;s current image along with the image grade.</p>
-        <h5>Middle Tab – Optimized Image</h5>
+        <b>Middle Tab – Optimized Image</b>
         <p>This shows an optimized image using the original image format. This optimization is achieved by scaling the image down to the actual required dimension in the web page and by adjusting the quality compression using Cloudinary&#39;s <a href="http://cloudinary.com/documentation/image_transformations#automatic_quality_and_encoding_settings">q_auto algorithm</a></p>
-        <h5>Right Tab - Format Alternatives</h5>
+        <b>Right Tab - Format Alternatives</b>
         <p>This shows the same &nbsp;optimized image in different formats. Recently, modern image formats, such as WebP and JPEG-XR, have been introduced, providing smaller images that often have better quality. The problem with these formats is that they are not supported by all web browsers. WebP is supported by Chrome and Opera, while JPEG-XR is supported by Explorer and Edge.</p>
+        <h4>Why do you suggest alternative formats for  SVG images?</h4>
+        <p>Using the SVG format introduces many advantages, especially for static backends that can supply only a single image for all resolutions. But for dynamic image management solutions, which can serve different images for different viewport sizes, there are cases where you can serve non-SVG images that will give you visually similar results at a smaller size.</p>
         <h3>Other</h3>  
         <h4>Can I use the optimized images?</h4>
         <p>Sure! For every optimized image, you will find a download button. As long as the original image was yours and the image license permits it, feel free to download the optimized version of the image and use it. (Please refer to the service <a href="http://webspeedtest-staging.cloudinary.com/tos">Terms of Service</a>&nbsp;for full details.</p>
+        <h4>Why does the screenshot of the whole web page at the top of the report occasionally show images that are different than the images that are actually analyzed?</h4>
+        <p>The service that creates the web page screenshot thumbnail is different from the service that requests the website’s images for the analysis. We do our best to ensure that both services use similar characteristics, such as viewport size, but we can’t guarantee that everything is identical. For example, a web page may show different content based on things like access location, time of day, or agent type.</p>
 
         <ReactDisqusComments
             shortname="website-speed-test"
