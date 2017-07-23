@@ -30,6 +30,7 @@ export default class About extends Component {
         <h3>Analysis Logic</h3>
         <h4>How do you calculate the image&#39;s average score?</h4>
         <p>The image average score is calculated by the average values of the format, fit and compression scores. Based on our research, the other image criteria (Color Space, Color Depth and Metadata) will affect the first 3 criteria and in addition, their effect on the overall performance is limited compared to the first 3 criteria. Therefore, we decided not to take the 3 last criteria into account in the image&#39;s average score.</p>
+        <p>For further details, please refer to our post <a href="https://www.smashingmagazine.com/2017/07/website-speed-test-image-analysis-tool/#measure-overall-performance">Introducing The Website Speed Test Image Analysis Tool</a> in <a href="https://www.smashingmagazine.com">Smashing Magazine</a></p>
         <h4>How do you calculate the Page Image Score?</h4>
         <p>The Page Image Score is the average value of the scores for all analyzed images.</p>
         <h4>What information is presented in the image&#39;s expanded view?</h4>
