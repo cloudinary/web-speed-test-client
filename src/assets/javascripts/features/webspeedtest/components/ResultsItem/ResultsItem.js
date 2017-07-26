@@ -58,7 +58,15 @@ export default class ResultsItem extends Component {
               <div className={'image-data-grading grade grade-' + result.analyze.grading.aggregated.value}>
                 {result.analyze.grading.aggregated.value}
               </div>
-              <h3 className="image-data-name">{result.original_filename + '.' + result.format}</h3>
+              {result.server == 'cloudinary' &&
+                <span className="from-cloudinary">
+                  <Image publicId="icon-cloudinary-gray.svg" type="asset" width="30"></Image>
+                  <span className="tooltip">{this.context.t("FromCloudinary")}</span>
+                </span>
+              }
+              <h3 className="image-data-name">
+                {result.original_filename + '.' + result.format}
+              </h3>
               <CompressionBar format={result.format} size={result.bytes} />
             </div>
             <div className="image-data-inner">

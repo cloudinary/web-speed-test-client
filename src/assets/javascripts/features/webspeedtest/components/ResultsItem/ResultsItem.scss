@@ -32,6 +32,9 @@
   }
   .image-data-header {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
     background: #fff;
     &:after {
       content: '';
@@ -41,8 +44,9 @@
       left: 0;
       right: 0;
       background: linear-gradient(rgba(#000, .15), rgba(#000, .05) 50%, transparent 80%);
-    // box-shadow: 0 0 6px rgba(#000, .4);
-
+    }
+    .compressionBar {
+      width: 100%;
     }
   }
   .image-data-grading {
@@ -56,14 +60,45 @@
     font-size: 18px;
     font-weight: 400;
     margin: 0;
-    padding: 15px 30px;
+    padding: 0 30px;
+    line-height: 60px;
     border-bottom: 1px solid $color-gray-border;
 
     box-sizing: border-box;
-    width: 100%;
+    // width: 100%;
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .from-cloudinary {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 0 15px;
+    line-height: 60px;
+    position: relative;
+    img {
+      vertical-align: text-bottom;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      box-shadow: 0 0 5px rgba(#000, .3);
+      width: 150px;
+      text-align: center;
+      background: #fbfbfb;
+      padding: 7px 12px;
+      color: #666;
+      bottom: 80%;
+      right: -10px;
+      font-size: 12px;
+      line-height: 2.5
+    }
+    &:hover .tooltip {
+      display: block;
+    }
+    + .image-data-name {
+      padding-right: 0;
+    }
   }
   .image-compressions-title {
     font-size: 18px;
