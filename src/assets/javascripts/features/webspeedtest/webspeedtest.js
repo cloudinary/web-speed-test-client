@@ -4,7 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
 import { State } from '../../models/webspeedtest';
-
+import ReactGA from 'react-ga';
 // Action Types
 
 // Define types in the form of 'npm-module-or-myapp/feature-name/ACTION_TYPE_NAME'
@@ -29,7 +29,8 @@ const NEW_TEST_END_POINT = API_URL + '/test/run';
 const initialState: State = {
   testId: null,
   testResult: {imagesTestResults : [], resultSumm : {}},
-  hasResults: false
+  hasResults: false,
+  newTest: false,
 };
 
 // Reducer
@@ -42,13 +43,16 @@ export default function (state = initialState, action) {
      }),
      [REQUEST_NEW_TEST]: () => ({
        ...state,
-       testUrl: action.url
+       testUrl: action.url,
+       testStartTime: Date.now(),
+       newTest: true
      }),
      [REQUEST_TEST_RESULTS_SUCCESS]: () => ({
        ...state,
        testResult: action.payload,
        isFetching: false,
-       hasResults: true
+       hasResults: true,
+       testEndTime: Date.now()
      }),
      [REQUEST_TEST_RESULTS_ERROR]: () => ({
        ...state,
@@ -191,6 +195,21 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
         }
         else {
           // Success
+          if (getState().newTest) {
+            if (process.env.GA) {
+              ReactGA.timing({
+                category: 'Test info',
+                variable: 'load',
+                value: Date.now() - getState().testStartTime,
+                label: 'Get test results for ' + testId
+              });
+              ReactGA.event({
+                category: 'Test info',
+                action: 'Get test results',
+                label: 'Get test results for ' + testId,
+              });
+            }
+          }
           dispatch(requestTestSuccess(processTestResults(result.data)));
         }
       }
@@ -210,6 +229,13 @@ const runNewTest = (url) => async(dispatch, getState) => {
       dispatch(requestNewTest(url));
       const result = await fetchNewTest(url);
       if (result.status == 'success') {
+        if (process.env.GA) {
+          ReactGA.event({
+            category: 'Test info',
+            action: 'Run new test',
+            label: 'Run new test for ' + result.data.testId,
+          });
+        }
         dispatch(requestNewTestSuccess(result.data));
         dispatch(setTestId(result.data.testId))
         dispatch(fetchTestDataIfNeeded(result.data.testId));
