@@ -195,12 +195,12 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
         }
         else {
           // Success
-          if (getState().newTest) {
+          if (getState().webspeedtest.newTest) {
             if (process.env.GA) {
               ReactGA.timing({
                 category: 'Test info',
                 variable: 'load',
-                value: Date.now() - getState().testStartTime,
+                value: Date.now() - getState().webspeedtest.testStartTime,
                 label: 'Get test results for ' + testId
               });
               ReactGA.event({
