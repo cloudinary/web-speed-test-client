@@ -47,6 +47,7 @@
     }
     .compressionBar {
       width: 100%;
+      border-right: 0;
     }
   }
   .image-data-grading {
@@ -61,11 +62,10 @@
     font-weight: 400;
     margin: 0;
     padding: 0 30px;
-    line-height: 60px;
+    line-height: 50px;
     border-bottom: 1px solid $color-gray-border;
 
     box-sizing: border-box;
-    // width: 100%;
     flex: 1;
     white-space: nowrap;
     overflow: hidden;
@@ -74,7 +74,7 @@
   .from-cloudinary {
     border-bottom: 1px solid rgb(204, 204, 204);
     padding: 0 15px;
-    line-height: 60px;
+    line-height: 50px;
     position: relative;
     img {
       vertical-align: text-bottom;
@@ -117,9 +117,6 @@
     flex: 1;
     text-align: center;
     position: relative;
-    @media #{$bp-min-md} {
-      padding-bottom: 70px;
-    }
   }
   .image-final-percent {
     margin-top: 30px;
@@ -140,34 +137,34 @@
     }
   }
   .toggle-btn {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
     display: inline-block;
     cursor: pointer;
     font-size: 14px;
     width: 190px;
     border-radius: 6px;
     padding: 10px 20px;
-    margin-top: 20px;
     background: $color-blue-c;
     color: #fff;
     box-shadow: 0 2px 8px rgba(#000, .4);
     border: none;
-    transition: background .3s;
-    left: 0;
-    right: 0;
-    bottom: 15px;
-    margin: auto;
+    margin: 15px auto 0;
     transition: all .5s;
+    @media #{$bp-max-md} {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 15px;
+    }
     &:hover {
       background: darken($color-blue-c, 10%);
     }
-    &.toggle-show {
-      transform: scale(1);
-      opacity: 1;
+    &:active {
+      box-shadow: 0 4px 10px rgba(#000, .5);
     }
-    &.toggle-hide {
-      transform: scale(.7);
-      opacity: 0;
+    &[data-state="toggle-hide"] {
       img {
         transform: rotate(180deg);
       }
@@ -179,19 +176,20 @@
       top: 0;
       bottom: 0;
       margin: auto;
+      transition: all .5s;
     }
     &:focus {
       outline: none;
     }
-  }
-  &.expanded .toggle-btn {
-    &.toggle-show {
+    .ripple {
+      display: block;
+      position: absolute;
+      background: rgba(#fff, .2);
+      border-radius: 100%;
       transform: scale(0);
-      opacity: 0;
     }
-    &.toggle-hide {
-      transform: scale(1);
-      opacity: 1;
+    &.btn-animate .ripple {
+      animation: rippleAnimation 0.65s linear;
     }
   }
 
@@ -293,3 +291,9 @@
     text-indent: -0.02em;
   }
 }
+
+@keyframes rippleAnimation {
+	/*scale the element to 250% to safely cover the entire link and fade it out*/
+	100% {opacity: 0; transform: scale(2.5);}
+}
+
