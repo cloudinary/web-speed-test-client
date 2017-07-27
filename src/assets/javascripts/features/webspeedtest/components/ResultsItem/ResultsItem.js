@@ -109,10 +109,10 @@ export default class ResultsItem extends Component {
                 <button onClick={this.toggleImageInfo} className="toggle-btn">
                   <Image publicId="icon-expand.svg" type="asset" width="12"></Image>
                   {this.state.expanded &&
-                    this.context.t('ExpandButton')
+                    this.context.t('CollapseButton')
                   }
                   {!this.state.expanded &&
-                    this.context.t('CollapseButton')
+                    this.context.t('ExpandButton')
                   }
                   <div ref="ripple" className="ripple"></div>
                 </button>
