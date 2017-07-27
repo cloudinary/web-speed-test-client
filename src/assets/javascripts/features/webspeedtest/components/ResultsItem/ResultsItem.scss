@@ -148,10 +148,11 @@
     padding: 10px 20px;
     background: $color-blue-c;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(#000, .4);
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
     border: none;
     margin: 15px auto 0;
-    transition: all .5s;
+    will-change: box-shadow;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
     @media #{$bp-max-md} {
       position: absolute;
       left: 0;
@@ -159,10 +160,10 @@
       bottom: 15px;
     }
     &:hover {
-      background: darken($color-blue-c, 10%);
+      background: darken($color-blue-c, 5%);
     }
     &:active {
-      box-shadow: 0 4px 10px rgba(#000, .5);
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);;
     }
     &[data-state="toggle-hide"] {
       img {
@@ -184,7 +185,7 @@
     .ripple {
       display: block;
       position: absolute;
-      background: rgba(#fff, .2);
+      background: rgba(#fff, .1);
       border-radius: 100%;
       transform: scale(0);
     }
