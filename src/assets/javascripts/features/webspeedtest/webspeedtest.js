@@ -31,6 +31,7 @@ const initialState: State = {
   testResult: {imagesTestResults : [], resultSumm : {}},
   hasResults: false,
   newTest: false,
+  error: false
 };
 
 // Reducer
@@ -69,6 +70,7 @@ export default function (state = initialState, action) {
      }),
      ['@@router/LOCATION_CHANGE']: () => ({
        ...state,
+       error: initialState.error,
        isFetching: false,
        testResult: initialState.testResult,
        hasResults: false,
