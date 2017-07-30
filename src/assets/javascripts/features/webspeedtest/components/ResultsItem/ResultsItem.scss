@@ -46,8 +46,7 @@
       background: linear-gradient(rgba(#000, .15), rgba(#000, .05) 50%, transparent 80%);
     }
     .compressionBar {
-      width: 100%;
-      border-right: 0;
+      margin-right: auto;
     }
   }
   .image-data-grading {
@@ -64,9 +63,8 @@
     padding: 0 30px;
     line-height: 50px;
     border-bottom: 1px solid $color-gray-border;
-
+    width: 100%;
     box-sizing: border-box;
-    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -98,6 +96,7 @@
     }
     + .image-data-name {
       padding-right: 0;
+      width: calc(100% - 60px);
     }
   }
   .image-compressions-title {
