@@ -139,7 +139,6 @@ const fetchTestData = async(testId, getState, retryNum = 0) => {
     if (data.status === 'success' && data.code !== 150) {
       // SUCCESS
       console.log("Got test data:", data);
-      return data;
     }
     else if (data.status === 'success' && data.code === 150 && retryNum < totalRetries) {
       // KEEP TRYING
@@ -152,9 +151,8 @@ const fetchTestData = async(testId, getState, retryNum = 0) => {
       console.log("Tried " + retryNum + " times. Stopping.");
       data.status = 'timeout';
       data.message = 'timeout';
-      return data;
     }
-
+    return data;
   } catch (err) {
     console.log("Got server error", err);
     throw err;
