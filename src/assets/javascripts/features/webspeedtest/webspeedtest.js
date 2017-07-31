@@ -31,6 +31,7 @@ const initialState: State = {
   testResult: {imagesTestResults : [], resultSumm : {}},
   hasResults: false,
   newTest: false,
+  error: false
 };
 
 // Reducer
@@ -69,6 +70,7 @@ export default function (state = initialState, action) {
      }),
      ['@@router/LOCATION_CHANGE']: () => ({
        ...state,
+       error: initialState.error,
        isFetching: false,
        testResult: initialState.testResult,
        hasResults: false,
@@ -195,12 +197,12 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
         }
         else {
           // Success
-          if (getState().newTest) {
+          if (getState().webspeedtest.newTest) {
             if (process.env.GA) {
               ReactGA.timing({
                 category: 'Test info',
                 variable: 'load',
-                value: Date.now() - getState().testStartTime,
+                value: Date.now() - getState().webspeedtest.testStartTime,
                 label: 'Get test results for ' + testId
               });
               ReactGA.event({

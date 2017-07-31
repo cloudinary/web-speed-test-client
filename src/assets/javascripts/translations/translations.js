@@ -93,6 +93,7 @@ export const translations = {
     'ImageProperty_metadata': 'Metadata',
     'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average',
+    'FromCloudinary': 'Delivered Via Cloudinary',
 
     // Image type display name transforms
     'jpg': 'JPEG',
