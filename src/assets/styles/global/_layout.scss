@@ -14,9 +14,12 @@ body {
 
 .container {
   width: 94%;
-  width: calc(100% - 34px);
+  width: calc(100% - 40px);
   max-width: $container-width;
   margin: 0 auto;
+  &.static-page {
+    max-width: 800px;
+  }
 }
 
 img {

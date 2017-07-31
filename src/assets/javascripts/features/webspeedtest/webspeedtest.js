@@ -4,8 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import isFunction from 'lodash/isFunction';
 import fetch from 'isomorphic-fetch';
 import { State } from '../../models/webspeedtest';
-import { version } from '../../../../../package.json';
-
+import ReactGA from 'react-ga';
 // Action Types
 
 // Define types in the form of 'npm-module-or-myapp/feature-name/ACTION_TYPE_NAME'
@@ -31,7 +30,8 @@ const initialState: State = {
   testId: null,
   testResult: {imagesTestResults : [], resultSumm : {}},
   hasResults: false,
-  version: version
+  newTest: false,
+  error: false
 };
 
 // Reducer
@@ -42,15 +42,23 @@ export default function (state = initialState, action) {
        ...state,
        testId: action.testId
      }),
+     [REQUEST_NEW_TEST]: () => ({
+       ...state,
+       testUrl: action.url,
+       testStartTime: Date.now(),
+       newTest: true
+     }),
      [REQUEST_TEST_RESULTS_SUCCESS]: () => ({
        ...state,
        testResult: action.payload,
        isFetching: false,
-       hasResults: true
+       hasResults: true,
+       testEndTime: Date.now()
      }),
      [REQUEST_TEST_RESULTS_ERROR]: () => ({
        ...state,
        testResult: initialState.testResult,
+       error: action.msg,
        isFetching: false,
        hasResults: false
      }),
@@ -62,6 +70,7 @@ export default function (state = initialState, action) {
      }),
      ['@@router/LOCATION_CHANGE']: () => ({
        ...state,
+       error: initialState.error,
        isFetching: false,
        testResult: initialState.testResult,
        hasResults: false,
@@ -142,6 +151,7 @@ const fetchTestData = async(testId, getState, retryNum = 0) => {
       // STOP TRYING
       console.log("Tried " + retryNum + " times. Stopping.");
       data.status = 'timeout';
+      data.message = 'timeout';
       return data;
     }
 
@@ -180,7 +190,30 @@ const fetchTestDataIfNeeded = (testId) => async(dispatch, getState) => {
         return;
       }
       if (result.status == 'success') {
-        dispatch(requestTestSuccess(processTestResults(result.data)));
+        if (result.data.imagesTestResults.length == 0 && result.data.resultSumm.totalImagesCount !== 0) {
+          // Catch an error where images are not analyzed.
+          // Image list is empty while totalImagesCount > 0.
+          dispatch(requestTestError('generic'));
+        }
+        else {
+          // Success
+          if (getState().webspeedtest.newTest) {
+            if (process.env.GA) {
+              ReactGA.timing({
+                category: 'Test info',
+                variable: 'load',
+                value: Date.now() - getState().webspeedtest.testStartTime,
+                label: 'Get test results for ' + testId
+              });
+              ReactGA.event({
+                category: 'Test info',
+                action: 'Get test results',
+                label: 'Get test results for ' + testId,
+              });
+            }
+          }
+          dispatch(requestTestSuccess(processTestResults(result.data)));
+        }
       }
       else {
         dispatch(requestTestError(result.message));
@@ -198,6 +231,13 @@ const runNewTest = (url) => async(dispatch, getState) => {
       dispatch(requestNewTest(url));
       const result = await fetchNewTest(url);
       if (result.status == 'success') {
+        if (process.env.GA) {
+          ReactGA.event({
+            category: 'Test info',
+            action: 'Run new test',
+            label: 'Run new test for ' + result.data.testId,
+          });
+        }
         dispatch(requestNewTestSuccess(result.data));
         dispatch(setTestId(result.data.testId))
         dispatch(fetchTestDataIfNeeded(result.data.testId));

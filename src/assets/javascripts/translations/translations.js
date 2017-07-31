@@ -5,7 +5,9 @@ export const translations = {
     'PageTitleA': 'Website Speed Test',
     'PageTitleB': 'Image Analysis Tool',
     'LearnMoreText': 'Learn More',
-    'LearnMoreURL': 'https://webspeedtest.cloudinary.com/about',
+    'LearnMoreURL': '/about',
+    'SupportText': 'Contact Cloudinary support',
+    'SupportURL': 'https://support.cloudinary.com/hc/en-us/requests/new',
     'PoweredByText': 'Powered By',
     'CloudinaryLogoURL': 'http://cloudinary.com?utm_source=webspeedtest',
     'ToolDescription': 'Optimizing images can significantly improve Web page load time, resulting in improved user retention and satisfaction. This tool provides measurable and actionable information about how to go beyond simple compression: discover how changes to image size, format selection, quality and encoding can dramatically improve page load speed.',
@@ -26,14 +28,14 @@ export const translations = {
     'FooterCompressedImageWeight': '16 KB (42%)',
     'FooterSampleURL': 'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
     'TryItNowButtonText': 'Try Cloudinary for free',
-    'TryItNowButtonURL': 'https://cloudinary.com/signup?utm_source=webspeedtest&source=webspeedtest',
+    'TryItNowButtonURL': 'https://cloudinary.com/signup?source=webspeedtest&utm_source=webspeedtest',
     'LeadForm_Title': 'Learn more about Image Optimization',
     'LeadForm_EmailDefaultText': 'Email',
     'LeadForm_FirstDefaultText': 'First name',
     'LeadForm_LastDefaultText': 'Last name',
     'LeadForm_Button': 'Send',
     'AboutButtonText': 'About',
-    'AboutButtonURL': 'http://cloudinary.com/features/image_manipulation?utm_source=webspeedtest',
+    'AboutButtonURL': '/about',
     'PrivacyButtonText': 'Privacy',
     'PrivacyButtonURL': 'http://cloudinary.com/privacy',
     'TermsButtonText': 'Terms',
@@ -91,6 +93,7 @@ export const translations = {
     'ImageProperty_metadata': 'Metadata',
     'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average',
+    'FromCloudinary': 'Delivered Via Cloudinary',
 
     // Image type display name transforms
     'jpg': 'JPEG',
@@ -105,11 +108,11 @@ export const translations = {
     'wdp': 'JPEG-XR',
     'hdp': 'JPEG-XR',
 
-    // Loader phrases
+    // Loader
     // Loader configuration (time between sentences and loop yes/no) can be found in
-    // web-speed-test-client/src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
-    // wdtLoading.start
-    //  
+    // /src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
+    'loaderTitle': 'Testing',
+
     // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
     'loadingPhrase1': 'Ranking optimization potential...',
@@ -117,17 +120,16 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': 'Analysis may take several minutes',
+    'loaderExplanation': `Website Speed Test analyzes a website\'s images and provides a ranking for a variety of image aspects and categories. Using a grade range of A-F, it rates the image format, fit, compression rate, color space and color depth.
+
+    Analysis may take several minutes`,
 
     // Loader arrived from webpagetest
     'loadingWPTPhrase0': 'Analyzing images...',
     'loadingWPTPhrase1': 'Ranking optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
-    'loadingWPTPhrase3': 'Creating recommended images...',
-    'loadingWPTPhrase4': 'Adding explanations...',
-    'loadingWPTPhrase5': 'Almost done...',
     'loaderWPTExplanation': 'Analysis takes around 10 seconds',
-      
+
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
@@ -143,16 +145,15 @@ export const translations = {
     'meta_results_title': 'Website Speed Test by Cloudinary - results for',
 
     // meta_social_url should be replaced with the results page URL
-
     'meta_results_social_description': 'Optimized images improve page load time and user satisfaction. This tool provides measurable and actionable info about how to go beyond simple compression. Check out this website analysis results:',
-  
+
     // Errors handling
-      
+
     // Timeout waiting for WPT results
     'error_timeout_header': 'Its a bit crowded at the moment...',
     'error_timeout_subtitle': 'Looks like we are having too many requests',
     'error_timeout_content': 'Please try again later',
-      
+
     // Firefox is not supported
     'error_firefox_header': 'Firefox is not supported',
     'error_firefox_subtitle': 'Unfortunaetly Firefox testing is not supported at the moment',
@@ -163,9 +164,10 @@ export const translations = {
     'error_wpt_failure_subtitle': 'We are sorry but something went wrong',
     'error_wpt_failure_content': 'Please contact us for assistance',
 
-    // Cloudinary failure
-    'error_cld_failure_header': 'Error Encountered',
-    'error_cld_failure_subtitle': 'We are sorry but something went wrong',
-    'error_cld_failure_content': 'Please contact us for assistance'
+    // Generic error
+    'error_generic_header': 'Error Encountered',
+    'error_generic_subtitle': 'We are sorry but something went wrong',
+    'error_generic_content': 'Please contact us for assistance'
+
   }
 }

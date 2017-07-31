@@ -97,13 +97,17 @@
   }
 
   .transform-image {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+    height: 300px;
     @include checkered;
   }
   .support {
     color: $color-grade-e;
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     text-align: left;
