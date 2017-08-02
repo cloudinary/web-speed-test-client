@@ -111,7 +111,7 @@ export const translations = {
     // Loader
     // Loader configuration (time between sentences and loop yes/no) can be found in
     // /src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
-    'loaderTitle': 'Testing',
+    'loaderTitle': 'Analyzing URL',
 
     // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
