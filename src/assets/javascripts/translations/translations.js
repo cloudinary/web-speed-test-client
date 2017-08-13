@@ -119,7 +119,7 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance beyond simple compression.
+    'loaderExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance.
 
     Analysis may take several minutes`,
 
@@ -127,7 +127,7 @@ export const translations = {
     'loadingWPTPhrase0': 'Analyzing images...',
     'loadingWPTPhrase1': 'Ranking optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
-    'loaderWPTExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance beyond simple compression.
+    'loaderWPTExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance.
 
     Analysis may take up to 30 seconds`,
     
