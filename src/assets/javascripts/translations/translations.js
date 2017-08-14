@@ -119,11 +119,11 @@ export const translations = {
     'loadingPhrase2': 'Ranking images...',
     'loadingPhrase3': 'Optimizing images...',
     'loadingPhrase4': 'Creating recommended images...',
-    'loadingPhrase5': 'Adding descriptions/details...',
+    'loadingPhrase5': 'Adding descriptions...',
     'loadingPhrase6': 'Almost ready...',
     'loaderExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
-    Analysis may take several minutes`,
+    Analysis may take several minutes.`,
 
     // Loader arrived from webpagetest
     'loadingWPTPhrase0': 'Analyzing images...',
@@ -131,7 +131,7 @@ export const translations = {
     'loadingWPTPhrase2': 'Optimizing images...',
     'loaderWPTExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
-    Analysis may take 30 seconds`,
+    Analysis may take 30 seconds.`,
       
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
