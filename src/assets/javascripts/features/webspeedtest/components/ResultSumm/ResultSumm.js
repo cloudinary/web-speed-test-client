@@ -54,6 +54,9 @@ export default class ResultSumm extends Component {
         <div className="container">
           <h1>{this.context.t("PageTitleResults")}</h1>
           <Share shareUrl={window.location.href} title={this.context.t("PageTitleA") + ' - ' + this.context.t('PageTitleB')}><span>{this.context.t('ShareResults')}</span></Share>
+          <a className="support" href={this.context.t('SupportURL')} title={this.context.t('SupportText')} target="_blank">
+            <Image publicId="icon-support-blue.svg" width="24" type="asset"></Image>
+          </a>
           <div className="test-url">{result.url}</div>
 
           {result.totalImagesCount == 0 &&

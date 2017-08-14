@@ -14,7 +14,6 @@ export default class WebspeedtestView extends Component {
 
   componentDidMount() {
     const { location, actions: { setTestId, fetchTestDataIfNeeded } } = this.props;
-    console.log(this.props.params);
     //@TODO: remove after change the redirect on WPT side.
     if (location.query.testid) {
       browserHistory.push({

@@ -120,7 +120,7 @@ export const translations = {
     'loadingPhrase3': 'Creating recommended images...',
     'loadingPhrase4': 'Adding explanations...',
     'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance.
+    'loaderExplanation': `Website Speed Test analyzes your website\'s images and provides a ranking for a variety of image aspects. In addition, the tool provides actionable information about how to go beyond simple compression to optimize performance.
 
     Analysis may take several minutes`,
 
@@ -128,10 +128,10 @@ export const translations = {
     'loadingWPTPhrase0': 'Analyzing images...',
     'loadingWPTPhrase1': 'Ranking optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
-    'loaderWPTExplanation': `Website Speed Test analyzes your images, provides a ranking for a variety of aspects and actionable information about how to optimize website’s performance.
+    'loaderWPTExplanation': `Website Speed Test analyzes your website\'s images and provides a ranking for a variety of image aspects. In addition, the tool provides actionable information about how to go beyond simple compression to optimize performance.
 
-    Analysis may take up to 30 seconds`,
-    
+    Analysis may take 30 seconds`,
+      
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',

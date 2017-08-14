@@ -24,11 +24,22 @@
       line-height: 20px;
     }
   }
+  .support {
+    float: right;
+    margin-right: 15px;
+    line-height: 28px;
+    img {
+      vertical-align: middle;
+    }
+    @media #{$bp-min-xs} {
+      display: none;
+    }
+  }
   .test-url {
     font-size: 18px;
     color: #323a45;
     line-height: 28px;
-    max-width: calc(100% - 30px);
+    max-width: calc(100% - 50px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
