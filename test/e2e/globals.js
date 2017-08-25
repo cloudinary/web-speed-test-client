@@ -1,6 +1,7 @@
 var analyzeUrl = "https://s.codepen.io/maxro/debug/5b4dde20bc49345de60920ffd1ce8af1";
 
 var imagesName = [
+    'MickeyArt.webp',
     'Mickey_Mouse.png',
     'Mickey_Mouse.png',
     'a58ecacebad44ed0c8e32aa9a64727e1.jpg',
@@ -13,7 +14,16 @@ var imagesName = [
     's-l96.jpg'
 ];
 
+var HtmlReporter = require('nightwatch-html-reporter');
+var reporter = new HtmlReporter({
+    openBrowser: false,
+    reportsDirectory: __dirname + '/reports'
+});
+
 module.exports = {
     analyzeUrl: analyzeUrl,
     imagesName: imagesName,
+    reporter: reporter.fn
 }
+
+

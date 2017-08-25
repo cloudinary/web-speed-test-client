@@ -4,7 +4,7 @@
   "description": "End-to-end testing for Web Speed Test Client and BrowserStack Automate",
   "scripts": {
     "test": "npm run suite && npm run parallel",
-    "suite": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome",
+    "suite": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome -t tests\\test.js",
     "parallel": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome,firefox,safari,ie"
   },
   "repository": {
@@ -12,7 +12,8 @@
     "url": "https://github.com/cloudinary/web-speed-test-client"
   },
   "dependencies": {
-    "nightwatch": "^0.9.16"
+    "nightwatch": "^0.9.16",
+    "nightwatch-html-reporter": "^2.0.2"
   },
   "license": "MIT"
 }
