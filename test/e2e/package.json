@@ -4,7 +4,7 @@
   "description": "End-to-end testing for Web Speed Test Client and BrowserStack Automate",
   "scripts": {
     "test": "npm run suite && npm run parallel",
-    "suite": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome -t tests\\test.js",
+    "suite": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome",
     "parallel": "./node_modules/.bin/nightwatch -c conf/nightwatch.conf.js -e chrome,firefox,safari,ie"
   },
   "repository": {
