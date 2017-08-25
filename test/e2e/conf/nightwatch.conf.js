@@ -1,6 +1,7 @@
 nightwatch_config = {
     src_folders: ['tests/'],
     custom_commands_path: ['commands/'],
+    page_objects_path: ['pages/'],
     globals_path: "./globals.js",
     test_workers: { enabled: true, workers: 'auto' },
 
