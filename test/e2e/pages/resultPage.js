@@ -1,6 +1,3 @@
-var https = require("https");
-var url = require('url');
-
 module.exports = {
     elements: {
         results: '.results'
