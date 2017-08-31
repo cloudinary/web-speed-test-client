@@ -1,3 +1,6 @@
+var https = require("https");
+var url = require('url');
+
 module.exports = {
     elements: {
         results: '.results'
@@ -163,6 +166,262 @@ module.exports = {
                     }
 
                     self.checkTabItem(index);
+                })
+
+
+        },
+        checkOpenWindowAndSave: function (index) {
+
+            var self = this;
+
+            var resultsItem = '.resultsItem:nth-child(' + index + ')';
+            var carousel = resultsItem + ' .carousel-1';
+            var header = resultsItem + ' h3';
+
+            this
+                .scrollIntoView(resultsItem)
+                .click(resultsItem + ' button.toggle-btn')
+                .waitForElementPresent(resultsItem + '.expanded', 3000)
+                .getText(header, function (result) {
+
+                    var original = carousel + ' .original .links a'
+                    var transformed = carousel + ' .transformed .links a:nth-child(1)'
+                    var transformedDownload = carousel + ' .transformed .links a:nth-child(2)'
+                    var dynamic = carousel + ' .dynamic .links a:nth-child(1)';
+                    var dynamicDownload = carousel + ' .dynamic .links a:nth-child(2)'
+
+                    function checkOriginal(selector, browser) {
+                        return browser
+                            .click(selector)
+                            .windowHandles(function (result) {
+                                var newWindow;
+                                browser.verify.equal(result.value.length, 2);
+                                newWindow = result.value[1];
+                                browser.switchWindow(newWindow)
+                                    .waitForElementVisible('body', 3000)
+                                    .verify.urlContains('res.cloudinary.com/webspeedtest/image/upload')
+                                    .closeWindow()
+                                    .switchWindow(result.value[0])
+                            })
+                    }
+
+                    function checkTransformed(selector, browser) {
+
+                        return browser.click(selector)
+                            .windowHandles(function (result) {
+                                var newWindow;
+                                browser.verify.equal(result.value.length, 2);
+                                newWindow = result.value[1];
+                                browser.switchWindow(newWindow)
+                                    .waitForElementVisible('body', 3000)
+                                    .verify.urlContains('q_auto')
+                                    .closeWindow()
+                                    .switchWindow(result.value[0])
+                            })
+
+                    }
+
+                    function checkTransformedDownload(selector, browser) {
+                        return browser.getAttribute(selector, 'href', function (result) {
+                            browser.assert.equal(result.value.includes('q_auto'), true);
+                        })
+                    }
+
+                    function checkDynamic(selector, tabName, browser) {
+                        var format;
+
+                        if (tabName === 'WEBP') {
+                            format = 'f_webp'
+                        } else if (tabName === 'PNG') {
+                            format = 'f_png'
+                        } else {
+                            format = 'f_wdp'
+                        }
+
+                        return browser.click(selector)
+                            .windowHandles(function (result) {
+                                var newWindow;
+                                browser.verify.equal(result.value.length, 2);
+                                newWindow = result.value[1];
+                                browser.switchWindow(newWindow)
+                                    .waitForElementVisible('body', 3000)
+                                    .verify.urlContains(format)
+                                    .closeWindow()
+                                    .switchWindow(result.value[0])
+                            })
+                    }
+
+                    function checkDynamicDownload(selector, tabName, browser) {
+
+                        var format;
+
+                        if (tabName === 'WEBP') {
+                            format = 'f_webp'
+                        } else if (tabName === 'PNG') {
+                            format = 'f_png'
+                        } else {
+                            format = 'f_wdp'
+                        }
+
+                        return browser
+                            .getAttribute(selector, 'href', function (result) {
+                                browser.assert.equal(result.value.includes(format), true);
+                            })
+                    }
+
+                    switch (result.value) {
+
+                        case 'MickeyArt.webp':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamicDownload(dynamicDownload, 'JPEG-XR', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+
+                        case 'Mickey_Mouse.png':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            break;
+                        case 'a58ecacebad44ed0c8e32aa9a64727e1.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamicDownload(dynamicDownload, 'JPEG-XR', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+                        case '212482.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+
+                            break;
+                        case '386870.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+
+                        case '590847e65b32c851033a9ca1ca26d903.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamicDownload(dynamicDownload, 'JPEG-XR', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(3)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+                        case 'Mickey-Face-Clipart-mickey-and-friends-37612599-256-256.png':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            break;
+
+                        case '310qpmPNfIL._CR0,0,175,175_UX128.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamicDownload(dynamicDownload, 'JPEG-XR', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+
+                            break;
+
+                        case 'b386037ee62d835421af74a582667c3f37fa2741_128.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamicDownload(dynamicDownload, 'JPEG-XR', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+
+                        case 's-l96.jpg':
+
+                            checkOriginal(original, this)
+                            checkTransformed(transformed, this)
+                            checkTransformedDownload(transformedDownload, this)
+                            checkDynamic(dynamic, 'WEBP', this);
+                            checkDynamicDownload(dynamicDownload, 'WEBP', this);
+
+                            this.click(carousel + ' .dynamic ul li:nth-child(2)');
+
+                            checkDynamic(dynamic, 'PNG', this);
+                            checkDynamicDownload(dynamicDownload, 'PNG', this);
+
+                            break;
+                    }
+
+                })
+                .click(resultsItem + ' button[data-state=toggle-hide]')
+                .waitForElementNotPresent(resultsItem + '.expanded', 3000)
+                .api.pause(500, function () {
+
+                    index++;
+
+                    if (index > this.globals.imagesName.length) {
+                        return;
+                    }
+
+                    self.checkOpenWindowAndSave(index);
                 })
 
 
