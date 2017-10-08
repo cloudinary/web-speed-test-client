@@ -115,22 +115,23 @@ export const translations = {
 
     // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
-    'loadingPhrase1': 'Ranking optimization potential...',
-    'loadingPhrase2': 'Optimizing images...',
-    'loadingPhrase3': 'Creating recommended images...',
-    'loadingPhrase4': 'Adding explanations...',
-    'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': `Website Speed Test analyzes your website\'s images and provides a ranking for a variety of image aspects. In addition, the tool provides actionable information about how to go beyond simple compression to optimize performance.
+    'loadingPhrase1': 'Evaluating optimization potential...',
+    'loadingPhrase2': 'Ranking images...',
+    'loadingPhrase3': 'Optimizing images...',
+    'loadingPhrase4': 'Creating recommended images...',
+    'loadingPhrase5': 'Adding descriptions...',
+    'loadingPhrase6': 'Almost ready...',
+    'loaderExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
-    Analysis may take several minutes`,
+    Analysis may take several minutes.`,
 
     // Loader arrived from webpagetest
     'loadingWPTPhrase0': 'Analyzing images...',
-    'loadingWPTPhrase1': 'Ranking optimization potential...',
+    'loadingWPTPhrase1': 'Evaluating optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
-    'loaderWPTExplanation': `Website Speed Test analyzes your website\'s images and provides a ranking for a variety of image aspects. In addition, the tool provides actionable information about how to go beyond simple compression to optimize performance.
+    'loaderWPTExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
-    Analysis may take 30 seconds`,
+    Analysis may take 30 seconds.`,
       
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
