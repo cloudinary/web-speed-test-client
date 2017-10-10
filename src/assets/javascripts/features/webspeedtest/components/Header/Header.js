@@ -15,6 +15,9 @@ export default class Header extends Component {
             <h1>{this.context.t("AppName")}</h1>
           </Link>
           <a className="learn" href={this.context.t('LearnMoreURL')} target="_blank">{this.context.t("LearnMoreText")}</a>
+          <a className="support" href={this.context.t('SupportURL')} title={this.context.t('SupportText')} target="_blank">
+            <Image publicId="icon-support-v2.svg" width="21" type="asset"></Image>
+          </a>
           <Share icon="icon-share-gray.svg" shareUrl={window.location.href.split('?')[0]} title={this.context.t("PageTitleA") + ' - ' + this.context.t('PageTitleB')} />
           <a className="powered-by" href={this.context.t('CloudinaryLogoURL')} target="_blank">
             <div className="label">{this.context.t('PoweredByText')}</div>

@@ -11,7 +11,8 @@ const GLOBALS = {
     'API_URL':  JSON.stringify(process.env.API_URL),
     'CLOUDINARY_CLOUD_NAME': JSON.stringify(process.env.CLOUDINARY_CLOUD_NAME),
     'CLOUDINARY_CNAME': JSON.stringify(process.env.CLOUDINARY_CNAME),
-    'GA': JSON.stringify(process.env.GA)
+    'GA': JSON.stringify(process.env.GA),
+    'GTM': JSON.stringify(process.env.GTM),
   },
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 };

@@ -20,18 +20,9 @@
     height: 300px;
     width: 400px;
     position: relative;
-    z-index: 1;
     text-align: center;
     border-right: 1px solid $color-gray-border;
     @include checkered;
-    img {
-      vertical-align: top;
-      height: 100%;
-      width: 100%;
-    }
-    &:not(.image-svg) img {
-      object-fit: cover
-    }
   }
   .image-data {
     flex: 1;
@@ -41,6 +32,9 @@
   }
   .image-data-header {
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
     background: #fff;
     &:after {
       content: '';
@@ -50,8 +44,9 @@
       left: 0;
       right: 0;
       background: linear-gradient(rgba(#000, .15), rgba(#000, .05) 50%, transparent 80%);
-    // box-shadow: 0 0 6px rgba(#000, .4);
-
+    }
+    .compressionBar {
+      margin-right: auto;
     }
   }
   .image-data-grading {
@@ -65,14 +60,44 @@
     font-size: 18px;
     font-weight: 400;
     margin: 0;
-    padding: 15px 30px;
+    padding: 0 30px;
+    line-height: 50px;
     border-bottom: 1px solid $color-gray-border;
-
-    box-sizing: border-box;
     width: 100%;
+    box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .from-cloudinary {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 0 15px;
+    line-height: 50px;
+    position: relative;
+    img {
+      vertical-align: text-bottom;
+    }
+    .tooltip {
+      display: none;
+      position: absolute;
+      box-shadow: 0 0 5px rgba(#000, .3);
+      width: 150px;
+      text-align: center;
+      background: #fbfbfb;
+      padding: 7px 12px;
+      color: #666;
+      bottom: 80%;
+      right: -10px;
+      font-size: 12px;
+      line-height: 2.5
+    }
+    &:hover .tooltip {
+      display: block;
+    }
+    + .image-data-name {
+      padding-right: 0;
+      width: calc(100% - 60px);
+    }
   }
   .image-compressions-title {
     font-size: 18px;
@@ -91,9 +116,6 @@
     flex: 1;
     text-align: center;
     position: relative;
-    @media #{$bp-min-md} {
-      padding-bottom: 70px;
-    }
   }
   .image-final-percent {
     margin-top: 30px;
@@ -114,34 +136,35 @@
     }
   }
   .toggle-btn {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+    user-select: none;
     display: inline-block;
     cursor: pointer;
     font-size: 14px;
     width: 190px;
     border-radius: 6px;
     padding: 10px 20px;
-    margin-top: 20px;
     background: $color-blue-c;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(#000, .4);
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
     border: none;
-    transition: background .3s;
-    left: 0;
-    right: 0;
-    bottom: 15px;
-    margin: auto;
-    transition: all .5s;
+    margin: 15px auto 0;
+    will-change: box-shadow;
+    transition: all .2s cubic-bezier(.4,0,.2,1);
+    @media #{$bp-max-md} {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 15px;
+    }
     &:hover {
-      background: darken($color-blue-c, 10%);
+      background: darken($color-blue-c, 5%);
     }
-    &.toggle-show {
-      transform: scale(1);
-      opacity: 1;
+    &:active {
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);;
     }
-    &.toggle-hide {
-      transform: scale(.7);
-      opacity: 0;
+    &[data-state="toggle-hide"] {
       img {
         transform: rotate(180deg);
       }
@@ -153,19 +176,20 @@
       top: 0;
       bottom: 0;
       margin: auto;
+      transition: all .5s;
     }
     &:focus {
       outline: none;
     }
-  }
-  &.expanded .toggle-btn {
-    &.toggle-show {
+    .ripple {
+      display: block;
+      position: absolute;
+      background: rgba(#fff, .1);
+      border-radius: 100%;
       transform: scale(0);
-      opacity: 0;
     }
-    &.toggle-hide {
-      transform: scale(1);
-      opacity: 1;
+    &.btn-animate .ripple {
+      animation: rippleAnimation 0.65s linear;
     }
   }
 
@@ -249,4 +273,27 @@
   &-F {
     background: $color-grade-e;
   }
+  // Tweaks
+  &-A {
+    line-height: 1.55;
+  }
+  &-B {
+    text-indent: 0.04em;
+  }
+  &-C {
+    text-indent: -0.02em;
+  }
+  &-D {
+    text-indent: 0.09em;
+  }
+  &-E {
+    line-height: 1.57;
+    text-indent: -0.02em;
+  }
 }
+
+@keyframes rippleAnimation {
+	/*scale the element to 250% to safely cover the entire link and fade it out*/
+	100% {opacity: 0; transform: scale(2.5);}
+}
+

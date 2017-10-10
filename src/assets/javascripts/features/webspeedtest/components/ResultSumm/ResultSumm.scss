@@ -24,11 +24,22 @@
       line-height: 20px;
     }
   }
+  .support {
+    float: right;
+    margin-right: 15px;
+    line-height: 28px;
+    img {
+      vertical-align: middle;
+    }
+    @media #{$bp-min-xs} {
+      display: none;
+    }
+  }
   .test-url {
     font-size: 18px;
     color: #323a45;
     line-height: 28px;
-    max-width: calc(100% - 30px);
+    max-width: calc(100% - 50px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -63,10 +74,14 @@
     .screenshot {
       display: none;
     }
+    .placeholder {
+      padding: 160px 0;
+      background: #E9EEF1;
+    }
     .placeholder-text {
       text-align: center;
       position: absolute;
-      top: 40px;
+      top: 210px;
       left: 0;
       width: 300px;
       z-index: 1;
@@ -109,6 +124,7 @@
     padding: 0 40px 20px;
     .grade {
       font-size: 61px;
+      box-shadow: 0 3px 6px rgba(#000, .3), 0 1px 0 1px rgba(#fff, .7) inset;
     }
     .grade-text {
       font-size: 18px;
@@ -223,16 +239,23 @@
       margin-bottom: 0;
     }
     .value {
-      font-weight: 100;
+      font-weight: 300;
       font-size: 64px;
       text-transform: uppercase;
       line-height: 1.2;
       white-space: nowrap;
       color: $color-blue-dark;
       img {
-        vertical-align: middle;
+        vertical-align: baseline;
         margin-right: 10px;
+        margin-bottom: -1px;
       }
+    }
+    .image-weight .value img {
+      margin-bottom: -3px;
+    }
+    .compression .value img {
+      margin-bottom: -2px;
     }
     .description {
       margin-top: 10px;
@@ -338,6 +361,9 @@
     }
     .test-info {
       width: 100%;
+      .test-meta-box {
+        border-bottom: none;
+      }
     }
     .test-screen {
       margin: 20px auto 0;

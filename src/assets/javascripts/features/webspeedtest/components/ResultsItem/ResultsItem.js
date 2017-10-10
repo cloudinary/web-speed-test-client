@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import ReactDOM from 'react-dom';
 import { Image, Transformation } from 'cloudinary-react';
 import numbro from 'numbro';
 import CompressionBar from './CompressionBar/CompressionBar';
@@ -20,8 +21,22 @@ export default class ResultsItem extends Component {
     this.toggleImageInfo = this.toggleImageInfo.bind(this);
   }
 
-  toggleImageInfo() {
-    this.setState({expanded: !this.state.expanded})
+  toggleImageInfo(e) {
+    this.setState({ expanded: !this.state.expanded });
+
+    const ripple = ReactDOM.findDOMNode(this.refs.ripple);
+    const btn = ripple.parentElement;
+    btn.classList.remove("btn-animate");
+    btn.setAttribute("data-state", this.state.expanded ? "toggle-show" : "toggle-hide");
+    const d = Math.max(btn.offsetWidth, btn.offsetHeight);
+		ripple.style.height = d + "px";
+    ripple.style.width = d + "px";
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - d/2;
+    const y = e.clientY - rect.top - d/2;
+    ripple.style.left = x + "px";
+    ripple.style.top = y + "px";
+    btn.classList.add("btn-animate");
   }
 
   getBestReduction(transformations) {
@@ -45,14 +60,28 @@ export default class ResultsItem extends Component {
       <div className={resultCls}>
         <div className="image-intro">
           <div className={"image-orig image-" + result.format}>
-            <Image publicId={result.public_id} height="300" width="400" background="auto" crop="lpad" dpr="auto"></Image>
+            <Image
+              publicId={result.public_id}
+              height="300"
+              width="400"
+              crop="limit"
+              dpr="auto">
+            </Image>
           </div>
           <div className="image-data">
             <div className="image-data-header">
               <div className={'image-data-grading grade grade-' + result.analyze.grading.aggregated.value}>
                 {result.analyze.grading.aggregated.value}
               </div>
-              <h3 className="image-data-name">{result.original_filename + '.' + result.format}</h3>
+              {result.server == 'cloudinary' &&
+                <span className="from-cloudinary">
+                  <Image publicId="icon-cloudinary-gray.svg" type="asset" width="30"></Image>
+                  <span className="tooltip">{this.context.t("FromCloudinary")}</span>
+                </span>
+              }
+              <h3 className="image-data-name">
+                {result.original_filename + '.' + result.format}
+              </h3>
               <CompressionBar format={result.format} size={result.bytes} />
             </div>
             <div className="image-data-inner">
@@ -77,13 +106,15 @@ export default class ResultsItem extends Component {
                   <Image publicId="icon-arrow-gray.svg" type="asset" width="18"></Image>
                   {result.transformedImage.width}x{result.transformedImage.height}
                 </div>
-                <button onClick={this.toggleImageInfo} className="toggle-btn toggle-show">
+                <button onClick={this.toggleImageInfo} className="toggle-btn">
                   <Image publicId="icon-expand.svg" type="asset" width="12"></Image>
-                  {this.context.t('ExpandButton')}
-                </button>
-                <button onClick={this.toggleImageInfo} className="toggle-btn toggle-hide">
-                  <Image publicId="icon-expand.svg" type="asset" width="12"></Image>
-                  {this.context.t('CollapseButton')}
+                  {this.state.expanded &&
+                    this.context.t('CollapseButton')
+                  }
+                  {!this.state.expanded &&
+                    this.context.t('ExpandButton')
+                  }
+                  <div ref="ripple" className="ripple"></div>
                 </button>
               </div>
             </div>
