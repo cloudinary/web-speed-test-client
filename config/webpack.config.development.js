@@ -2,7 +2,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const config = require('./webpack.config.base');
 const path = require('path');
-
+require('dotenv').config();
 
 const GLOBALS = {
   'process.env': {
