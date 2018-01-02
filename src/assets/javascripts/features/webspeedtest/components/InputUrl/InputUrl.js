@@ -56,25 +56,23 @@ export default class InputUrl extends Component {
             <span> {this.context.t('PageTitleB')}</span>
           </h1>
           <p>{this.context.t('ToolDescription')}</p>
-          <p style={{fontSize:'150%', fontWeight:'bold'}}>{"We are down for maintenance. Please check back soon."}</p>
-          <p style={{display:'none'}}>
           <form onSubmit={this.submitUrl} autoComplete="on">
-             <input
-               type="text"
-               name="testid"
-               placeholder={this.context.t('EditBoxDefaultText')}
-               ref={(input) => this.input = input}
-               onChange={this.validateUrl}
-               autoComplete="on"
-             />
-             <button type="submit">
-               {this.context.t('ButtonText')}
-               <Image publicId="icon-arrow-white.svg" width="21" type="asset"></Image>
-             </button>
-             {!this.state.validUrl &&
-               <div className="validation">{this.context.t('Please enter a valid URL.')}</div>
-             }
-          </form></p>
+            <input
+              type="text"
+              name="testid"
+              placeholder={this.context.t('EditBoxDefaultText')}
+              ref={(input) => this.input = input}
+              onChange={this.validateUrl}
+              autoComplete="on"
+            />
+            <button type="submit">
+              {this.context.t('ButtonText')}
+              <Image publicId="icon-arrow-white.svg" width="21" type="asset"></Image>
+            </button>
+            {!this.state.validUrl &&
+              <div className="validation">{this.context.t('Please enter a valid URL.')}</div>
+            }
+          </form>
           <div className="integrated">
             {this.context.t("IntegratedWith")}
             <a href="https://www.webpagetest.org/" target="_blank" className="icon">
