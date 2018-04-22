@@ -11,17 +11,17 @@ Uses:
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Prerequisites
 
-[NodeJs](https://nodejs.org/en/ "NodeJs") runtime engine
+[NodeJs](https://nodejs.org/en/ "NodeJs") runtime engine (Version 8 and above)
 [Chrome](https://www.google.com/chrome/ "Chrome")  for tests execution
 [FireFox](https://www.mozilla.org/en-US/ "FireFox")  for tests execution and display allure reporter
-[Java](http://www.oracle.com/technetwork/java/index.html "Java") for selenium grid and report generation 
+[Java](http://www.oracle.com/technetwork/java/index.html "Java") for selenium grid and report generation(Version 7 and above) 
 
 ------------
 **Steps:**
 **Install packages:**
 > npm install
 
-**Compile:**
+**Compile TypeScript:**
 > npm run compile
 
 **Start Selenium grid:** *(start grid in separate terminal)*
