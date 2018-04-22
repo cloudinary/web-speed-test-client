@@ -47,7 +47,7 @@ export namespace WebSpeedResultPage {
     //Image count
     BrowserUtils.expectText(
       `${TOTALS_SELECTOR}//*[@class='image-count test-meta-box']${VALUE_CLASS_SELECTOR}`,
-      "131"
+      "11"
     );
 
     //Total weight
