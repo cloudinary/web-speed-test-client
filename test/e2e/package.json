@@ -29,7 +29,7 @@
     "_spec": "Runs a single spec with dev config. Sample usage: npm run spec ./lib/specs/WebSpeedTest.js",
     "spec": "tsc; wdio wdio.dev.conf.js --spec"
   },
-  "dependencies": {
+  "devDependencies": {
     "@types/mocha": "^5.0.0",
     "@types/node": "^9.4.6",
     "@types/webdriverio": "^4.10.0",
