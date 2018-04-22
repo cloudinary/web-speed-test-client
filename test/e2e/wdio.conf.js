@@ -1,6 +1,6 @@
 var fs = require("fs");
 var wdioAllureReporter = require("wdio-allure-reporter");
-var dotenv = require("dotenv");
+// var dotenv = require("dotenv");
 
 exports.config = {
   //
@@ -180,12 +180,12 @@ exports.config = {
    * @param {Object} config wdio configuration object
    * @param {Array.<Object>} capabilities list of capabilities details
    */
-  onPrepare: function(config, capabilities) {
+  // onPrepare: function(config, capabilities) {
     /**
      * Load configurations from .env
      */
-    dotenv.config();
-  },
+    // dotenv.config();
+  // },
   /**
    * Gets executed just before initializing the webdriver session and test framework. It allows you
    * to manipulate configurations depending on the capability or spec.
