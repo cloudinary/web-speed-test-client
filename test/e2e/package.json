@@ -5,9 +5,6 @@
   "description": "Web speed test using Mocha, WebDriverIO, Allure report ",
   "author": "Felix Zilber",
   "license": "MIT",
-  "engines": {
-    "node": ">7.5.0"
-  },
   "scripts": {
     "_tslint-conflict-check": "Check for conflict rules in tslint json",
     "tslint-conflict-check": "tslint-config-prettier-check ./tslint.json",
