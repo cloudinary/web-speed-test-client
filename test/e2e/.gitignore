@@ -1,0 +1,7 @@
+
+node_modules
+.npm
+allure-report
+allure-results
+errorShots
+lib
