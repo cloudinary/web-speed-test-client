@@ -51,7 +51,7 @@ export default class About extends Component {
         <p>There could be few different reasons for this situation:</p>
         <ul>
           <li>There are some websites that use a &#34;lazy loading&#34; approach. This means that the browser gets more and more content &#40;images in this case&#41; when the user performs an action such as scrolling down. In such a case, our engine doesn&#39;t get these images and thus we can&#39;t analyze them.</li>
-          <li>Our engine does not analyze images which are hidden &#40;either via &#39;display: none&#39; or &#39;visibility: hidden&#39; in css&#41;. For example, if you have a carousel with 9 images, out of which 8 are hidden at any moment in time, we&#39;ll analyze only the 1 image which is not hidden at the time we look for the images in the page.</li>
+          <li>Website Speed Test doesn&#39;t analyze hidden images &#40;&#39;display: none&#39; or &#39;visibility: hidden&#39; in css&#41;. For example, if you have a carousel with 9 images, but 8 are hidden at any moment in time, the engine only analyzes the single image displayed on the page at the time that the analysis is performed.</li>
           <li>Website Speed Test doesn&#39;t analyze the same image twice, unless the image is presented with different dimensions.</li>
           <li>Website Speed Test analyzes up to  300 images per page. Additionally, it does not analyze extremely large images &#40;those over 9 million pixels&#41;.</li>
         </ul>
