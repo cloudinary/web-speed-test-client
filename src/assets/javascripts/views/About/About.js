@@ -47,6 +47,13 @@ export default class About extends Component {
         <p>Sure! For every optimized image, you will find a download button. As long as the original image was yours and the image license permits it, feel free to download the optimized version of the image and use it. (Please refer to the service <a href="http://webspeedtest-staging.cloudinary.com/tos">Terms of Service</a>&nbsp;for full details.</p>
         <h4>Why does the screenshot of the whole web page at the top of the report occasionally show images that are different than the images that are actually analyzed?</h4>
         <p>The service that creates the web page screenshot thumbnail is different from the service that requests the website’s images for the analysis. We do our best to ensure that both services use similar characteristics, such as viewport size, but we can’t guarantee that everything is identical. For example, a web page may show different content based on things like access location, time of day, or agent type.</p>
+        <h4>Why do I see fewer images in your report than I see when I browse the web page from my browser?</h4>
+        <p>There could be few different reasons for this situation:</p>
+        <ul>
+          <li>There are some websites that use a &#34;lazy loading&#34; approach. This means that the browser gets more and more content &#40;images in this case&#41; when the user performs an action such as scrolling down. In such a case, our engine doesn&#39;t get these images and thus we can&#39;t analyze them.</li>
+          <li>Website Speed Test doesn&#39;t analyze the same image twice, unless the image is presented with different dimensions.</li>
+          <li>Website Speed Test analyzes up to  300 images per page. Additionally, it does not analyze extremely large images &#40;those over 9 million pixels&#41;.</li>
+        </ul>
 
         <ReactDisqusComments
             shortname="website-speed-test"
