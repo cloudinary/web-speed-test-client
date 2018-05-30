@@ -3,6 +3,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   output: {
@@ -31,7 +32,8 @@ module.exports = {
       name: 'vendor',
       filename: 'js/vendor.bundle.js',
       minChunks: Infinity
-    })
+    }),
+    new CopyWebpackPlugin([{from: './robots.txt', to: '.'}]),
   ],
   module: {
     loaders: [
