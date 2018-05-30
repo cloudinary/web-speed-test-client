@@ -29,7 +29,8 @@ module.exports = merge(config, {
       {
         from: path.join(__dirname, '../src/assets/images'),
         to: 'images'
-      }
+      },
+      {from: './robots.txt', to: '.'}
     ]),
     // Avoid publishing files when compilation fails
     new webpack.NoErrorsPlugin(),
