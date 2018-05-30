@@ -31,7 +31,7 @@ module.exports = {
       name: 'vendor',
       filename: 'js/vendor.bundle.js',
       minChunks: Infinity
-    })
+    }),
   ],
   module: {
     loaders: [
