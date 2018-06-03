@@ -1,3 +1,4 @@
+
 import { Reporter } from "wdio-allure-ts";
 import { WebSpeedPage } from "../pages/WebSpeedPage";
 import { WebSpeedResultPage } from "../pages/WebSpeedResultPage";

@@ -31,13 +31,13 @@ export namespace WebSpeedResultPage {
     //original weight
     BrowserUtils.expectText(
       `${STATS_SELECTOR}//*[@class='original-images-weight']`,
-      "328.5 KB"
+      "234.9 KB"
     );
 
     //trans weight
     BrowserUtils.expectText(
       `${STATS_SELECTOR}//*[@class='trans-images-weight']`,
-      "93.3 KB"
+      "74.7 KB"
     );
   }
 
@@ -47,19 +47,19 @@ export namespace WebSpeedResultPage {
     //Image count
     BrowserUtils.expectText(
       `${TOTALS_SELECTOR}//*[@class='image-count test-meta-box']${VALUE_CLASS_SELECTOR}`,
-      "11"
+      "10"
     );
 
     //Total weight
     BrowserUtils.expectText(
       `${TOTALS_SELECTOR}//*[@class='image-weight test-meta-box']${VALUE_CLASS_SELECTOR}`,
-      "328KB"
+      "235KB"
     );
 
     //Potential Compressed Weight
     BrowserUtils.expectText(
       `${TOTALS_SELECTOR}//*[@class='compression test-meta-box']${VALUE_CLASS_SELECTOR}`,
-      "28.4%"
+      "31.8%"
     );
   }
 
@@ -69,26 +69,26 @@ export namespace WebSpeedResultPage {
 
     //image data grade
     BrowserUtils.expectText(
-      `${ITEM_SELECTOR}//*[@class='image-data-grading grade grade-C']`,
-      "C"
+      `${ITEM_SELECTOR}//*[@class='image-data-grading grade grade-B']`,
+      "B"
     );
 
     //image name
     BrowserUtils.expectText(
       `${ITEM_SELECTOR}//*[@class='image-data-name']`,
-      "MickeyArt.webp"
+      "Mickey_Mouse.png"
     );
 
     //compression Bar
     const COMPRESSION_BAR_SELECTOR: string = `${ITEM_SELECTOR}//*[@class='compressionBar' and descendant-or-self::*[@class='note original-note' and text()='Current']]`;
     BrowserUtils.expectText(
       `${COMPRESSION_BAR_SELECTOR}//*[@class='type']`,
-      "WEBP"
+      "PNG"
     );
 
     BrowserUtils.expectText(
       `${COMPRESSION_BAR_SELECTOR}//*[@class='bytes']`,
-      "93.6 KB"
+      "71.7 KB"
     );
   }
 }
