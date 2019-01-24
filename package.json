@@ -21,7 +21,7 @@
     "typecheck": "flow",
     "test": "mocha --compilers js:babel-core/register,css:./test/unit/cssNullCompiler.js --require ./test/unit/testHelper.js --recursive ./test/unit",
     "test:watch": "npm run test -- --watch",
-    "deployS3": "s3cmd put --recursive ./build/client/* s3://$BUCKET/ -P ; s3cmd tput  ./build/index.html s3://$BUCKET/ -P"
+    "deployS3": "s3cmd put --recursive ./build/* s3://$BUCKET/ -P"
   },
   "devDependencies": {
     "babel-cli": "6.14.0",
@@ -74,6 +74,7 @@
     "webpack-merge": "0.14.1"
   },
   "dependencies": {
+    "@babel/polyfill": "7.2.5",
     "async": "^2.4.0",
     "autoprefixer": "6.4.1",
     "babel-runtime": "6.11.6",

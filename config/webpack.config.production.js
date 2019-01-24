@@ -37,7 +37,8 @@ module.exports = merge(config, {
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
-        'screw_ie8': true
+        'screw_ie8': true,
+          drop_console: true
       },
       output: {
         comments: false

@@ -4,6 +4,7 @@ import { browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { AppContainer } from 'react-hot-loader';
 import Redbox from 'redbox-react';
+import "@babel/polyfill";
 
 import Root from './Root';
 import configureStore from './store/configureStore';

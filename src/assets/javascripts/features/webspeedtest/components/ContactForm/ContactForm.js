@@ -16,7 +16,10 @@ export default class ContactForm extends Component {
         while (i--) {
           var label = labels.item(i);
           var text = label.textContent.replace(/[:*]/g,'');
-          label.parentNode.querySelector('input').setAttribute("placeholder", text);
+          var input = label.parentNode.querySelector('input');
+          if (input) {
+              input.setAttribute("placeholder", text);
+          }
         }
         // debugger;
       });
