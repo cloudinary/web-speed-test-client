@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { CloudinaryContext } from 'cloudinary-react';
 
 import { actionCreators as webspeedtestActions, selector } from '../';
+import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 import WebspeedtestLayout from './WebspeedtestLayout';
 
 @connect(selector, (dispatch) => ({
@@ -14,7 +15,6 @@ export default class WebspeedtestView extends Component {
 
   componentDidMount() {
     const { location, actions: { setTestId, fetchTestDataIfNeeded } } = this.props;
-    console.log(this.props.params);
     //@TODO: remove after change the redirect on WPT side.
     if (location.query.testid) {
       browserHistory.push({
@@ -45,6 +45,9 @@ export default class WebspeedtestView extends Component {
   render() {
     return (
       <CloudinaryContext cloudName={process.env.CLOUDINARY_CLOUD_NAME} cname={process.env.CLOUDINARY_CNAME}>
+        {process.env.GTM &&
+          <GoogleTagManager gtmId={process.env.GTM} />
+        }
         <WebspeedtestLayout {...this.props} />
       </CloudinaryContext>
     );

@@ -8,19 +8,19 @@
     display: flex;
     flex: 1;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
-    max-width: 800px;
+    max-width: 900px;
   }
   h2 {
     width: 100%;
     font-weight: 200;
-    margin: 0 10px 20px;
+    margin: 0 14px 20px;
     word-break: break-all;
   }
   .gif {
     width: 180px;
-    margin: 15px 0;
+    margin: 4px 0;
   }
   .col {
     width: 620px;

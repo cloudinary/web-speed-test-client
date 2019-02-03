@@ -93,6 +93,7 @@ export const translations = {
     'ImageProperty_metadata': 'Metadata',
     'ImageProperty_progressive': 'Progressive',
     'GradesToAverageConnection': 'Average',
+    'FromCloudinary': 'Delivered Via Cloudinary',
 
     // Image type display name transforms
     'jpg': 'JPEG',
@@ -110,25 +111,28 @@ export const translations = {
     // Loader
     // Loader configuration (time between sentences and loop yes/no) can be found in
     // /src/assets/javascripts/features/webspeedtest/components/Loader/Loader.js
-    'loaderTitle': 'Testing',
+    'loaderTitle': 'Analyzing URL',
 
     // Loader arrived from pagespeed homepage
     'loadingPhrase0': 'Analyzing images...',
-    'loadingPhrase1': 'Ranking optimization potential...',
-    'loadingPhrase2': 'Optimizing images...',
-    'loadingPhrase3': 'Creating recommended images...',
-    'loadingPhrase4': 'Adding explanations...',
-    'loadingPhrase5': 'Almost done...',
-    'loaderExplanation': `Website Speed Test analyzes a website\'s images and provides a ranking for a variety of image aspects and categories. Using a grade range of A-F, it rates the image format, fit, compression rate, color space and color depth.
+    'loadingPhrase1': 'Evaluating optimization potential...',
+    'loadingPhrase2': 'Ranking images...',
+    'loadingPhrase3': 'Optimizing images...',
+    'loadingPhrase4': 'Creating recommended images...',
+    'loadingPhrase5': 'Adding descriptions...',
+    'loadingPhrase6': 'Almost ready...',
+    'loaderExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
-    Analysis may take several minutes`,
+    Analysis may take several minutes.`,
 
     // Loader arrived from webpagetest
     'loadingWPTPhrase0': 'Analyzing images...',
-    'loadingWPTPhrase1': 'Ranking optimization potential...',
+    'loadingWPTPhrase1': 'Evaluating optimization potential...',
     'loadingWPTPhrase2': 'Optimizing images...',
-    'loaderWPTExplanation': 'Analysis takes around 10 seconds',
+    'loaderWPTExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
+    Analysis may take 30 seconds.`,
+      
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',

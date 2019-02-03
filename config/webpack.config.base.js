@@ -31,7 +31,7 @@ module.exports = {
       name: 'vendor',
       filename: 'js/vendor.bundle.js',
       minChunks: Infinity
-    })
+    }),
   ],
   module: {
     loaders: [
@@ -59,6 +59,11 @@ module.exports = {
           limit: 8192,
           name: 'fonts/[name].[ext]?[hash]'
         }
+      },
+      // JSON
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
