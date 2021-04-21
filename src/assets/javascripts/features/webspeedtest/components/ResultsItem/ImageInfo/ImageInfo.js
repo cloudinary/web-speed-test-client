@@ -60,6 +60,12 @@ export default class ImageInfo extends Component {
       case 'webp':
         browsers = ['Google Chrome', 'Opera'];
         break;
+      case 'avif':
+        browsers = ['Google Chrome', 'Firefox', 'Opera'];
+        break;
+      case 'jp2':
+        browsers = ['Google Chrome', 'Firefox', 'Opera'];
+        break;
 
       default:
         browsers = ['Google Chrome', 'Microsoft Edge', 'Firefox', 'Internet Explorer', 'Opera', 'Safari'];
