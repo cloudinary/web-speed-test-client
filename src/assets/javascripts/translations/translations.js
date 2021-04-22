@@ -107,6 +107,8 @@ export const translations = {
     'svg': 'SVG',
     'wdp': 'JPEG-XR',
     'hdp': 'JPEG-XR',
+    'avif': 'AVIF',
+    'jp2': 'JPEG2000',
 
     // Loader
     // Loader configuration (time between sentences and loop yes/no) can be found in
@@ -132,7 +134,7 @@ export const translations = {
     'loaderWPTExplanation': `Website Speed Test is an image analysis tool that provides detailed optimization insights on how changes to image size, format, quality and encoding parameters can improve performance.
 
     Analysis may take 30 seconds.`,
-      
+
     // Meta data - homepahe
     'meta_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
     'meta_social_title': 'Website Speed Test - Image Analysis Tool by Cloudinary',
