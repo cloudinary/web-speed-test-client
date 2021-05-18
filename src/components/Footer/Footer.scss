@@ -1,0 +1,46 @@
+@import "styles/helpers";
+
+.footer {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    display: flex;
+  }
+  .logo {
+    margin-right: 10px;
+    height: 70px;
+  }
+  h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 18px;
+    line-height: 70px;
+  }
+  .links {
+    margin: 0 auto;
+    a {
+      margin: 0 25px;
+    }
+  }
+  .social {
+    a {
+      vertical-align: middle;
+      display: inline-block;
+      margin-left: 15px;
+    }
+  }
+
+  @media #{$bp-max-md} {
+    .container {
+      flex-direction: column;
+    }
+    .links,
+    .social {
+      margin-bottom: 20px;
+    }
+  }
+
+}

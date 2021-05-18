@@ -7,42 +7,39 @@ This is the client app for Cloudinary image analysis tool.
 
 ### Installation
 
-**Step 1**. Make sure that you have [Node.js](https://nodejs.org/) v5 or newer and
+**Step 1**. Make sure that you have [Node.js](https://nodejs.org/) and
 [Yarn](https://yarnpkg.com/) installed on your development machine.
 
-**Step 2**. Clone this repository
+**Step 2**. Clone this repository & Install dependencies
 
 ```shell
 $ git clone git@github.com:CloudinaryLtd/web-speed-test-client.git
 $ cd web-speed-test-client
-$ yarn install                  # Install project dependencies listed in package.json
+$ yarn install
 ```
 
 **Step 3**. Compile and launch your app by running:
 
 ```shell
-$ CLOUDINARY_CLOUD_NAME='demo' yarn start      # Compiles the app and opens a browser with "live reload"
+$ REACT_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn start
 ```
 
 ## Build
 
 ```shell
-$ CLOUDINARY_CLOUD_NAME='demo' yarn run build  # Compiles the app for production
-$ yarn run build:serve                         # boot up HTTP server on `3003` port and serve `build/client`
+$ REACT_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn build
 ```
+
+Builds the app for production to the `build` folder.
+
+The build is minified and the filenames include the hashes.
+
 
 ## Testing
 
-**(TBD)**
-
-To execute all unit tests, use:
-
 ```sh
-$ yarn run test
+$ yarn test
 ```
 
-To run unit tests continuously during development (watch tests), use:
-
-```sh
-$ yarn run test:watch
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

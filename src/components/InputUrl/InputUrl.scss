@@ -1,0 +1,140 @@
+@import "styles/helpers";
+
+.inputUrl {
+  background: #EFF3F4;
+  padding-top: 120px;
+  padding-bottom: 140px;
+  .container {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
+  .logo {
+    $size: 120px;
+    background: #fff;
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border-radius: $size;
+    box-sizing: border-box;
+    padding: 20px 0 0 25px;
+    img {
+      vertical-align: middle;
+    }
+  }
+  h1 {
+    font-weight: 200;
+    span {
+      color: $color-blue-c;
+    }
+  }
+  p {
+    font-weight: 300;
+    font-size: 15px;
+    color: #626063;
+    max-width: 880px;
+    margin: 0 auto 10px;
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 800px;
+    min-height: 90px;
+    margin: 20px auto 0;
+  }
+  input,
+  button {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    border: 1px solid $color-gray-blue;
+    &:focus {
+      outline: none;
+    }
+  }
+  input {
+    font-size: 18px;
+    border-radius: 8px 0 0 8px;
+    flex: 1;
+    @media #{$bp-min-xs} {
+      border-right: 0;
+    }
+    &:focus {
+      border-color: darken($color-gray-blue, 25%);
+    }
+  }
+  button {
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    text-shadow: none;
+    background: $color-blue-c;
+    box-shadow: 1px 2px 5px rgba(#000, .25);
+    cursor: pointer;
+    img {
+      vertical-align: baseline;
+      margin-left: 20px;
+    }
+    @media #{$bp-min-xs} {
+      border-left: 0;
+    }
+    &:focus {
+      background: darken($color-blue-c, 10%);
+    }
+  }
+  .validation {
+    width: 100%;
+    text-align: left;
+    color: #F44336;
+    padding: 3px 20px;
+    font-size: 14px;
+    min-height: 20px;
+  }
+  .integrated {
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 300;
+    color: #777;
+    img {
+      margin-left: 6px;
+    }
+  }
+
+  @media #{$bp-max-md} {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  @media #{$bp-max-xs} {
+    h1 {
+      font-size: 30px;
+      span {
+        display: block;
+      }
+    }
+    form {
+      order: 2;
+      margin: 0 0 30px;
+      max-width: 400px;
+    }
+    input,
+    button {
+      display: block;
+      margin: 10px 0;
+      width: 100%;
+      border-radius: 8px;
+    }
+    input { order: 1; }
+    .validation { order: 2; }
+    button { order: 3; }
+    p { order: 4; }
+    .integrated { order: 5; }
+  }
+
+}
