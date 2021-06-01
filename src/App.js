@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 import { CloudinaryContext } from "cloudinary-react";
 
+import { useStore } from "context";
+
 import "services/i18n";
 
 import Header from "components/Header/Header";
@@ -21,11 +23,16 @@ function App(props) {
   // ToDo: add fetchTestData logic.
   // Old implementation in src/components/WebspeedtestView.js
 
+  const {
+    dispatch,
+    state: { webspeedtest },
+  } = useStore();
+
   // const { webspeedtest, actions } = props;
 
   // temp
-  const webspeedtest = props.webspeedtest || {};
-  const actions = props.actions || {};
+  // const webspeedtest = props.webspeedtest || {};
+  // const actions = props.actions || {};
 
   return (
     <Router>
@@ -47,7 +54,8 @@ function App(props) {
 
             <Route exact path="/">
               {!webspeedtest.testId && (
-                <InputUrl onSubmit={actions.runNewTest} />
+                // <InputUrl onSubmit={actions.runNewTest} />
+                <InputUrl onSubmit={() => dispatch({ type: "increment" })} />
               )}
               {webspeedtest.testId && webspeedtest.isFetching !== false && (
                 <Loader url={webspeedtest.testUrl} />
