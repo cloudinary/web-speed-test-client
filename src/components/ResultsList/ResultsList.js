@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import ResultsItem from "../ResultsItem/ResultsItem";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import ResultsItem from '../ResultsItem/ResultsItem';
 
-import "./ResultsList.scss";
+import './ResultsList.scss';
 
 class ResultsList extends Component {
   static propTypes = {

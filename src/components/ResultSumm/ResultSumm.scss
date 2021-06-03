@@ -1,4 +1,4 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .resultSumm {
   padding-top: 15px;
@@ -67,16 +67,14 @@
     max-height: 660px;
     position: relative;
     img {
-      box-shadow:
-        0 0 30px rgba(#000, .2),
-        0 -15px 20px -5px rgba(#000, .2);
+      box-shadow: 0 0 30px rgba(#000, 0.2), 0 -15px 20px -5px rgba(#000, 0.2);
     }
     .screenshot {
       display: none;
     }
     .placeholder {
       padding: 160px 0;
-      background: #E9EEF1;
+      background: #e9eef1;
     }
     .placeholder-text {
       text-align: center;
@@ -124,7 +122,7 @@
     padding: 0 40px 20px;
     .grade {
       font-size: 61px;
-      box-shadow: 0 3px 6px rgba(#000, .3), 0 1px 0 1px rgba(#fff, .7) inset;
+      box-shadow: 0 3px 6px rgba(#000, 0.3), 0 1px 0 1px rgba(#fff, 0.7) inset;
     }
     .grade-text {
       font-size: 18px;
@@ -208,7 +206,7 @@
     .tooltip {
       display: none;
       position: absolute;
-      box-shadow: 0 0 5px rgba(#000, .3);
+      box-shadow: 0 0 5px rgba(#000, 0.3);
       border-radius: 2px;
       width: 220px;
       background: #fbfbfb;
@@ -264,7 +262,6 @@
     }
   }
 
-
   .test-info {
     width: 100%;
     display: flex;
@@ -286,7 +283,7 @@
     .wpt {
       img {
         height: auto;
-        opacity: .6;
+        opacity: 0.6;
       }
     }
   }
@@ -378,5 +375,4 @@
       }
     }
   }
-
 }

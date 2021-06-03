@@ -9,12 +9,12 @@ $color-blue-c: #0071ba;
 $color-blue-d: #255fb0;
 $color-gray-blue: #90a0b3;
 $color-gray-border: #ccc;
-$color-gray-bg: #E4EBF1;
+$color-gray-bg: #e4ebf1;
 $color-orange: #ff620c;
 
-$color-grade-a: #77BD58;
-$color-grade-c: #F2A81A;
-$color-grade-e: #F05C5F;
+$color-grade-a: #77bd58;
+$color-grade-c: #f2a81a;
+$color-grade-e: #f05c5f;
 
 //== Containers
 $container-width: 1208px;
@@ -29,10 +29,10 @@ $screen-sm-max: ($screen-md - 1) !default;
 $screen-xs-max: ($screen-sm - 1) !default;
 $screen-xs-min: ($screen-xs + 1) !default;
 
-$bp-min-md: "(min-width: #{$screen-md})";
-$bp-max-md: "(max-width: #{$screen-sm-max})";
-$bp-min-sm: "(min-width: #{$screen-sm})";
-$bp-max-sm: "(max-width: #{$screen-xs-max})";
-$bp-min-xs: "(min-width: #{$screen-xs-min})";
-$bp-min-xs-max-md: "(min-width: #{$screen-xs-min}) and (max-width: #{$screen-sm-max})";
-$bp-max-xs: "(max-width: #{$screen-xs})";
+$bp-min-md: '(min-width: #{$screen-md})';
+$bp-max-md: '(max-width: #{$screen-sm-max})';
+$bp-min-sm: '(min-width: #{$screen-sm})';
+$bp-max-sm: '(max-width: #{$screen-xs-max})';
+$bp-min-xs: '(min-width: #{$screen-xs-min})';
+$bp-min-xs-max-md: '(min-width: #{$screen-xs-min}) and (max-width: #{$screen-sm-max})';
+$bp-max-xs: '(max-width: #{$screen-xs})';

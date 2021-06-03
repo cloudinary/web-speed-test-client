@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import gtmParts from "react-google-tag-manager";
+import React, { Component } from 'react';
+import gtmParts from 'react-google-tag-manager';
 
 export default class GoogleTagManager extends Component {
   componentDidMount() {
-    const dataLayerName = this.props.dataLayerName || "dataLayer";
-    const scriptId = this.props.scriptId || "react-google-tag-manager-gtm";
+    const dataLayerName = this.props.dataLayerName || 'dataLayer';
+    const scriptId = this.props.scriptId || 'react-google-tag-manager-gtm';
 
     if (!window[dataLayerName]) {
       const gtmScriptNode = document.getElementById(scriptId);
@@ -16,7 +16,7 @@ export default class GoogleTagManager extends Component {
   render() {
     const gtm = gtmParts({
       id: this.props.gtmId,
-      dataLayerName: this.props.dataLayerName || "dataLayer",
+      dataLayerName: this.props.dataLayerName || 'dataLayer',
       additionalEvents: this.props.additionalEvents || {},
       previewVariables: this.props.previewVariables || false,
     });
@@ -24,7 +24,7 @@ export default class GoogleTagManager extends Component {
     return (
       <div>
         <div>{gtm.noScriptAsReact()}</div>
-        <div id={this.props.scriptId || "react-google-tag-manager-gtm"}>
+        <div id={this.props.scriptId || 'react-google-tag-manager-gtm'}>
           {gtm.scriptAsReact()}
         </div>
       </div>

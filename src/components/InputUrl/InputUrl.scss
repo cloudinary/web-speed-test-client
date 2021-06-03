@@ -1,7 +1,7 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .inputUrl {
-  background: #EFF3F4;
+  background: #eff3f4;
   padding-top: 120px;
   padding-bottom: 140px;
   .container {
@@ -75,7 +75,7 @@
     color: #fff;
     text-shadow: none;
     background: $color-blue-c;
-    box-shadow: 1px 2px 5px rgba(#000, .25);
+    box-shadow: 1px 2px 5px rgba(#000, 0.25);
     cursor: pointer;
     img {
       vertical-align: baseline;
@@ -91,7 +91,7 @@
   .validation {
     width: 100%;
     text-align: left;
-    color: #F44336;
+    color: #f44336;
     padding: 3px 20px;
     font-size: 14px;
     min-height: 20px;
@@ -130,11 +130,20 @@
       width: 100%;
       border-radius: 8px;
     }
-    input { order: 1; }
-    .validation { order: 2; }
-    button { order: 3; }
-    p { order: 4; }
-    .integrated { order: 5; }
+    input {
+      order: 1;
+    }
+    .validation {
+      order: 2;
+    }
+    button {
+      order: 3;
+    }
+    p {
+      order: 4;
+    }
+    .integrated {
+      order: 5;
+    }
   }
-
 }

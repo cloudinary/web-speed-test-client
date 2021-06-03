@@ -1,16 +1,16 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .resultsItem {
-  background: #E4EAEE;
+  background: #e4eaee;
   margin: 25px 0;
-  transition: box-shadow .25s;
+  transition: box-shadow 0.25s;
   &:hover {
-    box-shadow: 0 0 6px rgba(#000, .2);
+    box-shadow: 0 0 6px rgba(#000, 0.2);
   }
   .image-intro {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #8596AA;
+    border: 1px solid #8596aa;
     position: relative;
   }
   .image-orig {
@@ -43,7 +43,11 @@
       top: 100%;
       left: 0;
       right: 0;
-      background: linear-gradient(rgba(#000, .15), rgba(#000, .05) 50%, transparent 80%);
+      background: linear-gradient(
+        rgba(#000, 0.15),
+        rgba(#000, 0.05) 50%,
+        transparent 80%
+      );
     }
     .compressionBar {
       margin-right: auto;
@@ -53,7 +57,7 @@
     position: absolute;
     font-size: 22px;
     top: 7px;
-    left: -.75em;
+    left: -0.75em;
     z-index: 2;
   }
   .image-data-name {
@@ -80,7 +84,7 @@
     .tooltip {
       display: none;
       position: absolute;
-      box-shadow: 0 0 5px rgba(#000, .3);
+      box-shadow: 0 0 5px rgba(#000, 0.3);
       width: 150px;
       text-align: center;
       background: #fbfbfb;
@@ -89,7 +93,7 @@
       bottom: 80%;
       right: -10px;
       font-size: 12px;
-      line-height: 2.5
+      line-height: 2.5;
     }
     &:hover .tooltip {
       display: block;
@@ -147,11 +151,12 @@
     padding: 10px 20px;
     background: $color-blue-c;
     color: #fff;
-    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
+      0 1px 1px 0 rgba(0, 0, 0, 0.24);
     border: none;
     margin: 15px auto 0;
     will-change: box-shadow;
-    transition: all .2s cubic-bezier(.4,0,.2,1);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     @media #{$bp-max-md} {
       position: absolute;
       left: 0;
@@ -162,9 +167,10 @@
       background: darken($color-blue-c, 5%);
     }
     &:active {
-      box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+        0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     }
-    &[data-state="toggle-hide"] {
+    &[data-state='toggle-hide'] {
       img {
         transform: rotate(180deg);
       }
@@ -176,7 +182,7 @@
       top: 0;
       bottom: 0;
       margin: auto;
-      transition: all .5s;
+      transition: all 0.5s;
     }
     &:focus {
       outline: none;
@@ -184,7 +190,7 @@
     .ripple {
       display: block;
       position: absolute;
-      background: rgba(#fff, .1);
+      background: rgba(#fff, 0.1);
       border-radius: 100%;
       transform: scale(0);
     }
@@ -245,10 +251,9 @@
       padding-left: 32px;
     }
     .image-data-grading {
-      left: -.4em;
+      left: -0.4em;
     }
   }
-
 }
 
 .grade {
@@ -260,7 +265,7 @@
   text-align: center;
   border-radius: 1.5em;
   line-height: 1.6;
-  box-shadow: 0 3px 6px rgba(#000, .3);
+  box-shadow: 0 3px 6px rgba(#000, 0.3);
   &-A,
   &-B {
     background: $color-grade-a;
@@ -293,7 +298,9 @@
 }
 
 @keyframes rippleAnimation {
-	/*scale the element to 250% to safely cover the entire link and fade it out*/
-	100% {opacity: 0; transform: scale(2.5);}
+  /*scale the element to 250% to safely cover the entire link and fade it out*/
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
 }
-

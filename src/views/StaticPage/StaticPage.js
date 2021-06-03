@@ -1,5 +1,5 @@
-import React from "react";
-import * as Pages from "views";
+import React from 'react';
+import * as Pages from 'views';
 
 const StaticPage = (props) => {
   const page = props.page;

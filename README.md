@@ -2,7 +2,6 @@
 
 This is the client app for Cloudinary image analysis tool.
 
-
 ## Getting Started
 
 ### Installation
@@ -33,7 +32,6 @@ $ REACT_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn build
 Builds the app for production to the `build` folder.
 
 The build is minified and the filenames include the hashes.
-
 
 ## Testing
 

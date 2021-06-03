@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import { Image } from "cloudinary-react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import classnames from "classnames";
-import ImageInfo from "../ImageInfo/ImageInfo";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { Image } from 'cloudinary-react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import classnames from 'classnames';
+import ImageInfo from '../ImageInfo/ImageInfo';
 
-import "./ImageExpanded.scss";
+import './ImageExpanded.scss';
 
 class ImageExpanded extends Component {
   static propTypes = {
@@ -30,9 +30,9 @@ class ImageExpanded extends Component {
   mobileCarousel(dir) {
     const slides = 3;
     let currSlide = this.state.carousel;
-    if (dir === "next" && currSlide < slides) {
+    if (dir === 'next' && currSlide < slides) {
       this.setState({ carousel: this.state.carousel + 1 });
-    } else if (dir === "prev" && currSlide > 1) {
+    } else if (dir === 'prev' && currSlide > 1) {
       this.setState({ carousel: this.state.carousel - 1 });
     }
   }
@@ -41,8 +41,8 @@ class ImageExpanded extends Component {
     const { result } = this.props;
 
     const imageExpandedCls = classnames(
-      "imageExpanded",
-      "carousel-" + this.state.carousel,
+      'imageExpanded',
+      'carousel-' + this.state.carousel,
       { dynamicIn: this.state.expanded }
     );
 
@@ -53,13 +53,13 @@ class ImageExpanded extends Component {
         </button>
         <button
           className="mobile-carousel-btn prev"
-          onClick={() => this.mobileCarousel("prev")}
+          onClick={() => this.mobileCarousel('prev')}
         >
           <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
         </button>
         <button
           className="mobile-carousel-btn next"
-          onClick={() => this.mobileCarousel("next")}
+          onClick={() => this.mobileCarousel('next')}
         >
           <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
         </button>
@@ -71,7 +71,7 @@ class ImageExpanded extends Component {
               type="asset"
               width="25"
             ></Image>
-            {this.props.t("ExpandedTabOriginal")}
+            {this.props.t('ExpandedTabOriginal')}
           </div>
           <div className="tab">{this.props.t(result.format)}</div>
           <ImageInfo image={result} isOriginal={true} />
@@ -84,7 +84,7 @@ class ImageExpanded extends Component {
               type="asset"
               width="25"
             ></Image>
-            {this.props.t("ExpandedTabSameFormat")}
+            {this.props.t('ExpandedTabSameFormat')}
           </div>
           <div className="tab">
             {this.props.t(result.transformedImage.analyze.data.format)}
@@ -99,7 +99,7 @@ class ImageExpanded extends Component {
               type="asset"
               width="25"
             ></Image>
-            {this.props.t("ExpandedTabOtherFormats")}
+            {this.props.t('ExpandedTabOtherFormats')}
           </div>
           <Tabs>
             <TabList>

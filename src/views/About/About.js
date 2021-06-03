@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import ReactDisqusComments from "react-disqus-comments";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import ReactDisqusComments from 'react-disqus-comments';
 
-import "./About.scss";
+import './About.scss';
 
 class About extends Component {
   render() {
@@ -26,7 +26,7 @@ class About extends Component {
           parameters to drastically improve their web page&#39;s load speed.
         </p>
         <p>
-          The Website Speed Test image analysis tool is integrated with{" "}
+          The Website Speed Test image analysis tool is integrated with{' '}
           <a href="https://www.webpagetest.org/">WebPagetest</a>. With this
           integration, <a href="http://cloudinary.com/">Cloudinary</a> powers
           WebPagetest with robust image analysis capabilities, enabling users to
@@ -37,15 +37,15 @@ class About extends Component {
         <p>You can use the tool in two ways:</p>
         <ul>
           <li>
-            From WebPagetest: Run the test in{" "}
+            From WebPagetest: Run the test in{' '}
             <a href="https://www.webpagetest.org/">WebPagetest</a> and in the
             results page, click the Image Analysis tab.
           </li>
           <li>
-            From Website Speed Test: Go directly to{" "}
+            From Website Speed Test: Go directly to{' '}
             <a href="https://webspeedtest.cloudinary.com/">
               Website Speed Test
-            </a>{" "}
+            </a>{' '}
             and enter the URL for the web page you want to analyze.
           </li>
         </ul>
@@ -81,10 +81,10 @@ class About extends Component {
           image&#39;s average score.
         </p>
         <p>
-          For further details, please refer to our post{" "}
+          For further details, please refer to our post{' '}
           <a href="https://www.smashingmagazine.com/2017/07/website-speed-test-image-analysis-tool/#measure-overall-performance">
             Introducing The Website Speed Test Image Analysis Tool
-          </a>{" "}
+          </a>{' '}
           in <a href="https://www.smashingmagazine.com">Smashing Magazine</a>
         </p>
         <h4>How do you calculate the Page Image Score?</h4>
@@ -102,7 +102,7 @@ class About extends Component {
           This shows an optimized image using the original image format. This
           optimization is achieved by scaling the image down to the actual
           required dimension in the web page and by adjusting the quality
-          compression using Cloudinary&#39;s{" "}
+          compression using Cloudinary&#39;s{' '}
           <a href="http://cloudinary.com/documentation/image_transformations#automatic_quality_and_encoding_settings">
             q_auto algorithm
           </a>
@@ -131,7 +131,7 @@ class About extends Component {
           Sure! For every optimized image, you will find a download button. As
           long as the original image was yours and the image license permits it,
           feel free to download the optimized version of the image and use it.
-          (Please refer to the service{" "}
+          (Please refer to the service{' '}
           <a href="http://webspeedtest-staging.cloudinary.com/tos">
             Terms of Service
           </a>

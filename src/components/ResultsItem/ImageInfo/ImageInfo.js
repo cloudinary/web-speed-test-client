@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import { Image } from "cloudinary-react";
-import numbro from "numbro";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { Image } from 'cloudinary-react';
+import numbro from 'numbro';
 
-import "./ImageInfo.scss";
+import './ImageInfo.scss';
 
 class ImageInfo extends Component {
   static propTypes = {
@@ -36,9 +36,9 @@ class ImageInfo extends Component {
       },
     } = this.props;
 
-    if (image.transformation && image.transformation.includes("f_")) {
-      if (format === "jxr") {
-        return "wdp";
+    if (image.transformation && image.transformation.includes('f_')) {
+      if (format === 'jxr') {
+        return 'wdp';
       } else {
         return format;
       }
@@ -49,7 +49,7 @@ class ImageInfo extends Component {
 
   getFlags() {
     const { image } = this.props;
-    if (image.transformation && image.transformation.includes("fl_")) {
+    if (image.transformation && image.transformation.includes('fl_')) {
       return /fl_([^,/]+)/.exec(image.transformation)[1];
     } else {
       return undefined;
@@ -59,29 +59,29 @@ class ImageInfo extends Component {
   getBrowsersSupport(format) {
     let browsers = [];
     switch (format) {
-      case "jxr":
-      case "wdp":
-      case "hdp":
-        browsers = ["Internet Explorer", "Microsoft Edge"];
+      case 'jxr':
+      case 'wdp':
+      case 'hdp':
+        browsers = ['Internet Explorer', 'Microsoft Edge'];
         break;
-      case "webp":
-        browsers = ["Google Chrome", "Opera"];
+      case 'webp':
+        browsers = ['Google Chrome', 'Opera'];
         break;
-      case "avif":
-        browsers = ["Google Chrome", "Firefox", "Opera"];
+      case 'avif':
+        browsers = ['Google Chrome', 'Firefox', 'Opera'];
         break;
-      case "jp2":
-        browsers = ["Google Chrome", "Firefox", "Opera"];
+      case 'jp2':
+        browsers = ['Google Chrome', 'Firefox', 'Opera'];
         break;
 
       default:
         browsers = [
-          "Google Chrome",
-          "Microsoft Edge",
-          "Firefox",
-          "Internet Explorer",
-          "Opera",
-          "Safari",
+          'Google Chrome',
+          'Microsoft Edge',
+          'Firefox',
+          'Internet Explorer',
+          'Opera',
+          'Safari',
         ];
         break;
     }
@@ -91,8 +91,8 @@ class ImageInfo extends Component {
   imageError() {
     if (this.state.formatSupported) {
       this.image.element.src = this.image.state.url.replace(
-        "f_" + this.image.props.fetchFormat,
-        "f_auto"
+        'f_' + this.image.props.fetchFormat,
+        'f_auto'
       );
       this.setState({ formatSupported: false });
     }
@@ -118,17 +118,17 @@ class ImageInfo extends Component {
             {this.getBrowsersSupport(data.format).map((browser, key) => (
               <Image
                 key={key}
-                publicId={"browser-" + browser + ".svg"}
+                publicId={'browser-' + browser + '.svg'}
                 type="asset"
               ></Image>
             ))}
           </div>
-          {original && original.hasOwnProperty("public_id") && (
+          {original && original.hasOwnProperty('public_id') && (
             <div className="links">
               <a
                 target="_blank"
                 rel="noreferrer"
-                title={this.props.t("Open image in a new tab")}
+                title={this.props.t('Open image in a new tab')}
                 href={image.url}
               >
                 <Image
@@ -139,11 +139,11 @@ class ImageInfo extends Component {
               </a>
               <a
                 download={
-                  original.public_id + "." + this.getFormat(data.format)
+                  original.public_id + '.' + this.getFormat(data.format)
                 }
                 target="_blank"
                 rel="noreferrer"
-                title={this.props.t("Download the image")}
+                title={this.props.t('Download the image')}
                 href={image.url}
               >
                 <Image
@@ -159,7 +159,7 @@ class ImageInfo extends Component {
               <a
                 target="_blank"
                 rel="noreferrer"
-                title={this.props.t("Open image in a new tab")}
+                title={this.props.t('Open image in a new tab')}
                 href={image.url}
               >
                 <Image
@@ -178,10 +178,10 @@ class ImageInfo extends Component {
           </div>
           {!isOriginal && (
             <div className="percent">
-              {numbro(image.percentChange / 100).format("0.0%")}
+              {numbro(image.percentChange / 100).format('0.0%')}
             </div>
           )}
-          <div className="weight">{numbro(data.bytes).format("0.0 d")}</div>
+          <div className="weight">{numbro(data.bytes).format('0.0 d')}</div>
         </div>
 
         {isOriginal && grading && (
@@ -191,13 +191,13 @@ class ImageInfo extends Component {
                 <div className={grade.toLowerCase()} key={key}>
                   <div
                     className={
-                      "original-image-grading grade grade-" +
+                      'original-image-grading grade grade-' +
                       grading[grade].value
                     }
                   >
                     {grading[grade].value}
                   </div>
-                  {this.props.t("ImageProperty_" + grade)}
+                  {this.props.t('ImageProperty_' + grade)}
                 </div>
               ))}
             </div>
@@ -208,20 +208,20 @@ class ImageInfo extends Component {
             </div>
             <div className="total">
               <span className="average">
-                {this.props.t("GradesToAverageConnection")}
+                {this.props.t('GradesToAverageConnection')}
               </span>
-              <div className={"grade grade-" + grading.aggregated.value}>
+              <div className={'grade grade-' + grading.aggregated.value}>
                 {grading.aggregated.value}
               </div>
             </div>
           </div>
         )}
 
-        {original && original.hasOwnProperty("public_id") && (
+        {original && original.hasOwnProperty('public_id') && (
           <div className="transform-image">
             {!this.state.formatSupported && (
               <div className="support">
-                {this.props.t("{f} is not supported in your browser", {
+                {this.props.t('{f} is not supported in your browser', {
                   f: this.props.t(data.format),
                 })}
               </div>

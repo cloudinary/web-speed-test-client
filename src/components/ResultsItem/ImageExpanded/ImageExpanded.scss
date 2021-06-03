@@ -1,4 +1,4 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .imageExpanded {
   $col-height: 800px;
@@ -7,10 +7,10 @@
   overflow: hidden;
   position: relative;
   box-sizing: border-box;
-  transition: max-height .3s linear;
+  transition: max-height 0.3s linear;
 
   display: flex;
-  border: 1px solid #8596AA;
+  border: 1px solid #8596aa;
   border-top: none;
   margin-top: -1px;
   justify-content: space-between;
@@ -50,7 +50,7 @@
     box-sizing: border-box;
     text-transform: uppercase;
     font-size: 14px;
-    border-bottom: 1px solid #E4EAEE;
+    border-bottom: 1px solid #e4eaee;
   }
   .original .tab {
     text-align: left;
@@ -102,7 +102,7 @@
     position: absolute;
     z-index: 9;
     transform: rotate(0);
-    transition: transform .4s;
+    transition: transform 0.4s;
     img {
       transform: rotate(270deg);
       vertical-align: middle;
@@ -123,7 +123,7 @@
     position: absolute;
     top: 20px;
     z-index: 9;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     img {
       vertical-align: middle;
     }
@@ -141,10 +141,10 @@
     }
   }
   &.carousel-1 .mobile-carousel-btn.prev {
-    opacity: .3;
+    opacity: 0.3;
   }
   &.carousel-3 .mobile-carousel-btn.next {
-    opacity: .3;
+    opacity: 0.3;
   }
 
   @media #{$bp-max-md} {
@@ -169,7 +169,7 @@
     }
     .image-details {
       transform: translateX(0);
-      transition: transform .4s;
+      transition: transform 0.4s;
     }
     &.dynamicIn .image-details {
       transform: translateX(-103%);
@@ -191,7 +191,7 @@
     }
     .image-details {
       transform: translateX(0);
-      transition: transform .4s;
+      transition: transform 0.4s;
     }
     &.carousel-2 .image-details {
       transform: translateX(-100%);
@@ -200,5 +200,4 @@
       transform: translateX(-200%);
     }
   }
-
 }

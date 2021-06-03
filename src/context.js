@@ -1,15 +1,15 @@
 // https://kentcdodds.com/blog/how-to-use-react-context-effectively
 
-import * as React from "react";
+import * as React from 'react';
 
 const StoreContext = React.createContext();
 
 function storeReducer(state, action) {
   switch (action.type) {
-    case "increment": {
+    case 'increment': {
       return { webspeedtest: state.webspeedtest + 1 };
     }
-    case "decrement": {
+    case 'decrement': {
       return { webspeedtest: state.webspeedtest - 1 };
     }
     default: {
@@ -33,7 +33,7 @@ function StoreProvider({ children }) {
 function useStore() {
   const context = React.useContext(StoreContext);
   if (context === undefined) {
-    throw new Error("useStore must be used within a StoreProvider");
+    throw new Error('useStore must be used within a StoreProvider');
   }
   return context;
 }

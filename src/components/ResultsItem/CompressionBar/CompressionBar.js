@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import { Image } from "cloudinary-react";
-import numbro from "numbro";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { Image } from 'cloudinary-react';
+import numbro from 'numbro';
 
-import "./CompressionBar.scss";
+import './CompressionBar.scss';
 
 class CompressionBar extends Component {
   static propTypes = {
@@ -18,13 +18,13 @@ class CompressionBar extends Component {
     let barStyles;
     if (originalSize) {
       barStyles = {
-        width: (size / originalSize) * 100 + "%",
-        backgroundColor: "#0071ba",
+        width: (size / originalSize) * 100 + '%',
+        backgroundColor: '#0071ba',
       };
     } else {
       barStyles = {
-        width: "100%",
-        backgroundColor: "#f2676a",
+        width: '100%',
+        backgroundColor: '#f2676a',
       };
     }
     return barStyles;
@@ -46,9 +46,9 @@ class CompressionBar extends Component {
                 publicId="icon-best.svg"
                 type="asset"
                 width="20"
-                title={this.props.t("BestImageText")}
+                title={this.props.t('BestImageText')}
               ></Image>
-              <span className="tooltip">{this.props.t("BestImageText")}</span>
+              <span className="tooltip">{this.props.t('BestImageText')}</span>
             </div>
           )}
         </div>
@@ -58,16 +58,16 @@ class CompressionBar extends Component {
             style={this.computeBarStyles(size, originalSize)}
           ></div>
         </div>
-        <div className="bytes">{numbro(size).format("0.0 d")}</div>
+        <div className="bytes">{numbro(size).format('0.0 d')}</div>
         {!originalSize && (
           <div className="note original-note">
-            {this.props.t("ExpandedTabOriginal")}
+            {this.props.t('ExpandedTabOriginal')}
           </div>
         )}
         {originalSize && (
           <div className="note compression-note">
             (
-            {numbro(this.computeCompression(size, originalSize)).format("0.0%")}
+            {numbro(this.computeCompression(size, originalSize)).format('0.0%')}
             )
           </div>
         )}

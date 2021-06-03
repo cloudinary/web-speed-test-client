@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import ContactForm from "../ContactForm/ContactForm";
-import "./PreFooter.scss";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+import ContactForm from '../ContactForm/ContactForm';
+import './PreFooter.scss';
 
 class PreFooter extends Component {
   render() {
     return (
       <section className="preFooter">
-        <h1>{this.props.t("FooterTitle")}</h1>
-        <p>{this.props.t("FooterText")}</p>
+        <h1>{this.props.t('FooterTitle')}</h1>
+        <p>{this.props.t('FooterText')}</p>
         <a
           className="link-box"
           href="https://res.cloudinary.com/demo/image/upload/h_210/f_auto,q_auto/paint.jpg"
@@ -22,15 +22,15 @@ class PreFooter extends Component {
         </a>
         <div className="compare-images">
           <div className="original">
-            <div className="label">{this.props.t("FooterOriginalTitle")}</div>
+            <div className="label">{this.props.t('FooterOriginalTitle')}</div>
             <div className="format">
-              {this.props.t("FooterOriginalImageFormat")}
+              {this.props.t('FooterOriginalImageFormat')}
             </div>
             <div className="dimensions">
-              {this.props.t("FooterOriginalImageDimensions")}
+              {this.props.t('FooterOriginalImageDimensions')}
             </div>
             <div className="weight">
-              {this.props.t("FooterOriginalImageWeight")}
+              {this.props.t('FooterOriginalImageWeight')}
             </div>
           </div>
           <div className="original-image">
@@ -46,25 +46,25 @@ class PreFooter extends Component {
             />
           </div>
           <div className="dynamic">
-            <div className="label">{this.props.t("FooterCompressedTitle")}</div>
+            <div className="label">{this.props.t('FooterCompressedTitle')}</div>
             <div className="format">
-              {this.props.t("FooterCompressedImageFormat")}
+              {this.props.t('FooterCompressedImageFormat')}
             </div>
             <div className="dimensions">
-              {this.props.t("FooterCompressedImageDimensions")}
+              {this.props.t('FooterCompressedImageDimensions')}
             </div>
             <div className="weight">
-              {this.props.t("FooterCompressedImageWeight")}
+              {this.props.t('FooterCompressedImageWeight')}
             </div>
           </div>
         </div>
         <a
           className="link-btn"
-          href={this.props.t("TryItNowButtonURL")}
+          href={this.props.t('TryItNowButtonURL')}
           target="_blank"
           rel="noreferrer"
         >
-          {this.props.t("TryItNowButtonText")}
+          {this.props.t('TryItNowButtonText')}
         </a>
 
         <ContactForm />

@@ -1,14 +1,19 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .about {
   font-size: 15px;
   h1 + hr {
     margin-bottom: 20px;
   }
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 200;
   }
-  h2, h3 {
+  h2,
+  h3 {
     margin-top: 39px;
     margin-bottom: 13px;
   }

@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import { Image, Transformation } from "cloudinary-react";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { Image, Transformation } from 'cloudinary-react';
 // import Share from '../Share/Share';
-import numbro from "numbro";
-import cloudinary from "cloudinary-core";
+import numbro from 'numbro';
+import cloudinary from 'cloudinary-core';
 
-import "./ResultSumm.scss";
+import './ResultSumm.scss';
 
 class ResultSumm extends Component {
   static propTypes = {
@@ -31,10 +31,10 @@ class ResultSumm extends Component {
 
   getBrowserIcon() {
     const { result } = this.props;
-    if (result.browserName.includes("Chrome")) {
-      return "browser-Google Chrome.svg";
+    if (result.browserName.includes('Chrome')) {
+      return 'browser-Google Chrome.svg';
     } else {
-      return "browser-" + result.browserName + ".svg";
+      return 'browser-' + result.browserName + '.svg';
     }
   }
 
@@ -48,27 +48,27 @@ class ResultSumm extends Component {
     let url2png;
     if (result.url) {
       url2png =
-        cloudinaryCore.url(result.url.replace(/\/$/, ""), {
+        cloudinaryCore.url(result.url.replace(/\/$/, ''), {
           width: 300,
-          crop: "limit",
-          type: "url2png",
-          fetchFormat: "jpg",
-          dpr: "auto",
+          crop: 'limit',
+          type: 'url2png',
+          fetchFormat: 'jpg',
+          dpr: 'auto',
         }) +
-        "/url2png/fullpage=false%7Cviewport=" +
+        '/url2png/fullpage=false%7Cviewport=' +
         result.viewportSize.width +
-        "x2200%7Cthumbnail_max_width=900";
+        'x2200%7Cthumbnail_max_width=900';
     }
 
     return (
       <div className="resultSumm">
         <div className="container">
-          <h1>{this.props.t("PageTitleResults")}</h1>
+          <h1>{this.props.t('PageTitleResults')}</h1>
           {/* <Share shareUrl={window.location.href} title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')}><span>{this.props.t('ShareResults')}</span></Share> */}
           <a
             className="support"
-            href={this.props.t("SupportURL")}
-            title={this.props.t("SupportText")}
+            href={this.props.t('SupportURL')}
+            title={this.props.t('SupportText')}
             target="_blank"
             rel="noreferrer"
           >
@@ -82,7 +82,7 @@ class ResultSumm extends Component {
 
           {result.totalImagesCount === 0 && (
             <div className="test-empty-summ">
-              <div className="test-empty">{this.props.t("EmptyTest")}</div>
+              <div className="test-empty">{this.props.t('EmptyTest')}</div>
             </div>
           )}
 
@@ -91,42 +91,42 @@ class ResultSumm extends Component {
               <div className="test-meta">
                 <div className="test-grade test-meta-box">
                   <div className="label">
-                    {this.props.t("PageImageScoreTitle")}
+                    {this.props.t('PageImageScoreTitle')}
                   </div>
                   <div className="grade-content">
-                    <div className={"grade grade-" + result.totalPageRank}>
+                    <div className={'grade grade-' + result.totalPageRank}>
                       {result.totalPageRank}
                     </div>
                     <div
                       className={
-                        "grade-text grade-text-" + result.totalPageRank
+                        'grade-text grade-text-' + result.totalPageRank
                       }
                     >
-                      {this.props.t("AverageGrade" + result.totalPageRank)}
+                      {this.props.t('AverageGrade' + result.totalPageRank)}
                     </div>
                   </div>
                 </div>
                 <div className="test-stats test-meta-box">
                   <div className="label">
-                    {this.props.t("ImageWeightComparisonTitle")}
+                    {this.props.t('ImageWeightComparisonTitle')}
                   </div>
                   <div className="original-images-label">
-                    {this.props.t("OriginalImages")}
+                    {this.props.t('OriginalImages')}
                   </div>
                   <div className="original-images-weight">
-                    {numbro(result.totalImagesWeight).format("0.0 d")}
+                    {numbro(result.totalImagesWeight).format('0.0 d')}
                   </div>
                   <div className="original-images-indicator"></div>
                   <div
                     className="trans-images"
-                    style={{ width: result.totalPercentChange + "%" }}
+                    style={{ width: result.totalPercentChange + '%' }}
                   >
                     <div className="trans-images-indicator"></div>
                     <div className="trans-images-weight">
                       {numbro(
                         (result.totalImagesWeight * result.totalPercentChange) /
                           100
-                      ).format("0.0 d")}
+                      ).format('0.0 d')}
                     </div>
                   </div>
                   <div className="trans-images-label">
@@ -135,7 +135,7 @@ class ResultSumm extends Component {
                       type="asset"
                       width="30"
                     ></Image>
-                    {this.props.t("PotentialCompression")}
+                    {this.props.t('PotentialCompression')}
                     <span className="more-info">
                       <Image
                         publicId="icon-info.svg"
@@ -143,7 +143,7 @@ class ResultSumm extends Component {
                         width="14"
                       ></Image>
                       <span className="tooltip">
-                        {this.props.t("PotentialCompressionMoreInfo")}
+                        {this.props.t('PotentialCompressionMoreInfo')}
                       </span>
                     </span>
                   </div>
@@ -151,7 +151,7 @@ class ResultSumm extends Component {
                 <div className="test-totals">
                   <div className="image-count test-meta-box">
                     <div className="label">
-                      {this.props.t("TotalImagesNumber")}
+                      {this.props.t('TotalImagesNumber')}
                     </div>
                     <div className="value">
                       <Image
@@ -159,21 +159,21 @@ class ResultSumm extends Component {
                         type="asset"
                         width="41"
                       ></Image>
-                      {numbro(result.totalImagesCount).format("0a")}
+                      {numbro(result.totalImagesCount).format('0a')}
                     </div>
                     {result.imageList && result.imageList.isCut && (
                       <div className="description">
-                        {this.props.t("TotalImagesNumber_TooMany_A") +
-                          " " +
-                          numbro(result.totalImagesCount).format("0a") +
-                          " " +
-                          this.props.t("TotalImagesNumber_TooMany_B")}
+                        {this.props.t('TotalImagesNumber_TooMany_A') +
+                          ' ' +
+                          numbro(result.totalImagesCount).format('0a') +
+                          ' ' +
+                          this.props.t('TotalImagesNumber_TooMany_B')}
                       </div>
                     )}
                   </div>
                   <div className="image-weight test-meta-box">
                     <div className="label">
-                      {this.props.t("TotalImagesWeight")}
+                      {this.props.t('TotalImagesWeight')}
                     </div>
                     <div className="value">
                       <Image
@@ -181,12 +181,12 @@ class ResultSumm extends Component {
                         type="asset"
                         width="41"
                       ></Image>
-                      {numbro(result.totalImagesWeight).format("0d")}
+                      {numbro(result.totalImagesWeight).format('0d')}
                     </div>
                   </div>
                   <div className="compression test-meta-box">
                     <div className="label">
-                      {this.props.t("PotentialCompressionPercentage")}
+                      {this.props.t('PotentialCompressionPercentage')}
                       <span className="more-info">
                         <Image
                           publicId="icon-info.svg"
@@ -195,7 +195,7 @@ class ResultSumm extends Component {
                         ></Image>
                         <span className="tooltip">
                           {this.props.t(
-                            "PotentialCompressionPercentageMoreInfo"
+                            'PotentialCompressionPercentageMoreInfo'
                           )}
                         </span>
                       </span>
@@ -206,14 +206,14 @@ class ResultSumm extends Component {
                         type="asset"
                         width="41"
                       ></Image>
-                      {numbro(result.totalPercentChange / 100).format("0.0%")}
+                      {numbro(result.totalPercentChange / 100).format('0.0%')}
                     </div>
                   </div>
                 </div>
                 <div className="test-info">
                   <div className="browser test-meta-box">
                     <div className="label">
-                      {this.props.t("Tested_BrowserType")}
+                      {this.props.t('Tested_BrowserType')}
                     </div>
                     <div className="icon">
                       <Image
@@ -225,7 +225,7 @@ class ResultSumm extends Component {
                   </div>
                   <div className="location test-meta-box">
                     <div className="label">
-                      {this.props.t("Tested_Location")}
+                      {this.props.t('Tested_Location')}
                     </div>
                     <div className="icon">
                       <Image publicId="icon-location.svg" type="asset"></Image>
@@ -234,33 +234,33 @@ class ResultSumm extends Component {
                   </div>
                   <div className="viewport test-meta-box">
                     <div className="label">
-                      {this.props.t("Tested_Viewport")}
+                      {this.props.t('Tested_Viewport')}
                     </div>
                     <div className="icon">
                       <Image publicId="icon-screen.svg" type="asset"></Image>
                     </div>
                     <div className="value">
                       {result.viewportSize.width +
-                        " x " +
+                        ' x ' +
                         result.viewportSize.height +
-                        " px"}
+                        ' px'}
                     </div>
                   </div>
                   <div className="dpi test-meta-box">
                     <div className="label">
-                      {this.props.t("Tested_DeviceDPI")}
+                      {this.props.t('Tested_DeviceDPI')}
                     </div>
                     <div className="icon">
                       <Image publicId="icon-dpi.svg" type="asset"></Image>
                     </div>
-                    <div className="value">{result.dpi + " DPI"}</div>
+                    <div className="value">{result.dpi + ' DPI'}</div>
                   </div>
                   <div className="wpt test-meta-box">
                     <div className="label">
-                      {this.props.t("IntegratedWith")}
+                      {this.props.t('IntegratedWith')}
                     </div>
                     <a
-                      href={"https://www.webpagetest.org/result/" + testId}
+                      href={'https://www.webpagetest.org/result/' + testId}
                       target="_blank"
                       className="icon"
                       rel="noreferrer"
@@ -279,8 +279,8 @@ class ResultSumm extends Component {
               <div
                 className={
                   this.state.screenshotLoaded
-                    ? "test-screen loaded"
-                    : "test-screen"
+                    ? 'test-screen loaded'
+                    : 'test-screen'
                 }
               >
                 <Image
@@ -289,13 +289,13 @@ class ResultSumm extends Component {
                   type="asset"
                 ></Image>
                 <div className="placeholder-text">
-                  {this.props.t("URL2PNG_PlaceHolderText")}
+                  {this.props.t('URL2PNG_PlaceHolderText')}
                 </div>
                 <img
                   className="screenshot"
                   width="300"
                   src={url2png}
-                  alt={this.props.t("Screenshot of ") + result.url}
+                  alt={this.props.t('Screenshot of ') + result.url}
                   onLoad={this.handleScreenshotOnLoad}
                 />
               </div>

@@ -1,4 +1,4 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .compressionBar {
   display: flex;
@@ -36,13 +36,13 @@
     right: 50%;
     transform: translateX(50%);
     white-space: nowrap;
-    background: #303B46;
+    background: #303b46;
     color: #fff;
     font-size: 12px;
     font-weight: 300;
     padding: 4px 7px 3px;
     border-radius: 4px;
-    @include triangle($dir: bottom, $pos: 50%, $color: #303B46);
+    @include triangle($dir: bottom, $pos: 50%, $color: #303b46);
   }
 
   .bytes {

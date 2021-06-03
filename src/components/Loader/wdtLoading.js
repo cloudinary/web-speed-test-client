@@ -10,7 +10,7 @@
 var wdtLoading = {};
 
 wdtLoading.defaults = {
-  category: "default",
+  category: 'default',
   speed: 2000, // millisecond
   loop: true,
 };
@@ -21,13 +21,13 @@ wdtLoading.defaults = {
 wdtLoading.start = function (options) {
   this.options = extend(wdtLoading.defaults, options);
 
-  this.wdtLoadingScreen = document.querySelector(".wdt-loading-screen");
+  this.wdtLoadingScreen = document.querySelector('.wdt-loading-screen');
   var wdtPhraseCategories = document.querySelectorAll(
-    ".wdt-loading-phrase-category"
+    '.wdt-loading-phrase-category'
   );
 
   for (var i = 0; i < wdtPhraseCategories.length; i++) {
-    css(wdtPhraseCategories[i], { display: "none" });
+    css(wdtPhraseCategories[i], { display: 'none' });
   }
 
   this.wdtPhraseActiveCat = document.querySelector(
@@ -35,17 +35,17 @@ wdtLoading.start = function (options) {
       this.options.category +
       '"]'
   );
-  css(this.wdtPhraseActiveCat, { display: "block" });
+  css(this.wdtPhraseActiveCat, { display: 'block' });
 
   this.activePhrases = this.wdtPhraseActiveCat.querySelectorAll(
-    ".wdt-loading-phrase"
+    '.wdt-loading-phrase'
   );
   this.activePhrasesCount = this.activePhrases.length;
 
   if (this.activePhrasesCount < 5) {
     console.warn(
-      "wdtLoading -->",
-      "Add more phrase for better spin animation!"
+      'wdtLoading -->',
+      'Add more phrase for better spin animation!'
     );
   }
 
@@ -61,7 +61,7 @@ wdtLoading.start = function (options) {
     this.wdtPhraseActiveCat.appendChild(sufflePhrases[i]);
   }
 
-  css(this.wdtLoadingScreen, { display: "block" });
+  css(this.wdtLoadingScreen, { display: 'block' });
 
   wdtLoading.spin();
 
@@ -71,7 +71,7 @@ wdtLoading.start = function (options) {
 wdtLoading.spin = function () {
   var that = this;
   this.phraseHeight = that.wdtPhraseActiveCat.querySelector(
-    ".wdt-loading-phrase"
+    '.wdt-loading-phrase'
   ).scrollHeight;
 
   that.currentIndex = 0;
@@ -79,9 +79,9 @@ wdtLoading.spin = function () {
 
   that.spinInternal = setInterval(function () {
     that.activePhrases = that.wdtPhraseActiveCat.querySelectorAll(
-      ".wdt-loading-phrase"
+      '.wdt-loading-phrase'
     );
-    addClass(that.activePhrases[that.currentIndex], "wdt-checked");
+    addClass(that.activePhrases[that.currentIndex], 'wdt-checked');
     that.currentTransform = that.currentTransform - that.phraseHeight;
 
     if (!that.options.loop) {
@@ -93,7 +93,7 @@ wdtLoading.spin = function () {
 
     window.setTimeout(function () {
       css(that.wdtPhraseActiveCat, {
-        transform: "translateY(" + that.currentTransform + "px)",
+        transform: 'translateY(' + that.currentTransform + 'px)',
       });
     }, 500);
 
@@ -101,9 +101,9 @@ wdtLoading.spin = function () {
       if (that.currentIndex > 0) {
         var currentNone = that.activePhrases[that.currentIndex - 1];
         var currentClone = currentNone.cloneNode(true);
-        removeClass(currentClone, "wdt-checked");
-        addClass(currentClone, "wdt-cloned-phrase");
-        currentClone.style.transform = "";
+        removeClass(currentClone, 'wdt-checked');
+        addClass(currentClone, 'wdt-cloned-phrase');
+        currentClone.style.transform = '';
         that.wdtPhraseActiveCat.appendChild(currentClone);
       }
     }
@@ -115,16 +115,16 @@ wdtLoading.spin = function () {
 wdtLoading.done = function () {
   if (this.spinInternal) clearInterval(this.spinInternal);
 
-  css(this.wdtLoadingScreen, { display: "none" });
+  css(this.wdtLoadingScreen, { display: 'none' });
 
-  var clonePhrases = document.querySelectorAll(".wdt-cloned-phrase");
+  var clonePhrases = document.querySelectorAll('.wdt-cloned-phrase');
 
-  var allPhrases = document.querySelectorAll(".wdt-loading-phrase");
+  var allPhrases = document.querySelectorAll('.wdt-loading-phrase');
   for (var i = 0; i < allPhrases.length; i++) {
-    removeClass(allPhrases[i], "wdt-checked");
+    removeClass(allPhrases[i], 'wdt-checked');
   }
 
-  this.wdtPhraseActiveCat.style.transform = "";
+  this.wdtPhraseActiveCat.style.transform = '';
 
   for (var i = 0; i < clonePhrases.length; i++) {
     removeElement(clonePhrases[i]);
@@ -159,7 +159,7 @@ var extend = function () {
   var length = arguments.length;
 
   // Check if a deep merge
-  if (Object.prototype.toString.call(arguments[0]) === "[object Boolean]") {
+  if (Object.prototype.toString.call(arguments[0]) === '[object Boolean]') {
     deep = arguments[0];
     i++;
   }
@@ -171,7 +171,7 @@ var extend = function () {
         // If deep merge and property is an object, merge properties
         if (
           deep &&
-          Object.prototype.toString.call(obj[prop]) === "[object Object]"
+          Object.prototype.toString.call(obj[prop]) === '[object Object]'
         ) {
           extended[prop] = extend(true, extended[prop], obj[prop]);
         } else {
@@ -198,12 +198,12 @@ var extend = function () {
  * does not perform any manipulation of values prior to setting styles.
  */
 var css = (function () {
-  var cssPrefixes = ["Webkit", "O", "Moz", "ms"],
+  var cssPrefixes = ['Webkit', 'O', 'Moz', 'ms'],
     cssProps = {};
 
   function camelCase(string) {
     return string
-      .replace(/^-ms-/, "ms-")
+      .replace(/^-ms-/, 'ms-')
       .replace(/-([\da-z])/gi, function (match, letter) {
         return letter.toUpperCase();
       });
@@ -255,8 +255,8 @@ var css = (function () {
  * (Internal) Determines if an element or space separated list of class names contains a class name.
  */
 function hasClass(element, name) {
-  var list = typeof element == "string" ? element : classList(element);
-  return list.indexOf(" " + name + " ") >= 0;
+  var list = typeof element == 'string' ? element : classList(element);
+  return list.indexOf(' ' + name + ' ') >= 0;
 }
 
 /**
@@ -282,7 +282,7 @@ function removeClass(element, name) {
   if (!hasClass(element, name)) return;
 
   // Replace the class name.
-  newList = oldList.replace(" " + name + " ", " ");
+  newList = oldList.replace(' ' + name + ' ', ' ');
 
   // Trim the opening and closing spaces.
   element.className = newList.substring(1, newList.length - 1);
@@ -294,9 +294,9 @@ function removeClass(element, name) {
  * matches within the list.
  */
 function classList(element) {
-  return (" " + ((element && element.className) || "") + " ").replace(
+  return (' ' + ((element && element.className) || '') + ' ').replace(
     /\s+/gi,
-    " "
+    ' '
   );
 }
 

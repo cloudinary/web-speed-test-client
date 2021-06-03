@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import { Image } from "cloudinary-react";
-import classnames from "classnames";
-import { ShareButtons, ShareCounts, generateShareIcon } from "react-share";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import { Image } from 'cloudinary-react';
+import classnames from 'classnames';
+import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
 
-import "./Share.scss";
+import './Share.scss';
 
 const {
   FacebookShareButton,
@@ -14,13 +14,16 @@ const {
   TwitterShareButton,
 } = ShareButtons;
 
-const { FacebookShareCount, GooglePlusShareCount, LinkedinShareCount } =
-  ShareCounts;
+const {
+  FacebookShareCount,
+  GooglePlusShareCount,
+  LinkedinShareCount,
+} = ShareCounts;
 
-const FacebookIcon = generateShareIcon("facebook");
-const TwitterIcon = generateShareIcon("twitter");
-const GooglePlusIcon = generateShareIcon("google");
-const LinkedinIcon = generateShareIcon("linkedin");
+const FacebookIcon = generateShareIcon('facebook');
+const TwitterIcon = generateShareIcon('twitter');
+const GooglePlusIcon = generateShareIcon('google');
+const LinkedinIcon = generateShareIcon('linkedin');
 
 class Share extends Component {
   static propTypes = {
@@ -42,7 +45,7 @@ class Share extends Component {
   }
 
   render() {
-    const shareCls = classnames("share", { expanded: this.state.expanded });
+    const shareCls = classnames('share', { expanded: this.state.expanded });
 
     const { icon, shareUrl, title, children } = this.props;
 
@@ -50,7 +53,7 @@ class Share extends Component {
       <div className={shareCls}>
         <button className="share-toggle" onClick={this.toggleShareWidget}>
           <Image
-            publicId={icon || "icon-share.svg"}
+            publicId={icon || 'icon-share.svg'}
             width="18"
             type="asset"
           ></Image>

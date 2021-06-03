@@ -1,11 +1,11 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 .imageInfo {
   .image-info-bar {
     display: flex;
     align-items: center;
     height: 30px;
     padding: 10px 20px;
-    border-bottom: 1px solid #E4EAEE;
+    border-bottom: 1px solid #e4eaee;
     font-size: 18px;
   }
   .browsers {
@@ -113,7 +113,11 @@
     text-align: left;
     font-size: 14px;
     padding: 10px 10px 25px;
-    background: linear-gradient(rgba(#000, .8), rgba(#000, .5) 50%, transparent 95%);
+    background: linear-gradient(
+      rgba(#000, 0.8),
+      rgba(#000, 0.5) 50%,
+      transparent 95%
+    );
   }
 
   .explanation {
@@ -122,7 +126,7 @@
     color: #616161;
     font-weight: 300;
     p {
-      margin: .5em 0;
+      margin: 0.5em 0;
     }
   }
 }

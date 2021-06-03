@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { Image } from "cloudinary-react";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Image } from 'cloudinary-react';
 // import Share from '../Share/Share';
-import { withTranslation } from "react-i18next";
+import { withTranslation } from 'react-i18next';
 
-import "./Header.scss";
+import './Header.scss';
 
 class Header extends Component {
   render() {
@@ -18,20 +18,20 @@ class Header extends Component {
               width="31"
               type="asset"
             ></Image>
-            <h1>{this.props.t("AppName")}</h1>
+            <h1>{this.props.t('AppName')}</h1>
           </Link>
           <a
             className="learn"
-            href={this.props.t("LearnMoreURL")}
+            href={this.props.t('LearnMoreURL')}
             target="_blank"
             rel="noreferrer"
           >
-            {this.props.t("LearnMoreText")}
+            {this.props.t('LearnMoreText')}
           </a>
           <a
             className="support"
-            href={this.props.t("SupportURL")}
-            title={this.props.t("SupportText")}
+            href={this.props.t('SupportURL')}
+            title={this.props.t('SupportText')}
             target="_blank"
             rel="noreferrer"
           >
@@ -44,11 +44,11 @@ class Header extends Component {
           {/* <Share icon="icon-share-gray.svg" shareUrl={window.location.href.split('?')[0]} title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')} /> */}
           <a
             className="powered-by"
-            href={this.props.t("CloudinaryLogoURL")}
+            href={this.props.t('CloudinaryLogoURL')}
             target="_blank"
             rel="noreferrer"
           >
-            <div className="label">{this.props.t("PoweredByText")}</div>
+            <div className="label">{this.props.t('PoweredByText')}</div>
             <Image
               publicId="cloudinary_logo_text.svg"
               width="120"

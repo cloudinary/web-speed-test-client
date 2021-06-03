@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withTranslation } from "react-i18next";
-import ReactDOM from "react-dom";
-import { Image } from "cloudinary-react";
-import numbro from "numbro";
-import CompressionBar from "./CompressionBar/CompressionBar";
-import ImageExpanded from "./ImageExpanded/ImageExpanded";
-import classnames from "classnames";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withTranslation } from 'react-i18next';
+import ReactDOM from 'react-dom';
+import { Image } from 'cloudinary-react';
+import numbro from 'numbro';
+import CompressionBar from './CompressionBar/CompressionBar';
+import ImageExpanded from './ImageExpanded/ImageExpanded';
+import classnames from 'classnames';
 
-import "./ResultsItem.scss";
+import './ResultsItem.scss';
 
 class ResultsItem extends Component {
   static propTypes = {
@@ -28,39 +28,39 @@ class ResultsItem extends Component {
 
     const ripple = ReactDOM.findDOMNode(this.refs.ripple);
     const btn = ripple.parentElement;
-    btn.classList.remove("btn-animate");
+    btn.classList.remove('btn-animate');
     btn.setAttribute(
-      "data-state",
-      this.state.expanded ? "toggle-show" : "toggle-hide"
+      'data-state',
+      this.state.expanded ? 'toggle-show' : 'toggle-hide'
     );
     const d = Math.max(btn.offsetWidth, btn.offsetHeight);
-    ripple.style.height = d + "px";
-    ripple.style.width = d + "px";
+    ripple.style.height = d + 'px';
+    ripple.style.width = d + 'px';
     const rect = btn.getBoundingClientRect();
     const x = e.clientX - rect.left - d / 2;
     const y = e.clientY - rect.top - d / 2;
-    ripple.style.left = x + "px";
-    ripple.style.top = y + "px";
-    btn.classList.add("btn-animate");
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    btn.classList.add('btn-animate');
   }
 
   getBestReduction(transformations) {
     const best = transformations.filter(function (t) {
       return t.best;
     });
-    return best[0] ? best[0].percentChange / 100 : "N/A";
+    return best[0] ? best[0].percentChange / 100 : 'N/A';
   }
 
   render() {
     const { result } = this.props;
     const transformations = [result.transformedImage, ...result.dynamicFormats];
-    const resultCls = classnames("resultsItem", {
+    const resultCls = classnames('resultsItem', {
       expanded: this.state.expanded,
     });
     return (
       <div className={resultCls}>
         <div className="image-intro">
-          <div className={"image-orig image-" + result.format}>
+          <div className={'image-orig image-' + result.format}>
             <Image
               publicId={result.public_id}
               height="300"
@@ -73,13 +73,13 @@ class ResultsItem extends Component {
             <div className="image-data-header">
               <div
                 className={
-                  "image-data-grading grade grade-" +
+                  'image-data-grading grade grade-' +
                   result.analyze.grading.aggregated.value
                 }
               >
                 {result.analyze.grading.aggregated.value}
               </div>
-              {result.server === "cloudinary" && (
+              {result.server === 'cloudinary' && (
                 <span className="from-cloudinary">
                   <Image
                     publicId="icon-cloudinary-gray.svg"
@@ -87,19 +87,19 @@ class ResultsItem extends Component {
                     width="30"
                   ></Image>
                   <span className="tooltip">
-                    {this.props.t("FromCloudinary")}
+                    {this.props.t('FromCloudinary')}
                   </span>
                 </span>
               )}
               <h3 className="image-data-name">
-                {result.original_filename + "." + result.format}
+                {result.original_filename + '.' + result.format}
               </h3>
               <CompressionBar format={result.format} size={result.bytes} />
             </div>
             <div className="image-data-inner">
               <div className="image-compression-bars">
                 <h3 className="image-compressions-title">
-                  {this.props.t("CollapsedPotentialCompressionTitle")}
+                  {this.props.t('CollapsedPotentialCompressionTitle')}
                 </h3>
                 {transformations.map((transform, key) => (
                   <CompressionBar
@@ -119,7 +119,7 @@ class ResultsItem extends Component {
                     width="35"
                   ></Image>
                   {numbro(this.getBestReduction(transformations)).format(
-                    "0.0%"
+                    '0.0%'
                   )}
                 </div>
                 <div className="image-final-pixel">
@@ -138,8 +138,8 @@ class ResultsItem extends Component {
                     type="asset"
                     width="12"
                   ></Image>
-                  {this.state.expanded && this.props.t("CollapseButton")}
-                  {!this.state.expanded && this.props.t("ExpandButton")}
+                  {this.state.expanded && this.props.t('CollapseButton')}
+                  {!this.state.expanded && this.props.t('ExpandButton')}
                   <div ref="ripple" className="ripple"></div>
                 </button>
               </div>

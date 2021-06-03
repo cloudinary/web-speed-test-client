@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Header from "./Header/Header";
-import InputUrl from "./InputUrl/InputUrl";
-import Loader from "./Loader/Loader";
-import Error from "./Error/Error";
-import ResultSumm from "./ResultSumm/ResultSumm";
-import ResultsList from "./ResultsList/ResultsList";
-import PreFooter from "./PreFooter/PreFooter";
-import Footer from "./Footer/Footer";
-import * as Pages from "views";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Header from './Header/Header';
+import InputUrl from './InputUrl/InputUrl';
+import Loader from './Loader/Loader';
+import Error from './Error/Error';
+import ResultSumm from './ResultSumm/ResultSumm';
+import ResultsList from './ResultsList/ResultsList';
+import PreFooter from './PreFooter/PreFooter';
+import Footer from './Footer/Footer';
+import * as Pages from 'views';
 
 const StaticPage = (props) => {
   const page = props.page;

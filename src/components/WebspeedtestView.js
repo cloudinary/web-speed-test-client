@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { browserHistory } from "react-router";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { CloudinaryContext } from "cloudinary-react";
+import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { CloudinaryContext } from 'cloudinary-react';
 
-import { actionCreators as webspeedtestActions, selector } from "../";
-import GoogleTagManager from "./GoogleTagManager/GoogleTagManager";
-import WebspeedtestLayout from "./WebspeedtestLayout";
+import { actionCreators as webspeedtestActions, selector } from '../';
+import GoogleTagManager from './GoogleTagManager/GoogleTagManager';
+import WebspeedtestLayout from './WebspeedtestLayout';
 
 @connect(selector, (dispatch) => ({
   actions: bindActionCreators(webspeedtestActions, dispatch),
@@ -38,7 +38,7 @@ export default class WebspeedtestView extends Component {
       nextProps.webspeedtest.testId &&
       webspeedtest.testId !== nextProps.webspeedtest.testId
     ) {
-      if (location.pathname.indexOf("results") == -1) {
+      if (location.pathname.indexOf('results') == -1) {
         debugger;
         // browserHistory.push({
         //   pathname: location.pathname + "results/" + nextProps.webspeedtest.testId

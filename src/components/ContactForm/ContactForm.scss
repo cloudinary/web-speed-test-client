@@ -1,13 +1,13 @@
-@import "styles/helpers";
+@import 'styles/helpers';
 
 .contactForm {
   width: 480px;
   margin: 50px auto 0;
-  background: #3B82D7;
+  background: #3b82d7;
   border-radius: 8px;
   padding-bottom: 30px;
   &:after {
-    content: "";
+    content: '';
     display: table;
     clear: both;
   }
@@ -41,7 +41,7 @@
       width: 195px !important;
       margin-bottom: 12px !important;
     }
-    &[name="FirstName"] {
+    &[name='FirstName'] {
       margin-right: 10px !important;
     }
     &.mktoEmailField {
@@ -65,8 +65,8 @@
     margin-top: 20px;
     background: $color-orange;
     color: #fff;
-    box-shadow: 0 2px 8px rgba(#000, .4);
-    transition: background .3s;
+    box-shadow: 0 2px 8px rgba(#000, 0.4);
+    transition: background 0.3s;
     &:hover {
       background: darken($color-orange, 10%);
     }

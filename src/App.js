@@ -1,23 +1,23 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
-import { CloudinaryContext } from "cloudinary-react";
+import { CloudinaryContext } from 'cloudinary-react';
 
-import { useStore } from "context";
+import { useStore } from 'context';
 
-import "services/i18n";
+import 'services/i18n';
 
-import Header from "components/Header/Header";
-import InputUrl from "components/InputUrl/InputUrl";
-import Loader from "components/Loader/Loader";
-import Error from "components/Error/Error";
-import ResultSumm from "components/ResultSumm/ResultSumm";
-import ResultsList from "components/ResultsList/ResultsList";
-import PreFooter from "components/PreFooter/PreFooter";
-import Footer from "components/Footer/Footer";
-import StaticPage from "views/StaticPage/StaticPage";
+import Header from 'components/Header/Header';
+import InputUrl from 'components/InputUrl/InputUrl';
+import Loader from 'components/Loader/Loader';
+import Error from 'components/Error/Error';
+import ResultSumm from 'components/ResultSumm/ResultSumm';
+import ResultsList from 'components/ResultsList/ResultsList';
+import PreFooter from 'components/PreFooter/PreFooter';
+import Footer from 'components/Footer/Footer';
+import StaticPage from 'views/StaticPage/StaticPage';
 
-import "styles/styles.scss";
+import 'styles/styles.scss';
 
 function App(props) {
   // ToDo: add fetchTestData logic.
@@ -55,7 +55,7 @@ function App(props) {
             <Route exact path="/">
               {!webspeedtest.testId && (
                 // <InputUrl onSubmit={actions.runNewTest} />
-                <InputUrl onSubmit={() => dispatch({ type: "increment" })} />
+                <InputUrl onSubmit={() => dispatch({ type: 'increment' })} />
               )}
               {webspeedtest.testId && webspeedtest.isFetching !== false && (
                 <Loader url={webspeedtest.testUrl} />

@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import { withTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { withTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 class Tos extends Component {
   render() {
     return (
       <div className="static-page container">
         <h2>
-          {this.props.t("Cloudinary Website Speed Test Image Analysis Tool")}
+          {this.props.t('Cloudinary Website Speed Test Image Analysis Tool')}
         </h2>
-        <h1>{this.props.t("Terms of Service")}</h1>
+        <h1>{this.props.t('Terms of Service')}</h1>
         <p>
           Welcome to Cloudinary&#39;s Website Speed Test Image Analysis Tool,
           (the &ldquo;<b>Service</b>&rdquo;). The Service is owned and Operated
@@ -20,7 +20,7 @@ class Tos extends Component {
           PLEASE READ CAREFULLY THE FOLLOWING TERMS AND CONDITIONS (THE &quot;
           <b>TERMS</b>&quot;), BECAUSE THEY CONSTITUTE A BINDING AGREEMENT
           BETWEEN YOU AND CLOUDINARY. BY ACCESSING OR USING THE SERVICE YOU
-          SIGNIFY YOUR ACCEPTANCE OF THESE TERMS.{" "}
+          SIGNIFY YOUR ACCEPTANCE OF THESE TERMS.{' '}
         </p>
 
         <p>
@@ -28,7 +28,7 @@ class Tos extends Component {
             Cloudinary may change the Terms to meet technical, operational and
             legal changes. Cloudinary may also modify or enhance the Service,
             and may offer additional tools and features, free-of-charge or
-            subject to fees.{" "}
+            subject to fees.{' '}
           </b>
         </p>
 
@@ -83,7 +83,7 @@ class Tos extends Component {
         <p>
           Except for your Contributed Content, all rights, title and interest in
           and to the Service, including any intellectual property rights, are
-          owned by, or licensed to Cloudinary.{" "}
+          owned by, or licensed to Cloudinary.{' '}
         </p>
         <p>
           You grant Cloudinary permission to use your Contributed Content, for
