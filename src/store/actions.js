@@ -154,28 +154,3 @@ const processTestResults = (data) => {
     resultSumm: data.resultSumm,
   };
 };
-
-// const runNewTest = (url) => async (dispatch, getState) => {
-//   if (url) {
-//     try {
-//       dispatch({ type: 'requestNewTest', url });
-//       const result = await fetchNewTest(url);
-//       if (result.status == 'success') {
-//         if (process.env.GA) {
-//           ReactGA.event({
-//             category: 'Test info',
-//             action: 'Run new test',
-//             label: 'Run new test for ' + result.data.testId,
-//           });
-//         }
-//         dispatch({ type: 'requestNewTestSuccess', data: result.data });
-//         dispatch({ type: 'setTestId', testId: result.data.testId });
-//         dispatch(fetchTestDataIfNeeded(result.data.testId));
-//       } else {
-//         dispatch(requestNewTestError(result.message));
-//       }
-//     } catch (err) {
-//       dispatch(requestNewTestError(err));
-//     }
-//   }
-// };

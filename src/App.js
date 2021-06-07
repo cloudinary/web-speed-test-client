@@ -29,13 +29,6 @@ function App(props) {
     state: { webspeedtest },
   } = useStore();
 
-  console.log(webspeedtest);
-  // const { webspeedtest, actions } = props;
-
-  // temp
-  // const webspeedtest = props.webspeedtest || {};
-  // const actions = props.actions || {};
-
   return (
     <Router>
       <CloudinaryContext
