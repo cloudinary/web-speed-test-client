@@ -105,7 +105,6 @@ function StoreProvider({ children }) {
 }
 
 function useStore() {
-  debugger;
   const context = React.useContext(StoreContext);
   if (context === undefined) {
     throw new Error('useStore must be used within a StoreProvider');

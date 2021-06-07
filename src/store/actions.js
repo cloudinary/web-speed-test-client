@@ -1,5 +1,3 @@
-import InputUrl from '../components/InputUrl/InputUrl';
-
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 const TEST_RESULTS_END_POINT = API_URL + '/test';
 const NEW_TEST_END_POINT = API_URL + '/test/run';
@@ -25,7 +23,7 @@ export const runNewTest = async (url, dispatch, state) => {
   try {
     dispatch({ type: 'requestNewTest', url });
     const result = await fetchNewTest(url);
-    if (result.status == 'success') {
+    if (result.status === 'success') {
       // if (process.env.GA) {
       //   ReactGA.event({
       //     category: 'Test info',
@@ -52,14 +50,13 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
         type: 'requestTestResults',
         testId,
       });
-      debugger;
-      const result = await fetchTestData(testId, state);
-      if (result == false) {
+      const result = await fetchTestData(testId);
+      if (result === false) {
         return;
       }
-      if (result.status == 'success') {
+      if (result.status === 'success') {
         if (
-          result.data.imagesTestResults.length == 0 &&
+          result.data.imagesTestResults.length === 0 &&
           result.data.resultSumm.totalImagesCount !== 0
         ) {
           // Catch an error where images are not analyzed.
@@ -111,7 +108,7 @@ const wait = (duration) => {
   });
 };
 
-const fetchTestData = async (testId, state, retryNum = 0) => {
+const fetchTestData = async (testId, retryNum = 0) => {
   const totalRetries = 180;
   const delay = 3000;
   try {
@@ -132,7 +129,7 @@ const fetchTestData = async (testId, state, retryNum = 0) => {
       );
       retryNum++;
       return wait(delay).then(() => {
-        return fetchTestData(testId, state, retryNum);
+        return fetchTestData(testId, retryNum);
       });
     } else if (
       data.status === 'success' &&
