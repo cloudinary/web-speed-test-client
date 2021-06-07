@@ -5,8 +5,72 @@ import * as actions from './actions';
 
 const StoreContext = React.createContext();
 
+const initialState = {
+  testId: null,
+  testResult: { imagesTestResults: [], resultSumm: {} },
+  hasResults: false,
+  newTest: false,
+  error: false,
+  isFetching: false,
+};
+
 function storeReducer(state, action) {
   switch (action.type) {
+    case 'requestNewTest': {
+      return {
+        ...state,
+        webspeedtest: {
+          ...state.webspeedtest,
+          testUrl: action.url,
+          testStartTime: Date.now(),
+          newTest: true,
+        },
+      };
+    }
+    case 'setTestId': {
+      return {
+        ...state,
+        webspeedtest: {
+          ...state.webspeedtest,
+          testId: action.testId,
+        },
+      };
+    }
+    case 'requestTestResultsSuccess': {
+      return {
+        ...state,
+        webspeedtest: {
+          ...state.webspeedtest,
+          testResult: action.payload,
+          isFetching: false,
+          hasResults: true,
+          testEndTime: Date.now(),
+        },
+      };
+    }
+    case 'requestTestResultsError': {
+      return {
+        ...state,
+        webspeedtest: {
+          ...state.webspeedtest,
+          testResult: initialState.testResult,
+          error: action.msg,
+          isFetching: false,
+          hasResults: false,
+        },
+      };
+    }
+    case 'requestTestResults': {
+      return {
+        ...state,
+        webspeedtest: {
+          ...state.webspeedtest,
+          isFetching: true,
+          testResult: initialState.testResult,
+          hasResults: false,
+        },
+      };
+    }
     case 'fetchNewTest': {
       // WIP
       const testResult = actions.fetchNewTest(action.url);
@@ -29,8 +93,9 @@ function storeReducer(state, action) {
 function StoreProvider({ children }) {
   const [state, dispatch] = React.useReducer(storeReducer, {
     count: 0,
-    webspeedtest: {},
+    webspeedtest: initialState,
   });
+
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context
   const value = { state, dispatch };
@@ -40,6 +105,7 @@ function StoreProvider({ children }) {
 }
 
 function useStore() {
+  debugger;
   const context = React.useContext(StoreContext);
   if (context === undefined) {
     throw new Error('useStore must be used within a StoreProvider');

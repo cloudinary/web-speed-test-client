@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 import { CloudinaryContext } from 'cloudinary-react';
-
+// import ReactGA from 'react-ga';
 import { useStore } from 'store/context';
 
 import 'services/i18n';
@@ -18,6 +18,7 @@ import Footer from 'components/Footer/Footer';
 import StaticPage from 'views/StaticPage/StaticPage';
 
 import 'styles/styles.scss';
+import { runNewTest } from './store/actions';
 
 function App(props) {
   // ToDo: add fetchTestData logic.
@@ -28,6 +29,7 @@ function App(props) {
     state: { webspeedtest },
   } = useStore();
 
+  console.log(webspeedtest);
   // const { webspeedtest, actions } = props;
 
   // temp
@@ -55,7 +57,9 @@ function App(props) {
             <Route exact path="/">
               {!webspeedtest.testId && (
                 <InputUrl
-                  onSubmit={(url) => dispatch({ type: 'fetchNewTest', url })}
+                  onSubmit={async (url) => {
+                    runNewTest(url, dispatch, webspeedtest);
+                  }}
                 />
               )}
               {webspeedtest.testId && webspeedtest.isFetching !== false && (
