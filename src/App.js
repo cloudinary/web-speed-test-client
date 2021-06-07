@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 import { CloudinaryContext } from 'cloudinary-react';
 
-import { useStore } from 'context';
+import { useStore } from 'store/context';
 
 import 'services/i18n';
 
@@ -54,8 +54,9 @@ function App(props) {
 
             <Route exact path="/">
               {!webspeedtest.testId && (
-                // <InputUrl onSubmit={actions.runNewTest} />
-                <InputUrl onSubmit={() => dispatch({ type: 'increment' })} />
+                <InputUrl
+                  onSubmit={(url) => dispatch({ type: 'fetchNewTest', url })}
+                />
               )}
               {webspeedtest.testId && webspeedtest.isFetching !== false && (
                 <Loader url={webspeedtest.testUrl} />
