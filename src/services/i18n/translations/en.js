@@ -1,6 +1,6 @@
 export const en = {
   // Home page
-  AppName: 'Website Speed Test',
+  AppName: 'Website Image Analysis Tool',
   PageTitleA: 'Website Speed Test',
   PageTitleB: 'Image Analysis Tool',
   LearnMoreText: 'Learn More',

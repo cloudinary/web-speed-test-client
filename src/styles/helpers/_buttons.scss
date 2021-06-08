@@ -1,0 +1,29 @@
+// --------------------------------------------------
+//                   Buttons
+// --------------------------------------------------
+
+  .btn {
+    transition: background-color 0.2s ease;
+    background: $color-grade-e;
+    color: #fff;
+    line-height: 29px;
+    border-radius: 29px;
+    padding: 0 20px;
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+
+    &:hover {
+      transition: background-color 0.2s ease;
+      background-color: darken($color-grade-e, 5%);
+    }
+
+    &.btn-large {
+      line-height: 42px;
+      border-radius: 42px;
+      font-size: 18px;
+    }
+
+  }
