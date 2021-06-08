@@ -161,7 +161,7 @@ export const translations = {
 
     // Firefox is not supported
     'error_firefox_header': 'Firefox is not supported',
-    'error_firefox_subtitle': 'Unfortunaetly Firefox testing is not supported at the moment',
+    'error_firefox_subtitle': 'Unfortunately Firefox testing is not supported at the moment',
     'error_firefox_content': 'We will add this capability in the near future',
 
     // WPT failure
