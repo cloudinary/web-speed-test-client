@@ -14,11 +14,8 @@ const {
   TwitterShareButton,
 } = ShareButtons;
 
-const {
-  FacebookShareCount,
-  GooglePlusShareCount,
-  LinkedinShareCount,
-} = ShareCounts;
+const { FacebookShareCount, GooglePlusShareCount, LinkedinShareCount } =
+  ShareCounts;
 
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
