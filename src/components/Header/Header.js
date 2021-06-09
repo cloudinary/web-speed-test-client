@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
 // import Share from '../Share/Share';
 import { withTranslation } from 'react-i18next';
@@ -11,17 +10,21 @@ class Header extends Component {
     return (
       <header className="header">
         <div className="container">
-          <Link className="brand" to="/">
+          <a
+            className="logo"
+            href={this.props.t('CloudinaryLogoURL')}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Image
-              className="logo"
-              publicId="icon-logo.svg"
-              width="31"
+              publicId="cloudinary_logo_text.svg"
+              width="155"
               type="asset"
             ></Image>
-            <h1>{this.props.t('AppName')}</h1>
-          </Link>
+          </a>
+          <h1 className="title">{this.props.t('AppName')}</h1>
           <a
-            className="learn"
+            className="btn learn"
             href={this.props.t('LearnMoreURL')}
             target="_blank"
             rel="noreferrer"
@@ -42,19 +45,6 @@ class Header extends Component {
             ></Image>
           </a>
           {/* <Share icon="icon-share-gray.svg" shareUrl={window.location.href.split('?')[0]} title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')} /> */}
-          <a
-            className="powered-by"
-            href={this.props.t('CloudinaryLogoURL')}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <div className="label">{this.props.t('PoweredByText')}</div>
-            <Image
-              publicId="cloudinary_logo_text.svg"
-              width="120"
-              type="asset"
-            ></Image>
-          </a>
         </div>
       </header>
     );
