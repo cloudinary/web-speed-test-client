@@ -60,7 +60,7 @@ h6 {
   font-size: 14px;
 }
 
-a {
+a:not(.btn) {
   text-decoration: none;
   transition: color 0.3s;
   color: $color-blue-light;
