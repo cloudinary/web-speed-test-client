@@ -44,7 +44,6 @@ export const en = {
   TermsButtonURL: 'http://www.responsivebreakpoints.com/tos',
   LinkedinURL: 'https://www.linkedin.com/company/cloudinary',
   FacebookURL: 'https://www.facebook.com/Cloudinary',
-  GooglePlusURL: 'https://plus.google.com/+Cloudinary',
   TwitterURL: 'https://twitter.com/cloudinary',
 
   /* Results page
