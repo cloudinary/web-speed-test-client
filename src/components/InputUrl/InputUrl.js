@@ -50,11 +50,7 @@ class InputUrl extends Component {
           <div className="logo">
             <Image publicId="icon-logo.svg" width="70" type="asset"></Image>
           </div>
-          <h1>
-            {this.props.t('PageTitleA')}
-            <span> {this.props.t('PageTitleB')}</span>
-          </h1>
-          <p>{this.props.t('ToolDescription')}</p>
+          <h1>{this.props.t('AppName')}</h1>
           <form onSubmit={this.submitUrl} autoComplete="on">
             <input
               type="text"
@@ -64,13 +60,8 @@ class InputUrl extends Component {
               onChange={this.validateUrl}
               autoComplete="on"
             />
-            <button type="submit">
+            <button className="btn btn-large" type="submit">
               {this.props.t('ButtonText')}
-              <Image
-                publicId="icon-arrow-white.svg"
-                width="21"
-                type="asset"
-              ></Image>
             </button>
             {!this.state.validUrl && (
               <div className="validation">
@@ -78,8 +69,9 @@ class InputUrl extends Component {
               </div>
             )}
           </form>
+          <p>{this.props.t('ToolDescription')}</p>
           <div className="integrated">
-            {this.props.t('IntegratedWith')}
+            {this.props.t('IntegratedWith') + ':'}
             <a
               href="https://www.webpagetest.org/"
               target="_blank"
