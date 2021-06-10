@@ -24,7 +24,10 @@ const uploadImages = (imagesPath) => {
           tags: ['static'],
           type: 'asset',
         },
-        (result) => callback()
+        (result) => {
+          console.log(result);
+          callback()
+        }
       );
     },
     (err) => {
