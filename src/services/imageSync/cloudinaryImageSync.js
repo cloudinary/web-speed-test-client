@@ -25,7 +25,7 @@ const uploadImages = (imagesPath) => {
         },
         (result) => {
           console.log(result);
-          callback()
+          callback();
         }
       );
     },
