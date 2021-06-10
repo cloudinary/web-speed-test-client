@@ -4,7 +4,7 @@
 
   .btn {
     transition: background-color 0.2s ease;
-    background: $color-grade-e;
+    background: $color-a;
     color: #fff;
     line-height: 29px;
     border-radius: 29px;
@@ -14,16 +14,19 @@
     text-decoration: none;
     font-size: 12px;
     font-weight: 700;
+    border: none;
+    cursor: pointer;
 
     &:hover {
       transition: background-color 0.2s ease;
-      background-color: darken($color-grade-e, 5%);
+      background-color: $color-a-dark;
     }
 
     &.btn-large {
       line-height: 42px;
       border-radius: 42px;
       font-size: 18px;
+      padding: 0 30px;
     }
 
   }

@@ -1,9 +1,10 @@
 @import 'styles/helpers';
 
 .inputUrl {
-  background: #eff3f4;
-  padding-top: 120px;
-  padding-bottom: 140px;
+  background: $color-blue-medium;
+  padding-top: 122px;
+  padding-bottom: 100px;
+  position: relative;
   .container {
     display: flex;
     text-align: center;
@@ -12,7 +13,7 @@
     flex-flow: column;
   }
   .logo {
-    $size: 120px;
+    $size: 136px;
     background: #fff;
     display: inline-block;
     width: $size;
@@ -25,125 +26,84 @@
     }
   }
   h1 {
-    font-weight: 200;
-    span {
-      color: $color-blue-c;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #fff;
+  }
+  form {
+    width: 800px;
+    display: flex;
+    align-items: center;
+    input {
+      height: 60px;
+      padding: 0 17px;
+      width: 100%;
+      margin-right: 26px;
+      border: 1px solid $color-gray-light;
+      border-radius: 7px;
+      box-sizing: border-box;
+      &::placeholder {
+        font-size: 21px;
+        font-family: 'Inter', sans-serif;
+        color: $color-gray-medium;
+      }
     }
   }
   p {
-    font-weight: 300;
-    font-size: 15px;
-    color: #626063;
-    max-width: 880px;
-    margin: 0 auto 10px;
-  }
-  form {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 800px;
-    min-height: 90px;
-    margin: 20px auto 0;
-  }
-  input,
-  button {
-    font-family: 'Fira Sans', sans-serif;
-    font-weight: 400;
-    height: 60px;
-    line-height: 60px;
-    padding: 0 20px;
-    vertical-align: middle;
-    box-sizing: border-box;
-    border: 1px solid $color-gray-blue;
-    &:focus {
-      outline: none;
-    }
-  }
-  input {
     font-size: 18px;
-    border-radius: 8px 0 0 8px;
-    flex: 1;
-    @media #{$bp-min-xs} {
-      border-right: 0;
-    }
-    &:focus {
-      border-color: darken($color-gray-blue, 25%);
-    }
-  }
-  button {
-    border-radius: 0 8px 8px 0;
     color: #fff;
-    text-shadow: none;
-    background: $color-blue-c;
-    box-shadow: 1px 2px 5px rgba(#000, 0.25);
-    cursor: pointer;
-    img {
-      vertical-align: baseline;
-      margin-left: 20px;
-    }
-    @media #{$bp-min-xs} {
-      border-left: 0;
-    }
-    &:focus {
-      background: darken($color-blue-c, 10%);
-    }
-  }
-  .validation {
-    width: 100%;
-    text-align: left;
-    color: #f44336;
-    padding: 3px 20px;
-    font-size: 14px;
-    min-height: 20px;
+    margin-top: 47px;
+    max-width: 980px;
   }
   .integrated {
-    font-size: 15px;
-    margin-top: 20px;
-    font-weight: 300;
-    color: #777;
-    img {
-      margin-left: 6px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: $color-blue-dark;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: $color-blue-light;
+    a {
+      margin-left: 20px;
     }
   }
 
   @media #{$bp-max-md} {
-    padding-top: 80px;
-    padding-bottom: 100px;
+    padding-top: 50px;
+    h1 {
+      font-size: 42px;
+    }
+    form {
+      max-width: 80%;
+    }
+    p {
+      font-size: 16px;
+      max-width: 95%;
+    }
+
   }
 
   @media #{$bp-max-xs} {
     h1 {
       font-size: 30px;
-      span {
-        display: block;
-      }
     }
     form {
-      order: 2;
-      margin: 0 0 30px;
-      max-width: 400px;
-    }
-    input,
-    button {
-      display: block;
-      margin: 10px 0;
-      width: 100%;
-      border-radius: 8px;
-    }
-    input {
-      order: 1;
-    }
-    .validation {
-      order: 2;
-    }
-    button {
-      order: 3;
+      flex-direction: column;
+      input {
+        flex-shrink: 0;
+        margin-right: 0;
+        margin: 0 0 20px 0;
+      }
     }
     p {
-      order: 4;
-    }
-    .integrated {
-      order: 5;
+      margin-top: 30px;
     }
   }
 }
