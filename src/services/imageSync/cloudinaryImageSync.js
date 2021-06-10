@@ -16,13 +16,12 @@ const uploadImages = (imagesPath) => {
     UPLOAD_LIMIT,
     (fileName, callback) => {
       console.log('Uploading ' + fileName.replace(/\.[^/.]+$/, ''));
-      cloudinary.v2.uploader.unsigned_upload(
+      cloudinary.v2.uploader.upload(
         path.join(imagesPath, fileName),
-        process.env.CLOUDINARY_UPLOAD_PRESET,
         {
           public_id: fileName.replace(/\.[^/.]+$/, ''),
           tags: ['static'],
-          // type: 'asset',
+          type: 'asset',
         },
         (result) => {
           console.log(result);
