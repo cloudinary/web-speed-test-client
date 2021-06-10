@@ -58,6 +58,7 @@
     "react-i18next": "^11.8.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-share": "^4.4.0",
     "react-tabs": "^3.2.2",
     "web-vitals": "^1.0.1"
   },
