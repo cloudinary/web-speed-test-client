@@ -22,7 +22,7 @@ const uploadImages = (imagesPath) => {
         {
           public_id: fileName.replace(/\.[^/.]+$/, ''),
           tags: ['static'],
-          type: 'asset',
+          // type: 'asset',
         },
         (result) => {
           console.log(result);
