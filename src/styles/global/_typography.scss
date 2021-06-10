@@ -2,8 +2,6 @@
 //                  Typography
 // --------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css?family=Roboto|Fira+Sans:100,200,300,400,700');
-
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
@@ -68,8 +66,4 @@ a:not(.btn) {
   &:active {
     color: lighten($color-blue-light, 10%);
   }
-}
-
-button {
-  font-family: 'Fira Sans', sans-serif;
 }
