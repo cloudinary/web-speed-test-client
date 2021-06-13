@@ -43,7 +43,7 @@ class Share extends Component {
         <button className="share-toggle" onClick={this.toggleShareWidget}>
           <Image
             publicId={icon || 'icon-share.svg'}
-            width="18"
+            width="22"
             type="asset"
           ></Image>
           {children}

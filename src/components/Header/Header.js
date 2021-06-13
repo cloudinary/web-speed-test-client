@@ -40,7 +40,7 @@ class Header extends Component {
           >
             <Image
               publicId="icon-support-v2.svg"
-              width="21"
+              width="22"
               type="asset"
             ></Image>
           </a>
