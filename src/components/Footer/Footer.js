@@ -80,18 +80,6 @@ class Footer extends Component {
               ></Image>
             </a>
             <a
-              href={this.props.t('GooglePlusURL')}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                publicId="icon-gplus.png"
-                width="24"
-                type="asset"
-                dpr="auto"
-              ></Image>
-            </a>
-            <a
               href={this.props.t('TwitterURL')}
               target="_blank"
               rel="noreferrer"

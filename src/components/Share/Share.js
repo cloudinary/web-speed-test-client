@@ -3,24 +3,16 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
 import classnames from 'classnames';
-import { ShareButtons, ShareCounts, generateShareIcon } from 'react-share';
-
-import './Share.scss';
-
-const {
+import {
   FacebookShareButton,
-  GooglePlusShareButton,
   LinkedinShareButton,
   TwitterShareButton,
-} = ShareButtons;
+  FacebookIcon,
+  TwitterIcon,
+  LinkedinIcon,
+} from 'react-share';
 
-const { FacebookShareCount, GooglePlusShareCount, LinkedinShareCount } =
-  ShareCounts;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const GooglePlusIcon = generateShareIcon('google');
-const LinkedinIcon = generateShareIcon('linkedin');
+import './Share.scss';
 
 class Share extends Component {
   static propTypes = {
@@ -76,12 +68,6 @@ class Share extends Component {
             >
               <TwitterIcon size={32} round />
             </TwitterShareButton>
-          </div>
-
-          <div className="share-item gplus-share">
-            <GooglePlusShareButton url={shareUrl} className="share-button">
-              <GooglePlusIcon size={32} round />
-            </GooglePlusShareButton>
           </div>
 
           <div className="share-item lin-share">

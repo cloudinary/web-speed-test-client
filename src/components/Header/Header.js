@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image } from 'cloudinary-react';
-// import Share from '../Share/Share';
+import Share from '../Share/Share';
 import { withTranslation } from 'react-i18next';
 
 import './Header.scss';
@@ -44,7 +44,13 @@ class Header extends Component {
               type="asset"
             ></Image>
           </a>
-          {/* <Share icon="icon-share-gray.svg" shareUrl={window.location.href.split('?')[0]} title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')} /> */}
+          <Share
+            icon="icon-share-gray.svg"
+            shareUrl={this.props.t('meta_social_url')}
+            title={
+              this.props.t('PageTitleA') + ' - ' + this.props.t('PageTitleB')
+            }
+          />
         </div>
       </header>
     );
