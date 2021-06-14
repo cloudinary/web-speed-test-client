@@ -1,25 +1,22 @@
 @import 'styles/helpers';
 
 .footer {
+  background: $color-blue-dark;
+  color: #fff;
   .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .brand {
-    display: flex;
-  }
-  .logo {
-    margin-right: 10px;
     height: 70px;
+    display: flex;
+    align-items: center;
   }
   h1 {
     font-weight: 400;
     margin: 0;
     font-size: 18px;
-    line-height: 70px;
+    color: #fff;
   }
   .links {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-size: 18px;
     margin: 0 auto;
     a {
       margin: 0 25px;
@@ -27,19 +24,26 @@
   }
   .social {
     a {
-      vertical-align: middle;
-      display: inline-block;
-      margin-left: 15px;
+      vertical-align: bottom;
+      transition: opacity 0.25s;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
     }
   }
 
   @media #{$bp-max-md} {
     .container {
       flex-direction: column;
+      height: auto;
+      padding: 25px 0;
     }
     .links,
     .social {
-      margin-bottom: 20px;
+      margin-top: 20px;
     }
   }
 }
