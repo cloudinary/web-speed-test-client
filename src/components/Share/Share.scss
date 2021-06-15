@@ -2,6 +2,8 @@
 
 .share {
   position: relative;
+  display: flex;
+  align-items: center;
   .share-widget {
     display: none;
     position: absolute;
@@ -21,13 +23,7 @@
     outline: none;
     padding: 0;
     cursor: pointer;
-    min-height: 28px;
     color: #0071ba;
-    img {
-      position: relative;
-      z-index: 4;
-      margin-right: 10px;
-    }
   }
   .share-item {
     margin: 5px;
