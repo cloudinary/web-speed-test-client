@@ -1,7 +1,7 @@
 @import 'styles/helpers';
 
 .inputUrl {
-  background: $color-blue-medium;
+  background: $color-blue-medium-a;
   padding-top: 122px;
   padding-bottom: 100px;
   position: relative;
@@ -39,7 +39,7 @@
       padding: 0 17px;
       width: 100%;
       margin-right: 26px;
-      border: 1px solid $color-gray-light;
+      border: 1px solid $color-gray-light-b;
       border-radius: 7px;
       box-sizing: border-box;
       &::placeholder {
