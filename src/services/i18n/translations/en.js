@@ -1,6 +1,6 @@
 export const en = {
   // Home page
-  AppName: 'Website Speed Test',
+  AppName: 'Website Image Analysis Tool',
   PageTitleA: 'Website Speed Test',
   PageTitleB: 'Image Analysis Tool',
   LearnMoreText: 'Learn More',
@@ -44,7 +44,6 @@ export const en = {
   TermsButtonURL: 'http://www.responsivebreakpoints.com/tos',
   LinkedinURL: 'https://www.linkedin.com/company/cloudinary',
   FacebookURL: 'https://www.facebook.com/Cloudinary',
-  GooglePlusURL: 'https://plus.google.com/+Cloudinary',
   TwitterURL: 'https://twitter.com/cloudinary',
 
   /* Results page

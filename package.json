@@ -12,7 +12,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
+    "format": "prettier --write \"src/**/*\"",
+    "upload:images": "node ./src/services/imageSync/cloudinaryImageSync.js"
   },
   "eslintConfig": {
     "extends": [
@@ -22,7 +23,7 @@
     ],
     "rules": {
       "prettier/prettier": [
-        "error",
+        "warn",
         {
           "singleQuote": true
         }
@@ -57,10 +58,14 @@
     "react-i18next": "^11.8.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-share": "^4.4.0",
     "react-tabs": "^3.2.2",
     "web-vitals": "^1.0.1"
   },
   "devDependencies": {
+    "async": "^3.2.0",
+    "cloudinary": "^1.26.0",
+    "dotenv": "^10.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "prettier": "^2.3.0",
