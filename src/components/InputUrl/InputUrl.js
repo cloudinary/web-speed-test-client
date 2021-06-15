@@ -48,7 +48,7 @@ class InputUrl extends Component {
       <div className="inputUrl">
         <div className="container">
           <div className="logo">
-            <Image publicId="icon-logo.svg" width="70" type="asset"></Image>
+            <Image publicId="icon-logo-new.svg" width="90" type="asset"></Image>
           </div>
           <h1>{this.props.t('AppName')}</h1>
           <form onSubmit={this.submitUrl} autoComplete="on">
@@ -79,9 +79,9 @@ class InputUrl extends Component {
               className="icon"
             >
               <Image
-                publicId="https://nullvoid.org/jason.khanlar/assets/img/logos/webpagetest-logo.png"
-                type="fetch"
-                width="107"
+                publicId="webpagetest-logo-new.svg"
+                type="asset"
+                width="150"
               >
                 <Transformation width="107" crop="fit" />
               </Image>
