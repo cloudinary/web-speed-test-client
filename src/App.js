@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 import { CloudinaryContext } from 'cloudinary-react';
@@ -18,7 +18,10 @@ import Footer from 'components/Footer/Footer';
 import StaticPage from 'views/StaticPage/StaticPage';
 
 import 'styles/styles.scss';
-import { runNewTest } from './store/actions';
+import {
+  runNewTest,
+  runDummyTest
+} from './store/actions';
 
 function App(props) {
   // ToDo: add fetchTestData logic.
@@ -28,6 +31,10 @@ function App(props) {
     dispatch,
     state: { webspeedtest },
   } = useStore();
+
+  useEffect(() => {
+    runDummyTest(dispatch)
+  }, []);
 
   return (
     <Router>

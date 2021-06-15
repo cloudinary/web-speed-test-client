@@ -1,0 +1,1676 @@
+{
+    "status": "success",
+    "data": {
+        "imagesTestResults": [
+            {
+                "asset_id": "fc5c0b7a0ea52a12157c74bd614e1924",
+                "public_id": "djd5znd7qej0hsfr794p",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "0d145c123de85b4b6060914091ca9f434deebf30",
+                "width": 3600,
+                "height": 700,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 231086,
+                "type": "upload",
+                "etag": "6a9d052eb55414fcfa8d6aff8eeb5e77",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/djd5znd7qej0hsfr794p.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/djd5znd7qej0hsfr794p.jpg",
+                "original_filename": "D_Content",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 18,
+                        "lossy": true,
+                        "chroma_subsampling": "4:2:0",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 231086
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "A",
+                            "explanation": [
+                                "The JPG format is a good choice."
+                            ]
+                        },
+                        "fit": {
+                            "value": "D",
+                            "explanation": [
+                                "The current image size (3600x700) is larger than the effective rendered size (1366x266) and is being scaled down by the browser."
+                            ]
+                        },
+                        "compression": {
+                            "value": "D",
+                            "explanation": [
+                                "The current image weight (226 KB JPG) is 495.52% larger than the optimal image weight (37.9 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "metadata": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image has a small amount of metadata."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "C",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_266,q_auto,w_1366",
+                    "width": 1366,
+                    "height": 266,
+                    "bytes": 48447,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:2:0",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 48447
+                        },
+                        "explanation": [
+                            "Scaled down to 1366x266.",
+                            "Encoded as JPG with a quality score of 83/100, with 4:2:0 chroma subsampling, progressive.",
+                            "Image appears not to be a photograph.",
+                            "Tested a lossless format, but lossy yields better results."
+                        ]
+                    },
+                    "percentChange": "21.0"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_266,q_auto,w_1366",
+                        "width": 1366,
+                        "height": 266,
+                        "bytes": 38804,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": true,
+                                "chroma_subsampling": "4:2:0",
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 38804
+                            },
+                            "explanation": [
+                                "Scaled down to 1366x266.",
+                                "Encoded as Lossy WebP with a quality score of 86/100.",
+                                "Image appears not to be a photograph.",
+                                "Tested a lossless format, but lossy yields better results.",
+                                "Selected lossy WebP, which uses 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "16.8"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_266,q_auto,w_1366",
+                        "width": 1366,
+                        "height": 266,
+                        "bytes": 44316,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "jp2",
+                                "bytes": 44316
+                            },
+                            "explanation": [
+                                "Scaled down to 1366x266.",
+                                "Encoded as JP2, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "19.2"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_266,q_auto,w_1366",
+                        "width": 1366,
+                        "height": 266,
+                        "bytes": 26548,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 26548
+                            },
+                            "explanation": [
+                                "Scaled down to 1366x266.",
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "11.5",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_wdp,h_266,q_auto,w_1366",
+                        "width": 1366,
+                        "height": 266,
+                        "bytes": 46111,
+                        "format": "wdp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.wdp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.wdp",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 7,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "wdp",
+                                "bytes": 46111
+                            },
+                            "explanation": [
+                                "Scaled down to 1366x266.",
+                                "Encoded as JPEG-XR with a quality score of 0.54/1.0, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "20.0"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_266,q_auto,w_1366",
+                        "width": 1366,
+                        "height": 266,
+                        "bytes": 124910,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_266,q_auto,w_1366/v1623759483/djd5znd7qej0hsfr794p.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 124910
+                            },
+                            "explanation": [
+                                "Scaled down to 1366x266.",
+                                "Encoded as PNG.",
+                                "Image appears not to be a photograph.",
+                                "Using a lossless format."
+                            ]
+                        },
+                        "percentChange": "54.1"
+                    }
+                ]
+            },
+            {
+                "asset_id": "f69d0c98e1d891bc380a251dca28c8f8",
+                "public_id": "vjaqty7wuxptke02l1lp",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "9309ad80ae90071c569a466cdb126765ece97494",
+                "width": 300,
+                "height": 169,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 61998,
+                "type": "upload",
+                "etag": "03e20c2564bd0949659a78044b8e6feb",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/vjaqty7wuxptke02l1lp.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/vjaqty7wuxptke02l1lp.jpg",
+                "original_filename": "201215105233-mcconnell-biden-split-medium-tease",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 18,
+                        "lossy": true,
+                        "chroma_subsampling": "4:4:4",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 61998
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "A",
+                            "explanation": [
+                                "The JPG format is a good choice."
+                            ]
+                        },
+                        "fit": {
+                            "value": "B",
+                            "explanation": [
+                                "The current image size (300x169) is smaller than the effective rendered size (307x173). This causes upscaling and lost quality on display."
+                            ]
+                        },
+                        "compression": {
+                            "value": "F",
+                            "explanation": [
+                                "The current image weight (60.5 KB JPG) is 941.63% larger than the optimal image weight (5.81 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "metadata": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image has a small amount of metadata."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "C",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache-Coyote/1.1",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_173,q_auto,w_307",
+                    "width": 300,
+                    "height": 169,
+                    "bytes": 8479,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:2:0",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 8479
+                        },
+                        "explanation": [
+                            "Encoded as JPG with a quality score of 75/100, with 4:2:0 chroma subsampling, progressive.",
+                            "Image is almost definitely a photograph.",
+                            "Using a lossy format."
+                        ]
+                    },
+                    "percentChange": "13.7"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 5952,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": true,
+                                "chroma_subsampling": "4:2:0",
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 5952
+                            },
+                            "explanation": [
+                                "Encoded as Lossy WebP with a quality score of 78/100.",
+                                "Image is almost definitely a photograph.",
+                                "Using a lossy format.",
+                                "Selected lossy WebP, which uses 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "9.6"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 7423,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "jp2",
+                                "bytes": 7423
+                            },
+                            "explanation": [
+                                "Encoded as JP2, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "12.0"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 4862,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 4862
+                            },
+                            "explanation": [
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "7.8",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_wdp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 7956,
+                        "format": "wdp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.wdp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.wdp",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 8,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "wdp",
+                                "bytes": 7956
+                            },
+                            "explanation": [
+                                "Encoded as JPEG-XR with a quality score of 0.49/1.0, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "12.8"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 29211,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/vjaqty7wuxptke02l1lp.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 29211
+                            },
+                            "explanation": [
+                                "Encoded as PNG.",
+                                "Image is almost definitely a photograph."
+                            ]
+                        },
+                        "percentChange": "47.1"
+                    }
+                ]
+            },
+            {
+                "asset_id": "c6045c13f0becd2fbc04828601a45e62",
+                "public_id": "ypkqpb5nqhk5feesve6m",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "94a27322f3550ccd4d4cfac0f91cd25b547d9eb6",
+                "width": 300,
+                "height": 35,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 19792,
+                "type": "upload",
+                "etag": "c82ee3fbbff753705e4e6aaeec38efa1",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/ypkqpb5nqhk5feesve6m.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/ypkqpb5nqhk5feesve6m.jpg",
+                "original_filename": "TDALogo_300x35",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 13585,
+                        "lossy": true,
+                        "chroma_subsampling": "4:4:4",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 19792
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "C",
+                            "explanation": [
+                                "Current image is a lossy JPG, but a lossless WEBP yields a smaller and better result."
+                            ]
+                        },
+                        "fit": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image size exactly matches the effective rendered size."
+                            ]
+                        },
+                        "compression": {
+                            "value": "F",
+                            "explanation": [
+                                "The current image weight (19.3 KB JPG) is 903.65% larger than the optimal image weight (1.93 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "C",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "sffe",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_35,q_auto,w_300",
+                    "width": 300,
+                    "height": 35,
+                    "bytes": 2591,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:4:4",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 2591
+                        },
+                        "explanation": [
+                            "Encoded as JPG with a quality score of 87/100, without chroma subsampling, non-progressive.",
+                            "Image is almost definitely not a photograph.",
+                            "Tested a lossless format, but lossy yields better results."
+                        ]
+                    },
+                    "percentChange": "13.1"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_35,q_auto,w_300",
+                        "width": 300,
+                        "height": 35,
+                        "bytes": 1972,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 1972
+                            },
+                            "explanation": [
+                                "Encoded as Lossless WebP.",
+                                "Image is almost definitely not a photograph.",
+                                "Using a lossless format."
+                            ]
+                        },
+                        "percentChange": "10.0",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_35,q_auto,w_300",
+                        "width": 300,
+                        "height": 35,
+                        "bytes": 1996,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 1996
+                            },
+                            "explanation": [
+                                "Encoded as PNG.",
+                                "Image is almost definitely not a photograph.",
+                                "Using a lossless format."
+                            ]
+                        },
+                        "percentChange": "10.1"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_35,q_auto,w_300",
+                        "width": 300,
+                        "height": 35,
+                        "bytes": 4617,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_35,q_auto,w_300/v1623759483/ypkqpb5nqhk5feesve6m.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 4617
+                            },
+                            "explanation": [
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "23.3"
+                    }
+                ]
+            },
+            {
+                "asset_id": "9c63a9a4582ffbd79267082b96abc6a3",
+                "public_id": "goprb8fgubsr5disez4f",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "ef5f77a11287374f8a0dac3fbfe719e2c1dada84",
+                "width": 300,
+                "height": 169,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 15730,
+                "type": "upload",
+                "etag": "6140427a6ce592660c575ae022eda480",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/goprb8fgubsr5disez4f.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/goprb8fgubsr5disez4f.jpg",
+                "original_filename": "210523145246-marjorie-taylor-greene-may-13-2021-medium-tease",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 7000,
+                        "lossy": true,
+                        "chroma_subsampling": "4:2:0",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 15730
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "A",
+                            "explanation": [
+                                "The JPG format is a good choice."
+                            ]
+                        },
+                        "fit": {
+                            "value": "B",
+                            "explanation": [
+                                "The current image size (300x169) is smaller than the effective rendered size (307x173). This causes upscaling and lost quality on display."
+                            ]
+                        },
+                        "compression": {
+                            "value": "D",
+                            "explanation": [
+                                "The current image weight (15.4 KB JPG) is 168.61% larger than the optimal image weight (5.72 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "B",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache-Coyote/1.1",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_173,q_auto,w_307",
+                    "width": 300,
+                    "height": 169,
+                    "bytes": 8273,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:2:0",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 8273
+                        },
+                        "explanation": [
+                            "Encoded as JPG."
+                        ]
+                    },
+                    "percentChange": "52.6"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 5856,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": true,
+                                "chroma_subsampling": "4:2:0",
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 5856
+                            },
+                            "explanation": [
+                                "Encoded as Lossy WebP with a quality score of 78/100.",
+                                "Image is almost definitely a photograph.",
+                                "Using a lossy format.",
+                                "Selected lossy WebP, which uses 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "37.2"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 6468,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "jp2",
+                                "bytes": 6468
+                            },
+                            "explanation": [
+                                "Encoded as JP2, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "41.1"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 4652,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 4652
+                            },
+                            "explanation": [
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "29.6",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_wdp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 5811,
+                        "format": "wdp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.wdp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.wdp",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 7,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "wdp",
+                                "bytes": 5811
+                            },
+                            "explanation": [
+                                "Encoded as JPEG-XR with a quality score of 0.35/1.0, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "36.9"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 29913,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/goprb8fgubsr5disez4f.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 29913
+                            },
+                            "explanation": [
+                                "Encoded as PNG.",
+                                "Image is almost definitely a photograph."
+                            ]
+                        },
+                        "percentChange": "190.2"
+                    }
+                ]
+            },
+            {
+                "asset_id": "025fa6a84bceea24cee034aa17750c18",
+                "public_id": "d6gcxp44xziqb7ymcqwq",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "1e15e3505d6dc7fa4efdc2114113abfd571787c3",
+                "width": 460,
+                "height": 259,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 13940,
+                "type": "upload",
+                "etag": "1f4abe57cc64ab3193f3235b90514505",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/d6gcxp44xziqb7ymcqwq.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/d6gcxp44xziqb7ymcqwq.jpg",
+                "original_filename": "210527101033-donald-trump-2018-file-large-tease",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 18,
+                        "lossy": true,
+                        "chroma_subsampling": "4:2:0",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 13940
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "A",
+                            "explanation": [
+                                "The JPG format is a good choice."
+                            ]
+                        },
+                        "fit": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image size is very similar to the effective rendered size."
+                            ]
+                        },
+                        "compression": {
+                            "value": "C",
+                            "explanation": [
+                                "The current image weight (13.6 KB JPG) is 66.99% larger than the optimal image weight (8.15 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "metadata": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image has a small amount of metadata."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "B",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache-Coyote/1.1",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_252,q_auto,w_447",
+                    "width": 447,
+                    "height": 252,
+                    "bytes": 12274,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:2:0",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 12274
+                        },
+                        "explanation": [
+                            "Scaled down to 447x252.",
+                            "Encoded as JPG with a quality score of 77/100, with 4:2:0 chroma subsampling, progressive.",
+                            "Image is almost definitely a photograph.",
+                            "Using a lossy format."
+                        ]
+                    },
+                    "percentChange": "88.0"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_252,q_auto,w_447",
+                        "width": 447,
+                        "height": 252,
+                        "bytes": 8348,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": true,
+                                "chroma_subsampling": "4:2:0",
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 8348
+                            },
+                            "explanation": [
+                                "Scaled down to 447x252.",
+                                "Encoded as Lossy WebP with a quality score of 78/100.",
+                                "Image is almost definitely a photograph.",
+                                "Using a lossy format.",
+                                "Selected lossy WebP, which uses 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "59.9"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_252,q_auto,w_447",
+                        "width": 447,
+                        "height": 252,
+                        "bytes": 9553,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "jp2",
+                                "bytes": 9553
+                            },
+                            "explanation": [
+                                "Scaled down to 447x252.",
+                                "Encoded as JP2, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "68.5"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_252,q_auto,w_447",
+                        "width": 447,
+                        "height": 252,
+                        "bytes": 6795,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 6795
+                            },
+                            "explanation": [
+                                "Scaled down to 447x252.",
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "48.7",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_wdp,h_252,q_auto,w_447",
+                        "width": 447,
+                        "height": 252,
+                        "bytes": 10274,
+                        "format": "wdp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.wdp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.wdp",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 8,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "wdp",
+                                "bytes": 10274
+                            },
+                            "explanation": [
+                                "Scaled down to 447x252.",
+                                "Encoded as JPEG-XR with a quality score of 0.49/1.0, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "73.7"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_252,q_auto,w_447",
+                        "width": 447,
+                        "height": 252,
+                        "bytes": 49116,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_252,q_auto,w_447/v1623759483/d6gcxp44xziqb7ymcqwq.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 49116
+                            },
+                            "explanation": [
+                                "Scaled down to 447x252.",
+                                "Encoded as PNG.",
+                                "Image is almost definitely a photograph."
+                            ]
+                        },
+                        "percentChange": "352.3"
+                    }
+                ]
+            },
+            {
+                "asset_id": "26aa55a2f2e4b333b996e1cc7fcc99c8",
+                "public_id": "mcju6oxijzqdt46w8fh4",
+                "version": 1623759483,
+                "version_id": "84b35a7a864df6f99dbfd1dd063ad729",
+                "signature": "4b00f6db37171fc8b2add03c258d8e512c93e3d5",
+                "width": 300,
+                "height": 169,
+                "format": "jpg",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "bytes": 11123,
+                "type": "upload",
+                "etag": "7978df9e113f5a470ff6360dcb0b0678",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/mcju6oxijzqdt46w8fh4.jpg",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/mcju6oxijzqdt46w8fh4.jpg",
+                "original_filename": "210607012008-california-vaccination-0513-restricted-medium-tease",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 1224,
+                        "lossy": true,
+                        "chroma_subsampling": "4:2:0",
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "jpg",
+                        "bytes": 11123
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "A",
+                            "explanation": [
+                                "The JPG format is a good choice."
+                            ]
+                        },
+                        "fit": {
+                            "value": "B",
+                            "explanation": [
+                                "The current image size (300x169) is smaller than the effective rendered size (307x173). This causes upscaling and lost quality on display."
+                            ]
+                        },
+                        "compression": {
+                            "value": "C",
+                            "explanation": [
+                                "The current image weight (10.9 KB JPG) is 59.86% larger than the optimal image weight (6.79 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "B",
+                            "explanation": [
+                                "Some optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache-Coyote/1.1",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_173,q_auto,w_307",
+                    "width": 300,
+                    "height": 169,
+                    "bytes": 9454,
+                    "format": "jpg",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.jpg",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.jpg",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 18,
+                            "lossy": true,
+                            "chroma_subsampling": "4:2:0",
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "jpg",
+                            "bytes": 9454
+                        },
+                        "explanation": [
+                            "Encoded as JPG."
+                        ]
+                    },
+                    "percentChange": "85.0"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 6958,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": true,
+                                "chroma_subsampling": "4:2:0",
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 6958
+                            },
+                            "explanation": [
+                                "Encoded as Lossy WebP with a quality score of 78/100.",
+                                "Image is almost definitely a photograph.",
+                                "Using a lossy format.",
+                                "Selected lossy WebP, which uses 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "62.6"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_jp2,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 7353,
+                        "format": "jp2",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.jp2",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_jp2,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.jp2",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "jp2",
+                                "bytes": 7353
+                            },
+                            "explanation": [
+                                "Encoded as JP2, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "66.1"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 5457,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 5457
+                            },
+                            "explanation": [
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "49.1",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_wdp,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 6436,
+                        "format": "wdp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.wdp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_wdp,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.wdp",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 8,
+                                "lossy": true,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "wdp",
+                                "bytes": 6436
+                            },
+                            "explanation": [
+                                "Encoded as JPEG-XR with a quality score of 0.35/1.0, with 4:2:0 chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "57.9"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307",
+                        "width": 300,
+                        "height": 169,
+                        "bytes": 32560,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_173,q_auto,w_307/v1623759483/mcju6oxijzqdt46w8fh4.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 32560
+                            },
+                            "explanation": [
+                                "Encoded as PNG.",
+                                "Image is almost definitely a photograph."
+                            ]
+                        },
+                        "percentChange": "292.7"
+                    }
+                ]
+            },
+            {
+                "asset_id": "949fded94eb6b3ab021f69a2ee5e6109",
+                "public_id": "wd8mxoevl68ctgjroecy",
+                "version": 1623759483,
+                "version_id": "d5a5a668e52307f80d7bde215b4beee2",
+                "signature": "febd41b79b6bafdff62961ed29ddc8bf4c6037e2",
+                "width": 20,
+                "height": 20,
+                "format": "gif",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "pages": 37,
+                "bytes": 6995,
+                "type": "upload",
+                "etag": "dc64b50b58013156ec271842bebfdc64",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/wd8mxoevl68ctgjroecy.gif",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/wd8mxoevl68ctgjroecy.gif",
+                "original_filename": "live-story-status_dark",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 1138,
+                        "lossy": false,
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "gif",
+                        "bytes": 6995
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "D",
+                            "explanation": [
+                                "Current image is an animated GIF, but an animated WEBP yields a smaller and better result."
+                            ]
+                        },
+                        "fit": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image size exactly matches the effective rendered size."
+                            ]
+                        },
+                        "compression": {
+                            "value": "A",
+                            "explanation": [
+                                "The current image weight is close to optimal."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "A",
+                            "explanation": [
+                                "The image is well optimized."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_20,q_auto,w_20",
+                    "width": 20,
+                    "height": 20,
+                    "bytes": 6606,
+                    "format": "gif",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.gif",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.gif",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 0,
+                            "lossy": false,
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "gif",
+                            "bytes": 6606
+                        },
+                        "explanation": [
+                            "Encoded as animated GIF."
+                        ]
+                    },
+                    "percentChange": "94.4"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_20,q_auto,w_20",
+                        "width": 20,
+                        "height": 20,
+                        "bytes": 6392,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 6392
+                            },
+                            "explanation": [
+                                "Encoded as animated WEBP."
+                            ]
+                        },
+                        "percentChange": "91.4"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_20,q_auto,w_20",
+                        "width": 20,
+                        "height": 20,
+                        "bytes": 479,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 479
+                            },
+                            "explanation": [
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "6.8",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_20,q_auto,w_20",
+                        "width": 20,
+                        "height": 20,
+                        "bytes": 6605,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_20,q_auto,w_20/v1623759483/wd8mxoevl68ctgjroecy.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 40,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 6605
+                            },
+                            "explanation": [
+                                "Encoded as animated PNG."
+                            ]
+                        },
+                        "percentChange": "94.4"
+                    }
+                ]
+            },
+            {
+                "asset_id": "ee4e7d68f7080a63c927c3b24aad6d16",
+                "public_id": "qbgwbcrdzvviehf4yhd3",
+                "version": 1623759483,
+                "version_id": "d5a5a668e52307f80d7bde215b4beee2",
+                "signature": "6a633ddf191e1f5af90e26dabb81feae1f2ef9bd",
+                "width": 20,
+                "height": 20,
+                "format": "gif",
+                "resource_type": "image",
+                "created_at": "2021-06-15T12:18:03Z",
+                "tags": [
+                    "1623759483"
+                ],
+                "pages": 37,
+                "bytes": 6995,
+                "type": "upload",
+                "etag": "dc64b50b58013156ec271842bebfdc64",
+                "placeholder": false,
+                "url": "http://res.cloudinary.com/webspeedtest/image/upload/v1623759483/qbgwbcrdzvviehf4yhd3.gif",
+                "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/v1623759483/qbgwbcrdzvviehf4yhd3.gif",
+                "original_filename": "live-story-status_dark",
+                "api_key": "357153651535593",
+                "analyze": {
+                    "data": {
+                        "metadata_bytes": 1138,
+                        "lossy": false,
+                        "color_space": "RGB",
+                        "color_depth": 8,
+                        "format": "gif",
+                        "bytes": 6995
+                    },
+                    "grading": {
+                        "format": {
+                            "value": "D",
+                            "explanation": [
+                                "Current image is an animated GIF, but an animated WEBP yields a smaller and better result."
+                            ]
+                        },
+                        "fit": {
+                            "value": "D",
+                            "explanation": [
+                                "The current image size (20x20) is larger than the effective rendered size (6x6) and is being scaled down by the browser."
+                            ]
+                        },
+                        "compression": {
+                            "value": "C",
+                            "explanation": [
+                                "The current image weight (6.83 KB GIF) is 96.49% larger than the optimal image weight (3.48 KB WEBP)."
+                            ]
+                        },
+                        "color_space": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color space is optimal."
+                            ]
+                        },
+                        "color_depth": {
+                            "value": "A",
+                            "explanation": [
+                                "The image color depth is optimal."
+                            ]
+                        },
+                        "aggregated": {
+                            "value": "D",
+                            "explanation": [
+                                "Significant optimization is recommended."
+                            ]
+                        }
+                    }
+                },
+                "server": "Apache",
+                "transformedImage": {
+                    "transformation": "c_limit,dpr_1,h_6,q_auto,w_6",
+                    "width": 6,
+                    "height": 6,
+                    "bytes": 3763,
+                    "format": "gif",
+                    "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.gif",
+                    "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.gif",
+                    "analyze": {
+                        "data": {
+                            "metadata_bytes": 0,
+                            "lossy": false,
+                            "color_space": "RGB",
+                            "color_depth": 8,
+                            "format": "gif",
+                            "bytes": 3763
+                        },
+                        "explanation": [
+                            "Scaled down to 6x6.",
+                            "Encoded as animated GIF."
+                        ]
+                    },
+                    "percentChange": "53.8"
+                },
+                "dynamicFormats": [
+                    {
+                        "transformation": "c_limit,dpr_1,f_webp,fl_awebp,h_6,q_auto,w_6",
+                        "width": 6,
+                        "height": 6,
+                        "bytes": 3560,
+                        "format": "webp",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.webp",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_webp,fl_awebp,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.webp",
+                        "analyze": {
+                            "data": {
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "webp",
+                                "bytes": 3560
+                            },
+                            "explanation": [
+                                "Scaled down to 6x6.",
+                                "Encoded as animated WEBP."
+                            ]
+                        },
+                        "percentChange": "50.9"
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_avif,h_6,q_auto,w_6",
+                        "width": 6,
+                        "height": 6,
+                        "bytes": 342,
+                        "format": "avif",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.avif",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_avif,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.avif",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 0,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 16,
+                                "format": "avif",
+                                "bytes": 342
+                            },
+                            "explanation": [
+                                "Scaled down to 6x6.",
+                                "Encoded as AVIF, without chroma subsampling."
+                            ]
+                        },
+                        "percentChange": "4.9",
+                        "best": true
+                    },
+                    {
+                        "transformation": "c_limit,dpr_1,f_png,fl_apng,h_6,q_auto,w_6",
+                        "width": 6,
+                        "height": 6,
+                        "bytes": 3905,
+                        "format": "png",
+                        "url": "http://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.png",
+                        "secure_url": "https://res.cloudinary.com/webspeedtest/image/upload/c_limit,dpr_1,f_png,fl_apng,h_6,q_auto,w_6/v1623759483/qbgwbcrdzvviehf4yhd3.png",
+                        "analyze": {
+                            "data": {
+                                "metadata_bytes": 40,
+                                "lossy": false,
+                                "color_space": "RGB",
+                                "color_depth": 8,
+                                "format": "png",
+                                "bytes": 3905
+                            },
+                            "explanation": [
+                                "Scaled down to 6x6.",
+                                "Encoded as animated PNG."
+                            ]
+                        },
+                        "percentChange": "55.8"
+                    }
+                ]
+            }
+        ],
+        "resultSumm": {
+            "totalPageRank": "C",
+            "totalImagesCount": 8,
+            "totalImagesWeight": 367659,
+            "totalPercentChange": "13.9",
+            "url": "http://cnn.com",
+            "dpi": 96,
+            "screenShot": "https://www.webpagetest.org/getfile.php?test=210615_BiDcQ5_d17e581bbe8cbb45a6b9c1870fa6386c&file=1_screen.jpg",
+            "browserName": "Chrome",
+            "browserVersion": "91.0.4472.101",
+            "viewportSize": {
+                "width": 1366,
+                "height": 712
+            },
+            "location": "Dulles",
+            "headers": [
+                "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 PTST/210610.140319",
+                "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9"
+            ],
+            "userAgent": " Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 PTST/210610.140319",
+            "imageList": {
+                "isCut": false,
+                "origLength": 8
+            }
+        }
+    }
+}

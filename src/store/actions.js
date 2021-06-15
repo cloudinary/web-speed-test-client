@@ -1,6 +1,22 @@
+import dummyResults from './dummyResults';
+
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
 const TEST_RESULTS_END_POINT = API_URL + '/test';
 const NEW_TEST_END_POINT = API_URL + '/test/run';
+
+export const runDummyTest = async (dispatch) => {
+  dispatch({
+    type: 'setTestId',
+    testId: 'dummyResultsTestId',
+  });
+  dispatch({
+    type: 'requestTestResultsSuccess',
+    payload: {
+      imagesTestResults: dummyResults.data.imagesTestResults,
+      resultSumm: dummyResults.data.resultSumm,
+    },
+  });
+};
 
 export const fetchNewTest = async (url) => {
   try {
@@ -43,6 +59,7 @@ export const runNewTest = async (url, dispatch, state) => {
     console.log('error get test result', err);
   }
 };
+
 export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
   if (testId && !state.isFetching && !state.hasResults) {
     try {
