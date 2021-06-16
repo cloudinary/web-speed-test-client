@@ -1,33 +1,36 @@
 @import 'styles/helpers';
 
 .preFooter {
-  background: $color-blue-d;
-  color: #fff;
-  text-align: center;
-  padding: 60px 5%;
+  background: $color-gray-light-a;
+  color: #000;
+  padding: 50px 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     font-size: 48px;
     margin: 0 0 30px;
-    color: #fff;
+    text-align: center;
   }
   p {
-    max-width: 600px;
-    margin: 20px auto 30px;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 0 30px 0;
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
     font-weight: 300;
+    font-size: 18px;
   }
   a.link-box {
-    background: #e4ebf1;
+    background: $color-blue-medium-b;
     display: inline-block;
-    color: #000;
+    color: #fff;
     font-family: Consolas, Menlo, Monaco, 'Lucida Console', 'Liberation Mono',
       'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace,
       serif;
+    font-weight: 600;
     padding: 20px 40px;
     max-width: 100%;
     box-sizing: border-box;
-    // white-space: nowrap;
-    // overflow: hidden;
-    // text-overflow: ellipsis;
     word-wrap: break-word;
     .color-orange {
       color: #d47617;
@@ -40,16 +43,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin: 50px 0;
   }
   .original,
   .dynamic {
     font-size: 18px;
-    font-weight: 300;
-    padding: 20px;
+    padding: 0 30px;
     width: 200px;
     .label {
-      font-weight: 400;
+      font-weight: 600;
       margin-bottom: 10px;
     }
   }
@@ -88,23 +90,11 @@
   .dynamic-image:after {
     left: 0;
   }
-  a.link-btn {
-    display: inline-block;
-    font-size: 19px;
-    width: 220px;
-    border-radius: 6px;
-    padding: 10px 20px;
-    margin-top: 20px;
-    background: $color-orange;
-    color: #fff;
-    box-shadow: 0 2px 8px rgba(#000, 0.4);
-    transition: background 0.3s;
-    &:hover {
-      background: darken($color-orange, 10%);
-    }
-  }
+
   @media #{$bp-max-xs} {
-    //   display: none;
+    h1 {
+      font-size: 40px;
+    }
     a.link-box {
       padding: 10px 20px;
       font-size: 14px;
@@ -112,7 +102,7 @@
     .compare-images {
       flex-wrap: wrap;
       align-items: baseline;
-      margin-bottom: 0;
+      margin-bottom: 20px;
     }
     .original,
     .original-image,

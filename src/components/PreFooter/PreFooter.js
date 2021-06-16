@@ -59,7 +59,7 @@ class PreFooter extends Component {
           </div>
         </div>
         <a
-          className="link-btn"
+          className="link-btn btn btn-large"
           href={this.props.t('TryItNowButtonURL')}
           target="_blank"
           rel="noreferrer"

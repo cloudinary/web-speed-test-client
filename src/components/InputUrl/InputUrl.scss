@@ -1,7 +1,7 @@
 @import 'styles/helpers';
 
 .inputUrl {
-  background: $color-blue-medium;
+  background: $color-blue-medium-a;
   padding-top: 122px;
   padding-bottom: 100px;
   position: relative;
@@ -14,16 +14,14 @@
   }
   .logo {
     $size: 136px;
-    background: #fff;
-    display: inline-block;
+    background: #F1F2F9;
     width: $size;
     height: $size;
     border-radius: $size;
     box-sizing: border-box;
-    padding: 20px 0 0 25px;
-    img {
-      vertical-align: middle;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   h1 {
     font-weight: 500;
@@ -39,12 +37,13 @@
       padding: 0 17px;
       width: 100%;
       margin-right: 26px;
-      border: 1px solid $color-gray-light;
+      border: 1px solid $color-gray-light-b;
       border-radius: 7px;
       box-sizing: border-box;
       &::placeholder {
         font-size: 21px;
         font-family: 'Inter', sans-serif;
+        font-weight: 300;
         color: $color-gray-medium;
       }
     }
