@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { Image } from 'cloudinary-react';
 import { withTranslation } from 'react-i18next';
 
@@ -10,15 +9,7 @@ class Footer extends Component {
     return (
       <footer className="footer">
         <div className="container">
-          <Link className="brand" to="/">
-            <Image
-              className="logo"
-              publicId="icon-logo.svg"
-              width="31"
-              type="asset"
-            ></Image>
-            <h1>{this.props.t('AppName')}</h1>
-          </Link>
+          <h1>{this.props.t('AppName')}</h1>
           <div className="links">
             <a
               href={this.props.t('AboutButtonURL')}
@@ -49,20 +40,8 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="icon-cloudinary.png"
-                width="40"
-                type="asset"
-                dpr="auto"
-              ></Image>
-            </a>
-            <a
-              href={this.props.t('LinkedinURL')}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image
-                publicId="icon-lin.png"
-                width="24"
+                publicId="cloudinary_logo_white_0720_svg.svg"
+                width="155"
                 type="asset"
                 dpr="auto"
               ></Image>
@@ -73,8 +52,8 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="icon-fb.png"
-                width="24"
+                publicId="facebook.png"
+                width="16"
                 type="asset"
                 dpr="auto"
               ></Image>
@@ -85,8 +64,20 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="icon-twitter.png"
-                width="24"
+                publicId="twitter.svg"
+                width="16"
+                type="asset"
+                dpr="auto"
+              ></Image>
+            </a>
+            <a
+              href={this.props.t('LinkedinURL')}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image
+                publicId="linkedin2.png"
+                width="16"
                 type="asset"
                 dpr="auto"
               ></Image>
