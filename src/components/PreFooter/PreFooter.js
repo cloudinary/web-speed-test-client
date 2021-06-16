@@ -67,7 +67,7 @@ class PreFooter extends Component {
           {this.props.t('TryItNowButtonText')}
         </a>
 
-        <ContactForm />
+        {/* <ContactForm /> */}
       </section>
     );
   }
