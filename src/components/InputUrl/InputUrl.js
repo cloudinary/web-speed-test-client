@@ -48,7 +48,7 @@ class InputUrl extends Component {
       <div className="inputUrl">
         <div className="container">
           <div className="logo">
-            <Image publicId="icon-logo-new.svg" width="90" type="asset"></Image>
+            <Image publicId="icon-logo-v2.svg" width="90" type="asset"></Image>
           </div>
           <h1>{this.props.t('AppName')}</h1>
           <form onSubmit={this.submitUrl} autoComplete="on">
