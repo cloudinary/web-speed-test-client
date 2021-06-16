@@ -27,10 +27,9 @@ function WebSpeedPage(props) {
   } = useStore();
   debugger;
   const { search, pathname } = useLocation();
-
   const history = useHistory();
   const { testId: paramTestId } = useParams();
-  debugger;
+  const storeTestId = webspeedtest.testId;
   useEffect(() => {
     const locationParams = new URLSearchParams(search);
     const locationTestId = locationParams.get('testId')
@@ -46,6 +45,13 @@ function WebSpeedPage(props) {
     });
     fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
   }, [search, pathname, paramTestId]);
+  useEffect(() => {
+    if (storeTestId && (pathname.indexOf('results') == -1)) {
+      history.push({
+        pathname: pathname + "results/" + storeTestId
+      })
+    }
+  }, [storeTestId, pathname])
   return <Fragment>
     {!webspeedtest.testId && (
         <InputUrl
