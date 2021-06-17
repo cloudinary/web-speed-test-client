@@ -17,7 +17,7 @@ class Header extends Component {
             rel="noreferrer"
           >
             <Image
-              publicId="cloudinary_logo_text.svg"
+              publicId="cloudinary_logo_text_v2.svg"
               width="155"
               type="asset"
             ></Image>
