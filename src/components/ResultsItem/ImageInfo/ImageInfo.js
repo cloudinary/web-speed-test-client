@@ -89,7 +89,7 @@ class ImageInfo extends Component {
   }
 
   imageError() {
-    if (this.state.formatSupported) {
+    if (this.state.formatSupported && this.image.state.url) {
       this.image.element.src = this.image.state.url.replace(
         'f_' + this.image.props.fetchFormat,
         'f_auto'
