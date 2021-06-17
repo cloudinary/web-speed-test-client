@@ -1,13 +1,17 @@
 @import 'styles/helpers';
 
 .resultSumm {
-  padding-top: 15px;
+  // padding-top: 15px;
+  background: $color-blue-medium-a;
+  padding-top: 122px;
   overflow: hidden;
   h1 {
-    margin-top: 40px;
-    border-bottom: 1px solid $color-gray-border;
-    padding-bottom: 12px;
-    margin-bottom: 12px;
+    // margin-top: 40px;
+    margin-top: 0;
+    color: #fff;
+    // border-bottom: 1px solid $color-gray-border;
+    // padding-bottom: 12px;
+    // margin-bottom: 12px;
   }
   .share {
     float: right;
@@ -36,8 +40,8 @@
     }
   }
   .test-url {
-    font-size: 18px;
-    color: #323a45;
+    font-size: 24px;
+    color: $color-blue-light;
     line-height: 28px;
     max-width: calc(100% - 50px);
     white-space: nowrap;
@@ -47,9 +51,9 @@
   .test-empty-summ,
   .test-summ {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-top: 50px;
+    // justify-content: space-between;
+    // align-items: flex-end;
+    margin-top: 24px;
   }
   .test-empty {
     padding: 60px 0 120px;
@@ -103,29 +107,39 @@
     flex-wrap: wrap;
     overflow: hidden;
     padding-right: 5%;
+    // .test-meta-box:first-child {
+    //   border-right: 1px solid $color-gray-border;
+    // }
   }
   .test-meta-box {
     box-sizing: border-box;
-    border-left: 1px solid $color-gray-border;
+    border-right: 1px solid $color-gray-border;
     flex: 1;
     margin-bottom: 60px;
     padding: 0 30px 20px;
+    // &:nth-child(even) {
+    //   border-left: 1px solid $color-gray-border;
+    // }
     .label {
       text-align: left;
-      color: #6a6f77;
-      margin-bottom: 30px;
+      font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      color: $color-blue-light;
+      margin-bottom: 34px;
     }
   }
   .test-grade {
-    flex: 1 0 33%;
+    // background: red;
+    // flex: 1 0 33%;
     text-align: center;
     padding: 0 40px 20px;
     .grade {
       font-size: 61px;
-      box-shadow: 0 3px 6px rgba(#000, 0.3), 0 1px 0 1px rgba(#fff, 0.7) inset;
+      font-weight: 900;
+      color: $color-blue-medium-a;
     }
     .grade-text {
-      font-size: 18px;
+      font-size: 16px;
       margin: 20px auto 0;
       max-width: 150px;
       &-A,
@@ -145,55 +159,39 @@
 
   .test-stats {
     flex: 2 0 66%;
-    padding: 0 0 20px;
-    .label {
-      padding-left: 30px;
-      margin-bottom: 10px;
+    padding: 0 0 20px 40px;
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    color: #fff;
+    .original-images-label,
+    .trans-images-label {
+      display: inline-block;
+      margin-right: 5px;
     }
-    .original-images-label {
-      font-size: 12px;
-      text-align: right;
+    .original-images-weight,
+    .trans-images-weight {
+      display: inline-block;
+      font-weight: 700;
     }
-    .original-images-weight {
-      margin-top: 6px;
-      color: $color-grade-e;
-      text-align: right;
-      font-size: 18px;
-      font-weight: 400;
+    .trans-images-label,
+    .trans-images-weight {
+      color: $color-cyan;
+    }
+    .original-images-indicator,
+    .trans-images-indicator {
+      $size: 18px;
+      margin-top: 10px;
+      height: $size;
+      border-radius: 0 $size $size 0;
     }
     .original-images-indicator {
-      margin-top: 6px;
-      background: $color-grade-e;
-      height: 7px;
-      border-radius: 0 7px 7px 0;
+      background: $color-gray-blue-light;
     }
     .trans-images {
-      display: inline-block;
       min-width: 15%;
     }
     .trans-images-indicator {
-      margin-top: 20px;
-      background: $color-blue-c;
-      height: 7px;
-      border-radius: 0 7px 7px 0;
-    }
-    .trans-images-weight {
-      margin-top: 6px;
-      color: $color-blue-c;
-      text-align: right;
-      font-size: 18px;
-      font-weight: 400;
-      padding-left: 30px;
-      white-space: nowrap;
-    }
-    .trans-images-label {
-      margin-top: 6px;
-      padding-left: 30px;
-      font-size: 12px;
-      > img {
-        vertical-align: bottom;
-        margin-right: 3px;
-      }
+      background: $color-cyan;
+      margin-bottom: 10px;
     }
   }
 
