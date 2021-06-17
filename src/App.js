@@ -45,51 +45,53 @@ function App(props) {
         {/* {process.env.REACT_APP_GTM &&
           <GoogleTagManager gtmId={process.env.REACT_APP_GTM} />
         } */}
-        <div className="webspeedtestApp">
-          <Header />
+        <div className="page-container">
+          <div className="webspeedtestApp">
+            <Header />
 
-          <Switch>
-            <Route
-              path="/:page"
-              render={(props) => <StaticPage page={props.match.params.page} />}
-            />
+            <Switch>
+              <Route
+                path="/:page"
+                render={(props) => <StaticPage page={props.match.params.page} />}
+              />
 
-            <Route exact path="/">
-              {!webspeedtest.testId && (
-                <InputUrl
-                  onSubmit={async (url) => {
-                    runNewTest(url, dispatch, webspeedtest);
-                  }}
-                />
-              )}
-              {webspeedtest.testId && webspeedtest.isFetching !== false && (
-                <Loader url={webspeedtest.testUrl} />
-              )}
-              {webspeedtest.testId &&
-                webspeedtest.isFetching === false &&
-                !webspeedtest.error && (
-                  <div className="page-wrap">
-                    <ResultSumm
-                      testId={webspeedtest.testId}
-                      result={webspeedtest.testResult.resultSumm || {}}
-                    />
-                    {webspeedtest.testResult.resultSumm.totalImagesCount >
-                      0 && (
-                      <ResultsList
-                        testId={webspeedtest.testId}
-                        results={
-                          webspeedtest.testResult.imagesTestResults || []
-                        }
-                      />
-                    )}
-                  </div>
+              <Route exact path="/">
+                {!webspeedtest.testId && (
+                  <InputUrl
+                    onSubmit={async (url) => {
+                      runNewTest(url, dispatch, webspeedtest);
+                    }}
+                  />
                 )}
-              {webspeedtest.error && <Error error={webspeedtest.error} />}
-            </Route>
-          </Switch>
+                {webspeedtest.testId && webspeedtest.isFetching !== false && (
+                  <Loader url={webspeedtest.testUrl} />
+                )}
+                {webspeedtest.testId &&
+                  webspeedtest.isFetching === false &&
+                  !webspeedtest.error && (
+                    <div className="page-wrap">
+                      <ResultSumm
+                        testId={webspeedtest.testId}
+                        result={webspeedtest.testResult.resultSumm || {}}
+                      />
+                      {webspeedtest.testResult.resultSumm.totalImagesCount >
+                        0 && (
+                        <ResultsList
+                          testId={webspeedtest.testId}
+                          results={
+                            webspeedtest.testResult.imagesTestResults || []
+                          }
+                        />
+                      )}
+                    </div>
+                  )}
+                {webspeedtest.error && <Error error={webspeedtest.error} />}
+              </Route>
+            </Switch>
 
-          <PreFooter />
-          <Footer />
+            <PreFooter />
+            <Footer />
+          </div>
         </div>
       </CloudinaryContext>
     </Router>
