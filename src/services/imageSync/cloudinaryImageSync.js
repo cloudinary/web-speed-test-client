@@ -24,7 +24,6 @@ const uploadImages = (imagesPath) => {
           type: 'asset',
         },
         (result) => {
-          console.log(result);
           callback();
         }
       );
