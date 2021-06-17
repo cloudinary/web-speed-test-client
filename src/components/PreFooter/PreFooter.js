@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-import ContactForm from '../ContactForm/ContactForm';
+// import ContactForm from '../ContactForm/ContactForm';
 import './PreFooter.scss';
 
 class PreFooter extends Component {
