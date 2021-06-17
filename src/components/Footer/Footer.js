@@ -40,7 +40,7 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="cloudinary_logo_white_0720_svg.svg"
+                publicId="cloudinary_logo_text_v2_white.svg"
                 width="155"
                 type="asset"
                 dpr="auto"
@@ -52,7 +52,7 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="facebook.png"
+                publicId="icon_facebook.svg"
                 width="16"
                 type="asset"
                 dpr="auto"
@@ -64,7 +64,7 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="twitter.svg"
+                publicId="icon_twitter.svg"
                 width="16"
                 type="asset"
                 dpr="auto"
@@ -76,7 +76,7 @@ class Footer extends Component {
               rel="noreferrer"
             >
               <Image
-                publicId="linkedin2.png"
+                publicId="icon_linkedin.png"
                 width="16"
                 type="asset"
                 dpr="auto"

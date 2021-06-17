@@ -25,11 +25,12 @@ function WebSpeedPage(props) {
     dispatch,
     state: { webspeedtest },
   } = useStore();
-  debugger;
+
   const { search, pathname } = useLocation();
   const history = useHistory();
   const { testId: paramTestId } = useParams();
   const storeTestId = webspeedtest.testId;
+
   useEffect(() => {
     const locationParams = new URLSearchParams(search);
     const locationTestId = locationParams.get('testId')
@@ -45,6 +46,7 @@ function WebSpeedPage(props) {
     });
     fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
   }, [search, pathname, paramTestId]);
+
   useEffect(() => {
     if (storeTestId && (pathname.indexOf('results') == -1)) {
       history.push({
@@ -52,6 +54,7 @@ function WebSpeedPage(props) {
       })
     }
   }, [storeTestId, pathname])
+
   return <Fragment>
     {!webspeedtest.testId && (
         <InputUrl
@@ -105,7 +108,7 @@ function App(props) {
       {/* {process.env.REACT_APP_GTM &&
         <GoogleTagManager gtmId={process.env.REACT_APP_GTM} />
       } */}
-      <div className="webspeedtestApp">
+      <div className="webspeedtest page-container">
         <Header />
 
         <Switch>
