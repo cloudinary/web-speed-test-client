@@ -65,7 +65,7 @@ class ResultSumm extends Component {
         <div className="container">
           <h1>{this.props.t('PageTitleResults')}</h1>
           {/* <Share shareUrl={window.location.href} title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')}><span>{this.props.t('ShareResults')}</span></Share> */}
-          <a
+          {/* <a
             className="support"
             href={this.props.t('SupportURL')}
             title={this.props.t('SupportText')}
@@ -77,7 +77,7 @@ class ResultSumm extends Component {
               width="24"
               type="asset"
             ></Image>
-          </a>
+          </a> */}
           <div className="test-url">{result.url}</div>
 
           {result.totalImagesCount === 0 && (
@@ -88,6 +88,29 @@ class ResultSumm extends Component {
 
           {result.totalImagesCount > 0 && (
             <div className="test-summ">
+              <div
+                className={
+                  this.state.screenshotLoaded
+                    ? 'test-screen loaded'
+                    : 'test-screen'
+                }
+              >
+                <Image
+                  className="placeholder"
+                  publicId="placeholder.png"
+                  type="asset"
+                ></Image>
+                <div className="placeholder-text">
+                  {this.props.t('URL2PNG_PlaceHolderText')}
+                </div>
+                <img
+                  className="screenshot"
+                  width="300"
+                  src={url2png}
+                  alt={this.props.t('Screenshot of ') + result.url}
+                  onLoad={this.handleScreenshotOnLoad}
+                />
+              </div>
               <div className="test-meta">
                 <div className="test-grade test-meta-box">
                   <div className="label">
@@ -111,7 +134,7 @@ class ResultSumm extends Component {
                     {this.props.t('ImageWeightComparisonTitle')}
                   </div>
                   <div className="original-images-label">
-                    {this.props.t('OriginalImages')}
+                    {this.props.t('OriginalImages') + ':'}
                   </div>
                   <div className="original-images-weight">
                     {numbro(result.totalImagesWeight).format('0.0 d')}
@@ -122,14 +145,17 @@ class ResultSumm extends Component {
                     style={{ width: result.totalPercentChange + '%' }}
                   >
                     <div className="trans-images-indicator"></div>
-                    <div className="trans-images-weight">
-                      {numbro(
-                        (result.totalImagesWeight * result.totalPercentChange) /
-                          100
-                      ).format('0.0 d')}
-                    </div>
                   </div>
                   <div className="trans-images-label">
+                    {this.props.t('PotentialCompression') + ':'}
+                  </div>
+                  <div className="trans-images-weight">
+                    {numbro(
+                      (result.totalImagesWeight * result.totalPercentChange) /
+                        100
+                    ).format('0.0 d')}
+                  </div>
+                  {/* <div className="trans-images-label">
                     <Image
                       publicId="cloudinary_logo.svg"
                       type="asset"
@@ -146,7 +172,7 @@ class ResultSumm extends Component {
                         {this.props.t('PotentialCompressionMoreInfo')}
                       </span>
                     </span>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="test-totals">
                   <div className="image-count test-meta-box">
@@ -276,7 +302,7 @@ class ResultSumm extends Component {
                   </div>
                 </div>
               </div>
-              <div
+              {/* <div
                 className={
                   this.state.screenshotLoaded
                     ? 'test-screen loaded'
@@ -298,7 +324,7 @@ class ResultSumm extends Component {
                   alt={this.props.t('Screenshot of ') + result.url}
                   onLoad={this.handleScreenshotOnLoad}
                 />
-              </div>
+              </div> */}
             </div>
           )}
         </div>
