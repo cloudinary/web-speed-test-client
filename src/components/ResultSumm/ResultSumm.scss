@@ -106,20 +106,12 @@
     flex: 1;
     flex-wrap: wrap;
     overflow: hidden;
-    // padding-right: 5%;
-    // .test-meta-box:first-child {
-    //   border-right: 1px solid $color-gray-border;
-    // }
   }
   .test-meta-box {
     box-sizing: border-box;
-    // border-right: 1px solid $color-gray-border;
     flex: 1;
     margin-bottom: 60px;
     padding: 0 30px 20px;
-    // &:nth-child(even) {
-    //   border-left: 1px solid $color-gray-border;
-    // }
     .label {
       text-align: left;
       font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
@@ -129,9 +121,7 @@
     }
   }
   .test-grade {
-    // background: red;
     flex: 1 0 33%;
-    // width: auto;
     text-align: center;
     padding: 0 40px 20px;
     border-right: 1px solid $color-gray-border;
@@ -227,41 +217,28 @@
   }
 
   .test-totals {
-    // background: red;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     .test-meta-box {
       flex: 1 0 33%;
-      // overflow: hidden;
       padding: 0 10px 10px 30px;
       &:not(:last-of-type) {
-        // background: red;
         border-right: 1px solid $color-gray-border;
       }
-      // padding: 0;
       &.image-count {
         padding: 0 20px 20px 40px;
       }
     }
     .label {
-      // height: 45px;
       margin-bottom: 21px;
     }
     .value {
       display: flex;
       align-items: baseline;
-      // font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
-      // font-weight: 300;
-      // font-size: 64px;
       text-transform: uppercase;
-      // line-height: 1.2;
-      // white-space: nowrap;
-      // color: #fff;
       img {
-        // vertical-align: baseline;
         margin-right: 10px;
-        // margin-bottom: -1px;
       }
       .value-text {
         font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
@@ -291,10 +268,8 @@
   }
 
   .test-info {
-    // background: $color-blue-dark;
     width: 100%;
     display: flex;
-    // align-items: center;
     max-height: 151px;
     padding: 30px 0 20px 0;
     z-index: 1;
@@ -304,16 +279,12 @@
     .test-meta-box {
       display: flex;
       flex-direction: column;
-      // margin-bottom: 0;
       margin: 0;
       padding: 0 0 0 38px;
-      // align-items: center;
       &:not(:last-of-type) {
-        // background: red;
         border-right: 1px solid $color-blue-medium;
       }
       .label {
-        // text-align: center;
         font-size: 12px;
       }
     }
@@ -329,7 +300,6 @@
     .wpt {
       img {
         height: auto;
-        // opacity: 0.6;
       }
     }
   }
