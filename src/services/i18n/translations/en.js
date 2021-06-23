@@ -65,9 +65,11 @@ export const en = {
   AverageGradeD: 'Poor',
   AverageGradeE: 'Poor',
   AverageGradeF: 'Very poor',
-  TotalImagesNumber: 'Total Images Analyzed',
-  TotalImagesWeight: 'Total Image Weight',
-  PotentialCompressionPercentage: 'Potential Compressed Weight',
+  TotalImagesNumber: 'Total images analyzed',
+  TotalImagesWeight: 'Total image weight',
+  TotalImagesWeightOutOf: 'out of a total page weight of',
+  PotentialCompressionPercentage: 'Potential weight reduction',
+  PotentialCompressionOutOf: 'of the original total image weight',
   PotentialCompressionPercentageMoreInfo:
     'The potential compression percentage is calculated only for the analyzed images',
   TotalImagesNumber_TooMany_A: 'Only the first', // Only first X images were analyzed
@@ -78,10 +80,16 @@ export const en = {
   Tested_DeviceDPI: 'Device DPI',
   IntegratedWith: 'Integrated with',
   URL2PNG_PlaceHolderText: 'Generating Thumbnail',
+  CompressionBarsTitle:
+    'Image format options with file size and % compared to current',
+  LargestResultTitle: 'Largest Content Paint (LCP)',
+  LargestResultDescription:
+    'This measures how long it takes for the initial largest piece of visual media or block of content to be visible.',
+  OtherPageAssets: 'Other page assets',
 
   // Page body (collapse and expanded)
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
-  ExpandButton: 'See More',
+  ExpandButton: 'See Details',
   CollapseButton: 'Close',
   BestImageText: 'Smallest Image',
   ExpandedTabOriginal: 'Current',

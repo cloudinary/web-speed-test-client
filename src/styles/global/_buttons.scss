@@ -7,6 +7,7 @@
     background: $color-a;
     color: #fff;
     line-height: 29px;
+    height: 29px;
     border-radius: 29px;
     padding: 0 20px;
     font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
@@ -16,6 +17,8 @@
     font-weight: 600;
     border: none;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 
     &:hover {
       transition: background-color 0.2s ease;
@@ -24,6 +27,7 @@
 
     &.btn-large {
       line-height: 42px;
+      height: 42px;
       border-radius: 42px;
       font-size: 18px;
       padding: 0 30px;
