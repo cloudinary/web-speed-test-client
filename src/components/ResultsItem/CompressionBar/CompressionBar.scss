@@ -3,27 +3,60 @@
 .compressionBar {
   display: flex;
   align-items: center;
-  width: 405px;
-  border-right: 1px solid $color-gray-border;
+  justify-content: center;
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
   font-size: 18px;
+  line-height: 60px;
   height: 60px;
 
   .image-compression-bars & {
     font-size: 14px;
-    height: 32px;
+    height: 40px;
+    width: 100%;
+    justify-content: flex-start;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+    .type {
+      width: calc(52% - 95px);
+      line-height: 40px;
+      padding-left: 7%;
+      border-right: 2px solid $color-blue-light;
+      box-sizing: border-box;
+    }
+    .bar-wrp {
+      align-self: stretch;
+      margin: 1px 0 0 0;
+      background: $color-gray-light-b;
+      height: 9px;
+      align-self: center;
+      width: 95px;
+    }
+    .bytes {
+      margin-left: 10%;
+    }
+    .bytes,
+    .note {
+      text-align: center;
+      line-height: normal;
+      width: 17%;
+      margin-right: 0;
+      color: $color-blue-medium;
+    }
   }
 
   .type {
     text-transform: uppercase;
-    padding: 0 0 0 7%;
-    width: 25%;
+    font-weight: 600;
   }
 
   .best {
     float: right;
     position: relative;
-    text-transform: initial;
     margin: 0 6px 0 3px;
+    img {
+      vertical-align: middle;
+    }
     &:hover .tooltip {
       display: block;
     }
@@ -46,21 +79,18 @@
   }
 
   .bytes {
-    width: 17%;
-    padding-left: 5%;
+    margin-right: 5px;
   }
 
   .bar-wrp {
-    align-self: stretch;
-    border-left: 1px solid $color-gray-border;
     width: 25%;
     display: flex;
     align-items: center;
+    margin: 0 10px;
   }
 
   .bar {
-    height: 7px;
-    border-radius: 0 7px 7px 0;
+    height: 9px;
   }
 
   .original-note {

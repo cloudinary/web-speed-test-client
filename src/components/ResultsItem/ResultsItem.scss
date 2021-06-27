@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 300px;
+    height: auto;
     width: 400px;
     position: relative;
     text-align: center;
@@ -26,6 +26,8 @@
   }
   .image-data {
     flex: 1;
+    background: #fff;
+    box-sizing: border-box;
     @media #{$bp-min-sm} {
       max-width: calc(100% - 401px);
     }
@@ -35,20 +37,6 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
-    background: #fff;
-    &:after {
-      content: '';
-      position: absolute;
-      height: 5px;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: linear-gradient(
-        rgba(#000, 0.15),
-        rgba(#000, 0.05) 50%,
-        transparent 80%
-      );
-    }
     .compressionBar {
       margin-right: auto;
     }
@@ -56,19 +44,18 @@
   .image-data-grading {
     position: absolute;
     font-size: 22px;
-    top: 7px;
+    top: 40px;
+    transform: translateY(-50%);
     left: -0.75em;
     z-index: 2;
   }
   .image-data-name {
-    font-size: 18px;
-    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
     margin: 0;
     padding: 0 30px;
-    line-height: 50px;
-    border-bottom: 1px solid $color-gray-border;
+    line-height: 80px;
     width: 100%;
-    box-sizing: border-box;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -104,98 +91,71 @@
     }
   }
   .image-compressions-title {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0;
-    padding: 22px 6.9% 12px;
-    white-space: nowrap;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 15px;
   }
   .image-data-inner {
     display: flex;
   }
   .image-compression-bars {
-    padding-bottom: 5px;
+    background: $color-gray-blue-light;
+    min-width: 500px;
+    margin: 0 25px 20px 0;
+    .image-compressions-title {
+      background: $color-blue-medium-a;
+      color: #fff;
+      line-height: 30px;
+      text-align: center;
+      margin-bottom: 12px;
+    }
   }
   .image-final {
     flex: 1;
     text-align: center;
     position: relative;
+    margin: 0 0 20px 0;
+    .compressionBar {
+      height: auto;
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+    .total-of {
+      margin: 0 0 10px;
+      font-size: 14px;
+      display: inline-flex;
+      img {
+        transform: rotate(90deg);
+      }
+    }
   }
   .image-final-percent {
-    margin-top: 30px;
-    line-height: 1.1;
-    font-size: 56px;
-    font-weight: 300;
+    font-size: 64px;
+    line-height: 1;
     img {
       vertical-align: baseline;
       margin-right: 15px;
     }
   }
   .image-final-pixel {
-    color: #5b616a;
-    font-size: 18px;
+    color: $color-blue-medium-a;
+    font-size: 16px;
+    margin-bottom: 15px;
     img {
       vertical-align: baseline;
       margin: 0 7px;
     }
   }
   .toggle-btn {
-    position: relative;
-    overflow: hidden;
-    user-select: none;
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
+    display: inline-flex;
+    justify-content: center;
     width: 190px;
-    border-radius: 6px;
-    padding: 10px 20px;
-    background: $color-blue-c;
-    color: #fff;
-    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12),
-      0 1px 1px 0 rgba(0, 0, 0, 0.24);
-    border: none;
-    margin: 15px auto 0;
-    will-change: box-shadow;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    @media #{$bp-max-md} {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 15px;
-    }
-    &:hover {
-      background: darken($color-blue-c, 5%);
-    }
-    &:active {
-      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14),
-        0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    }
-    &[data-state='toggle-hide'] {
-      img {
-        transform: rotate(180deg);
-      }
-    }
     img {
-      vertical-align: baseline;
-      position: absolute;
-      left: 15px;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      transition: all 0.5s;
+      margin-left: 10px;
+      transition: transform 0.5s;
     }
-    &:focus {
-      outline: none;
-    }
-    .ripple {
-      display: block;
-      position: absolute;
-      background: rgba(#fff, 0.1);
-      border-radius: 100%;
-      transform: scale(0);
-    }
-    &.btn-animate .ripple {
-      animation: rippleAnimation 0.65s linear;
+    &.expanded img {
+      transform: rotate(180deg);
     }
   }
 

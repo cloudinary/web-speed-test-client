@@ -89,6 +89,7 @@ export const en = {
 
   // Page body (collapse and expanded)
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
+  CompressionOutOf: 'of the original total image size',
   ExpandButton: 'See Details',
   CollapseButton: 'Close',
   BestImageText: 'Smallest Image',
