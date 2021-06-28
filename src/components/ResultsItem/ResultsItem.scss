@@ -4,6 +4,7 @@
   background: #e4eaee;
   margin: 25px 0;
   transition: box-shadow 0.25s;
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
   &:hover {
     box-shadow: 0 0 6px rgba(#000, 0.2);
   }
@@ -43,7 +44,9 @@
   }
   .image-data-grading {
     position: absolute;
+    font-family: 'Inter', sans-serif;
     font-size: 22px;
+    font-weight: 600;
     top: 40px;
     transform: translateY(-50%);
     left: -0.75em;

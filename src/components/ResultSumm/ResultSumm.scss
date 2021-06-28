@@ -5,6 +5,7 @@
   padding-top: 60px;
   overflow: hidden;
   position: relative;
+  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
   &::after {
     content: '';
     position: absolute;
@@ -114,7 +115,6 @@
     padding: 0 30px 20px;
     .label {
       text-align: left;
-      font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
       font-weight: 600;
       color: $color-blue-light;
       margin-bottom: 34px;
@@ -130,11 +130,13 @@
       white-space: nowrap;
     }
     .grade {
+      font-family: 'Inter', sans-serif;
       font-size: 61px;
       font-weight: 900;
       color: $color-blue-medium-a;
     }
     .grade-text {
+      font-family: 'Inter', sans-serif;
       font-size: 16px;
       font-weight: 500;
       margin: 20px auto 0;
@@ -157,7 +159,6 @@
   .test-stats {
     flex: 2 0 66%;
     padding: 0 0 20px 40px;
-    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
     color: #fff;
     .original-images-label,
     .trans-images-label {
@@ -243,7 +244,6 @@
         margin-right: 10px;
       }
       .value-text {
-        font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
         font-size: 64px;
         line-height: 1em;
         text-transform: uppercase;
@@ -262,7 +262,6 @@
       color: $color-gray-blue;
     }
     .meta-box-bottom-text {
-      font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
       color: #fff;
       font-size: 12px;
       margin-top: 6px;
@@ -292,7 +291,6 @@
     }
     .value {
       margin: 10px 0 10px;
-      font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
       color: #fff;
       font-size: 12px;
     }
