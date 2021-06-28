@@ -19,10 +19,12 @@
     }
     .type {
       width: calc(52% - 95px);
-      line-height: 40px;
+      line-height: 1em;
       padding-left: 7%;
+      padding-right: 25px;
       border-right: 2px solid $color-blue-light;
       box-sizing: border-box;
+      word-break: break-all;
     }
     .bar-wrp {
       align-self: stretch;
@@ -30,7 +32,7 @@
       background: $color-gray-light-b;
       height: 9px;
       align-self: center;
-      width: 95px;
+      max-width: 95px;
     }
     .bytes {
       margin-left: 10%;
@@ -39,6 +41,7 @@
     .note {
       text-align: center;
       line-height: normal;
+      line-height: 1em;
       width: 17%;
       margin-right: 0;
       color: $color-blue-medium;
@@ -48,15 +51,15 @@
   .type {
     text-transform: uppercase;
     font-weight: 600;
+    position: relative;
   }
 
   .best {
-    float: right;
-    position: relative;
-    margin: 0 6px 0 3px;
-    img {
-      vertical-align: middle;
-    }
+    line-height: normal;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
     &:hover .tooltip {
       display: block;
     }
@@ -99,7 +102,22 @@
   }
 
   @media #{$bp-max-md} {
+
     width: 100%;
     border: none;
+
+    .image-compression-bars & {
+      .type {
+        padding-left: 5px;
+        width: 30%;
+      }
+      .bar-wrp {
+        width: 30%;
+      }
+      .bytes {
+        margin-left: 8px;
+      }
+    }
+
   }
 }

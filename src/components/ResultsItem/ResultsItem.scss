@@ -105,9 +105,10 @@
     .image-compressions-title {
       background: $color-blue-medium-a;
       color: #fff;
-      line-height: 30px;
+      line-height: 20px;
       text-align: center;
       margin-bottom: 12px;
+      padding: 5px 3px;
     }
   }
   .image-final {
@@ -160,7 +161,7 @@
   }
 
   @media #{$bp-max-md} {
-    $height: 130px;
+    $height: 250px;
     margin-bottom: 40px;
     .image-intro {
       padding-bottom: $height;
@@ -176,26 +177,36 @@
       width: 50%;
       box-sizing: border-box;
     }
-    .image-data-name,
-    .image-compressions-title {
-      padding-left: 7%;
+    .image-data-inner {
+      align-items: center;
+      justify-content: center;
     }
     .image-compression-bars {
-      width: 100%;
+      width: 95%;
+      min-width: auto;
+      margin: 0 0 10px 0;
     }
     .image-final {
       position: absolute;
+      margin: 0;
       left: 0;
       right: 0;
       bottom: 0;
       height: $height;
       border-top: 1px solid $color-gray-border;
+      background: #fff;
+      .compressionBar {
+        margin-top: 15px;
+      }
     }
     .image-final-percent {
       margin-top: 15px;
     }
     .toggle-btn {
-      bottom: -19px;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
       z-index: 9;
     }
   }

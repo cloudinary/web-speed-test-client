@@ -231,7 +231,9 @@
       }
     }
     .label {
-      margin-bottom: 21px;
+      height: 45px;
+      line-height: 20px;
+      margin-bottom: 0;
     }
     .value {
       display: flex;
@@ -300,6 +302,8 @@
     .wpt {
       img {
         height: auto;
+        width: 100%;
+        max-width: 150px;
       }
     }
   }
@@ -310,45 +314,74 @@
     }
     .test-meta {
       padding-right: 0;
+      .test-grade {
+        width: 33%;
+      }
     }
     .test-info {
       width: 50%;
       flex-wrap: wrap;
+      max-height: none;
       .test-meta-box {
         flex-basis: 50%;
-        &:nth-child(odd) {
-          border-left: none;
+        max-width: 50%;
+        align-items: center;
+        padding: 0;
+        height: 100px;
+        margin-bottom: 15px;
+        &:last-child {
+          margin: 0 auto;
+        }
+        &:nth-child(even) {
+          border-right: none;
         }
       }
     }
+    &::after {
+      height: 380px;
+    }
     .test-screen {
-      $height: 440px;
+      $height: 380px;
       height: $height;
       margin-top: -$height;
       width: 40%;
+      margin-left: auto;
+      order: 1;
+      justify-content: end;
     }
-  }
-
-  @media #{$bp-max-sm} {
-    .test-totals .value {
-      font-size: 46px;
+    .test-totals {
+      .test-meta-box {
+        padding: 0 14px 14px 30px;
+        .value {
+          img {
+            width: 36px;
+          }
+          .value-text {
+            font-size: 46px;
+          }
+        }
+      }
     }
   }
 
   @media #{$bp-max-xs} {
     h1 {
       margin-top: 10px;
-      font-size: 28px;
-      font-weight: 200;
+      font-size: 38px;
     }
     .test-meta-box,
     .test-totals .test-meta-box {
       flex: 1 0 100%;
+      &:not(:last-child) {
+        border-right: none;
+      }
     }
     .test-meta-box {
       border: none;
-      border-bottom: 1px solid #ccc;
       margin-bottom: 20px;
+      &:not(:last-of-type) {
+        border-bottom: 1px solid #ccc;
+      }
     }
     .test-grade,
     .test-meta-box,
@@ -358,6 +391,9 @@
     .test-stats .trans-images-label {
       padding-left: 0;
       padding-right: 0;
+    }
+    .test-grade .label {
+      text-align: left;
     }
     .grade-content {
       display: flex;
@@ -389,6 +425,9 @@
       span {
         display: none;
       }
+    }
+    &::after {
+      height: 780px;
     }
   }
 }
