@@ -32,9 +32,9 @@ class ResultSumm extends Component {
   getBrowserIcon() {
     const { result } = this.props;
     if (result.browserName.includes('Chrome')) {
-      return 'browser-Google Chrome-v2.svg';
+      return 'browser-Google Chrome-white.svg';
     } else {
-      return 'browser-' + result.browserName + '.svg';
+      return 'browser-' + result.browserName + '-white.svg';
     }
   }
 

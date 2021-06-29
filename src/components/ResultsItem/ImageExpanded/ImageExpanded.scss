@@ -14,6 +14,7 @@
   border-top: none;
   margin-top: -1px;
   justify-content: space-between;
+  background: $color-blue-dark;
   .resultsItem.expanded & {
     margin-top: 0;
     max-height: $col-height;
@@ -26,15 +27,24 @@
     margin-right: 5px;
     &.original {
       flex: 0 1 400px;
-      background: #fff;
+      background: $color-blue-medium-a;
+      .title,
+      .tab {
+        background: $color-blue-medium-a;
+        color: #fff;
+      }
+      .imageInfo,
+      .tab {
+        margin-left: 5px;
+      }
     }
     .title {
       position: relative;
       font-size: 18px;
-      text-align: center;
-      padding: 20px;
+      font-weight: 600;
+      padding: 20px 0 20px 60px;
       margin-bottom: 10px;
-      color: #616161;
+      color: #fff;
     }
     .image-info-icon {
       position: absolute;
@@ -43,6 +53,7 @@
   }
   .tab {
     background: #fff;
+    color: $color-blue-medium-b;
     text-align: center;
     width: 33%;
     padding: 6px 20px;
@@ -50,6 +61,7 @@
     box-sizing: border-box;
     text-transform: uppercase;
     font-size: 14px;
+    font-weight: 600;
     border-bottom: 1px solid #e4eaee;
   }
   .original .tab {
@@ -70,16 +82,20 @@
   .react-tabs__tab {
     @extend .tab;
     cursor: pointer;
-    background: #d0dae2;
+    background: $color-blue-medium-a;
+    color: #fff;
     display: block;
     margin: 0 7px 0 0;
     flex: 0 1 35%;
+    border-color: $color-blue-medium-a;
     &:last-child {
       margin-right: 0;
     }
   }
   .react-tabs__tab--selected {
     background: #fff;
+    color: $color-blue-medium-b;
+    border-color: #e4eaee;
   }
   .react-tabs__tab-panel--selected,
   .imageInfo {
