@@ -14,6 +14,15 @@ class CompressionBar extends Component {
     best: PropTypes.bool,
   };
 
+  gradeColor = {
+    A: '#77bd58',
+    B: '#77bd58',
+    C: '#f2a81a',
+    D: '#f2a81a',
+    E: '#FF5050',
+    F: '#FF5050',
+  };
+
   computeBarStyles(size, originalSize) {
     let barStyles;
     if (originalSize) {
@@ -24,7 +33,7 @@ class CompressionBar extends Component {
     } else {
       barStyles = {
         width: '100%',
-        backgroundColor: '#f2676a',
+        backgroundColor: this.gradeColor[this.props.grade],
       };
     }
     return barStyles;
@@ -43,9 +52,9 @@ class CompressionBar extends Component {
           {best && (
             <div className="best">
               <Image
-                publicId="icon-best.svg"
+                publicId="icon-best-v2.svg"
                 type="asset"
-                width="20"
+                width="22"
                 title={this.props.t('BestImageText')}
               ></Image>
               <span className="tooltip">{this.props.t('BestImageText')}</span>
