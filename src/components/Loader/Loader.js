@@ -80,6 +80,21 @@ class Loader extends Component {
             </div>
           </div>
         </div>
+        <div className="integrated">
+          {this.props.t('IntegratedWith') + ':'}
+          <a
+            href="https://www.webpagetest.org/"
+            target="_blank"
+            rel="noreferrer"
+            className="icon"
+          >
+            <Image
+              publicId="webpagetest-logo-new.svg"
+              type="asset"
+              width="150"
+            />
+          </a>
+        </div>
       </div>
     );
   }
