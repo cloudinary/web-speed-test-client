@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
-import { Image, Transformation } from 'cloudinary-react';
+import { Image } from 'cloudinary-react';
 import Share from '../Share/Share';
 import numbro from 'numbro';
 import cloudinary from 'cloudinary-core';
@@ -66,7 +66,9 @@ class ResultSumm extends Component {
           <h1>{this.props.t('PageTitleResults')}</h1>
           <Share
             shareUrl={window.location.href}
-            title={this.props.t("PageTitleA") + ' - ' + this.props.t('PageTitleB')}
+            title={
+              this.props.t('PageTitleA') + ' - ' + this.props.t('PageTitleB')
+            }
             icon="icon-share-light-blue.svg"
           >
             <span>{this.props.t('ShareResults')}</span>
@@ -210,7 +212,9 @@ class ResultSumm extends Component {
                     <div className="meta-box-bottom-text">
                       {this.props.t('PotentialCompressionOutOf') +
                         ' (' +
-                        numbro((100 - result.totalPercentChange) / 100).format('0.0%') +
+                        numbro((100 - result.totalPercentChange) / 100).format(
+                          '0.0%'
+                        ) +
                         ' less)'}
                     </div>
                   </div>
@@ -233,7 +237,10 @@ class ResultSumm extends Component {
                       {this.props.t('Tested_Location')}
                     </div>
                     <div className="icon">
-                      <Image publicId="icon-location-v2.svg" type="asset"></Image>
+                      <Image
+                        publicId="icon-location-v2.svg"
+                        type="asset"
+                      ></Image>
                     </div>
                     <div className="value">{result.location}</div>
                   </div>
