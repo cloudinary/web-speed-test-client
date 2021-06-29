@@ -92,10 +92,11 @@ export const en = {
   CompressionOutOf: 'of the original total image size',
   ExpandButton: 'See Details',
   CollapseButton: 'Close',
+  Reduction: 'reduction',
   BestImageText: 'Smallest Image',
   ExpandedTabOriginal: 'Current',
-  ExpandedTabSameFormat: 'Optimized Image',
-  ExpandedTabOtherFormats: 'Format Alternatives',
+  ExpandedTabSameFormat: 'Optimized Image Format',
+  ExpandedTabOtherFormats: 'Other Format Alternatives',
   ImageProperty_aggregated: 'Aggregated',
   ImageProperty_format: 'Format',
   ImageProperty_fit: 'Fit',
@@ -104,7 +105,7 @@ export const en = {
   ImageProperty_color_depth: 'Color Depth',
   ImageProperty_metadata: 'Metadata',
   ImageProperty_progressive: 'Progressive',
-  GradesToAverageConnection: 'Average',
+  GradesToAverageConnection: 'Average Score',
   FromCloudinary: 'Delivered Via Cloudinary',
 
   // Image type display name transforms

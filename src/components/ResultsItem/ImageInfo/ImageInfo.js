@@ -118,7 +118,7 @@ class ImageInfo extends Component {
             {this.getBrowsersSupport(data.format).map((browser, key) => (
               <Image
                 key={key}
-                publicId={'browser-' + browser + '.svg'}
+                publicId={'browser-' + browser + '-blue-v2.svg'}
                 type="asset"
               ></Image>
             ))}
@@ -132,7 +132,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-external.svg"
+                  publicId="icon-external-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -147,7 +147,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-download.svg"
+                  publicId="icon-download-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -163,7 +163,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-external.svg"
+                  publicId="icon-external-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -178,7 +178,7 @@ class ImageInfo extends Component {
           </div>
           {!isOriginal && (
             <div className="percent">
-              {numbro(image.percentChange / 100).format('0.0%')}
+              {numbro(image.percentChange / 100).format('0.0%') + ' ' +this.props.t('Reduction')}
             </div>
           )}
           <div className="weight">{numbro(data.bytes).format('0.0 d')}</div>
