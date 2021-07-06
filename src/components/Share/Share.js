@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
-import classnames from 'classnames';
+import cx from 'classnames';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -34,7 +34,7 @@ class Share extends Component {
   }
 
   render() {
-    const shareCls = classnames('share', { expanded: this.state.expanded });
+    const shareCls = cx('share', { expanded: this.state.expanded });
 
     const { icon, shareUrl, title, children } = this.props;
 

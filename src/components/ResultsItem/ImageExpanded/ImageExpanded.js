@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import classnames from 'classnames';
+import cx from 'classnames';
 import ImageInfo from '../ImageInfo/ImageInfo';
 
 import './ImageExpanded.scss';
@@ -40,7 +40,7 @@ class ImageExpanded extends Component {
   render() {
     const { result } = this.props;
 
-    const imageExpandedCls = classnames(
+    const imageExpandedCls = cx(
       'imageExpanded',
       'carousel-' + this.state.carousel,
       { dynamicIn: this.state.expanded }

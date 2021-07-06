@@ -5,7 +5,7 @@ import { Image } from 'cloudinary-react';
 import numbro from 'numbro';
 import CompressionBar from './CompressionBar/CompressionBar';
 import ImageExpanded from './ImageExpanded/ImageExpanded';
-import classnames from 'classnames';
+import cx from 'classnames';
 
 import './ResultsItem.scss';
 
@@ -36,10 +36,10 @@ class ResultsItem extends Component {
   render() {
     const { result } = this.props;
     const transformations = [result.transformedImage, ...result.dynamicFormats];
-    const resultCls = classnames('resultsItem', {
+    const resultCls = cx('resultsItem', {
       expanded: this.state.expanded,
     });
-    const btnCls = classnames('toggle-btn btn btn-large', {
+    const btnCls = cx('toggle-btn btn btn-large', {
       expanded: this.state.expanded,
     });
     return (
