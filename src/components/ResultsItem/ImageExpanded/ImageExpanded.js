@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import classnames from 'classnames';
+import cx from 'classnames';
 import ImageInfo from '../ImageInfo/ImageInfo';
 
 import './ImageExpanded.scss';
 
 class ImageExpanded extends Component {
   static propTypes = {
-    result: PropTypes.object.isRequired,
+    result: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
       expanded: props.expanded || false,
-      carousel: props.carousel || 1,
+      carousel: props.carousel || 1
     };
     this.toggleDynamic = this.toggleDynamic.bind(this);
     this.mobileCarousel = this.mobileCarousel.bind(this);
@@ -40,7 +40,7 @@ class ImageExpanded extends Component {
   render() {
     const { result } = this.props;
 
-    const imageExpandedCls = classnames(
+    const imageExpandedCls = cx(
       'imageExpanded',
       'carousel-' + this.state.carousel,
       { dynamicIn: this.state.expanded }
@@ -49,25 +49,25 @@ class ImageExpanded extends Component {
     return (
       <div className={imageExpandedCls}>
         <button className="image-info-expand" onClick={this.toggleDynamic}>
-          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand.svg" type="asset" width="20"></Image>
         </button>
         <button
           className="mobile-carousel-btn prev"
           onClick={() => this.mobileCarousel('prev')}
         >
-          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand.svg" type="asset" width="20"></Image>
         </button>
         <button
           className="mobile-carousel-btn next"
           onClick={() => this.mobileCarousel('next')}
         >
-          <Image publicId="icon-expand-b.svg" type="asset" width="20"></Image>
+          <Image publicId="icon-expand.svg" type="asset" width="20"></Image>
         </button>
         <div className="image-details original">
           <div className="title">
             <Image
               className="image-info-icon"
-              publicId="icon-original.svg"
+              publicId="icon-original-white.svg"
               type="asset"
               width="25"
             ></Image>
@@ -80,7 +80,7 @@ class ImageExpanded extends Component {
           <div className="title">
             <Image
               className="image-info-icon"
-              publicId="icon-transformed.svg"
+              publicId="icon-transformed-white.svg"
               type="asset"
               width="25"
             ></Image>
@@ -95,7 +95,7 @@ class ImageExpanded extends Component {
           <div className="title">
             <Image
               className="image-info-icon"
-              publicId="icon-dynamic.svg"
+              publicId="icon-dynamic-white.svg"
               type="asset"
               width="25"
             ></Image>

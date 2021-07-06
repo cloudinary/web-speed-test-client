@@ -10,14 +10,14 @@ class ImageInfo extends Component {
   static propTypes = {
     image: PropTypes.object.isRequired,
     original: PropTypes.object,
-    isOriginal: PropTypes.bool,
+    isOriginal: PropTypes.bool
   };
 
   constructor(props) {
     super(props);
     this.state = {
       imageUrl: false,
-      formatSupported: true,
+      formatSupported: true
     };
     this.getFormat = this.getFormat.bind(this);
     this.imageError = this.imageError.bind(this);
@@ -31,9 +31,9 @@ class ImageInfo extends Component {
       image,
       image: {
         analyze: {
-          data: { format },
-        },
-      },
+          data: { format }
+        }
+      }
     } = this.props;
 
     if (image.transformation && image.transformation.includes('f_')) {
@@ -81,7 +81,7 @@ class ImageInfo extends Component {
           'Firefox',
           'Internet Explorer',
           'Opera',
-          'Safari',
+          'Safari'
         ];
         break;
     }
@@ -104,8 +104,8 @@ class ImageInfo extends Component {
       original,
       isOriginal,
       image: {
-        analyze: { data, explanation, grading },
-      },
+        analyze: { data, explanation, grading }
+      }
     } = this.props;
 
     const format = this.getFormat();
@@ -118,7 +118,7 @@ class ImageInfo extends Component {
             {this.getBrowsersSupport(data.format).map((browser, key) => (
               <Image
                 key={key}
-                publicId={'browser-' + browser + '.svg'}
+                publicId={'browser-' + browser + '-blue-v2.svg'}
                 type="asset"
               ></Image>
             ))}
@@ -132,7 +132,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-external.svg"
+                  publicId="icon-external-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -147,7 +147,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-download.svg"
+                  publicId="icon-download-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -163,7 +163,7 @@ class ImageInfo extends Component {
                 href={image.url}
               >
                 <Image
-                  publicId="icon-external.svg"
+                  publicId="icon-external-black.svg"
                   type="asset"
                   width="16"
                 ></Image>
@@ -178,7 +178,9 @@ class ImageInfo extends Component {
           </div>
           {!isOriginal && (
             <div className="percent">
-              {numbro(image.percentChange / 100).format('0.0%')}
+              {numbro((100 - image.percentChange) / 100).format('0.0%') +
+                ' ' +
+                this.props.t('Reduction')}
             </div>
           )}
           <div className="weight">{numbro(data.bytes).format('0.0 d')}</div>
@@ -222,7 +224,7 @@ class ImageInfo extends Component {
             {!this.state.formatSupported && (
               <div className="support">
                 {this.props.t('{f} is not supported in your browser', {
-                  f: this.props.t(data.format),
+                  f: this.props.t(data.format)
                 })}
               </div>
             )}

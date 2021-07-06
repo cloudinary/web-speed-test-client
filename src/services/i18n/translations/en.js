@@ -65,9 +65,11 @@ export const en = {
   AverageGradeD: 'Poor',
   AverageGradeE: 'Poor',
   AverageGradeF: 'Very poor',
-  TotalImagesNumber: 'Total Images Analyzed',
-  TotalImagesWeight: 'Total Image Weight',
-  PotentialCompressionPercentage: 'Potential Compressed Weight',
+  TotalImagesNumber: 'Total images analyzed',
+  TotalImagesWeight: 'Total image weight',
+  TotalImagesWeightOutOf: 'out of a total page weight of',
+  PotentialCompressionPercentage: 'Potential weight reduction',
+  PotentialCompressionOutOf: 'of the original total image weight',
   PotentialCompressionPercentageMoreInfo:
     'The potential compression percentage is calculated only for the analyzed images',
   TotalImagesNumber_TooMany_A: 'Only the first', // Only first X images were analyzed
@@ -78,15 +80,23 @@ export const en = {
   Tested_DeviceDPI: 'Device DPI',
   IntegratedWith: 'Integrated with',
   URL2PNG_PlaceHolderText: 'Generating Thumbnail',
+  CompressionBarsTitle:
+    'Image format options with file size and % compared to current',
+  LargestResultTitle: 'Largest Content Paint (LCP)',
+  LargestResultDescription:
+    'This measures how long it takes for the initial largest piece of visual media or block of content to be visible.',
+  OtherPageAssets: 'Other page assets',
 
   // Page body (collapse and expanded)
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
-  ExpandButton: 'See More',
+  CompressionOutOf: 'of the original total image size',
+  ExpandButton: 'See Details',
   CollapseButton: 'Close',
+  Reduction: 'reduction',
   BestImageText: 'Smallest Image',
   ExpandedTabOriginal: 'Current',
-  ExpandedTabSameFormat: 'Optimized Image',
-  ExpandedTabOtherFormats: 'Format Alternatives',
+  ExpandedTabSameFormat: 'Optimized Image Format',
+  ExpandedTabOtherFormats: 'Other Format Alternatives',
   ImageProperty_aggregated: 'Aggregated',
   ImageProperty_format: 'Format',
   ImageProperty_fit: 'Fit',
@@ -95,7 +105,7 @@ export const en = {
   ImageProperty_color_depth: 'Color Depth',
   ImageProperty_metadata: 'Metadata',
   ImageProperty_progressive: 'Progressive',
-  GradesToAverageConnection: 'Average',
+  GradesToAverageConnection: 'Average Score',
   FromCloudinary: 'Delivered Via Cloudinary',
 
   // Image type display name transforms
@@ -180,5 +190,5 @@ export const en = {
   // Generic error
   error_generic_header: 'Error Encountered',
   error_generic_subtitle: 'We are sorry but something went wrong',
-  error_generic_content: 'Please contact us for assistance',
+  error_generic_content: 'Please contact us for assistance'
 };

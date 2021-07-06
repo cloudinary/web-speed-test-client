@@ -7,6 +7,7 @@
     padding: 10px 20px;
     border-bottom: 1px solid #e4eaee;
     font-size: 18px;
+    color: $color-blue-medium-a;
   }
   .browsers {
     img {
@@ -24,15 +25,11 @@
       vertical-align: middle;
     }
   }
-  .dimensions {
-    color: #5b616a;
-  }
   .percent {
     margin-left: auto;
   }
   .weight {
     margin-left: auto;
-    color: #5b616a;
   }
   .percent + .weight {
     margin-left: 15px;
@@ -42,13 +39,14 @@
     display: flex;
     padding: 20px;
     .list {
-      color: #616161;
       font-weight: 300;
       font-size: 14px;
       padding-right: 30px;
     }
     .grade {
       margin: 6px 8px 6px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
     }
     .aggregated {
       display: none;
@@ -58,22 +56,22 @@
       flex-direction: column;
       width: 33px;
       margin: 14px 0;
-      background: url('./bracket/b-vert.png') repeat-y 15px;
+      background: url('./bracket/b-vert-blue.png') repeat-y 15px;
       .b-top {
         width: 20px;
         height: 20px;
-        background: url('./bracket/b-top.png') no-repeat right #fff;
+        background: url('./bracket/b-top-blue.png') no-repeat right #fff;
       }
       .b-center {
         margin: auto 0;
         width: 33px;
         height: 24px;
-        background: url('./bracket/b-center.png') no-repeat 15px #fff;
+        background: url('./bracket/b-center-blue.png') no-repeat 15px #fff;
       }
       .b-bottom {
         width: 20px;
         height: 20px;
-        background: url('./bracket/b-bottom.png') no-repeat right #fff;
+        background: url('./bracket/b-bottom-blue.png') no-repeat right #fff;
       }
     }
     .total {
@@ -82,17 +80,15 @@
       align-items: center;
       justify-content: space-between;
       font-size: 31px;
-      background: url('./bracket/b-horz.png') repeat-x center;
+      background: url('./bracket/b-horz-blue.png') repeat-x center;
       .grade {
         margin: 0;
       }
     }
     .average {
       font-size: 14px;
-      color: #90a0b3;
       margin-top: -30px;
       margin-left: 10px;
-      font-weight: 300;
     }
   }
 
@@ -123,7 +119,6 @@
   .explanation {
     padding: 15px;
     font-size: 14px;
-    color: #616161;
     font-weight: 300;
     p {
       margin: 0.5em 0;

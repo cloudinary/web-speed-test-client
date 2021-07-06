@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import gtmParts from 'react-google-tag-manager';
 
 export default class GoogleTagManager extends Component {
@@ -18,7 +19,7 @@ export default class GoogleTagManager extends Component {
       id: this.props.gtmId,
       dataLayerName: this.props.dataLayerName || 'dataLayer',
       additionalEvents: this.props.additionalEvents || {},
-      previewVariables: this.props.previewVariables || false,
+      previewVariables: this.props.previewVariables || false
     });
 
     return (
@@ -37,5 +38,5 @@ GoogleTagManager.propTypes = {
   dataLayerName: PropTypes.string,
   additionalEvents: PropTypes.object,
   previewVariables: PropTypes.string,
-  scriptId: PropTypes.string,
+  scriptId: PropTypes.string
 };

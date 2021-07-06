@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import { useLocation, useHistory, useParams } from 'react-router-dom';
 // import ReactGA from 'react-ga';
 import { useStore } from 'store/context';
@@ -11,10 +11,15 @@ import ResultsList from 'components/ResultsList/ResultsList';
 
 import { fetchTestDataIfNeeded, runNewTest } from 'store/actions';
 
+// Prevent automatic page location restoration
+if (window.history.scrollRestoration) {
+  window.history.scrollRestoration = 'manual';
+}
+
 function WebSpeedPage(props) {
   const {
     dispatch,
-    state: { webspeedtest },
+    state: { webspeedtest }
   } = useStore();
 
   const { search, pathname } = useLocation();
@@ -22,26 +27,32 @@ function WebSpeedPage(props) {
   const { testId: paramTestId } = useParams();
   const storeTestId = webspeedtest.testId;
 
+  const testIdRef = useRef();
+
   useEffect(() => {
     const locationParams = new URLSearchParams(search);
     const locationTestId = locationParams.get('testId');
     const testId = paramTestId ? paramTestId : locationTestId;
     if (locationTestId && !paramTestId) {
       history.push({
-        pathname: pathname + 'results/' + locationTestId,
+        pathname: pathname + 'results/' + locationTestId
       });
     }
-    dispatch({
-      type: 'setTestId',
-      testId: testId,
-    });
-    fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
-  }, [search, pathname, paramTestId, dispatch, history]);
+    // Prevent this being called on every render
+    if (testId !== testIdRef.current) {
+      dispatch({
+        type: 'setTestId',
+        testId: testId
+      });
+      fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
+      testIdRef.current = testId;
+    }
+  }, [webspeedtest, search, pathname, paramTestId, dispatch, history]);
 
   useEffect(() => {
     if (storeTestId && pathname.indexOf('results') === -1) {
       history.push({
-        pathname: pathname + 'results/' + storeTestId,
+        pathname: pathname + 'results/' + storeTestId
       });
     }
   }, [storeTestId, pathname, history]);

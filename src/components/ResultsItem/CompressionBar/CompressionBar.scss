@@ -3,27 +3,68 @@
 .compressionBar {
   display: flex;
   align-items: center;
-  width: 405px;
-  border-right: 1px solid $color-gray-border;
+  justify-content: center;
   font-size: 18px;
+  line-height: 60px;
   height: 60px;
 
   .image-compression-bars & {
     font-size: 14px;
-    height: 32px;
+    height: 40px;
+    width: 100%;
+    justify-content: flex-start;
+    overflow: hidden;
+    &:last-child {
+      margin-bottom: 10px;
+    }
+    .type {
+      width: calc(52% - 95px);
+      padding-left: 7%;
+      padding-right: 25px;
+      border-right: 2px solid $color-blue-light;
+      box-sizing: border-box;
+      word-break: break-all;
+    }
+    .bar-wrp {
+      align-self: stretch;
+      margin: 1px 0 0 0;
+      background: $color-gray-light-b;
+      height: 9px;
+      align-self: center;
+      max-width: 95px;
+    }
+    .bytes {
+      margin-left: 10%;
+    }
+    .bytes,
+    .note {
+      text-align: center;
+      line-height: normal;
+      line-height: 1em;
+      width: 17%;
+      margin-right: 0;
+      color: $color-blue-medium;
+    }
+    &.no-reduction {
+      .bytes,
+      .note {
+        color: $color-grade-e;
+      }
+    }
   }
 
   .type {
     text-transform: uppercase;
-    padding: 0 0 0 7%;
-    width: 25%;
+    font-weight: 600;
+    position: relative;
   }
 
   .best {
-    float: right;
-    position: relative;
-    text-transform: initial;
-    margin: 0 6px 0 3px;
+    line-height: normal;
+    position: absolute;
+    right: 3px;
+    top: 50%;
+    transform: translateY(-50%);
     &:hover .tooltip {
       display: block;
     }
@@ -46,21 +87,18 @@
   }
 
   .bytes {
-    width: 17%;
-    padding-left: 5%;
+    margin-right: 5px;
   }
 
   .bar-wrp {
-    align-self: stretch;
-    border-left: 1px solid $color-gray-border;
     width: 25%;
     display: flex;
     align-items: center;
+    margin: 0 10px;
   }
 
   .bar {
-    height: 7px;
-    border-radius: 0 7px 7px 0;
+    height: 9px;
   }
 
   .original-note {
@@ -71,5 +109,18 @@
   @media #{$bp-max-md} {
     width: 100%;
     border: none;
+
+    .image-compression-bars & {
+      .type {
+        padding-left: 5px;
+        width: 30%;
+      }
+      .bar-wrp {
+        width: 30%;
+      }
+      .bytes {
+        margin-left: 8px;
+      }
+    }
   }
 }

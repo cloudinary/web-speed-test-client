@@ -13,7 +13,7 @@
   }
   .logo {
     $size: 136px;
-    background: #F1F2F9;
+    background: #f1f2f9;
     width: $size;
     height: $size;
     border-radius: $size;
@@ -39,8 +39,8 @@
       border: 1px solid $color-gray-light-b;
       border-radius: 7px;
       box-sizing: border-box;
+      font-size: 20px;
       &::placeholder {
-        font-size: 21px;
         font-family: 'Inter', sans-serif;
         font-weight: 300;
         color: $color-gray-medium;
@@ -85,7 +85,6 @@
       font-size: 16px;
       max-width: 95%;
     }
-
   }
 
   @media #{$bp-max-xs} {

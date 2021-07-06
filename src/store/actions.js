@@ -7,10 +7,10 @@ export const fetchNewTest = async (url) => {
     const response = await fetch(NEW_TEST_END_POINT, {
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       method: 'POST',
-      body: JSON.stringify({ url }),
+      body: JSON.stringify({ url })
     });
     const data = await response.json();
     return data;
@@ -33,7 +33,7 @@ export const runNewTest = async (url, dispatch, state) => {
       // }
       dispatch({
         type: 'setTestId',
-        testId: result.data.testId,
+        testId: result.data.testId
       });
       await fetchTestDataIfNeeded(result.data.testId, dispatch, state);
     } else {
@@ -48,8 +48,10 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
     try {
       dispatch({
         type: 'requestTestResults',
-        testId,
+        testId
       });
+      window.scrollTo(0, 0); // Scroll back to page top on test submit
+
       const result = await fetchTestData(testId);
       if (result === false) {
         return;
@@ -63,7 +65,7 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
           // Image list is empty while totalImagesCount > 0.
           dispatch({
             type: 'requestTestResultsError',
-            msg: 'generic',
+            msg: 'generic'
           });
         } else {
           // Success
@@ -84,19 +86,20 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
           }
           dispatch({
             type: 'requestTestResultsSuccess',
-            payload: processTestResults(result.data),
+            payload: processTestResults(result.data)
           });
+          window.scrollTo(0, 0); // Scroll back to page top on test results
         }
       } else {
         dispatch({
           type: 'requestTestResultsError',
-          msg: result.message,
+          msg: result.message
         });
       }
     } catch (err) {
       dispatch({
         type: 'requestTestResultsError',
-        msg: err,
+        msg: err
       });
     }
   }
@@ -151,6 +154,6 @@ const fetchTestData = async (testId, retryNum = 0) => {
 const processTestResults = (data) => {
   return {
     imagesTestResults: data.imagesTestResults,
-    resultSumm: data.resultSumm,
+    resultSumm: data.resultSumm
   };
 };

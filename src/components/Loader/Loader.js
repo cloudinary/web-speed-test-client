@@ -13,7 +13,7 @@ class Loader extends Component {
   componentDidMount() {
     wdtLoading.start({
       speed: delay,
-      loop: false,
+      loop: false
     });
   }
 
