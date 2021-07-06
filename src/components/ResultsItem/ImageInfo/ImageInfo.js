@@ -178,7 +178,7 @@ class ImageInfo extends Component {
           </div>
           {!isOriginal && (
             <div className="percent">
-              {numbro(image.percentChange / 100).format('0.0%') +
+              {numbro((100 - image.percentChange) / 100).format('0.0%') +
                 ' ' +
                 this.props.t('Reduction')}
             </div>
