@@ -5,19 +5,19 @@ import { Image } from 'cloudinary-react';
 import numbro from 'numbro';
 import CompressionBar from './CompressionBar/CompressionBar';
 import ImageExpanded from './ImageExpanded/ImageExpanded';
-import classnames from 'classnames';
+import cx from 'classnames';
 
 import './ResultsItem.scss';
 
 class ResultsItem extends Component {
   static propTypes = {
-    result: PropTypes.object.isRequired,
+    result: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      expanded: props.expanded || false,
+      expanded: props.expanded || false
     };
     this.toggleImageInfo = this.toggleImageInfo.bind(this);
   }
@@ -36,11 +36,11 @@ class ResultsItem extends Component {
   render() {
     const { result } = this.props;
     const transformations = [result.transformedImage, ...result.dynamicFormats];
-    const resultCls = classnames('resultsItem', {
-      expanded: this.state.expanded,
+    const resultCls = cx('resultsItem', {
+      expanded: this.state.expanded
     });
-    const btnCls = classnames('toggle-btn btn btn-large', {
-      expanded: this.state.expanded,
+    const btnCls = cx('toggle-btn btn btn-large', {
+      expanded: this.state.expanded
     });
     return (
       <div className={resultCls}>

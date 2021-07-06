@@ -2,51 +2,57 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
+import cx from 'classnames';
 import numbro from 'numbro';
 
 import './CompressionBar.scss';
 
+const gradeColor = {
+  A: '#77bd58',
+  B: '#77bd58',
+  C: '#f2a81a',
+  D: '#f2a81a',
+  E: '#FF5050',
+  F: '#FF5050',
+  default: '#0071ba'
+};
 class CompressionBar extends Component {
   static propTypes = {
     format: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
     originalSize: PropTypes.number,
-    best: PropTypes.bool,
-  };
-
-  gradeColor = {
-    A: '#77bd58',
-    B: '#77bd58',
-    C: '#f2a81a',
-    D: '#f2a81a',
-    E: '#FF5050',
-    F: '#FF5050',
+    best: PropTypes.bool
   };
 
   computeBarStyles(size, originalSize) {
     let barStyles;
-    if (originalSize) {
+    if (this.props.grade) {
       barStyles = {
-        width: (size / originalSize) * 100 + '%',
-        backgroundColor: '#0071ba',
+        width: '100%',
+        backgroundColor: gradeColor[this.props.grade]
       };
     } else {
       barStyles = {
-        width: '100%',
-        backgroundColor: this.gradeColor[this.props.grade],
+        width: (size / originalSize) * 100 + '%',
+        backgroundColor:
+          size > originalSize ? gradeColor['F'] : gradeColor['default']
       };
     }
     return barStyles;
   }
 
   computeCompression(size, originalSize) {
-    return size / originalSize;
+    return -1 + size / originalSize;
   }
 
   render() {
     const { format, size, originalSize, best } = this.props;
     return (
-      <div className="compressionBar">
+      <div
+        className={cx('compressionBar', {
+          'no-reduction': size > originalSize
+        })}
+      >
         <div className="type">
           {this.props.t(format)}
           {best && (
@@ -76,7 +82,9 @@ class CompressionBar extends Component {
         {originalSize && (
           <div className="note compression-note">
             (
-            {numbro(this.computeCompression(size, originalSize)).format('0.0%')}
+            {numbro(this.computeCompression(size, originalSize)).format(
+              '+0.0%'
+            )}
             )
           </div>
         )}

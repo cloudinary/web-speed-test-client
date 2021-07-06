@@ -190,5 +190,5 @@ export const en = {
   // Generic error
   error_generic_header: 'Error Encountered',
   error_generic_subtitle: 'We are sorry but something went wrong',
-  error_generic_content: 'Please contact us for assistance',
+  error_generic_content: 'Please contact us for assistance'
 };

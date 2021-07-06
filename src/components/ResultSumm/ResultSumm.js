@@ -11,13 +11,13 @@ import './ResultSumm.scss';
 class ResultSumm extends Component {
   static propTypes = {
     result: PropTypes.object.isRequired,
-    testId: PropTypes.string.isRequired,
+    testId: PropTypes.string.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      screenshotLoaded: false,
+      screenshotLoaded: false
     };
     this.handleScreenshotOnLoad = this.handleScreenshotOnLoad.bind(this);
     this.getBrowserIcon = this.getBrowserIcon.bind(this);
@@ -43,7 +43,7 @@ class ResultSumm extends Component {
 
     const cloudinaryCore = new cloudinary.Cloudinary({
       cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
-      cname: process.env.REACT_APP_CLOUDINARY_CNAME,
+      cname: process.env.REACT_APP_CLOUDINARY_CNAME
     });
     let url2png;
     if (result.url) {
@@ -53,7 +53,7 @@ class ResultSumm extends Component {
           crop: 'limit',
           type: 'url2png',
           fetchFormat: 'jpg',
-          dpr: 'auto',
+          dpr: 'auto'
         }) +
         '/url2png/fullpage=false%7Cviewport=' +
         result.viewportSize.width +

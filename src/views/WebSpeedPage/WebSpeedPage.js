@@ -14,7 +14,7 @@ import { fetchTestDataIfNeeded, runNewTest } from 'store/actions';
 function WebSpeedPage(props) {
   const {
     dispatch,
-    state: { webspeedtest },
+    state: { webspeedtest }
   } = useStore();
 
   const { search, pathname } = useLocation();
@@ -28,12 +28,12 @@ function WebSpeedPage(props) {
     const testId = paramTestId ? paramTestId : locationTestId;
     if (locationTestId && !paramTestId) {
       history.push({
-        pathname: pathname + 'results/' + locationTestId,
+        pathname: pathname + 'results/' + locationTestId
       });
     }
     dispatch({
       type: 'setTestId',
-      testId: testId,
+      testId: testId
     });
     fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
   }, [search, pathname, paramTestId, dispatch, history]);
@@ -41,7 +41,7 @@ function WebSpeedPage(props) {
   useEffect(() => {
     if (storeTestId && pathname.indexOf('results') === -1) {
       history.push({
-        pathname: pathname + 'results/' + storeTestId,
+        pathname: pathname + 'results/' + storeTestId
       });
     }
   }, [storeTestId, pathname, history]);

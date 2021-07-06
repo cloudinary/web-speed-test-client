@@ -12,7 +12,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --single-quote --write \"src/**/*\"",
+    "format": "eslint --ext .jsx,.js --fix ./src",
     "upload:images": "node ./src/services/imageSync/cloudinaryImageSync.js"
   },
   "eslintConfig": {
@@ -25,10 +25,14 @@
       "prettier/prettier": [
         "warn",
         {
-          "singleQuote": true
+          "singleQuote": true,
+          "trailingComma": "none"
         }
       ]
-    }
+    },
+    "ignorePatterns": [
+      "*.min.js"
+    ]
   },
   "browserslist": {
     "production": [

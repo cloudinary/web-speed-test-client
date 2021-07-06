@@ -13,12 +13,12 @@
     height: 40px;
     width: 100%;
     justify-content: flex-start;
+    overflow: hidden;
     &:last-child {
       margin-bottom: 10px;
     }
     .type {
       width: calc(52% - 95px);
-      line-height: 1em;
       padding-left: 7%;
       padding-right: 25px;
       border-right: 2px solid $color-blue-light;
@@ -44,6 +44,12 @@
       width: 17%;
       margin-right: 0;
       color: $color-blue-medium;
+    }
+    &.no-reduction {
+      .bytes,
+      .note {
+        color: $color-grade-e;
+      }
     }
   }
 

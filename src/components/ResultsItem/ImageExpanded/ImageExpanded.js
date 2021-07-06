@@ -3,21 +3,21 @@ import PropTypes from 'prop-types';
 import { withTranslation } from 'react-i18next';
 import { Image } from 'cloudinary-react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import classnames from 'classnames';
+import cx from 'classnames';
 import ImageInfo from '../ImageInfo/ImageInfo';
 
 import './ImageExpanded.scss';
 
 class ImageExpanded extends Component {
   static propTypes = {
-    result: PropTypes.object.isRequired,
+    result: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
       expanded: props.expanded || false,
-      carousel: props.carousel || 1,
+      carousel: props.carousel || 1
     };
     this.toggleDynamic = this.toggleDynamic.bind(this);
     this.mobileCarousel = this.mobileCarousel.bind(this);
@@ -40,7 +40,7 @@ class ImageExpanded extends Component {
   render() {
     const { result } = this.props;
 
-    const imageExpandedCls = classnames(
+    const imageExpandedCls = cx(
       'imageExpanded',
       'carousel-' + this.state.carousel,
       { dynamicIn: this.state.expanded }

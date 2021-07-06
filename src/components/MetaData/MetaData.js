@@ -5,14 +5,14 @@ import MetaTags from 'react-meta-tags';
 
 class MetaData extends Component {
   static propTypes = {
-    result: PropTypes.object,
+    result: PropTypes.object
   };
 
   render() {
     const {
       result: {
-        resultSumm: { url },
-      },
+        resultSumm: { url }
+      }
     } = this.props;
     if (url) {
       return (

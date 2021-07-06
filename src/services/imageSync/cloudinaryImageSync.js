@@ -1,4 +1,3 @@
-'use strict';
 require('dotenv').config();
 const fs = require('fs');
 const IMAGES_PATH = './src/assets/images';
@@ -21,7 +20,7 @@ const uploadImages = (imagesPath) => {
         {
           public_id: fileName.replace(/\.[^/.]+$/, ''),
           tags: ['static'],
-          type: 'asset',
+          type: 'asset'
         },
         (result) => {
           callback();

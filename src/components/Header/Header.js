@@ -22,7 +22,9 @@ class Header extends Component {
               type="asset"
             ></Image>
           </a>
-          <h1 className="title">{this.props.t('AppName')}</h1>
+          <a href="/">
+            <h1 className="title">{this.props.t('AppName')}</h1>
+          </a>
           <a
             className="btn learn"
             href={this.props.t('LearnMoreURL')}

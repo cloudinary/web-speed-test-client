@@ -11,7 +11,7 @@ const initialState = {
   hasResults: false,
   newTest: false,
   error: false,
-  isFetching: false,
+  isFetching: false
 };
 
 function storeReducer(state, action) {
@@ -23,8 +23,8 @@ function storeReducer(state, action) {
           ...state.webspeedtest,
           testUrl: action.url,
           testStartTime: Date.now(),
-          newTest: true,
-        },
+          newTest: true
+        }
       };
     }
     case 'setTestId': {
@@ -32,8 +32,8 @@ function storeReducer(state, action) {
         ...state,
         webspeedtest: {
           ...state.webspeedtest,
-          testId: action.testId,
-        },
+          testId: action.testId
+        }
       };
     }
     case 'requestTestResultsSuccess': {
@@ -44,8 +44,8 @@ function storeReducer(state, action) {
           testResult: action.payload,
           isFetching: false,
           hasResults: true,
-          testEndTime: Date.now(),
-        },
+          testEndTime: Date.now()
+        }
       };
     }
     case 'requestTestResultsError': {
@@ -56,8 +56,8 @@ function storeReducer(state, action) {
           testResult: initialState.testResult,
           error: action.msg,
           isFetching: false,
-          hasResults: false,
-        },
+          hasResults: false
+        }
       };
     }
     case 'requestTestResults': {
@@ -67,8 +67,8 @@ function storeReducer(state, action) {
           ...state.webspeedtest,
           isFetching: true,
           testResult: initialState.testResult,
-          hasResults: false,
-        },
+          hasResults: false
+        }
       };
     }
     case 'fetchNewTest': {
@@ -93,7 +93,7 @@ function storeReducer(state, action) {
 function StoreProvider({ children }) {
   const [state, dispatch] = React.useReducer(storeReducer, {
     count: 0,
-    webspeedtest: initialState,
+    webspeedtest: initialState
   });
 
   // NOTE: you *might* need to memoize this value
