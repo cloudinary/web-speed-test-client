@@ -29,7 +29,10 @@
           "trailingComma": "none"
         }
       ]
-    }
+    },
+    "ignorePatterns": [
+      "*.min.js"
+    ]
   },
   "browserslist": {
     "production": [
