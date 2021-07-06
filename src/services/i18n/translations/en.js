@@ -31,6 +31,10 @@ export const en = {
     'https://res.cloudinary.com/demo/image/upload/h_210,f_auto,q_auto/paint.jpg',
   TryItNowButtonText: 'Try Cloudinary for free',
   TryItNowButtonURL: 'https://cloudinary.com/signup?source=webspeedtest',
+  ContactTitle: 'Learn more about Cloudinary media optimization',
+  ContactText:
+    'Talk to an expert and find out how Cloudinary can help with your digital media needs.',
+  ContactLinkText: 'Contact Us',
   LeadForm_Title: 'Learn more about Image Optimization',
   LeadForm_EmailDefaultText: 'Email',
   LeadForm_FirstDefaultText: 'First name',
