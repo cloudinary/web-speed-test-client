@@ -35,11 +35,7 @@ export const en = {
   ContactText:
     'Talk to an expert and find out how Cloudinary can help with your digital media needs.',
   ContactLinkText: 'Contact Us',
-  LeadForm_Title: 'Learn more about Image Optimization',
   LeadForm_EmailDefaultText: 'Email',
-  LeadForm_FirstDefaultText: 'First name',
-  LeadForm_LastDefaultText: 'Last name',
-  LeadForm_Button: 'Send',
   AboutButtonText: 'About',
   AboutButtonURL: '/about',
   PrivacyButtonText: 'Privacy',
