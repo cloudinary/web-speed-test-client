@@ -11,13 +11,13 @@ import './ResultsItem.scss';
 
 class ResultsItem extends Component {
   static propTypes = {
-    result: PropTypes.object.isRequired,
+    result: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      expanded: props.expanded || false,
+      expanded: props.expanded || false
     };
     this.toggleImageInfo = this.toggleImageInfo.bind(this);
   }
@@ -37,10 +37,10 @@ class ResultsItem extends Component {
     const { result } = this.props;
     const transformations = [result.transformedImage, ...result.dynamicFormats];
     const resultCls = cx('resultsItem', {
-      expanded: this.state.expanded,
+      expanded: this.state.expanded
     });
     const btnCls = cx('toggle-btn btn btn-large', {
-      expanded: this.state.expanded,
+      expanded: this.state.expanded
     });
     return (
       <div className={resultCls}>

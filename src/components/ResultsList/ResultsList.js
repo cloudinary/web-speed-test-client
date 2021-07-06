@@ -7,7 +7,7 @@ import './ResultsList.scss';
 
 class ResultsList extends Component {
   static propTypes = {
-    results: PropTypes.array.isRequired,
+    results: PropTypes.array.isRequired
   };
 
   render() {

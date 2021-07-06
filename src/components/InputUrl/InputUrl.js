@@ -8,7 +8,7 @@ class InputUrl extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      validUrl: true,
+      validUrl: true
     };
     this.validateUrl = this.validateUrl.bind(this);
     this.submitUrl = this.submitUrl.bind(this);

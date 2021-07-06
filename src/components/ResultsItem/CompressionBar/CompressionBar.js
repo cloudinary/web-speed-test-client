@@ -21,7 +21,7 @@ class CompressionBar extends Component {
     format: PropTypes.string.isRequired,
     size: PropTypes.number.isRequired,
     originalSize: PropTypes.number,
-    best: PropTypes.bool,
+    best: PropTypes.bool
   };
 
   computeBarStyles(size, originalSize) {
@@ -29,7 +29,7 @@ class CompressionBar extends Component {
     if (this.props.grade) {
       barStyles = {
         width: '100%',
-        backgroundColor: gradeColor[this.props.grade],
+        backgroundColor: gradeColor[this.props.grade]
       };
     } else {
       barStyles = {
@@ -50,7 +50,7 @@ class CompressionBar extends Component {
     return (
       <div
         className={cx('compressionBar', {
-          'no-reduction': size > originalSize,
+          'no-reduction': size > originalSize
         })}
       >
         <div className="type">
@@ -82,7 +82,9 @@ class CompressionBar extends Component {
         {originalSize && (
           <div className="note compression-note">
             (
-            {numbro(this.computeCompression(size, originalSize)).format('+0.0%')}
+            {numbro(this.computeCompression(size, originalSize)).format(
+              '+0.0%'
+            )}
             )
           </div>
         )}

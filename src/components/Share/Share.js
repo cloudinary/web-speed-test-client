@@ -9,7 +9,7 @@ import {
   TwitterShareButton,
   FacebookIcon,
   TwitterIcon,
-  LinkedinIcon,
+  LinkedinIcon
 } from 'react-share';
 
 import './Share.scss';
@@ -18,13 +18,13 @@ class Share extends Component {
   static propTypes = {
     icon: PropTypes.string,
     shareUrl: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      expanded: props.expanded || false,
+      expanded: props.expanded || false
     };
     this.toggleShareWidget = this.toggleShareWidget.bind(this);
   }

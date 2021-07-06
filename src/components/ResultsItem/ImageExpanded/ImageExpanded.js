@@ -10,14 +10,14 @@ import './ImageExpanded.scss';
 
 class ImageExpanded extends Component {
   static propTypes = {
-    result: PropTypes.object.isRequired,
+    result: PropTypes.object.isRequired
   };
 
   constructor(props) {
     super(props);
     this.state = {
       expanded: props.expanded || false,
-      carousel: props.carousel || 1,
+      carousel: props.carousel || 1
     };
     this.toggleDynamic = this.toggleDynamic.bind(this);
     this.mobileCarousel = this.mobileCarousel.bind(this);
