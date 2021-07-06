@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import { useLocation, useHistory, useParams } from 'react-router-dom';
 // import ReactGA from 'react-ga';
 import { useStore } from 'store/context';
@@ -22,6 +22,8 @@ function WebSpeedPage(props) {
   const { testId: paramTestId } = useParams();
   const storeTestId = webspeedtest.testId;
 
+  const testIdRef = useRef();
+
   useEffect(() => {
     const locationParams = new URLSearchParams(search);
     const locationTestId = locationParams.get('testId');
@@ -31,12 +33,16 @@ function WebSpeedPage(props) {
         pathname: pathname + 'results/' + locationTestId
       });
     }
-    dispatch({
-      type: 'setTestId',
-      testId: testId
-    });
-    fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
-  }, [search, pathname, paramTestId, dispatch, history]);
+    // Prevent this being called on every render
+    if (testId !== testIdRef.current) {
+      dispatch({
+        type: 'setTestId',
+        testId: testId
+      });
+      fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
+      testIdRef.current = testId;
+    }
+  }, [webspeedtest, search, pathname, paramTestId, dispatch, history]);
 
   useEffect(() => {
     if (storeTestId && pathname.indexOf('results') === -1) {
