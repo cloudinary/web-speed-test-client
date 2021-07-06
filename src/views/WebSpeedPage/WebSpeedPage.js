@@ -11,6 +11,11 @@ import ResultsList from 'components/ResultsList/ResultsList';
 
 import { fetchTestDataIfNeeded, runNewTest } from 'store/actions';
 
+// Prevent automatic page location restoration
+if (window.history.scrollRestoration) {
+  window.history.scrollRestoration = 'manual';
+}
+
 function WebSpeedPage(props) {
   const {
     dispatch,

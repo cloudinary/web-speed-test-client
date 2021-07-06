@@ -50,6 +50,8 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
         type: 'requestTestResults',
         testId
       });
+      window.scrollTo(0, 0); // Scroll back to page top on test submit
+
       const result = await fetchTestData(testId);
       if (result === false) {
         return;
@@ -86,6 +88,7 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
             type: 'requestTestResultsSuccess',
             payload: processTestResults(result.data)
           });
+          window.scrollTo(0, 0); // Scroll back to page top on test results
         }
       } else {
         dispatch({
