@@ -22,7 +22,7 @@ export const en = {
   FooterOriginalTitle: 'Original',
   FooterCompressedTitle: 'Dynamic Format',
   FooterOriginalImageFormat: 'JPG',
-  FooterCompressedImageFormat: 'WEBP',
+  FooterCompressedImageFormat: 'AVIF',
   FooterOriginalImageDimensions: '374x210',
   FooterCompressedImageDimensions: '374x210',
   FooterOriginalImageWeight: '38 KB',
