@@ -69,7 +69,7 @@ export const en = {
   TotalImagesWeight: 'Total image weight',
   TotalImagesWeightOutOf: 'out of a total page weight of',
   PotentialCompressionPercentage: 'Potential weight reduction',
-  PotentialCompressionOutOf: 'of the original total image weight',
+  PotentialReduction: 'Reduction in total image weight',
   PotentialCompressionPercentageMoreInfo:
     'The potential compression percentage is calculated only for the analyzed images',
   TotalImagesNumber_TooMany_A: 'Only the first', // Only first X images were analyzed
@@ -89,7 +89,7 @@ export const en = {
 
   // Page body (collapse and expanded)
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
-  CompressionOutOf: 'of the original total image size',
+  ImageWeightReduction: 'Reduction in image weight',
   ExpandButton: 'See Details',
   CollapseButton: 'Close',
   Reduction: 'reduction',
