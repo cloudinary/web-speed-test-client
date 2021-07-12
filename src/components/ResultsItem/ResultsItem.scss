@@ -94,8 +94,8 @@
     }
   }
   .image-compressions-title {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 500;
     margin: 0 0 15px;
   }
   .image-data-inner {
@@ -103,7 +103,7 @@
   }
   .image-compression-bars {
     background: $color-gray-blue-light;
-    min-width: 500px;
+    min-width: 460px;
     margin: 0 25px 20px 0;
     .image-compressions-title {
       background: $color-blue-medium-a;
