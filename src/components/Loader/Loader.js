@@ -56,7 +56,7 @@ class Loader extends Component {
           </h2>
           <Image
             className="gif"
-            publicId="loader.gif"
+            publicId="loader_new.gif"
             width="180"
             type="asset"
           ></Image>

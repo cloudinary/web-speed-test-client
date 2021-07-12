@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-// import ContactForm from '../ContactForm/ContactForm';
 import './PreFooter.scss';
 
 class PreFooter extends Component {
@@ -67,7 +66,18 @@ class PreFooter extends Component {
           {this.props.t('TryItNowButtonText')}
         </a>
 
-        {/* <ContactForm /> */}
+        <div className="contact">
+          <h1>{this.props.t('ContactTitle')}</h1>
+          <p>{this.props.t('ContactText')}</p>
+          <a
+            className="btn btn-large"
+            href="http://cloudinary.com/contact"
+            target="_blank"
+            rel="noreferrer"
+          >
+            {this.props.t('ContactLinkText')}
+          </a>
+        </div>
       </section>
     );
   }
