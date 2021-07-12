@@ -89,8 +89,8 @@ class ImageInfo extends Component {
   }
 
   imageError() {
-    if (this.state.formatSupported && this.image.state.url) {
-      this.image.element.src = this.image.state.url.replace(
+    if (this.state.formatSupported && this.image.element.current) {
+      this.image.element.current.src = this.image.element.current.src.replace(
         'f_' + this.image.props.fetchFormat,
         'f_auto'
       );
@@ -223,7 +223,7 @@ class ImageInfo extends Component {
           <div className="transform-image">
             {!this.state.formatSupported && (
               <div className="support">
-                {this.props.t('{f} is not supported in your browser', {
+                {this.props.t('{{f}} is not supported in your browser', {
                   f: this.props.t(data.format)
                 })}
               </div>
