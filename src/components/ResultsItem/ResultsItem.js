@@ -96,22 +96,12 @@ class ResultsItem extends Component {
                     type="asset"
                     width="47"
                   ></Image>
-                  {numbro(this.getBestReduction(transformations)).format(
+                  {numbro(1 - this.getBestReduction(transformations)).format(
                     '0.0%'
                   )}
                 </div>
                 <div className="total-of">
-                  {this.props.t('CompressionOutOf') +
-                    ' (' +
-                    numbro(1 - this.getBestReduction(transformations)).format(
-                      '0.0%'
-                    )}
-                  <Image
-                    publicId="icon-arrow-black.svg"
-                    type="asset"
-                    width="12"
-                  ></Image>
-                  {')'}
+                  {this.props.t('ImageWeightReduction')}
                 </div>
                 <div className="image-final-pixel">
                   {result.width}x{result.height}

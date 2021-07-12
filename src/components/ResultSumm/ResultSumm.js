@@ -206,16 +206,11 @@ class ResultSumm extends Component {
                         width="46"
                       ></Image>
                       <div className="value-text">
-                        {numbro(result.totalPercentChange / 100).format('0.0%')}
+                        {numbro((100 - result.totalPercentChange) / 100).format('0.0%')}
                       </div>
                     </div>
                     <div className="meta-box-bottom-text">
-                      {this.props.t('PotentialCompressionOutOf') +
-                        ' (' +
-                        numbro((100 - result.totalPercentChange) / 100).format(
-                          '0.0%'
-                        ) +
-                        ' less)'}
+                      {this.props.t('PotentialReduction')}
                     </div>
                   </div>
                 </div>
