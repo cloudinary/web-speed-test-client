@@ -223,7 +223,7 @@ class ImageInfo extends Component {
           <div className="transform-image">
             {!this.state.formatSupported && (
               <div className="support">
-                {this.props.t('{f} is not supported in your browser', {
+                {this.props.t('{{f}} is not supported in your browser', {
                   f: this.props.t(data.format)
                 })}
               </div>
