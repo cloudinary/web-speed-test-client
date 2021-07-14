@@ -16,22 +16,22 @@ class ResultsLCP extends Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   expanded: props.expanded || false
-    // };
-    // this.toggleImageInfo = this.toggleImageInfo.bind(this);
+    this.state = {
+      expanded: props.expanded || false
+    };
+    this.toggleImageInfo = this.toggleImageInfo.bind(this);
   }
 
-  // toggleImageInfo(e) {
-  //   this.setState({ expanded: !this.state.expanded });
-  // }
+  toggleImageInfo(e) {
+    this.setState({ expanded: !this.state.expanded });
+  }
 
   render() {
     const { lcp } = this.props;
     console.log(lcp);
-    // const resultCls = cx('resultsLCP', {
-    //   expanded: this.state.expanded
-    // });
+    const resultCls = cx('resultsLCP', {
+      expanded: this.state.expanded
+    });
     // const btnCls = cx('toggle-btn btn btn-large', {
     //   expanded: this.state.expanded
     // });
