@@ -8,6 +8,7 @@ import Loader from 'components/Loader/Loader';
 import Error from 'components/Error/Error';
 import ResultSumm from 'components/ResultSumm/ResultSumm';
 import ResultsList from 'components/ResultsList/ResultsList';
+import ResultsLCP from 'components/ResultsLCP/ResultsLCP';
 
 import { fetchTestDataIfNeeded, runNewTest } from 'store/actions';
 
@@ -77,9 +78,14 @@ function WebSpeedPage(props) {
               testId={webspeedtest.testId}
               result={webspeedtest.testResult.resultSumm || {}}
             />
+            {webspeedtest.testResult.resultSumm.lcp && (
+              <ResultsLCP
+                lcp={webspeedtest.testResult.resultSumm.lcp}
+                lcpUrl={webspeedtest.testResult.resultSumm.lcpURL}
+              />
+            )}
             {webspeedtest.testResult.resultSumm.totalImagesCount > 0 && (
               <ResultsList
-                testId={webspeedtest.testId}
                 results={webspeedtest.testResult.imagesTestResults || []}
               />
             )}
