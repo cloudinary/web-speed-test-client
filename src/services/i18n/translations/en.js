@@ -184,11 +184,13 @@ export const en = {
 
   // WPT failure
   error_wpt_failure_header: 'Error Encountered',
-  error_wpt_failure_subtitle: 'We are sorry but something went wrong',
+  error_wpt_failure_subtitle: 'We are sorry, but something went wrong',
   error_wpt_failure_content: 'Please contact us for assistance',
 
   // Generic error
   error_generic_header: 'Error Encountered',
-  error_generic_subtitle: 'We are sorry but something went wrong',
-  error_generic_content: 'Please contact us for assistance'
+  error_generic_subtitle: 'We are sorry, but something went wrong',
+  error_generic_content: 'Please contact us for assistance',
+
+  error_contact_message: 'Please <0>contact us</0> for assistance'
 };
