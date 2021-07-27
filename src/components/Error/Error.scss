@@ -2,23 +2,44 @@
 
 .error {
   min-height: 440px;
-  background: $color-gray-bg;
+  background: $color-blue-medium-a;
   text-align: center;
-  padding: 80px 0;
+  padding: 80px 0 120px;
   box-sizing: border-box;
+  position: relative;
+  .error-image {
+    display: inline-flex;
+    height: 156px;
+    width: 156px;
+    background: #fff;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+  }
   h2 {
-    font-weight: 300;
+    font-size: 48px;
     margin-bottom: 15px;
+    color: #fff;
   }
   h3 {
     margin-top: 15px;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 700;
+    color: $color-blue-light;
+  }
+  h4 {
+    font-size: 14px;
+    color: $color-blue-light;
   }
   p {
-    font-size: 14px;
-    color: #787878;
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    color: #fff;
     white-space: pre-line;
+    a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: underline;
+    }
   }
 }
