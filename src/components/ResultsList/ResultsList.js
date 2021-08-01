@@ -7,7 +7,8 @@ import './ResultsList.scss';
 
 class ResultsList extends Component {
   static propTypes = {
-    results: PropTypes.array.isRequired
+    results: PropTypes.array.isRequired,
+    withLcp: PropTypes.bool
   };
 
   render() {
@@ -16,6 +17,7 @@ class ResultsList extends Component {
       <div className="resultsList">
         <div className="results">
           <div className="container">
+            {this.props.withLcp && <h1>{this.props.t('OtherPageAssets')}</h1>}
             {results &&
               results.length > 0 &&
               results.map((result, key) => (

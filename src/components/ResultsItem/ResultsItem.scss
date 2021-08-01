@@ -11,7 +11,7 @@
   .image-intro {
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid #8596aa;
+    border: 1px solid $color-gray-light-b;
     position: relative;
   }
   .image-orig {
@@ -94,8 +94,8 @@
     }
   }
   .image-compressions-title {
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 700;
     margin: 0 0 15px;
   }
   .image-data-inner {
