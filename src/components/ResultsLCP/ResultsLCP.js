@@ -34,7 +34,7 @@ class ResultsLCP extends Component {
   }
 
   render() {
-    const { lcp } = this.props;
+    const { analyzed: lcp, event } = this.props.lcp;
     const transformations = [lcp.transformedImage, ...lcp.dynamicFormats];
     const resultCls = cx('resultsLCP', {
       expanded: this.state.expanded
@@ -42,7 +42,7 @@ class ResultsLCP extends Component {
     const btnCls = cx('toggle-btn btn btn-large', {
       expanded: this.state.expanded
     });
-    return (
+    return lcp ? (
       <div className={resultCls}>
         <div className="container">
           <h1>{this.props.t('LargestResultTitle')}</h1>
@@ -92,7 +92,7 @@ class ResultsLCP extends Component {
                   type="asset"
                   width="51"
                 ></Image>
-                {'0.00s'}
+                {`${numbro(event.time / 1000).format('3a')}s`}
               </div>
               <div className="image-final-percent">
                 <h3 className="image-compressions-title">
@@ -160,7 +160,7 @@ class ResultsLCP extends Component {
           <ImageExpanded result={lcp} />
         </div>
       </div>
-    );
+    ) : null;
   }
 }
 

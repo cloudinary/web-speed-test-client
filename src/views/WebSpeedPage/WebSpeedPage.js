@@ -79,14 +79,13 @@ function WebSpeedPage(props) {
               result={webspeedtest.testResult.resultSumm || {}}
             />
             {webspeedtest.testResult.resultSumm.lcp && (
-              <ResultsLCP
-                lcp={webspeedtest.testResult.resultSumm.lcp}
-                lcpUrl={webspeedtest.testResult.resultSumm.lcpURL}
-              />
+              <ResultsLCP lcp={webspeedtest.testResult.resultSumm.lcp} />
             )}
             {webspeedtest.testResult.resultSumm.totalImagesCount > 0 && (
               <ResultsList
-                withLcp={webspeedtest.testResult.resultSumm.lcp}
+                withLcp={Boolean(
+                  webspeedtest.testResult.resultSumm.lcp && webspeedtest.testResult.resultSumm.lcp.analyzed
+                )}
                 results={webspeedtest.testResult.imagesTestResults || []}
               />
             )}
