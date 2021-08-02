@@ -84,7 +84,8 @@ function WebSpeedPage(props) {
             {webspeedtest.testResult.resultSumm.totalImagesCount > 0 && (
               <ResultsList
                 withLcp={Boolean(
-                  webspeedtest.testResult.resultSumm.lcp && webspeedtest.testResult.resultSumm.lcp.analyzed
+                  webspeedtest.testResult.resultSumm.lcp &&
+                    webspeedtest.testResult.resultSumm.lcp.analyzed
                 )}
                 results={webspeedtest.testResult.imagesTestResults || []}
               />
