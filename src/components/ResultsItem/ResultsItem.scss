@@ -58,15 +58,14 @@
     margin: 0;
     padding: 0 30px;
     line-height: 80px;
-    width: 100%;
+    flex: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
   .from-cloudinary {
-    border-bottom: 1px solid rgb(204, 204, 204);
     padding: 0 15px;
-    line-height: 50px;
+    line-height: 60px;
     position: relative;
     img {
       vertical-align: text-bottom;
@@ -87,10 +86,6 @@
     }
     &:hover .tooltip {
       display: block;
-    }
-    + .image-data-name {
-      padding-right: 0;
-      width: calc(100% - 60px);
     }
   }
   .image-compressions-title {
