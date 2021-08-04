@@ -18,7 +18,6 @@
     padding: 25px 20px;
     display: flex;
     position: relative;
-    max-height: 470px;
 
     .image-data {
       display: flex;
@@ -110,24 +109,26 @@
     }
     .flex-column {
       width: calc(100% - 360px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .image-orig {
         display: flex;
+        flex: 1 1 auto;
         align-items: center;
         justify-content: center;
-        height: calc(100% - 187px);
+        width: 100%;
         margin-bottom: 12px;
         border: 1px solid $color-gray-medium;
-        box-sizing: border-box;
         @include checkered;
         img {
-          max-height: 90%;
+          max-height: 250px;
         }
       }
       .image-compression-bars {
         background: $color-gray-blue-light;
         min-width: 460px;
-        max-width: 99%;
-        margin: 0 auto;
+        width: 99%;
         .image-compressions-title {
           background: $color-blue-medium-a;
           color: #fff;
@@ -144,6 +145,9 @@
           flex-wrap: wrap;
           height: 120px;
           padding: 12px 0;
+          &.large {
+            height: 160px;
+          }
           .compressionBar {
             width: 50%;
           }
@@ -192,7 +196,9 @@
         z-index: 9;
       }
       .flex-column {
-        display: flex;
+        // display: flex;
+        flex-direction: row;
+        align-items: stretch;
         margin: 0 0 20px 0;
         width: 100%;
         border-bottom: 1px solid $color-gray-light-b;
@@ -208,7 +214,9 @@
           min-width: auto;
           margin: 10px;
           .bars-wrp {
-            height: auto;
+            &, &.large {
+              height: auto;
+            }
             .compressionBar {
               width: 100%;
             }
