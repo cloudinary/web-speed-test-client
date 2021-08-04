@@ -18,6 +18,7 @@
     padding: 25px 20px;
     display: flex;
     position: relative;
+    max-height: 470px;
 
     .image-data {
       display: flex;
@@ -118,6 +119,9 @@
         border: 1px solid $color-gray-medium;
         box-sizing: border-box;
         @include checkered;
+        img {
+          max-height: 90%;
+        }
       }
       .image-compression-bars {
         background: $color-gray-blue-light;
