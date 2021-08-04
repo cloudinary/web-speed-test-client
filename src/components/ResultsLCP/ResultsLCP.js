@@ -92,7 +92,19 @@ class ResultsLCP extends Component {
                   type="asset"
                   width="51"
                 ></Image>
-                {`${numbro(event.time / 1000).format('3a')}s`}
+                <div
+                  className={cx(
+                    'image-loading-time-grade',
+                    'time-grade-' + lcp.analyze.grading.aggregated.value
+                  )}
+                >
+                  {`${numbro(event.time / 1000).format('3a')}s`}
+                  <span>
+                    {this.props.t(
+                      'TimeGrade' + lcp.analyze.grading.aggregated.value
+                    )}
+                  </span>
+                </div>
               </div>
               <div className="image-final-percent">
                 <h3 className="image-compressions-title">
