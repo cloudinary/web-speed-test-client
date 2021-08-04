@@ -148,7 +148,6 @@ class ResultsLCP extends Component {
                     large: transformations.length > 6
                   })}
                 >
-                  {console.log(transformations.length)}
                   {transformations.map((transform, key) => (
                     <CompressionBar
                       key={key}

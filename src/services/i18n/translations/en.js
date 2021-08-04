@@ -89,7 +89,7 @@ export const en = {
 
   // Page body (collapse and expanded)
   TimeToLoad: 'Time to load',
-  TimeToLoadShouldBe: 'should be >2 sec',
+  TimeToLoadShouldBe: 'should be <2 sec',
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
   ImageWeightReduction: 'Reduction in image weight',
   ExpandButton: 'See Details',
