@@ -82,12 +82,14 @@ export const en = {
   URL2PNG_PlaceHolderText: 'Generating Thumbnail',
   CompressionBarsTitle:
     'Image format options with file size and % compared to current',
-  LargestResultTitle: 'Largest Content Paint (LCP)',
+  LargestResultTitle: 'Largest Contentful Paint (LCP)',
   LargestResultDescription:
     'This measures how long it takes for the initial largest piece of visual media or block of content to be visible.',
   OtherPageAssets: 'Other page assets',
 
   // Page body (collapse and expanded)
+  TimeToLoad: 'Time to load',
+  TimeToLoadShouldBe: 'should be >2 sec',
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
   ImageWeightReduction: 'Reduction in image weight',
   ExpandButton: 'See Details',

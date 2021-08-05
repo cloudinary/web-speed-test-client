@@ -13,17 +13,17 @@
     height: 40px;
     width: 100%;
     justify-content: flex-start;
-    overflow: hidden;
     &:last-child {
       margin-bottom: 10px;
     }
     .type {
       width: calc(52% - 95px);
+      min-width: 120px;
       padding-left: 7%;
       padding-right: 25px;
       border-right: 2px solid $color-blue-light;
       box-sizing: border-box;
-      word-break: break-all;
+      line-height: 40px;
     }
     .bar-wrp {
       align-self: stretch;
@@ -44,6 +44,9 @@
       width: 17%;
       margin-right: 0;
       color: $color-blue-medium;
+    }
+    .note {
+      margin-right: 10px;
     }
     &.no-reduction {
       .bytes,
@@ -80,7 +83,7 @@
     background: #303b46;
     color: #fff;
     font-size: 12px;
-    font-weight: 300;
+    text-transform: initial;
     padding: 4px 7px 3px;
     border-radius: 4px;
     @include triangle($dir: bottom, $pos: 50%, $color: #303b46);

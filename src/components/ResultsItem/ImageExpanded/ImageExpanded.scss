@@ -15,7 +15,8 @@
   margin-top: -1px;
   justify-content: space-between;
   background: $color-blue-dark;
-  .resultsItem.expanded & {
+  .resultsItem.expanded &,
+  .resultsLCP.expanded & {
     margin-top: 0;
     max-height: $col-height;
   }

@@ -64,7 +64,7 @@ class ResultsItem extends Component {
               >
                 {result.analyze.grading.aggregated.value}
               </div>
-              {result.server === 'cloudinary' && (
+              {result.server === 'Cloudinary' && (
                 <span className="from-cloudinary">
                   <Image
                     publicId="icon-cloudinary-gray.svg"
