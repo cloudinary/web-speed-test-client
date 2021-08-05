@@ -76,6 +76,32 @@
       }
       .image-loading-time {
         margin-bottom: 25px;
+        .image-loading-time-grade {
+          position: relative;
+          line-height: 1em;
+          display: inline-block;
+          span {
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 700;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 1.2em);
+          }
+          &.time-grade-A,
+          &.time-grade-B {
+            color: $color-grade-a;
+          }
+          &.time-grade-C,
+          &.time-grade-D {
+            color: $color-grade-c;
+          }
+          &.time-grade-E,
+          &.time-grade-F {
+            color: $color-grade-e;
+          }
+        }
       }
       .total-of {
         margin: 10px 0;
@@ -109,21 +135,26 @@
     }
     .flex-column {
       width: calc(100% - 360px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       .image-orig {
         display: flex;
+        flex: 1 1 auto;
         align-items: center;
         justify-content: center;
-        height: calc(100% - 187px);
+        width: 100%;
         margin-bottom: 12px;
         border: 1px solid $color-gray-medium;
-        box-sizing: border-box;
         @include checkered;
+        img {
+          max-height: 250px;
+        }
       }
       .image-compression-bars {
         background: $color-gray-blue-light;
         min-width: 460px;
-        max-width: 99%;
-        margin: 0 auto;
+        width: 99%;
         .image-compressions-title {
           background: $color-blue-medium-a;
           color: #fff;
@@ -140,6 +171,9 @@
           flex-wrap: wrap;
           height: 120px;
           padding: 12px 0;
+          &.large {
+            height: 160px;
+          }
           .compressionBar {
             width: 50%;
           }
@@ -188,7 +222,8 @@
         z-index: 9;
       }
       .flex-column {
-        display: flex;
+        flex-direction: row;
+        align-items: stretch;
         margin: 0 0 20px 0;
         width: 100%;
         border-bottom: 1px solid $color-gray-light-b;
@@ -204,7 +239,9 @@
           min-width: auto;
           margin: 10px;
           .bars-wrp {
-            height: auto;
+            &, &.large {
+              height: auto;
+            }
             .compressionBar {
               width: 100%;
             }
