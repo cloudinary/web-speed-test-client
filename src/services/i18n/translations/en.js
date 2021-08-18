@@ -200,5 +200,5 @@ export const en = {
   error_generic_subtitle: 'We are sorry, but something went wrong',
   error_generic_content: 'Please contact us for assistance',
 
-  error_contact_message: 'Please <0>contact us</0> for assistance'
+  error_contact_message: 'Please try again later'
 };
