@@ -8,13 +8,13 @@ import numbro from 'numbro';
 import './CompressionBar.scss';
 
 const gradeColor = {
-  A: '#77bd58',
-  B: '#77bd58',
+  A: '#48C4D8',
+  B: '#48C4D8',
   C: '#f2a81a',
   D: '#f2a81a',
   E: '#FF5050',
   F: '#FF5050',
-  default: '#0071ba'
+  default: '#3146c6'
 };
 class CompressionBar extends Component {
   static propTypes = {
