@@ -143,7 +143,9 @@
         flex: 1 1 auto;
         align-items: center;
         justify-content: center;
+        text-align: center;
         width: 100%;
+        min-height: 270px;
         margin-bottom: 12px;
         border: 1px solid $color-gray-medium;
         @include checkered;
@@ -167,13 +169,11 @@
         }
         .bars-wrp {
           display: flex;
-          flex-direction: column;
           flex-wrap: wrap;
-          height: 120px;
+          align-content: flex-start;
+          row-gap: 0;
+          min-height: 120px;
           padding: 12px 0;
-          &.large {
-            height: 160px;
-          }
           .compressionBar {
             width: 50%;
           }
@@ -229,10 +229,10 @@
         border-bottom: 1px solid $color-gray-light-b;
         .image-orig {
           width: 50%;
+          min-height: auto;
           margin-bottom: 0;
           border: none;
           border-right: 1px solid $color-gray-light-b;
-          height: auto;
         }
         .image-compression-bars {
           width: 50%;

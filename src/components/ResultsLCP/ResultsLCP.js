@@ -155,11 +155,7 @@ class ResultsLCP extends Component {
                 <h3 className="image-compressions-title">
                   {this.props.t('CompressionBarsTitle')}
                 </h3>
-                <div
-                  className={cx('bars-wrp', {
-                    large: transformations.length > 6
-                  })}
-                >
+                <div className="bars-wrp">
                   {transformations.map((transform, key) => (
                     <CompressionBar
                       key={key}

@@ -24,6 +24,9 @@
     text-align: center;
     border-right: 1px solid $color-gray-border;
     @include checkered;
+    img {
+      max-height: 250px;
+    }
   }
   .image-data {
     flex: 1;
