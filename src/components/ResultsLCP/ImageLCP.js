@@ -22,7 +22,10 @@ class ImageLCP extends Component {
   }
 
   render() {
-    const {lcp: { analyzed: lcp, event }, getGrading} = this.props;
+    const {
+      lcp: { analyzed: lcp, event },
+      getGrading
+    } = this.props;
 
     const grade = getGrading(event.time);
 
@@ -35,11 +38,7 @@ class ImageLCP extends Component {
         <div className="lcp-item">
           <div className="image-data">
             <div className="image-data-header">
-              <div
-                className={
-                  'image-data-grading grade grade-' + grade
-                }
-              >
+              <div className={'image-data-grading grade grade-' + grade}>
                 {grade}
               </div>
               {lcp.server === 'cloudinary' && (
@@ -83,11 +82,7 @@ class ImageLCP extends Component {
                 )}
               >
                 {`${numbro(event.time / 1000).format('3a')}s`}
-                <span>
-                  {this.props.t(
-                    'TimeGrade' + grade
-                  )}
-                </span>
+                <span>{this.props.t('TimeGrade' + grade)}</span>
               </div>
             </div>
             <div className="image-final-percent">
