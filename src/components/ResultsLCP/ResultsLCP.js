@@ -25,6 +25,23 @@ class ResultsLCP extends Component {
     this.setState({ expanded: !this.state.expanded });
   }
 
+  getGrading(time) {
+    let grade;
+    // eslint-disable-next-line default-case
+    switch (true) {
+      case time <= 2500:
+        grade = 'A';
+        break;
+      case time > 2500 && time <= 4000:
+        grade = 'C';
+        break;
+      case time > 4000:
+        grade = 'E';
+        break;
+    }
+    return grade;
+  }
+
   render() {
     const { analyzed: lcp } = this.props.lcp;
     const resultCls = cx('resultsLCP', {
@@ -40,9 +57,10 @@ class ResultsLCP extends Component {
               lcp={this.props.lcp}
               toggleImageInfo={() => this.toggleImageInfo}
               expanded={this.state.expanded}
+              getGrading={this.getGrading}
             />
           ) : (
-            <NonImageLCP lcp={this.props.lcp} />
+            <NonImageLCP lcp={this.props.lcp} getGrading={this.getGrading} />
           )}
         </div>
       </div>

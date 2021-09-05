@@ -22,7 +22,10 @@ class ImageLCP extends Component {
   }
 
   render() {
-    const { analyzed: lcp, event } = this.props.lcp;
+    const {lcp: { analyzed: lcp, event }, getGrading} = this.props;
+
+    const grade = getGrading(event.time);
+
     const transformations = [lcp.transformedImage, ...lcp.dynamicFormats];
     const btnCls = cx('toggle-btn btn btn-large', {
       expanded: this.props.expanded
@@ -34,11 +37,10 @@ class ImageLCP extends Component {
             <div className="image-data-header">
               <div
                 className={
-                  'image-data-grading grade grade-' +
-                  lcp.analyze.grading.aggregated.value
+                  'image-data-grading grade grade-' + grade
                 }
               >
-                {lcp.analyze.grading.aggregated.value}
+                {grade}
               </div>
               {lcp.server === 'cloudinary' && (
                 <span className="from-cloudinary">
@@ -62,7 +64,7 @@ class ImageLCP extends Component {
             <CompressionBar
               format={lcp.format}
               size={lcp.bytes}
-              grade={lcp.analyze.grading.aggregated.value}
+              grade={grade}
             />
             <div className="image-loading-time">
               <h3 className="image-loading-time-title">
@@ -77,13 +79,13 @@ class ImageLCP extends Component {
               <div
                 className={cx(
                   'image-loading-time-grade',
-                  'time-grade-' + lcp.analyze.grading.aggregated.value
+                  'time-grade-' + grade
                 )}
               >
                 {`${numbro(event.time / 1000).format('3a')}s`}
                 <span>
                   {this.props.t(
-                    'TimeGrade' + lcp.analyze.grading.aggregated.value
+                    'TimeGrade' + grade
                   )}
                 </span>
               </div>
