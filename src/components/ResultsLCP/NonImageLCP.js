@@ -46,17 +46,10 @@ class NonImageLCP extends Component {
             </h3>
             <Image publicId="icon-time_new.svg" type="asset" width="51"></Image>
             <div
-              className={cx(
-                'image-loading-time-grade',
-                'time-grade-' + grade
-              )}
+              className={cx('image-loading-time-grade', 'time-grade-' + grade)}
             >
               {`${numbro(event.time / 1000).format('3a')}s`}
-              <span>
-                {this.props.t(
-                  'NonImageTimeGrade' + grade
-                )}
-              </span>
+              <span>{this.props.t('NonImageTimeGrade' + grade)}</span>
             </div>
           </div>
           <div className="lcp-canvas">
