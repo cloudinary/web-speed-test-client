@@ -96,6 +96,11 @@ export const en = {
   TimeGradeD: 'Fair',
   TimeGradeE: 'Bad',
   TimeGradeF: 'Bad',
+  
+  NonImageTimeGradeA: 'Good',
+  NonImageTimeGradeC: 'Needs Improvement',
+  NonImageTimeGradeE: 'Poor',
+  
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
   ImageWeightReduction: 'Reduction in image weight',
   ExpandButton: 'See Details',
@@ -115,6 +120,8 @@ export const en = {
   ImageProperty_progressive: 'Progressive',
   GradesToAverageConnection: 'Average Score',
   FromCloudinary: 'Delivered Via Cloudinary',
+  LcpCanvas: 'LCP Canvas',
+  HtmlCss: 'HTML/CSS',
 
   // Image type display name transforms
   jpg: 'JPEG',

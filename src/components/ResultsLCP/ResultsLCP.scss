@@ -57,7 +57,8 @@
         align-self: stretch;
       }
       .image-loading-time-title,
-      .image-compressions-title {
+      .image-compressions-title,
+      .lcp-canvas-title {
         font-size: 16px;
         font-weight: 700;
         span {
@@ -75,7 +76,7 @@
         }
       }
       .image-loading-time {
-        margin-bottom: 25px;
+        padding-bottom: 25px;
         .image-loading-time-grade {
           position: relative;
           line-height: 1em;
@@ -177,6 +178,63 @@
           .compressionBar {
             width: 50%;
           }
+        }
+      }
+    }
+    &.non-image {
+      padding: 0;
+      .image-data {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: stretch;
+        .image-loading-time-title,
+        .lcp-canvas-title {
+          line-height: 60px;
+          margin: 0;
+        }
+        .image-data-header {
+          flex-basis: 100%;
+          border-bottom: 1px solid $color-gray-medium;
+          margin-bottom: 0;
+          height: 100px;
+          position: relative;
+          .image-data-grading {
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+          .image-data-name {
+            max-width: 80%;
+            padding-left: 40px;
+          }
+        }
+        .compressionBar-wrapper,
+        .image-loading-time,
+        .lcp-canvas {
+          flex-basis: 33.33%;
+          height: auto;
+          height: 180px;
+          align-self: stretch;
+          box-sizing: border-box;
+          border-right: 1px solid $color-gray-medium;
+        }
+        .compressionBar-wrapper img {
+          height: 52px;
+        }
+        .lcp-canvas {
+          border-right: none;
+          .canvas-image-wrapper {
+            span {
+              color: $color-blue-medium-c;
+              line-height: 64px;
+            }
+          }
+        }
+        .image-loading-time .image-loading-time-grade span {
+          bottom: -5px;
+          white-space: nowrap;
         }
       }
     }
