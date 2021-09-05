@@ -96,11 +96,11 @@ export const en = {
   TimeGradeD: 'Fair',
   TimeGradeE: 'Bad',
   TimeGradeF: 'Bad',
-  
+
   NonImageTimeGradeA: 'Good',
   NonImageTimeGradeC: 'Needs Improvement',
   NonImageTimeGradeE: 'Poor',
-  
+
   CollapsedPotentialCompressionTitle: 'Potential Smart Compression',
   ImageWeightReduction: 'Reduction in image weight',
   ExpandButton: 'See Details',
