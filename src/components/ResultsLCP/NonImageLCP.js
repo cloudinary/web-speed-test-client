@@ -38,6 +38,7 @@ class NonImageLCP extends Component {
               size={event.size}
               grade={grade}
             />
+            <Image publicId="CodeBrackets.svg" type="asset" width="51"></Image>
           </div>
           <div className="image-loading-time">
             <h3 className="image-loading-time-title">
@@ -55,6 +56,7 @@ class NonImageLCP extends Component {
           <div className="lcp-canvas">
             <h3 className="lcp-canvas-title">{this.props.t('LcpCanvas')}</h3>
             <div className="canvas-image-wrapper">
+              <Image publicId="LCP-Canvas.svg" type="asset" width="51"></Image>
               <span>
                 {Math.floor(event.element.boundingRect.width) +
                   ' X ' +
