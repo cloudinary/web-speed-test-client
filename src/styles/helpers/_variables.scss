@@ -1,0 +1,55 @@
+// --------------------------------------------------
+//                   Variables
+// --------------------------------------------------
+
+//== Colors
+// $color-blue-dark: #0e2f5a;
+// $color-blue-light: #0054ac;
+$color-blue-c: #0071ba;
+$color-blue-d: #255fb0;
+$color-gray-blue: #90a0b3;
+$color-gray-border: #ccc;
+$color-gray-bg: #e4ebf1;
+$color-orange: #ff620c;
+
+$color-grade-a: #48C4D8;
+$color-grade-c: #f2a81a;
+$color-grade-e: #ff5050;
+
+$color-a: #ff5050;
+$color-a-dark: #d6364b;
+
+$color-gray-light-a: #eeefef;
+$color-gray-light-b: #c5c5c5;
+$color-gray-medium: #a9a9a9;
+$color-gray-blue-light: #f1f2f9;
+
+$color-cyan: #48c4d8;
+
+$color-blue-light: #b6d2ff;
+$color-blue-medium: #4962d5;
+$color-blue-medium-a: #3448c5;
+$color-blue-medium-b: #203991;
+$color-blue-medium-c: #3146c6;
+$color-blue-dark: #0c163b;
+
+//== Containers
+$container-width: 1208px;
+
+//== Media queries breakpoints
+$screen-lg: $container-width !default;
+$screen-md: 1200px !default;
+$screen-sm: 850px !default;
+$screen-xs: 641px !default;
+$screen-md-max: ($screen-lg - 1) !default;
+$screen-sm-max: ($screen-md - 1) !default;
+$screen-xs-max: ($screen-sm - 1) !default;
+$screen-xs-min: ($screen-xs + 1) !default;
+
+$bp-min-md: '(min-width: #{$screen-md})';
+$bp-max-md: '(max-width: #{$screen-sm-max})';
+$bp-min-sm: '(min-width: #{$screen-sm})';
+$bp-max-sm: '(max-width: #{$screen-xs-max})';
+$bp-min-xs: '(min-width: #{$screen-xs-min})';
+$bp-min-xs-max-md: '(min-width: #{$screen-xs-min}) and (max-width: #{$screen-sm-max})';
+$bp-max-xs: '(max-width: #{$screen-xs})';

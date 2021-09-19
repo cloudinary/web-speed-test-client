@@ -1,0 +1,131 @@
+@import 'styles/helpers';
+.imageInfo {
+  .image-info-bar {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e4eaee;
+    font-size: 18px;
+    color: $color-blue-medium-a;
+  }
+  .browsers {
+    img {
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 24px;
+    }
+  }
+  .links {
+    margin-left: auto;
+    a {
+      margin-left: 10px;
+    }
+    img {
+      vertical-align: middle;
+    }
+  }
+  .percent {
+    margin-left: auto;
+  }
+  .weight {
+    margin-left: auto;
+  }
+  .percent + .weight {
+    margin-left: 15px;
+  }
+
+  .grading {
+    display: flex;
+    padding: 20px;
+    .list {
+      font-weight: 300;
+      font-size: 14px;
+      padding-right: 30px;
+    }
+    .grade {
+      margin: 6px 8px 6px 0;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+    .aggregated {
+      display: none;
+    }
+    .bracket {
+      display: flex;
+      flex-direction: column;
+      width: 33px;
+      margin: 14px 0;
+      background: url('./bracket/b-vert-blue.png') repeat-y 15px;
+      .b-top {
+        width: 20px;
+        height: 20px;
+        background: url('./bracket/b-top-blue.png') no-repeat right #fff;
+      }
+      .b-center {
+        margin: auto 0;
+        width: 33px;
+        height: 24px;
+        background: url('./bracket/b-center-blue.png') no-repeat 15px #fff;
+      }
+      .b-bottom {
+        width: 20px;
+        height: 20px;
+        background: url('./bracket/b-bottom-blue.png') no-repeat right #fff;
+      }
+    }
+    .total {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 31px;
+      background: url('./bracket/b-horz-blue.png') repeat-x center;
+      .grade {
+        margin: 0;
+      }
+    }
+    .average {
+      font-size: 14px;
+      margin-top: -30px;
+      margin-left: 10px;
+    }
+  }
+
+  .transform-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 300px;
+    @include checkered;
+  }
+  .support {
+    color: $color-grade-e;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: left;
+    font-size: 14px;
+    padding: 10px 10px 25px;
+    background: linear-gradient(
+      rgba(#000, 0.8),
+      rgba(#000, 0.5) 50%,
+      transparent 95%
+    );
+  }
+
+  .explanation {
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 300;
+    p {
+      margin: 0.5em 0;
+    }
+  }
+}
+.original .explanation {
+  padding-top: 0;
+  padding-left: 20px;
+}

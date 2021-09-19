@@ -1,0 +1,14 @@
+{
+  "short_name": "Cloudinary Website Speed Test",
+  "name": "Website Speed Test - Image Analysis Tool by Cloudinary",
+  "icons": [
+    {
+      "src": "logo192.png",
+      "type": "image/png"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3448c5",
+  "background_color": "#ffffff"
+}

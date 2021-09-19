@@ -1,0 +1,49 @@
+@import 'styles/helpers';
+
+.footer {
+  background: $color-blue-dark;
+  color: #fff;
+  .container {
+    height: 70px;
+    display: flex;
+    align-items: center;
+  }
+  h1 {
+    font-weight: 400;
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  .links {
+    font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    margin: 0 auto;
+    a {
+      margin: 0 25px;
+    }
+  }
+  .social {
+    a {
+      vertical-align: bottom;
+      transition: opacity 0.25s;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  @media #{$bp-max-md} {
+    .container {
+      flex-direction: column;
+      height: auto;
+      padding: 25px 0;
+    }
+    .links,
+    .social {
+      margin-top: 20px;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+@import 'styles/helpers';
+
+.about {
+  font-size: 15px;
+  h1 + hr {
+    margin-bottom: 20px;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $color-blue-medium-a;
+  }
+  h2,
+  h3 {
+    margin-top: 39px;
+    margin-bottom: 13px;
+  }
+  h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+  p,
+  b,
+  li {
+    margin-top: 0;
+    color: $color-blue-dark;
+  }
+  a:not(.btn) {
+    color: $color-a;
+    &:hover {
+      color: $color-a-dark;
+    }
+  }
+  #disqus_thread {
+    margin: 39px 0;
+  }
+}
