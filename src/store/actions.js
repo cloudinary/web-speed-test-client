@@ -59,7 +59,8 @@ export const fetchTestDataIfNeeded = async (testId, dispatch, state) => {
       if (result.status === 'success') {
         if (
           result.data.imagesTestResults.length === 0 &&
-          result.data.resultSumm.totalImagesCount !== 0
+          result.data.resultSumm.totalImagesCount !== 0 &&
+          !result.data.resultSumm?.lcp?.isImage
         ) {
           // Catch an error where images are not analyzed.
           // Image list is empty while totalImagesCount > 0.
