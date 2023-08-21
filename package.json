@@ -47,10 +47,14 @@
     ]
   },
   "resolutions": {
-    "@svgr/webpack": "8.0.1"
+    "@svgr/webpack": "8.0.1",
+    "semver": "7.5.4",
+    "word-wrap": "1.2.4"
   },
   "overrides": {
-    "@svgr/webpack": "8.0.1"
+    "@svgr/webpack": "8.0.1",
+    "semver": "7.5.4",
+    "word-wrap": "1.2.4"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
