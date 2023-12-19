@@ -274,7 +274,7 @@ class ResultSumm extends Component {
                       className="icon"
                       rel="noreferrer"
                     >
-                      <Image publicId="webpagetest-logo-new.svg" type="asset" />
+                      <Image publicId="catchpoint-logo.svg" type="upload" />
                     </a>
                   </div>
                 </div>
