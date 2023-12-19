@@ -1,4 +1,4 @@
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_APP_API_URL || 'http://localhost:5000';
 const TEST_RESULTS_END_POINT = API_URL + '/test';
 const NEW_TEST_END_POINT = API_URL + '/test/run';
 
@@ -116,8 +116,8 @@ const fetchTestData = async (testId, retryNum = 0) => {
   const totalRetries = 180;
   const delay = 3000;
   try {
-    const response: Object = await fetch(TEST_RESULTS_END_POINT + '/' + testId);
-    const data: Object = await response.json();
+    let response = await fetch(TEST_RESULTS_END_POINT + '/' + testId);
+    let data = await response.json();
 
     if (data.status === 'success' && data.code !== 150) {
       // SUCCESS

@@ -42,8 +42,8 @@ class ResultSumm extends Component {
     const { result, testId } = this.props;
 
     const cloudinaryCore = new cloudinary.Cloudinary({
-      cloud_name: process.env.REACT_APP_CLOUDINARY_CLOUD_NAME,
-      cname: process.env.REACT_APP_CLOUDINARY_CNAME
+      cloud_name: import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME,
+      cname: import.meta.env.VITE_APP_CLOUDINARY_CNAME
     });
     let url2png;
     if (result.url) {

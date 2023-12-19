@@ -4,24 +4,24 @@ import { CloudinaryContext } from 'cloudinary-react';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 // import ReactGA from 'react-ga';
 
-import 'services/i18n';
+import './services/i18n';
 
-import Header from 'components/Header/Header';
-import PreFooter from 'components/PreFooter/PreFooter';
-import Footer from 'components/Footer/Footer';
-import StaticPage from 'views/StaticPage/StaticPage';
-import WebSpeedPage from 'views/WebSpeedPage/WebSpeedPage';
+import Header from './components/Header/Header';
+import PreFooter from './components/PreFooter/PreFooter';
+import Footer from './components/Footer/Footer';
+import StaticPage from './views/StaticPage/StaticPage';
+import WebSpeedPage from './views/WebSpeedPage/WebSpeedPage';
 
-import 'styles/styles.scss';
+import './styles/styles.scss';
 
 function App(props) {
   return (
     <CloudinaryContext
-      cloudName={process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}
-      cname={process.env.REACT_APP_CLOUDINARY_CNAME}
+      cloudName={import.meta.env.VITE_APP_CLOUDINARY_CLOUD_NAME}
+      cname={import.meta.env.VITE_APP_CLOUDINARY_CNAME}
     >
-      {/* {process.env.REACT_APP_GTM &&
-        <GoogleTagManager gtmId={process.env.REACT_APP_GTM} />
+      {/* {import.meta.env.VITE_APP_GTM &&
+        <GoogleTagManager gtmId={import.meta.env.VITE_APP_GTM} />
       } */}
       <div className="webspeedtest page-container">
         <Header />
