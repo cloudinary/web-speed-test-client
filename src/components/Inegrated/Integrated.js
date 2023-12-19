@@ -15,7 +15,7 @@ class Integrated extends Component {
           rel="noreferrer"
           className="icon"
         >
-          <Image publicId="webpagetest-logo-new.svg" type="asset" width="150" />
+          <Image publicId="catchpoint-logo.svg" type="upload" width="120" />
         </a>
       </div>
     );
