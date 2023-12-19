@@ -20,13 +20,13 @@ $ yarn install
 **Step 3**. Compile and launch your app by running:
 
 ```shell
-$ REACT_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn start
+$ VITE_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn start
 ```
 
 ## Build
 
 ```shell
-$ REACT_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn build
+$ VITE_APP_CLOUDINARY_CLOUD_NAME='webspeedtest' yarn build
 ```
 
 Builds the app for production to the `build` folder.
