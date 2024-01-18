@@ -53,7 +53,7 @@
     "classnames": "^2.3.2",
     "cloudinary-core": "^2.13.0",
     "cloudinary-react": "^1.8.1",
-    "i18next": "^23.2.1",
+    "i18next": "^23.7.12",
     "numbro": "^2.3.6",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
