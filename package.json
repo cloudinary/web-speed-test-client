@@ -50,7 +50,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@vitejs/plugin-react": "^4.2.1",
-    "classnames": "^2.3.2",
+    "classnames": "^2.5.1",
     "cloudinary-core": "^2.13.0",
     "cloudinary-react": "^1.8.1",
     "i18next": "^23.2.1",
