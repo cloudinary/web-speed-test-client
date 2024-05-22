@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useRef } from 'react';
-import { useLocation, useHistory, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 // import ReactGA from 'react-ga';
 import { useStore } from 'store/context';
 
@@ -24,7 +24,7 @@ function WebSpeedPage(props) {
   } = useStore();
 
   const { search, pathname } = useLocation();
-  const history = useHistory();
+  const navigate = useNavigate();
   const { testId: paramTestId } = useParams();
   const storeTestId = webspeedtest.testId;
 
@@ -35,7 +35,7 @@ function WebSpeedPage(props) {
     const locationTestId = locationParams.get('testId');
     const testId = paramTestId ? paramTestId : locationTestId;
     if (locationTestId && !paramTestId) {
-      history.push({
+      navigate({
         pathname: pathname + 'results/' + locationTestId
       });
     }
@@ -48,15 +48,15 @@ function WebSpeedPage(props) {
       fetchTestDataIfNeeded(testId, dispatch, webspeedtest);
       testIdRef.current = testId;
     }
-  }, [webspeedtest, search, pathname, paramTestId, dispatch, history]);
+  }, [webspeedtest, search, pathname, paramTestId, dispatch, navigate]);
 
   useEffect(() => {
     if (storeTestId && pathname.indexOf('results') === -1) {
-      history.push({
+      navigate({
         pathname: pathname + 'results/' + storeTestId
       });
     }
-  }, [storeTestId, pathname, history]);
+  }, [storeTestId, pathname, navigate]);
 
   return (
     <Fragment>

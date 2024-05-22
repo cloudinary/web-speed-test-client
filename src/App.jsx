@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { CloudinaryContext } from 'cloudinary-react';
 // import GoogleTagManager from './GoogleTagManager/GoogleTagManager'
 // import ReactGA from 'react-ga';
@@ -26,15 +26,19 @@ function App(props) {
       <div className="webspeedtest page-container">
         <Header />
 
-        <Switch>
-          <Route exact path={['/results/:testId', '/']}>
-            <WebSpeedPage />
-          </Route>
+        <Routes>
+          {['/results/:testId', '/'].map(path => (
+              <Route
+                  key="WebSpeedPage"
+                  path={path}
+                  element={<WebSpeedPage />}
+              />
+          ))}
           <Route
-            path="/:page"
-            render={(props) => <StaticPage page={props.match.params.page} />}
+              path="/:page"
+              render={(props) => <StaticPage page={props.match.params.page} />}
           />
-        </Switch>
+        </Routes>
 
         <PreFooter />
         <Footer />
