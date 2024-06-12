@@ -49,7 +49,7 @@
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react": "^4.3.0",
     "classnames": "^2.5.1",
     "cloudinary-core": "^2.13.1",
     "cloudinary-react": "^1.8.1",
