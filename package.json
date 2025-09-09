@@ -60,7 +60,7 @@
     "react-router-dom": "^6.23.1",
     "react-share": "^5.1.0",
     "react-tabs": "^6.0.2",
-    "vite": "^5.4.19",
+    "vite": "^5.4.20",
     "vite-plugin-minify": "^1.5.2",
     "vite-tsconfig-paths": "^4.3.2",
     "web-vitals": "^4.0.1"
