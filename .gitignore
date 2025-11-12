@@ -305,3 +305,7 @@ fabric.properties
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 # production
 /build
+
+### mise ###
+mise.toml
+.mise.local.toml
