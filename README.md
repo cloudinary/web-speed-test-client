@@ -12,7 +12,7 @@ This is the client app for Cloudinary image analysis tool.
 **Step 2**. Clone this repository & Install dependencies
 
 ```shell
-$ git clone git@github.com:CloudinaryLtd/web-speed-test-client.git
+$ git clone git@github.com:cloudinary/web-speed-test-client.git
 $ cd web-speed-test-client
 $ yarn install
 ```
