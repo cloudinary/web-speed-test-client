@@ -53,7 +53,7 @@ export const en = {
   PageTitleResults: 'Image Analysis Results',
   ShareResults: 'Share Results',
   EmptyTest: "We couldn't find any images on this page",
-  PageImageScoreTitle: 'Page Image Score',
+  PageImageScoreTitle: 'Page Score',
   ImageWeightComparisonTitle: 'Image Weight Comparison',
   OriginalImages: 'Current Images',
   PotentialCompression: 'Potential after Smart Compression',
