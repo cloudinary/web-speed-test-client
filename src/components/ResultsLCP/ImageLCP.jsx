@@ -33,81 +33,29 @@ class ImageLCP extends Component {
     const btnCls = cx('toggle-btn btn btn-large', {
       expanded: this.props.expanded
     });
+    const fileName = lcp.original_filename + '.' + lcp.format;
+
     return (
       <Fragment>
         <div className="lcp-item">
-          <div className="image-data">
+          <div className="lcp-header">
             <div className="image-data-header">
-              <div className={'image-data-grading grade grade-' + grade}>
-                {grade}
-              </div>
-              {lcp.server === 'cloudinary' && (
-                <span className="from-cloudinary">
-                  <Image
-                    publicId="icon-cloudinary-gray.svg"
-                    type="asset"
-                    width="30"
-                  ></Image>
-                  <span className="tooltip">
-                    {this.props.t('FromCloudinary')}
+              <div className="image-data-header-top">
+                <h3 className="image-data-name" title={fileName}>
+                  {fileName}
+                </h3>
+                {lcp.server === 'cloudinary' && (
+                  <span className="from-cloudinary">
+                    <Image
+                      publicId="icon-cloudinary-gray.svg"
+                      type="asset"
+                      width="30"
+                    ></Image>
+                    <span className="tooltip">
+                      {this.props.t('FromCloudinary')}
+                    </span>
                   </span>
-                </span>
-              )}
-              <h3
-                className="image-data-name"
-                title={lcp.original_filename + '.' + lcp.format}
-              >
-                {lcp.original_filename + '.' + lcp.format}
-              </h3>
-            </div>
-            <CompressionBar
-              format={lcp.format}
-              size={lcp.bytes}
-              grade={grade}
-            />
-            <div className="image-loading-time">
-              <h3 className="image-loading-time-title">
-                {this.props.t('TimeToLoad')}
-                <span>{'(' + this.props.t('TimeToLoadShouldBe') + ')'}</span>
-              </h3>
-              <Image
-                publicId="icon-time_new.svg"
-                type="asset"
-                width="51"
-              ></Image>
-              <div
-                className={cx(
-                  'image-loading-time-grade',
-                  'time-grade-' + grade
                 )}
-              >
-                {`${numbro(event.time / 1000).format('3a')}s`}
-                <span>{this.props.t('TimeGrade' + grade)}</span>
-              </div>
-            </div>
-            <div className="image-final-percent">
-              <h3 className="image-compressions-title">
-                {this.props.t('CollapsedPotentialCompressionTitle')}
-              </h3>
-              <Image
-                publicId="icon-compress-v4.svg"
-                type="asset"
-                width="47"
-              ></Image>
-              {numbro(1 - this.getBestReduction(transformations)).format(
-                '0.0%'
-              )}
-              <div className="total-of">
-                {this.props.t('ImageWeightReduction')}
-              </div>
-              <div className="image-final-pixel">
-                {lcp.width}x{lcp.height}
-                <Image
-                  publicId="icon-arrow-blue.svg"
-                  type="asset"
-                  width="14"
-                ></Image>
-                {lcp.transformedImage.width}x{lcp.transformedImage.height}
               </div>
             </div>
             <button onClick={this.props.toggleImageInfo()} className={btnCls}>
@@ -116,31 +64,97 @@ class ImageLCP extends Component {
               <Image publicId="icon-expand.svg" type="asset" width="12"></Image>
             </button>
           </div>
-          <div className="flex-column">
-            <div className={'image-orig image-' + lcp.format}>
-              <Image
-                publicId={lcp.public_id}
-                height="300"
-                width="400"
-                crop="limit"
-                dpr="auto"
-              ></Image>
-            </div>
-            <div className="image-compression-bars">
-              <h3 className="image-compressions-title">
-                {this.props.t('CompressionBarsTitle')}
-              </h3>
-              <div className="bars-wrp">
-                {transformations.map((transform, key) => (
-                  <CompressionBar
-                    key={key}
-                    format={transform.analyze.data.format}
-                    size={transform.analyze.data.bytes}
-                    originalSize={lcp.analyze.data.bytes}
-                    best={transform.best}
-                  />
-                ))}
+          <div className="lcp-top">
+            <div className="image-data">
+              <div className="image-stats-grid">
+                <div className="image-stat-card image-score-card">
+                  <h3 className="image-stat-title">Image Score</h3>
+                  <div className={'image-data-grading grade grade-' + grade}>
+                    {grade}
+                  </div>
+                </div>
+                <div className="image-stat-card image-current-card">
+                  <h3 className="image-stat-title">
+                    {this.props.t('ExpandedTabOriginal')}
+                  </h3>
+                  <div className="image-stat-main">
+                    {numbro(lcp.bytes).format('0.0 b')}
+                  </div>
+                  <div className="image-stat-sub">{lcp.format.toUpperCase()}</div>
+                </div>
+                <div className="image-stat-card image-loading-time">
+                  <h3 className="image-stat-title">
+                    {this.props.t('TimeToLoad')}
+                  </h3>
+                  <div
+                    className={cx(
+                      'image-loading-time-grade',
+                      'time-grade-' + grade,
+                      'image-stat-main'
+                    )}
+                  >
+                    {`${numbro(event.time / 1000).format('3a')}s`}
+                    <span>{this.props.t('TimeGrade' + grade)}</span>
+                  </div>
+                  <div className="image-stat-footnote">
+                    {this.props.t('TimeToLoadShouldBe')}
+                  </div>
+                </div>
+                <div className="image-stat-card image-final-percent">
+                  <h3 className="image-stat-title">
+                    {this.props.t('CollapsedPotentialCompressionTitle')}
+                  </h3>
+                  <div className="image-final-percent-value image-stat-main">
+                    {numbro(1 - this.getBestReduction(transformations)).format(
+                      '0.0%'
+                    )}
+                  </div>
+                  <div className="total-of">
+                    {this.props.t('ImageWeightReduction')}
+                  </div>
+                  <div className="image-final-pixel">
+                    {lcp.width}x{lcp.height}
+                    <Image
+                      publicId="icon-arrow-blue.svg"
+                      type="asset"
+                      width="14"
+                    ></Image>
+                    {lcp.transformedImage.width}x{lcp.transformedImage.height}
+                  </div>
+                </div>
               </div>
+            </div>
+            <div className="flex-column">
+              <div className={'image-orig image-' + lcp.format}>
+                <Image
+                  publicId={lcp.public_id}
+                  height="300"
+                  width="400"
+                  crop="limit"
+                  dpr="auto"
+                ></Image>
+              </div>
+            </div>
+          </div>
+          <div className="image-compression-bars">
+            <div className="image-compression-summary">
+              <h3 className="image-compressions-title">
+                Image Format Compression Options
+              </h3>
+              <p className="image-compression-copy">
+                {this.props.t('CompressionBarsTitle')}
+              </p>
+            </div>
+            <div className="bars-wrp">
+              {transformations.map((transform, key) => (
+                <CompressionBar
+                  key={key}
+                  format={transform.analyze.data.format}
+                  size={transform.analyze.data.bytes}
+                  originalSize={lcp.analyze.data.bytes}
+                  best={transform.best}
+                />
+              ))}
             </div>
           </div>
         </div>

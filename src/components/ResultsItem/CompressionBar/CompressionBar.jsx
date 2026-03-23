@@ -12,9 +12,9 @@ const gradeColor = {
   B: '#48C4D8',
   C: '#f2a81a',
   D: '#f2a81a',
-  E: '#FF5050',
-  F: '#FF5050',
-  default: '#3146c6'
+  E: '#F42153',
+  F: '#F42153',
+  default: '#B1F857'
 };
 class CompressionBar extends Component {
   static propTypes = {
