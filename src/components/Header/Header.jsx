@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Image } from 'cloudinary-react';
-import Share from '../Share/Share';
 import { withTranslation } from 'react-i18next';
 
 import './Header.scss';
@@ -17,42 +16,40 @@ class Header extends Component {
             rel="noreferrer"
           >
             <Image
-              publicId="cloudinary_logo_text_v2.svg"
-              width="155"
+              publicId="cloudinary_logo_text_v2_white.svg"
+              width="184"
               type="asset"
             ></Image>
           </a>
-          <a href="/">
+          <a className="title-link" href="/">
             <h1 className="title">{this.props.t('AppName')}</h1>
           </a>
-          <a
-            className="btn learn"
-            href={this.props.t('LearnMoreURL')}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {this.props.t('LearnMoreText')}
-          </a>
-          <a
-            className="support"
-            href={this.props.t('SupportURL')}
-            title={this.props.t('SupportText')}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Image
-              publicId="icon-support-v2.svg"
-              width="22"
-              type="asset"
-            ></Image>
-          </a>
-          <Share
-            icon="icon-share-gray.svg"
-            shareUrl={this.props.t('meta_social_url')}
-            title={
-              this.props.t('PageTitleA') + ' - ' + this.props.t('PageTitleB')
-            }
-          />
+          <nav className="header-links" aria-label="Header links">
+            <a
+              className="header-link"
+              href="https://cloudinary.com/about"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Image publicId="icon-info.svg" width="16" type="asset"></Image>
+              <span>About</span>
+            </a>
+            <a
+              className="header-link"
+              href="https://support.cloudinary.com/hc/en-us"
+              title={this.props.t('SupportText')}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="support-icon"
+                src="https://cloudinary-marketing-res.cloudinary.com/image/upload/v1774328712/icon-support-headphones.svg"
+                width="16"
+                alt=""
+              />
+              <span>Support</span>
+            </a>
+          </nav>
         </div>
       </header>
     );

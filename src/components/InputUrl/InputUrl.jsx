@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Image } from 'cloudinary-react';
 import Integrated from '../Inegrated/Integrated';
 
 import './InputUrl.scss';
@@ -45,33 +44,46 @@ class InputUrl extends Component {
   }
 
   render() {
+    const heroImage =
+      'https://cloudinary-marketing-res.cloudinary.com/image/upload/f_auto,q_auto/v1774326617/webspeed-hero.png';
+
     return (
       <div className="inputUrl">
         <div className="container">
-          <div className="logo">
-            <Image publicId="icon-logo-v2.svg" width="90" type="asset"></Image>
-          </div>
-          <h1>{this.props.t('AppName')}</h1>
-          <form onSubmit={this.submitUrl} autoComplete="on">
-            <input
-              type="text"
-              name="testid"
-              placeholder={this.props.t('EditBoxDefaultText')}
-              ref={(input) => (this.input = input)}
-              onChange={this.validateUrl}
-              autoComplete="on"
-            />
-            <button className="btn btn-large" type="submit">
-              {this.props.t('ButtonText')}
-            </button>
-            {!this.state.validUrl && (
-              <div className="validation">
-                {this.props.t('Please enter a valid URL.')}
+          <div className="hero-copy">
+            <div className="copy-block">
+              <h1>{this.props.t('AppName')}</h1>
+              <p>{this.props.t('ToolDescription')}</p>
+            </div>
+            <form onSubmit={this.submitUrl} autoComplete="on">
+              <div className="input-row">
+                <input
+                  type="text"
+                  name="testid"
+                  placeholder={this.props.t('EditBoxDefaultText')}
+                  ref={(input) => (this.input = input)}
+                  onChange={this.validateUrl}
+                  autoComplete="on"
+                />
+                <button className="btn btn-large" type="submit">
+                  {this.props.t('ButtonText')}
+                </button>
               </div>
-            )}
-          </form>
-          <p>{this.props.t('ToolDescription')}</p>
-          <Integrated />
+              {!this.state.validUrl && (
+                <div className="validation">
+                  {this.props.t('Please enter a valid URL.')}
+                </div>
+              )}
+            </form>
+            <Integrated />
+          </div>
+          <div className="hero-visual">
+            <img
+              className="hero-image"
+              src={heroImage}
+              alt="Website image analysis preview"
+            />
+          </div>
         </div>
       </div>
     );

@@ -57,12 +57,12 @@ class CompressionBar extends Component {
           {this.props.t(format)}
           {best && (
             <div className="best">
-              <Image
-                publicId="icon-best-v2.svg"
-                type="asset"
+              <img
+                src="https://cloudinary-marketing-res.cloudinary.com/image/upload/v1774330247/icon-editor_choice.svg"
                 width="22"
+                alt=""
                 title={this.props.t('BestImageText')}
-              ></Image>
+              />
               <span className="tooltip">{this.props.t('BestImageText')}</span>
             </div>
           )}

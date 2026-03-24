@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-import { Image } from 'cloudinary-react';
 
 import Integrated from '../Inegrated/Integrated';
 import wdtLoading from './wdtLoading.js';
@@ -45,43 +44,48 @@ class Loader extends Component {
   }
 
   render() {
-    const { url } = this.props;
     const phrases = this.getPhrases();
     const explanation = this.getExplanation();
+    const heroImage =
+      'https://cloudinary-marketing-res.cloudinary.com/image/upload/f_auto,q_auto/v1774326617/webspeed-hero.png';
+
     return (
       <div className="loader">
         <div className="container">
-          <h2>
-            {this.props.t('loaderTitle')}
-            {url ? ' ' + url : '...'}
-          </h2>
-          <Image
-            className="gif"
-            publicId="loader_new.gif"
-            width="180"
-            type="asset"
-          ></Image>
-          <div className="col">
-            {explanation !== '' && (
-              <p className="loader-explanation">{explanation}</p>
-            )}
-            <div className="wdt-loading-screen">
-              <div className="wdt-loading-phrases">
-                <div
-                  className="wdt-loading-phrase-category"
-                  data-category="default"
-                >
-                  {phrases.map((phrase, i) => (
-                    <div key={i} className="wdt-loading-phrase">
-                      {phrase}
-                    </div>
-                  ))}
+          <div className="loader-copy">
+            <div className="loader-kicker">{this.props.t('AppName')}</div>
+            <div className="copy-block">
+              <h2>{this.props.t('loaderTitle')}...</h2>
+              {explanation !== '' && (
+                <p className="loader-explanation">{explanation}</p>
+              )}
+            </div>
+            <div className="loader-status">
+              <div className="wdt-loading-screen">
+                <div className="wdt-loading-phrases">
+                  <div
+                    className="wdt-loading-phrase-category"
+                    data-category="default"
+                  >
+                    {phrases.map((phrase, i) => (
+                      <div key={i} className="wdt-loading-phrase">
+                        {phrase}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
+            <Integrated />
+          </div>
+          <div className="loader-visual">
+            <img
+              className="loader-image"
+              src={heroImage}
+              alt="Website image analysis preview"
+            />
           </div>
         </div>
-        <Integrated />
       </div>
     );
   }

@@ -115,7 +115,7 @@ class ImageLCP extends Component {
                   <div className="image-final-pixel">
                     {lcp.width}x{lcp.height}
                     <Image
-                      publicId="icon-arrow-blue.svg"
+                      publicId="icon-arrow-black.svg"
                       type="asset"
                       width="14"
                     ></Image>

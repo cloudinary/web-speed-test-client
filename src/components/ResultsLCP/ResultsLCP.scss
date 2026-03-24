@@ -6,6 +6,11 @@
   font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
   h1 {
     margin: 0 0 17px;
+    font-family: 'Inter', sans-serif;
+    font-size: 47px;
+    line-height: 1.2;
+    font-weight: 300;
+    color: #363d45;
   }
   h2 {
     margin: 0 0 38px;
@@ -28,7 +33,6 @@
     width: 100%;
     max-width: 1215px;
     margin: 0 auto;
-    min-height: 708px;
 
     .lcp-header {
       display: flex;
@@ -198,20 +202,30 @@
       }
     }
 
-    .toggle-btn {
+    .toggle-btn.btn.btn-large {
+      display: inline-flex;
       margin-left: auto;
       margin-bottom: 0;
-      min-width: 123px;
-      height: 30px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-size: 16px;
-      line-height: 30px;
-      background: #2f8ff7;
+      max-width: 100%;
+      width: 160px;
+      height: 36px;
+      padding: 16px 28px;
+      border-radius: 32px;
+      background: #0095ff;
       border: none;
       box-shadow: none;
       color: #fff;
       justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 120%;
+      text-transform: uppercase;
+      overflow: hidden;
+      white-space: nowrap;
 
       img {
         display: none;
@@ -489,6 +503,12 @@
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 650px) {
+    h1 {
+      font-size: 36px;
     }
   }
 }
