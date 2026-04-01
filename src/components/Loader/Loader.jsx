@@ -55,7 +55,14 @@ class Loader extends Component {
           <div className="loader-copy">
             <div className="loader-kicker">{this.props.t('AppName')}</div>
             <div className="copy-block">
-              <h2>{this.props.t('loaderTitle')}...</h2>
+              <h2>
+                {this.props.t('loaderTitle')}
+                <span className="loader-title-dots" aria-hidden="true">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </span>
+              </h2>
               {explanation !== '' && (
                 <p className="loader-explanation">{explanation}</p>
               )}

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { withTranslation } from 'react-i18next';
-import showcaseImage from '../../assets/images/paints.jpg';
 import './PreFooter.scss';
 
 class PreFooter extends Component {
   render() {
     const sampleUrl =
       'https://res.cloudinary.com/demo/image/upload/f_auto,q_auto/paint.jpg';
+    const showcaseImage =
+      'https://cloudinary-marketing-res.cloudinary.com/image/upload/f_auto,q_auto/v1775001676/paints.jpg';
 
     return (
       <section className="preFooter">

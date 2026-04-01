@@ -63,7 +63,7 @@ function WebSpeedPage(props) {
       {!webspeedtest.testId && (
         <InputUrl
           onSubmit={async (url) => {
-            runNewTest(url, dispatch, webspeedtest);
+            return runNewTest(url, dispatch, webspeedtest);
           }}
         />
       )}

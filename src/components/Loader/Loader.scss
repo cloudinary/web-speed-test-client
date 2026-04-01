@@ -51,6 +51,24 @@
     letter-spacing: -0.02em;
   }
 
+  .loader-title-dots {
+    display: inline-flex;
+    align-items: flex-end;
+    margin-left: 2px;
+
+    span {
+      animation: loader-dot-fade 1.2s infinite ease-in-out;
+    }
+
+    span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  }
+
   .loader-explanation {
     margin: 0;
     max-width: 611px;
@@ -64,7 +82,7 @@
 
   .loader-status {
     width: 300px;
-    height: 80px;
+    height: 108px;
     overflow: hidden;
     position: relative;
   }
@@ -76,7 +94,7 @@
 
   .wdt-loading-phrases {
     width: 300px;
-    height: 90px;
+    height: 108px;
     margin: 0;
     padding: 0;
     top: 0;
@@ -169,5 +187,17 @@
       width: 100%;
       max-width: 300px;
     }
+  }
+}
+
+@keyframes loader-dot-fade {
+  0%,
+  20%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
   }
 }

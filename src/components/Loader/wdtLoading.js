@@ -81,21 +81,31 @@ wdtLoading.spin = function () {
     that.activePhrases = that.wdtPhraseActiveCat.querySelectorAll(
       '.wdt-loading-phrase'
     );
+
+    if (that.currentIndex >= that.activePhrases.length) {
+      clearInterval(that.spinInternal);
+      return;
+    }
+
     addClass(that.activePhrases[that.currentIndex], 'wdt-checked');
-    that.currentTransform = that.currentTransform - that.phraseHeight;
+    if (that.currentIndex > 0) {
+      that.currentTransform = that.currentTransform - that.phraseHeight;
+    }
 
     if (!that.options.loop) {
       if (that.currentIndex + 1 == that.activePhrases.length) {
-        clearInterval(this.spinInternal);
+        clearInterval(that.spinInternal);
         return;
       }
     }
 
-    window.setTimeout(function () {
-      css(that.wdtPhraseActiveCat, {
-        transform: 'translateY(' + that.currentTransform + 'px)',
-      });
-    }, 500);
+    if (that.currentIndex > 0) {
+      window.setTimeout(function () {
+        css(that.wdtPhraseActiveCat, {
+          transform: 'translateY(' + that.currentTransform + 'px)',
+        });
+      }, 500);
+    }
 
     if (that.options.loop) {
       if (that.currentIndex > 0) {

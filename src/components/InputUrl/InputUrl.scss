@@ -111,10 +111,37 @@
     line-height: 120%;
     text-transform: uppercase;
     white-space: nowrap;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+
+    .button-content {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .button-spinner {
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: input-url-spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
 
     &:hover,
     &:focus {
       background: #237ee0;
+    }
+
+    &:disabled {
+      cursor: progress;
+    }
+
+    &.is-loading {
+      padding-left: 22px;
+      padding-right: 32px;
     }
   }
 
@@ -204,5 +231,11 @@
       height: 44px;
       padding: 0 20px;
     }
+  }
+}
+
+@keyframes input-url-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
