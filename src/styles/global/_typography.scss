@@ -5,7 +5,7 @@
 body {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
-  line-height: 1.42857143;
+  line-height: 1.5;
   color: #111;
   background-color: white;
 }
@@ -22,25 +22,31 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'sofia-pro', Helvetica, Arial, sans-serif;
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.2;
   color: $color-blue-dark;
 }
 
 .h1,
 h1 {
-  font-size: 48px;
+  font-size: 61px;
+  font-size: 61px;
+  font-weight: 300;
 }
 
 .h2,
 h2 {
   font-size: 32px;
+  font-size: 47px;
+  font-weight: 300;
 }
 
 .h3,
 h3 {
-  font-size: 24px;
+  font-size: 27px;
+  font-size: 27px;
+  font-weight: 400;
 }
 
 .h4,

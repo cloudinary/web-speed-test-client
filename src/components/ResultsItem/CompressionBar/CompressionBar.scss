@@ -10,45 +10,60 @@
 
   .image-compression-bars & {
     font-size: 14px;
-    height: 40px;
+    height: 25px;
     width: 100%;
     justify-content: flex-start;
+
     .type {
-      width: calc(52% - 95px);
-      min-width: 120px;
-      padding-left: 7%;
-      padding-right: 25px;
-      border-right: 2px solid $color-blue-light;
+      width: 92px;
+      min-width: 92px;
+      padding-left: 0;
+      padding-right: 18px;
+      border-right: none;
       box-sizing: border-box;
-      line-height: 40px;
+      line-height: 25px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #1d2533;
     }
+
     .bar-wrp {
-      align-self: stretch;
-      margin: 1px 0 0 0;
-      background: $color-gray-light-b;
-      height: 9px;
+      margin: 0 14px 0 16px;
+      background: #c8c8c8;
+      height: 8px;
       align-self: center;
-      max-width: 95px;
+      width: 96px;
+      min-width: 96px;
+      max-width: 96px;
+      border-radius: 0;
     }
+
     .bytes {
-      margin-left: 10%;
+      margin-left: 0;
     }
+
     .bytes,
     .note {
-      text-align: center;
-      line-height: normal;
-      line-height: 1em;
-      width: 17%;
+      text-align: left;
+      line-height: 1.1;
+      width: auto;
       margin-right: 0;
-      color: $color-blue-medium-c;
+      color: #000;
+      white-space: nowrap;
     }
+
+    .bytes {
+      min-width: 56px;
+    }
+
     .note {
-      margin-right: 10px;
+      margin-left: 12px;
     }
+
     &.no-reduction {
       .bytes,
       .note {
-        color: $color-grade-e;
+        color: #000;
       }
     }
   }
@@ -98,7 +113,7 @@
   }
 
   .bar {
-    height: 9px;
+    height: 8px;
   }
 
   .original-note {
@@ -112,14 +127,18 @@
 
     .image-compression-bars & {
       .type {
-        padding-left: 5px;
-        width: 30%;
+        width: 84px;
+        min-width: 84px;
+        padding-left: 0;
       }
       .bar-wrp {
-        width: 30%;
+        width: 84px;
+        min-width: 84px;
+        margin-left: 12px;
+        margin-right: 12px;
       }
       .bytes {
-        margin-left: 8px;
+        margin-left: 0;
       }
     }
   }

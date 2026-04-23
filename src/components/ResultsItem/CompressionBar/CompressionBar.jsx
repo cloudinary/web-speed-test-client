@@ -12,9 +12,9 @@ const gradeColor = {
   B: '#48C4D8',
   C: '#f2a81a',
   D: '#f2a81a',
-  E: '#FF5050',
-  F: '#FF5050',
-  default: '#3146c6'
+  E: '#F42153',
+  F: '#F42153',
+  default: '#B1F857'
 };
 class CompressionBar extends Component {
   static propTypes = {
@@ -57,12 +57,12 @@ class CompressionBar extends Component {
           {this.props.t(format)}
           {best && (
             <div className="best">
-              <Image
-                publicId="icon-best-v2.svg"
-                type="asset"
+              <img
+                src="https://cloudinary-marketing-res.cloudinary.com/image/upload/v1774330247/icon-editor_choice.svg"
                 width="22"
+                alt=""
                 title={this.props.t('BestImageText')}
-              ></Image>
+              />
               <span className="tooltip">{this.props.t('BestImageText')}</span>
             </div>
           )}

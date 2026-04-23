@@ -1,90 +1,203 @@
 @import 'src/styles/helpers';
 
 .loader {
-  min-height: 440px;
-  background: $color-blue-medium-a;
+  background: radial-gradient(
+    160.37% 197.91% at 89.38% 155.28%,
+    #0065ad 0%,
+    #031f33 81.57%
+  );
   color: #fff;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 80px;
+  padding: 112px 0 88px;
   position: relative;
+  overflow: hidden;
+
   .container {
+    display: grid;
+    grid-template-columns: minmax(0, 611px) minmax(320px, 1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
+  }
+
+  .loader-copy {
     display: flex;
-    flex: 1;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: flex-start;
-    align-content: center;
-    max-width: 900px;
+    gap: 28px;
+    min-width: 0;
   }
-  h2 {
-    width: 100%;
-    font-size: 48px;
-    font-weight: 200;
+
+  .loader-kicker {
     color: #fff;
-    margin: 0 14px 20px;
-    word-break: break-all;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    text-transform: uppercase;
   }
-  .gif {
-    width: 180px;
-    margin: 4px 0;
+
+  .copy-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
-  .col {
-    width: 620px;
-    width: calc(100% - 180px);
-    padding-left: 30px;
-    box-sizing: border-box;
-  }
-  .loader-explanation {
-    font-size: 14px;
-    white-space: pre-line;
-  }
-  .wdt-loading-phrases {
-    top: 0;
-    transform: translateY(0);
+
+  h2 {
     margin: 0;
-    padding: 0;
-    height: 90px;
-    &:before {
-      background: linear-gradient(
-        to bottom,
-        rgba($color-blue-medium-a, 1) 0%,
-        rgba($color-blue-medium-a, 0) 15%,
-        rgba($color-blue-medium-a, 0) 43%,
-        rgba($color-blue-medium-a, 1) 100%
-      );
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(44px, 5vw, 61px);
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .loader-title-dots {
+    display: inline-flex;
+    align-items: flex-end;
+    margin-left: 2px;
+
+    span {
+      animation: loader-dot-fade 1.2s infinite ease-in-out;
+    }
+
+    span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    span:nth-child(3) {
+      animation-delay: 0.4s;
     }
   }
+
+  .loader-explanation {
+    margin: 0;
+    max-width: 611px;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    white-space: pre-line;
+  }
+
+  .loader-status {
+    width: 300px;
+    height: 108px;
+    overflow: hidden;
+    position: relative;
+  }
+
   .wdt-loading-screen {
     position: relative;
-    background: $color-blue-medium-a;
+    background: transparent;
   }
+
+  .wdt-loading-phrases {
+    width: 300px;
+    height: 108px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+    text-align: center;
+
+    &:before {
+      display: none;
+    }
+  }
+
   .wdt-loading-phrase {
     white-space: nowrap;
     transform: translateY(8px);
     text-align: left;
     line-height: 36px;
     height: 36px;
+    color: #fff;
+
     &:before {
-      background: #fff;
+      width: 18px;
+      height: 18px;
       top: 7px;
+      left: 0;
+      border: 1px solid #fff;
+      background: #fff;
+      opacity: 1;
     }
+
     &:after {
+      left: 3px;
       top: 17px;
+      border-right: 3px solid #2eb150;
+      border-top: 3px solid #2eb150;
+      opacity: 0;
+    }
+  }
+
+  .loader-visual {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 0;
+  }
+
+  .loader-image {
+    width: min(100%, 520px);
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 1180px) {
+    .container {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 48px;
+    }
+
+    .loader-copy {
+      max-width: 611px;
+    }
+
+    .loader-visual {
+      justify-content: center;
+    }
+  }
+
+  @media #{$bp-max-sm} {
+    padding: 72px 0 64px;
+
+    .loader-copy {
+      gap: 24px;
+    }
+
+    .loader-image {
+      width: 100%;
+      max-width: 520px;
     }
   }
 
   @media #{$bp-max-xs} {
-    padding: 30px 0;
+    padding: 56px 0 52px;
+
     h2 {
-      display: none;
+      font-size: 38px;
     }
-    .gif {
-      margin: 0 auto;
+
+    .loader-status {
+      width: 100%;
+      max-width: 300px;
     }
-    .col {
-      margin: 0 auto;
-      width: 85%;
-      padding: 0;
-    }
+  }
+}
+
+@keyframes loader-dot-fade {
+  0%,
+  20%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
   }
 }

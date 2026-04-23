@@ -67,7 +67,7 @@ class ImageExpanded extends Component {
           <div className="title">
             <Image
               className="image-info-icon"
-              publicId="icon-original-white.svg"
+              publicId="icon-original.svg"
               type="asset"
               width="25"
             ></Image>

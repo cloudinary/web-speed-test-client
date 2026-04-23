@@ -110,86 +110,65 @@ class ImageInfo extends Component {
 
     const format = this.getFormat();
     const flags = this.getFlags();
+    const gradeEntries = grading
+      ? Object.keys(grading).filter((grade) => grade !== 'aggregated')
+      : [];
+    const reductionText =
+      !isOriginal && typeof image.percentChange === 'number'
+        ? `${numbro((100 - image.percentChange) / 100).format('0.0%')} ${this.props.t('Reduction')}`
+        : null;
 
     return (
-      <div className="imageInfo">
-        <div className="image-info-bar">
-          <div className="browsers">
-            {this.getBrowsersSupport(data.format).map((browser, key) => (
-              <Image
-                key={key}
-                publicId={'browser-' + browser + '-blue-v2.svg'}
-                type="asset"
-              ></Image>
-            ))}
-          </div>
-          {original && original.hasOwnProperty('public_id') && (
-            <div className="links">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                title={this.props.t('Open image in a new tab')}
-                href={image.url}
-              >
-                <Image
-                  publicId="icon-external-black.svg"
-                  type="asset"
-                  width="16"
-                ></Image>
-              </a>
-              <a
-                download={
-                  original.public_id + '.' + this.getFormat(data.format)
-                }
-                target="_blank"
-                rel="noreferrer"
-                title={this.props.t('Download the image')}
-                href={image.url}
-              >
-                <Image
-                  publicId="icon-download-black.svg"
-                  type="asset"
-                  width="16"
-                ></Image>
-              </a>
-            </div>
-          )}
-          {isOriginal && (
-            <div className="links">
-              <a
-                target="_blank"
-                rel="noreferrer"
-                title={this.props.t('Open image in a new tab')}
-                href={image.url}
-              >
-                <Image
-                  publicId="icon-external-black.svg"
-                  type="asset"
-                  width="16"
-                ></Image>
-              </a>
-            </div>
-          )}
-        </div>
-
-        <div className="image-info-bar">
+      <div className={isOriginal ? 'imageInfo is-original' : 'imageInfo'}>
+        <div className="image-info-meta">
           <div className="dimensions">
-            {image.width} x {image.height}
+            {image.width} x {image.height} px
           </div>
-          {!isOriginal && (
-            <div className="percent">
-              {numbro((100 - image.percentChange) / 100).format('0.0%') +
-                ' ' +
-                this.props.t('Reduction')}
+          <div className="meta-metrics">
+            <div className="weight">{numbro(data.bytes).format('0.0 d')}</div>
+            {reductionText && (
+              <div className="percent">
+                {reductionText}
+              </div>
+            )}
+          </div>
+          {(isOriginal || (original && original.hasOwnProperty('public_id'))) && (
+            <div className="links">
+              <a
+                target="_blank"
+                rel="noreferrer"
+                title={this.props.t('Open image in a new tab')}
+                href={image.url}
+              >
+                <Image
+                  publicId="icon-external-black.svg"
+                  type="asset"
+                  width="12"
+                ></Image>
+              </a>
+              {!isOriginal && original && original.hasOwnProperty('public_id') && (
+                <a
+                  download={original.public_id + '.' + (format || data.format)}
+                  target="_blank"
+                  rel="noreferrer"
+                  title={this.props.t('Download the image')}
+                  href={image.url}
+                >
+                  <Image
+                    publicId="icon-download-black.svg"
+                    type="asset"
+                    width="12"
+                  ></Image>
+                </a>
+              )}
             </div>
           )}
-          <div className="weight">{numbro(data.bytes).format('0.0 d')}</div>
         </div>
 
         {isOriginal && grading && (
           <div className="grading">
             <div className="list">
-              {Object.keys(grading).map((grade, key) => (
+              {gradeEntries.map((grade, key) => (
                 <div className={grade.toLowerCase()} key={key}>
                   <div
                     className={
@@ -203,14 +182,9 @@ class ImageInfo extends Component {
                 </div>
               ))}
             </div>
-            <div className="bracket">
-              <div className="b-top"></div>
-              <div className="b-center"></div>
-              <div className="b-bottom"></div>
-            </div>
             <div className="total">
               <span className="average">
-                {this.props.t('GradesToAverageConnection')}
+                Average Score
               </span>
               <div className={'grade grade-' + grading.aggregated.value}>
                 {grading.aggregated.value}
@@ -245,19 +219,23 @@ class ImageInfo extends Component {
           </div>
         )}
 
-        {explanation && explanation.length > 0 && (
+        {!isOriginal && explanation && explanation.length > 0 && (
           <div className="explanation">
-            {explanation.map((explain, key) => (
-              <p key={key}>{explain}</p>
-            ))}
+            <ul>
+              {explanation.map((explain, key) => (
+                <li key={key}>{explain}</li>
+              ))}
+            </ul>
           </div>
         )}
 
         {isOriginal && grading && (
           <div className="explanation">
-            {Object.keys(grading).map((grade, key) => (
-              <p key={key}>{grading[grade].explanation}</p>
-            ))}
+            <ul>
+              {gradeEntries.map((grade, key) => (
+                <li key={key}>{grading[grade].explanation}</li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

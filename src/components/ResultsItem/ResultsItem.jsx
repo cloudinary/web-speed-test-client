@@ -36,6 +36,7 @@ class ResultsItem extends Component {
   render() {
     const { result } = this.props;
     const transformations = [result.transformedImage, ...result.dynamicFormats];
+    const fileName = result.original_filename + '.' + result.format;
     const resultCls = cx('resultsItem', {
       expanded: this.state.expanded
     });
@@ -45,88 +46,95 @@ class ResultsItem extends Component {
     return (
       <div className={resultCls}>
         <div className="image-intro">
-          <div className={'image-orig image-' + result.format}>
-            <Image
-              publicId={result.public_id}
-              height="300"
-              width="400"
-              crop="limit"
-              dpr="auto"
-            ></Image>
-          </div>
-          <div className="image-data">
-            <div className="image-data-header">
-              <div
-                className={
-                  'image-data-grading grade grade-' +
-                  result.analyze.grading.aggregated.value
-                }
-              >
-                {result.analyze.grading.aggregated.value}
-              </div>
+          <div className="results-header">
+            <div className="results-header-main">
+              <h3 className="image-data-name" title={fileName}>
+                {fileName}
+              </h3>
               {result.server === 'Cloudinary' && (
-                <span className="from-cloudinary">
+                <div className="delivery-label">
                   <Image
                     publicId="icon-cloudinary-gray.svg"
                     type="asset"
-                    width="30"
+                    width="22"
                   ></Image>
-                  <span className="tooltip">
-                    {this.props.t('FromCloudinary')}
-                  </span>
-                </span>
+                  <span>Delivered via Cloudinary</span>
+                </div>
               )}
-              <h3 className="image-data-name">
-                {result.original_filename + '.' + result.format}
-              </h3>
             </div>
-            <div className="image-data-inner">
-              <div className="image-final">
-                <CompressionBar
-                  format={result.format}
-                  size={result.bytes}
-                  grade={result.analyze.grading.aggregated.value}
-                />
-                <div className="image-final-percent">
-                  <h3 className="image-compressions-title">
-                    {this.props.t('CollapsedPotentialCompressionTitle')}
-                  </h3>
-                  <Image
-                    publicId="icon-compress-v4.svg"
-                    type="asset"
-                    width="47"
-                  ></Image>
+            <button onClick={this.toggleImageInfo} className={btnCls}>
+              {this.state.expanded && this.props.t('CollapseButton')}
+              {!this.state.expanded && this.props.t('ExpandButton')}
+              <Image publicId="icon-expand.svg" type="asset" width="12"></Image>
+            </button>
+          </div>
+          <div className="results-grid">
+            <div className="results-left">
+              <div className="score-card">
+                <h3 className="metric-title">Image Score</h3>
+                <div
+                  className={
+                    'image-data-grading grade grade-' +
+                    result.analyze.grading.aggregated.value
+                  }
+                >
+                  {result.analyze.grading.aggregated.value}
+                </div>
+              </div>
+              <div className={'image-orig image-' + result.format}>
+                <Image
+                  publicId={result.public_id}
+                  height="300"
+                  width="400"
+                  crop="limit"
+                  dpr="auto"
+                ></Image>
+              </div>
+            </div>
+            <div className="results-middle">
+              <div className="metric-card current-card">
+                <h3 className="metric-title">
+                  {this.props.t('ExpandedTabOriginal')}
+                </h3>
+                <div className="metric-value">
+                  {numbro(result.bytes).format('0.0 b')}
+                </div>
+                <div className="metric-subvalue">{result.format.toUpperCase()}</div>
+              </div>
+              <div className="metric-card compression-card">
+                <h3 className="metric-title">
+                  {this.props.t('CollapsedPotentialCompressionTitle')}
+                </h3>
+                <div className="metric-value">
                   {numbro(1 - this.getBestReduction(transformations)).format(
                     '0.0%'
                   )}
                 </div>
-                <div className="total-of">
+                <div className="metric-copy">
                   {this.props.t('ImageWeightReduction')}
                 </div>
-                <div className="image-final-pixel">
+                <div className="metric-dimensions">
                   {result.width}x{result.height}
                   <Image
-                    publicId="icon-arrow-blue.svg"
+                    publicId="icon-arrow-black.svg"
                     type="asset"
                     width="14"
                   ></Image>
                   {result.transformedImage.width}x
                   {result.transformedImage.height}
                 </div>
-                <button onClick={this.toggleImageInfo} className={btnCls}>
-                  {this.state.expanded && this.props.t('CollapseButton')}
-                  {!this.state.expanded && this.props.t('ExpandButton')}
-                  <Image
-                    publicId="icon-expand.svg"
-                    type="asset"
-                    width="12"
-                  ></Image>
-                </button>
               </div>
-              <div className="image-compression-bars">
+            </div>
+            <div className="image-compression-bars">
+              <div className="image-compression-summary">
                 <h3 className="image-compressions-title">
-                  {this.props.t('CompressionBarsTitle')}
+                  Image Format Compression Options
                 </h3>
+                <p className="image-compression-copy">
+                  {this.props.t('CompressionBarsTitle')}
+                </p>
+              </div>
+              <div className="bars-wrp">
                 {transformations.map((transform, key) => (
                   <CompressionBar
                     key={key}
