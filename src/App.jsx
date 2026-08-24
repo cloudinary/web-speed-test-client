@@ -36,7 +36,7 @@ function App(props) {
           ))}
           <Route
               path="/:page"
-              render={(props) => <StaticPage page={props.match.params.page} />}
+              element={<StaticPage />}
           />
         </Routes>
 
